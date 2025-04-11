@@ -1,4 +1,7 @@
-site_name: My MkDocs Material Documentation
+site_name: Diplomado en Aplicaciones asistidas por IA
+site_description: Diplomado en Aplicaciones asistidas por IA
+site_author: Intitucion iniversitaria Digital de Antioquia
+
 site_url: https://sitename.example
 theme:
   name: material
