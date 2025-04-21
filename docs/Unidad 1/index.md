@@ -116,7 +116,7 @@ de la siguiente manera:
 <!--WARNING: El numerado automático de figuras no está funcionando. Arreglar-->
 
 <figure>
-  <img src="assets/images/tokenizer.png" alt="División en tokens de una frase en GPT-4" width="600">
+  <img src="../assets/images/tokenizer.png" alt="División en tokens de una frase en GPT-4" width="600">
   <figcaption>División en tokens de una frase utilizando el tokenizador de GPT-4. Fuente: <a href="https://platform.openai.com/tokenizer">OpenAI Tokenizer</a>.</figcaption>
 </figure>
 
@@ -159,6 +159,59 @@ Es muy posible que en el futuro estos modelos hoy considerados **LLMs** sean vis
     Estas estrategias permiten que modelos más pequeños logren mejor desempeño, aprovechando conocimiento preexistente o la generación sintética de datos.
 
 ## De ML Igeniringa a IA Ingering
+
+(Fata terminar)
+# Configuración inicial
+
+Para ejecutar los códigos del diplomado, debes instalar las librerías necesarias.
+
+Para facilitar el uso del material, puedes descargar el archivo de configuración [`environment.yml`](https://tu-enlace.com/environment.yml), que te permitirá crear automáticamente un ambiente virtual usando `conda`.
+
+Una vez descargado el archivo, ejecuta los siguientes comandos en tu terminal:
+
+```bash
+# Crea el ambiente virtual a partir del archivo environment.yml
+conda env create -f environment.yml
+```
+```bash
+#Activa el ambiente
+conda activate ia-diplomado
+```
+
+
+## Configuración del Entorno para Procesamiento de Lenguaje Natural
+
+Para trabajar con las herramientas de este módulo, configura un entorno virtual con Conda usando el siguiente archivo:
+
+!!! info "📖 Configuración del Entorno"
+    Descarga el archivo `environment.yml` para crear el entorno virtual:
+
+    [Descargar environment.yml](../assets/resources/environment.yml){ .md-button .md-button--primary }
+
+    **Instrucciones**:
+    1. Descarga el archivo.
+    2. Abre una terminal y ejecuta:
+       ```bash
+       conda env create -f environment.yml
+       conda activate diplomado_ia
+       ```
+    3. Verifica la instalación con:
+       ```python
+       import nltk
+       print(nltk.__version__)
+       ```
+
+
+## Usando la API de OpenAI
+
+Gran parte
+
+
+
+
+
+
+
 
 
 
