@@ -31,6 +31,7 @@ theme:
 
 markdown_extensions:
   - attr_list
+  - md_in_html
   - pymdownx.highlight
   - pymdownx.superfences
   - pymdownx.emoji:
@@ -51,3 +52,5 @@ markdown_extensions:
       alternate_style: true
   - admonition
   - pymdownx.details
+extra_css:
+ - css/custom.css
