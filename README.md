@@ -16,8 +16,8 @@ Follow these steps to set up the Conda environment and serve the MkDocs site loc
 
 1. **Clone the Repository** (if applicable):
    ```bash
-   git clone <repository-url>
-   cd <repository-directory>
+   git clone git@github.com:introSoft-iud/Diplomado_IA_IUDigital.git
+   cd Diplomado_IA_IUDigital
 
 
 ### Crear el Entorno Conda
