@@ -25,8 +25,8 @@ Follow these steps to set up the Conda environment and serve the MkDocs site loc
 Usa el archivo `environment.yml` proporcionado para crear un entorno Conda llamado `mkdocs-diplomado`:
 
 ```bash
-conda env create -f environment.yml
-
+    conda env create -f environment.yml
+```
 
 ### Activar el Entorno Conda
 
@@ -34,13 +34,14 @@ Activa el entorno para utilizar las dependencias instaladas:
 
 ```bash
 conda activate mkdocs-diplomado
+```
 ### Servir el Sitio MkDocs Localmente
 
 Ejecuta el servidor de desarrollo de MkDocs para visualizar el sitio localmente:
 
 ```bash
 mkdocs serve
-
+```
 Abre tu navegador y navega a `http://127.0.0.1:8000` para ver el sitio.
 
 El sitio se recargará automáticamente cuando realices cambios en los archivos fuente.
@@ -51,3 +52,4 @@ Para generar los archivos estáticos del sitio (por ejemplo, para su despliegue)
 
 ```bash
 mkdocs build
+```
