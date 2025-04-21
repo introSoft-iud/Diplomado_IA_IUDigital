@@ -631,7 +631,7 @@ Organiza y jerarquiza los temas y subtemas numéricamente.
 <!--WARNING: El numerado automático de figuras no está funcionando. Arreglar-->
 
 <figure>
-  <img src="assets/images/tokenizer.png" alt="División en tokens de una frase en GPT-4" width="600">
+  <img src="../assets/images/tokenizer.png" alt="División en tokens de una frase en GPT-4" width="600">
   <figcaption>División en tokens de una frase utilizando el tokenizador de GPT-4. Fuente: <a href="https://platform.openai.com/tokenizer">OpenAI Tokenizer</a>.</figcaption>
 </figure>
 
@@ -673,6 +673,36 @@ Organiza y jerarquiza los temas y subtemas numéricamente.
 <p>Estas estrategias permiten que modelos más pequeños logren mejor desempeño, aprovechando conocimiento preexistente o la generación sintética de datos.</p>
 </div>
 <h2 id="de-ml-igeniringa-a-ia-ingering">De ML Igeniringa a IA Ingering</h2>
+<p>(Fata terminar)</p>
+<h1 id="configuracion-inicial">Configuración inicial</h1>
+<p>Para ejecutar los códigos del diplomado, debes instalar las librerías necesarias.</p>
+<p>Para facilitar el uso del material, puedes descargar el archivo de configuración <a href="https://tu-enlace.com/environment.yml"><code>environment.yml</code></a>, que te permitirá crear automáticamente un ambiente virtual usando <code>conda</code>.</p>
+<p>Una vez descargado el archivo, ejecuta los siguientes comandos en tu terminal:</p>
+<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># Crea el ambiente virtual a partir del archivo environment.yml</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>conda<span class="w"> </span>env<span class="w"> </span>create<span class="w"> </span>-f<span class="w"> </span>environment.yml
+</span></code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1">#Activa el ambiente</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>conda<span class="w"> </span>activate<span class="w"> </span>ia-diplomado
+</span></code></pre></div></p>
+<h2 id="configuracion-del-entorno-para-procesamiento-de-lenguaje-natural">Configuración del Entorno para Procesamiento de Lenguaje Natural</h2>
+<p>Para trabajar con las herramientas de este módulo, configura un entorno virtual con Conda usando el siguiente archivo:</p>
+<div class="admonition info">
+<p class="admonition-title">📖 Configuración del Entorno</p>
+<p>Descarga el archivo <code>environment.yml</code> para crear el entorno virtual:</p>
+<p><a class="md-button md-button--primary" href="../assets/resources/environment.yml">Descargar environment.yml</a></p>
+<p><strong>Instrucciones</strong>:
+1. Descarga el archivo.
+2. Abre una terminal y ejecuta:
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>conda<span class="w"> </span>env<span class="w"> </span>create<span class="w"> </span>-f<span class="w"> </span>environment.yml
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>conda<span class="w"> </span>activate<span class="w"> </span>diplomado_ia
+</span></code></pre></div>
+3. Verifica la instalación con:
+   <div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kn">import</span> <span class="nn">nltk</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">nltk</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
+</span></code></pre></div></p>
+</div>
+<h2 id="usando-la-api-de-openai">Usando la API de OpenAI</h2>
+<p>Gran parte</p>
 <!--  ESTAS SON ALGUNAS ADAPTACIONES DE LAS ADMINICIONES USADAS EN LAS PLATILLAS DE LA IU -->
 
 <div class="admonition warning">
@@ -789,7 +819,7 @@ URL: [enlace]</p>
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.footer"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.footer", "content.code.copy"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../assets/javascripts/bundle.525ec568.min.js"></script>
