@@ -45,8 +45,8 @@
         
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather+Sans:300,300i,400,400i,700,700i%7CRed+Hat+Mono:400,400i,700,700i&display=fallback">
-        <style>:root{--md-text-font:"Merriweather Sans";--md-code-font:"Red Hat Mono"}</style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,700,700i%7CRed+Hat+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Montserrat";--md-code-font:"Red Hat Mono"}</style>
       
     
     
@@ -691,24 +691,218 @@ Organiza y jerarquiza los temas y subtemas numéricamente.
 <p>Descarga el archivo <code>environment.yml</code> para crear el entorno virtual:</p>
 <p><a class="md-button md-button--primary" href="../assets/resources/environment.yml">Descargar environment.yml</a></p>
 <p><strong>Instrucciones</strong>:
-1. Descarga el archivo.
-2. Abre una terminal y ejecuta:
+1. Descarga el archivo.</p>
+<ol>
+<li>Abre una terminal y ejecuta:
    <div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>conda<span class="w"> </span>env<span class="w"> </span>create<span class="w"> </span>-f<span class="w"> </span>environment.yml
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>conda<span class="w"> </span>activate<span class="w"> </span>diplomado_ia
-</span></code></pre></div>
-3. Verifica la instalación con:
-   <div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kn">import</span> <span class="nn">nltk</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">nltk</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
-</span></code></pre></div></p>
+</span></code></pre></div></li>
+</ol>
 </div>
 <h2 id="usando-la-api-de-openai">Usando la API de OpenAI</h2>
-<p>Gran parte</p>
+<p>Para gran parte del curso usaremos la API de OpenAI. Si aún no tienes una cuenta, puedes crearla en el siguiente enlace: <a href="https://platform.openai.com/signup">https://platform.openai.com/signup</a>.</p>
+<p>Una vez creada tu cuenta, deberás generar una clave de API (API Key). Para hacerlo, accede a: <a href="https://platform.openai.com/api-keys">https://platform.openai.com/api-keys</a> y haz clic en <strong>"Create new secret key"</strong>, como se muestra en la figura a continuación:</p>
+<figure>
+  <img src="../assets/images/secret_key.png" alt="Creación de clave secreta en OpenAI" width="600">
+  <figcaption>Generación de una clave secreta desde el panel de usuario de OpenAI. Fuente: <a href="https://platform.openai.com/api-keys">OpenAI</a>.</figcaption>
+</figure>
+
+<div class="admonition warning">
+<p class="admonition-title">Para tener en cuenta</p>
+<p>Para poder usar tu llave, debes cargar crédito en tu cuenta utilizando una tarjeta de crédito.<br />
+Por este motivo, la clave debe permanecer <strong>privada</strong> en tu computador y <strong>no debe ser compartida en línea</strong> (por ejemplo, en el repositorio de GitHub del proyecto).</p>
+</div>
+<p>Esta acción generará la llave de acceso a tu cuenta de OpenAI.<br />
+Cada llamada a la API tiene un costo asociado, el cual depende del número de <em>tokens</em> procesados en la solicitud.</p>
+<p>Puedes monitorear tu consumo en tiempo real desde la sección <strong>Usage</strong> en el panel de OpenAI:<br />
+<a href="https://platform.openai.com/account/usage">https://platform.openai.com/account/usage</a></p>
+<figure>
+  <img src="../assets/images/costs.png" alt="Panel de consumo de la API en OpenAI" width="600">
+  <figcaption>Visualización del consumo y costos acumulados en la sección <strong>Usage</strong> del panel de usuario de OpenAI. Fuente: <a href="https://platform.openai.com/account/usage">OpenAI</a>.</figcaption>
+</figure>
+<div class="admonition tip">
+<p class="admonition-title">Límite de consumo mensual</p>
+<p>En la sección <strong>Usage</strong> también puedes establecer, por seguridad, un límite mensual máximo de consumo en dólares para tu aplicación.<br />
+Esto te permite evitar cargos inesperados si se realizan muchas llamadas a la API.</p>
+</div>
+<h2 id="usando-mi-llave">Usando mi llave</h2>
+<p>Para que la llave no sea pública, podemos cargarla como una variable de ambiente local del sistema.<br />
+Para ello, crea un archivo con el nombre <code>.env</code> y guárdalo en la misma carpeta en la que estás trabajando.</p>
+<p>Dentro del archivo <code>.env</code>, la llave debe guardarse bajo el nombre <code>OPENAI_API_KEY</code>, de la siguiente manera:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nv">OPENAI_API_KEY</span><span class="o">=</span>your-api-key-here
+</span></code></pre></div></p>
+<h1 id="usando-la-api-de-openai_1">Usando la API de OpenAI</h1>
+<p>Para comenzar a trabajar con la API de OpenAI, primero debes importar la librería:</p>
+<p><div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kn">import</span> <span class="nn">openai</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="kn">from</span> <span class="nn">openai</span> <span class="kn">import</span> <span class="n">OpenAI</span>  
+</span></code></pre></div>
+Luego, debes cargar la llave desde un archivo <code>.env</code> para mantenerla oculta y segura:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kn">from</span> <span class="nn">dotenv</span> <span class="kn">import</span> <span class="n">load_dotenv</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="kn">import</span> <span class="nn">os</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="n">load_dotenv</span><span class="p">()</span>  <span class="c1"># Carga las variables de entorno desde el archivo .env</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="n">openai</span><span class="o">.</span><span class="n">api_key</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;OPENAI_API_KEY&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<p>Instanciamos un cliente y un modelo:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">client</span> <span class="o">=</span> <span class="n">OpenAI</span><span class="p">()</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="n">llm_model</span> <span class="o">=</span> <span class="s2">&quot;gpt-4o-mini&quot;</span>
+</span></code></pre></div>
+<p>Para encapsular un poco la llamada al modelo, podemos definir nuestra propia función de completado de chat:</p>
+<p><div class="language-python highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">def</span> <span class="nf">get_chat_completion</span><span class="p">(</span><span class="n">prompt</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="n">llm_model</span><span class="p">):</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>    <span class="c1"># Creamos una solicitud de completado de chat</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>    <span class="n">chat_completion</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">completions</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>        <span class="n">model</span><span class="o">=</span><span class="n">model</span><span class="p">,</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>        <span class="n">messages</span><span class="o">=</span><span class="p">[{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="n">prompt</span><span class="p">}]</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>    <span class="p">)</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>    <span class="k">return</span> <span class="n">chat_completion</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">content</span>  <span class="c1"># Devuelve la respuesta del modelo</span>
+</span></code></pre></div>
+La función <code>get_chat_completion</code> la utilizaremos para interactuar con el modelo de OpenAI y obtener una respuesta a partir de un mensaje proporcionado. El modelo que se utiliza por defecto es <code>gpt-4o-mini</code>, pero puedes especificar otro modelo si lo deseas. La lista completa de modelos puedes consultarla en la <a href="https://platform.openai.com/docs/models">documentación oficial de OpenAI</a>.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Ejemplo de uso</label><label for="__tabbed_1_2">Salida</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-python highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1"># Llamada a la función get_chat_completion con una pregunta</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="n">completion</span> <span class="o">=</span> <span class="n">get_chat_completion</span><span class="p">(</span><span class="s2">&quot;¿Cómo se llama el presidente de Colombia?&quot;</span><span class="p">)</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="c1"># Imprimir la respuesta del modelo</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="nb">print</span><span class="p">(</span><span class="n">completion</span><span class="p">)</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>A<span class="w"> </span>partir<span class="w"> </span>de<span class="w"> </span>mi<span class="w"> </span>última<span class="w"> </span>actualización<span class="w"> </span>en<span class="w"> </span>octubre<span class="w"> </span>de<span class="w"> </span><span class="m">2023</span>,<span class="w"> </span>el<span class="w"> </span>presidente<span class="w"> </span>de<span class="w"> </span>Colombia<span class="w"> </span>es<span class="w"> </span>Gustavo<span class="w"> </span>Petro,<span class="w"> </span>quien<span class="w"> </span>asumió<span class="w"> </span>el<span class="w"> </span>cargo<span class="w"> </span>el<span class="w"> </span><span class="m">7</span><span class="w"> </span>de<span class="w"> </span>agosto<span class="w"> </span>de<span class="w"> </span><span class="m">2022</span>.<span class="w"> </span>Sin<span class="w"> </span>embargo,<span class="w"> </span>te<span class="w"> </span>recomiendo<span class="w"> </span>verificar<span class="w"> </span>esta<span class="w"> </span>información,<span class="w"> </span>ya<span class="w"> </span>que<span class="w"> </span>puede<span class="w"> </span>haber<span class="w"> </span>cambios<span class="w"> </span>políticos<span class="w"> </span>o<span class="w"> </span>elecciones<span class="w"> </span>que<span class="w"> </span>alteren<span class="w"> </span>la<span class="w"> </span>situación.
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<p>Los modelos de chat asignan roles que nos pueden ayudar a predefinir el comportamiento del modelo. Por ejemplo, en nuestra función usamos el rol de <code>user</code> que representa el mensaje o la entrada proporcionada por el usuario. Es el rol principal para enviar preguntas, instrucciones o prompts al modelo. </p>
+<h3 id="preconfiguracion-del-tono-con-el-rol-system">Preconfiguración del Tono con el Rol <code>system</code></h3>
+<p>Sin embargo, nuestra función puede ser preconfigurada para que el chat responda en un tono específico usando el rol <code>system</code>. Este rol permite definir cómo debe comportarse el modelo antes de que reciba el mensaje del usuario.</p>
+<p>Por ejemplo, podemos configurar el modelo para que responda en un estilo poético y elegante, similar al de Shakespeare:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Ejemplo</label><label for="__tabbed_2_2">Salida</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-python highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="c1"># Inicializamos el cliente de OpenAI</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="n">client</span> <span class="o">=</span> <span class="n">OpenAI</span><span class="p">()</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="n">llm_model</span> <span class="o">=</span> <span class="s2">&quot;gpt-4o-mini&quot;</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="k">def</span> <span class="nf">get_chat_completion</span><span class="p">(</span><span class="n">prompt</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="n">llm_model</span><span class="p">):</span>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>    <span class="c1"># Creamos una solicitud de completado de chat</span>
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>    <span class="n">chat_completion</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">completions</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>        <span class="n">model</span><span class="o">=</span><span class="n">model</span><span class="p">,</span>
+</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>        <span class="n">messages</span><span class="o">=</span><span class="p">[</span>
+</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>            <span class="p">{</span>
+</span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="hll">                <span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;system&quot;</span><span class="p">,</span>
+</span></span><span id="__span-10-12"><a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a><span class="hll">                <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;Thou art a wise and eloquent bard, akin to Shakespeare. Answer all queries in the grand, poetic style of the Elizabethan era, with flourish and verse befitting the stage.&quot;</span>
+</span></span><span id="__span-10-13"><a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a>            <span class="p">},</span>
+</span><span id="__span-10-14"><a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a>            <span class="p">{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="n">prompt</span><span class="p">}</span>
+</span><span id="__span-10-15"><a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a>        <span class="p">]</span>
+</span><span id="__span-10-16"><a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a>    <span class="p">)</span>
+</span><span id="__span-10-17"><a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a>
+</span><span id="__span-10-18"><a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a>    <span class="k">return</span> <span class="n">chat_completion</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">content</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>En<span class="w"> </span>tierras<span class="w"> </span>de<span class="w"> </span>Colombia,<span class="w"> </span>donde<span class="w"> </span>el<span class="w"> </span>sol<span class="w"> </span>se<span class="w"> </span>alza<span class="w"> </span>radiante,<span class="w">  </span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>El<span class="w"> </span>presidente<span class="w"> </span>en<span class="w"> </span>su<span class="w"> </span>trono,<span class="w"> </span>cual<span class="w"> </span>líder<span class="w"> </span>constante,<span class="w">  </span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>Es<span class="w"> </span>Gustavo<span class="w"> </span>Petro,<span class="w"> </span>hombre<span class="w"> </span>de<span class="w"> </span>ferviente<span class="w"> </span>voz,<span class="w">  </span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>Que<span class="w"> </span>al<span class="w"> </span>timón<span class="w"> </span>del<span class="w"> </span>destino,<span class="w"> </span>la<span class="w"> </span>nación<span class="w"> </span>él<span class="w"> </span>atroz.<span class="w">  </span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>Con<span class="w"> </span>sueños<span class="w"> </span>de<span class="w"> </span>cambio,<span class="w"> </span>justicia<span class="w"> </span>y<span class="w"> </span>verdad,<span class="w">  </span>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>Dirige<span class="w"> </span>su<span class="w"> </span>pueblo<span class="w"> </span>hacia<span class="w"> </span>la<span class="w"> </span>prosperidad.<span class="w">  </span>
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>Así,<span class="w"> </span>en<span class="w"> </span>sus<span class="w"> </span>manos,<span class="w"> </span>el<span class="w"> </span>futuro<span class="w"> </span>bien<span class="w"> </span>brilla,<span class="w">  </span>
+</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>Un<span class="w"> </span>eco<span class="w"> </span>de<span class="w"> </span>esperanza<span class="w"> </span>en<span class="w"> </span>la<span class="w"> </span>tierra<span class="w"> </span>sencilla.
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<h2 id="langchain">LangChain</h2>
+<p>En la sección anterior, tuviste tu primera interacción con un modelo de lenguaje de gran escala (LLM). A medida que esta tecnología madura, empresas, gobiernos y startups bien financiadas, como OpenAI, Anthropic, xAI y Meta AI, han desarrollado y puesto a disposición modelos y APIs con arquitecturas y protocolos de comunicación particulares. Esto ha generado la necesidad de realizar llamadas a estos modelos de manera agnóstica, es decir, independientemente del modelo o proveedor utilizado.</p>
+<p>En este contexto, el framework más popular hasta el momento es LangChain. LangChain permite realizar las mismas tareas que podríamos llevar a cabo directamente con las APIs de los modelos, pero a través de abstracciones de validez general. Este marco proporciona una interfaz unificada que simplifica la integración con diferentes LLMs, el manejo de prompts, la gestión de contexto y la incorporación de herramientas externas, como bases de datos o funciones personalizadas. De esta forma, LangChain facilita el desarrollo de aplicaciones robustas y escalables basadas en modelos de lenguaje, sin depender de las particularidades de cada API.</p>
+<figure>
+  <img src="../assets/images/langchain.png" alt="Logo de LangChain" width="600">
+  <figcaption>
+    Logo  de <strong>LangChain</strong>, un framework para construir aplicaciones con modelos de lenguaje de gran escala.
+    Fuente: <a href="https://www.linkedin.com/pulse/dark-side-langchain-major-problems-facing-generative-ai-matt-gallo-g0rpe" target="_blank">Matt Gallo en LinkedIn</a>.
+  </figcaption>
+</figure>
+
+<p>Para utilizar LangChain con modelos de OpenAI, primero debemos importar la clase <code>ChatOpenAI</code> y configurar el modelo:</p>
+<p><div class="language-python highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="kn">from</span> <span class="nn">langchain_openai</span> <span class="kn">import</span> <span class="n">ChatOpenAI</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="kn">import</span> <span class="nn">os</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="c1"># Definimos el modelo de lenguaje</span>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="n">llm_model</span> <span class="o">=</span> <span class="s2">&quot;gpt-4o-mini&quot;</span>
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="c1"># Inicializamos el modelo de chat de OpenAI con LangChain</span>
+</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="n">chat_model</span> <span class="o">=</span> <span class="n">ChatOpenAI</span><span class="p">(</span>
+</span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>    <span class="n">model</span><span class="o">=</span><span class="n">llm_model</span>
+</span><span id="__span-12-10"><a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a><span class="p">)</span>
+</span></code></pre></div>
+Y listo, eso es todo. Ahora simplemente invocamos el chat con el <em>prompt</em> que queramos. Por ejemplo:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Código</label><label for="__tabbed_3_2">Salida</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-python highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="c1"># Invocamos el modelo de chat con un prompt</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="n">response</span> <span class="o">=</span> <span class="n">chat_model</span><span class="o">.</span><span class="n">invoke</span><span class="p">(</span><span class="s2">&quot;¿Cómo se llama el presidente de Colombia?&quot;</span><span class="p">)</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>A<span class="w"> </span>partir<span class="w"> </span>de<span class="w"> </span>mi<span class="w"> </span>última<span class="w"> </span>actualización<span class="w"> </span>en<span class="w"> </span>octubre<span class="w"> </span>de<span class="w"> </span><span class="m">2023</span>,<span class="w"> </span>el<span class="w"> </span>presidente<span class="w"> </span>de<span class="w"> </span>Colombia<span class="w"> </span>es<span class="w"> </span>Gustavo<span class="w"> </span>Petro,<span class="w"> </span>quien<span class="w"> </span>asumió<span class="w"> </span>el<span class="w"> </span>cargo<span class="w"> </span>el<span class="w"> </span><span class="m">7</span><span class="w"> </span>de<span class="w"> </span>agosto<span class="w"> </span>de<span class="w"> </span><span class="m">2022</span>.<span class="w"> </span>Sin<span class="w"> </span>embargo,<span class="w"> </span>te<span class="w"> </span>recomiendo<span class="w"> </span>verificar<span class="w"> </span>esta<span class="w"> </span>información,<span class="w"> </span>ya<span class="w"> </span>que<span class="w"> </span>puede<span class="w"> </span>haber<span class="w"> </span>cambios<span class="w"> </span>políticos<span class="w"> </span>o<span class="w"> </span>elecciones<span class="w"> </span>que<span class="w"> </span>alteren<span class="w"> </span>la<span class="w"> </span>situación.
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<h2 id="herramientas-clave-de-langchain">Herramientas clave de LangChain</h2>
+<p>LangChain proporciona una variedad de herramientas que permiten construir aplicaciones basadas en modelos de lenguaje de manera modular y eficiente. A continuación, se describen algunas de las más importantes:</p>
+<ul>
+<li>
+<p><strong>Models (Modelos)</strong><br />
+  Representan los modelos de lenguaje que LangChain puede integrar, como <code>ChatOpenAI</code>. Permiten interactuar con LLMs de distintos proveedores, incluyendo OpenAI, Anthropic, Cohere, entre otros.</p>
+</li>
+<li>
+<p><strong>Prompts (Prompts)</strong><br />
+  Herramientas para diseñar y gestionar <em>prompts</em>, como <code>ChatPromptTemplate</code>. Facilitan la construcción de entradas dinámicas, reutilizables y bien estructuradas para los modelos.</p>
+</li>
+<li>
+<p><strong>Example Selectors (Selectores de Ejemplos)</strong><br />
+  Componentes que permiten seleccionar ejemplos relevantes (por ejemplo, para <em>few-shot learning</em>). Esto ayuda al modelo a comprender mejor el contexto y el formato esperado en sus respuestas.</p>
+</li>
+<li>
+<p><strong>Tools (Herramientas)</strong><br />
+  Permiten que el modelo interactúe con funciones externas, como APIs, calculadoras, o bases de datos. Son esenciales para extender las capacidades del LLM más allá del texto, habilitando tareas como búsqueda en tiempo real o ejecución de funciones personalizadas.</p>
+</li>
+<li>
+<p><strong>Vector Stores (Almacenes de Vectores)</strong><br />
+  Bases de datos vectoriales como Chroma, Pinecone o FAISS. Se utilizan para almacenar y buscar <em>embeddings</em>, habilitando funcionalidades como la búsqueda semántica o la generación aumentada por recuperación (<em>Retrieval-Augmented Generation</em>, RAG).</p>
+</li>
+<li>
+<p><strong>Document Loaders (Cargadores de Documentos)</strong><br />
+  Permiten cargar datos desde múltiples fuentes (archivos PDF, páginas web, bases de datos, etc.) y prepararlos para su procesamiento por el modelo o su almacenamiento en almacenes vectoriales.</p>
+</li>
+<li>
+<p><strong>Text Splitters (Divisores de Texto)</strong><br />
+  Herramientas que dividen documentos largos en fragmentos más pequeños. Esto facilita tanto el procesamiento por parte del modelo como la indexación eficiente en almacenes vectoriales.</p>
+</li>
+<li>
+<p><strong>Output Parsers (Parsers de Salida)</strong><br />
+  Utilizados para estructurar y formatear las respuestas del modelo. Por ejemplo, permiten convertir la salida del modelo en JSON, listas, tablas o formatos específicos para una aplicación.</p>
+</li>
+</ul>
+<figure>
+  <img src="../assets/images/langchain_tools.png" alt="Logo de LangChain" width="600">
+  <figcaption>
+    Ecosistema de herramientas de <strong>LangChain</strong>:.
+    Fuente: <a href="https://www.langchain.com/" target="_blank">LangChain</a>.
+  </figcaption>
+</figure>
+
 <!--  ESTAS SON ALGUNAS ADAPTACIONES DE LAS ADMINICIONES USADAS EN LAS PLATILLAS DE LA IU -->
 
 <div class="admonition warning">
 <p class="admonition-title">Para tener en cuenta</p>
 <p>Asegúrate de evaluar los posibles sesgos en los datos antes de implementar un modelo de IA. Los sesgos no detectados pueden llevar a decisiones injustas, afectando la equidad y la confianza en la tecnología.</p>
 </div>
+<p>-</p>
 <div class="admonition tip">
 <p class="admonition-title">📖 Para aprender más</p>
 <p>Si deseas conocer más sobre [tema], lee el siguiente material:
