@@ -20,7 +20,7 @@
       
       
       <link rel="icon" href="assets/favicon.ico">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.39">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.8">
     
     
       
@@ -28,7 +28,7 @@
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.8c3ca2c6.min.css">
+      <link rel="stylesheet" href="assets/stylesheets/main.8608ea7d.min.css">
       
         
         <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
@@ -245,6 +245,7 @@
   
   <span class="md-ellipsis">
     Home
+    
   </span>
   
 
@@ -256,6 +257,7 @@
   
   <span class="md-ellipsis">
     Home
+    
   </span>
   
 
@@ -327,6 +329,48 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#configuracion-del-sistema-antes-de-comenzar" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuración del sistema antes de comenzar
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuración del sistema antes de comenzar">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#requisitos-previos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Requisitos previos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instalacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instalación
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activacion-del-entorno" class="md-nav__link">
+    <span class="md-ellipsis">
+      Activación del entorno
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -357,6 +401,7 @@
   
   <span class="md-ellipsis">
     Unidad 1
+    
   </span>
   
 
@@ -382,6 +427,7 @@
   
   <span class="md-ellipsis">
     Index
+    
   </span>
   
 
@@ -475,6 +521,48 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#configuracion-del-sistema-antes-de-comenzar" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuración del sistema antes de comenzar
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuración del sistema antes de comenzar">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#requisitos-previos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Requisitos previos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instalacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instalación
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activacion-del-entorno" class="md-nav__link">
+    <span class="md-ellipsis">
+      Activación del entorno
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -488,6 +576,7 @@
               <article class="md-content__inner md-typeset">
                 
                   
+
 
 
 <!-- Presentación general del curso
@@ -701,6 +790,44 @@ Anexo_N°_X_Guión_de_Video_Presentación_Curso
 
 -->
 
+<h2 id="configuracion-del-sistema-antes-de-comenzar">Configuración del sistema antes de comenzar</h2>
+<p>Antes de empezar a trabajar con los módulos del curso, debes configurar tu sistema para poder ejecutar los ejemplos correctamente.</p>
+<p>La forma más sencilla de hacerlo es descargando el archivo de configuración <a href="assets/resources/environment.yml">📄environment.yml</a>
+, el cual creará automáticamente un entorno de Conda llamado <code>DiplomadoIA_env</code> con todas las dependencias necesarias para el curso.</p>
+<h3 id="requisitos-previos">Requisitos previos</h3>
+<ul>
+<li>Tener <strong>Anaconda</strong> instalado en tu computador.</li>
+<li>Usar una terminal Bash (en Windows puedes usar Anaconda Prompt, git bash, WSL o similares).</li>
+</ul>
+<h3 id="instalacion">Instalación</h3>
+<p>Una vez descargado el archivo de configuración, ejecuta el siguiente comando en tu terminal:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>conda<span class="w"> </span>env<span class="w"> </span>create<span class="w"> </span>-f<span class="w"> </span>environment.yml
+</span></code></pre></div>
+<h3 id="activacion-del-entorno">Activación del entorno</h3>
+<p>Para activar el entorno en tu terminal, ejecuta:</p>
+<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>conda<span class="w"> </span>activate<span class="w"> </span>diplomado_IA
+</span></code></pre></div>
+A partir de aquí, cualquier comando que ejecutes usará las dependencias definidas para el curso.</p>
+<p>Uso del entorno en Visual Studio Code</p>
+<div class="admonition warning">
+<p class="admonition-title">Para tener en cuenta</p>
+<p>Para ejecutar notebooks <code>.ipynb</code> en Visual Studio Code usando este entorno:</p>
+<ol>
+<li>Abre <strong>VS Code</strong>.</li>
+<li>Abre la carpeta del proyecto o el notebook deseado.</li>
+<li>En la parte superior derecha del notebook, haz clic en la selección de kernel.</li>
+<li>Elige el kernel correspondiente al entorno <code>diplomado_IA</code>.<br />
+Si no aparece, reinicia VS Code o asegúrate de haber activado el entorno desde la terminal integrada.</li>
+<li>Comienza a ejecutar celdas normalmente.</li>
+</ol>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Puedes asegurarte de que el entorno se registre correctamente como kernel ejecutando en la terminal:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>python<span class="w"> </span>-m<span class="w"> </span>ipykernel<span class="w"> </span>install<span class="w"> </span>--user<span class="w"> </span>--name<span class="w"> </span>diplomado_IA<span class="w"> </span>--display-name<span class="w"> </span><span class="s2">&quot;Python (diplomado_IA)&quot;</span>
+</span></code></pre></div></p>
+</div>
+
 
 
 
@@ -770,10 +897,10 @@ Anexo_N°_X_Guión_de_Video_Presentación_Curso
     </div>
     
     
-    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.footer", "content.code.copy"], "search": "assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.footer", "content.code.copy"], "search": "assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="assets/javascripts/bundle.525ec568.min.js"></script>
+      <script src="assets/javascripts/bundle.c8b220af.min.js"></script>
       
     
   </body>
