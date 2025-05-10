@@ -451,7 +451,7 @@ Veamos un ejemplo práctico:
 
 
 
-## Ejercicio Práctico
+## Reto formativo
 
 Crear una aplicación que corrija una respuesta inadecuada de un operador de servicio al cliente.
 
