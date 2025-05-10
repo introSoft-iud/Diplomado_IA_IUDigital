@@ -161,41 +161,6 @@ Es muy posible que en el futuro estos modelos hoy considerados **LLMs** sean vis
 ## De ML Igeniringa a IA Ingering
 
 (Fata terminar)
-# Configuración inicial
-
-Para ejecutar los códigos del diplomado, debes instalar las librerías necesarias.
-
-Para facilitar el uso del material, puedes descargar el archivo de configuración [`environment.yml`](https://tu-enlace.com/environment.yml), que te permitirá crear automáticamente un ambiente virtual usando `conda`.
-
-Una vez descargado el archivo, ejecuta los siguientes comandos en tu terminal:
-
-```bash
-# Crea el ambiente virtual a partir del archivo environment.yml
-conda env create -f environment.yml
-```
-```bash
-#Activa el ambiente
-conda activate ia-diplomado
-```
-
-
-## Configuración del Entorno para Procesamiento de Lenguaje Natural
-
-Para trabajar con las herramientas de este módulo, configura un entorno virtual con Conda usando el siguiente archivo:
-
-!!! info "📖 Configuración del Entorno"
-    Descarga el archivo `environment.yml` para crear el entorno virtual:
-
-    [Descargar environment.yml](../assets/resources/environment.yml){ .md-button .md-button--primary }
-
-    **Instrucciones**:
-    1. Descarga el archivo.
-   
-    2. Abre una terminal y ejecuta:
-       ```bash
-       conda env create -f environment.yml
-       conda activate diplomado_ia
-       ```
 ## Usando la API de OpenAI
 
 Para gran parte del curso usaremos la API de OpenAI. Si aún no tienes una cuenta, puedes crearla en el siguiente enlace: [https://platform.openai.com/signup](https://platform.openai.com/signup).
@@ -413,103 +378,78 @@ LangChain proporciona una variedad de herramientas que permiten construir aplica
   </figcaption>
 </figure>
 
+### Plantillas de Prompts
+
+Comenzaremos estudiando los prompt templates. Los prompts son el componente fundamental para proporcionar instrucciones a los LLMs. Al desarrollar aplicaciones asistidas por inteligencia artificial, es útil crear plantillas de prompts que permitan personalizar las instrucciones de forma dinámica. Estas plantillas mantienen constante una parte de la instrucción mientras incorporan elementos variables, como valores proporcionados durante la ejecución, a través de variables de entrada.
+
+Por ejemplo, una plantilla puede definir la estructura de una pregunta, dejando espacios para insertar valores específicos, como el nombre de un país. Esto se logra utilizando herramientas como `ChatPromptTemplate` de LangChain, que simplifica la creación de prompts reutilizables.
+
+En el siguiente ejemplo, se muestra cómo crear una plantilla para consultar el presidente de un país, utilizando una variable de entrada `{pais}` que puede tomar diferentes valores sin modificar la estructura general del prompt.
+
+=== "Código"
+    ```python
+    from langchain.prompts import ChatPromptTemplate
+
+    # Definir la plantilla con una variable de entrada
+    str_template = "¿Cómo se llama el presidente de {pais}?"
+    prompt_template = ChatPromptTemplate.from_template(str_template)
+
+    # Asignar un valor a la variable de entrada
+    pais = "Colombia"
+    prompt1 = prompt_template.format(pais=pais)
+    print(prompt1)
+
+    # Asignar otro valor a la variable de entrada
+    pais = "Francia"
+    prompt2 = prompt_template.format(pais=pais)
+    print(prompt2)
+    ```
+
+=== "Salida"
+    ```bash
+    ¿Cómo se llama el presidente de Colombia?
+    ¿Cómo se llama el presidente de Francia?
+    ```
 
 
+En este caso, `{pais}` es una variable de entrada a la que podemos asignar diferentes valores (por ejemplo, "Colombia", "Argentina", etc.) sin cambiar la estructura general del prompt. Esto hace que la plantilla sea flexible y reutilizable.
 
-# Uso de la API de OpenAI
+Veamos un ejemplo práctico:
 
-Este documento describe cómo utilizar la API de OpenAI para generar respuestas de chat y cómo aplicar diferentes estilos de lenguaje a las respuestas utilizando Langchain.
-
-## Configuración inicial
-
-Primero, asegurémonos de que la clave de la API esté protegida usando `dotenv` para cargarla desde un archivo `.env`.
-
-```python
-import openai
-from openai import OpenAI
-import os
-from dotenv import load_dotenv, find_dotenv
-
-load_dotenv(find_dotenv())  # Carga el archivo .env
-openai.api_key = os.getenv("OPENAI_API_KEY")
-```
-
-## Uso de la API de OpenAI
-
-Inicializamos el cliente de OpenAI y definimos una función para obtener respuestas de chat.
-
-```python
-# Inicializar el cliente de OpenAI
-client = OpenAI()
-llm_model = "gpt-4o-mini"
-
-def get_chat_completion(prompt, model=llm_model):
-    # Crear una solicitud de finalización de chat
-    chat_completion = client.chat.completions.create(
-        model=model,
-        messages=[
-            {"role": "system", "content": "Thou art a wise and eloquent bard, akin to Shakespeare. Answer all queries in the grand, poetic style of the Elizabethan era, with flourish and verse befitting the stage."},
-            {"role": "user", "content": prompt}
-        ]
+=== "Código"
+    ```python
+    # Definimos un mensaje original en español
+    mensaje_original = (
+        "Manque estaba muy embelesao, le dijo Peralta a la hermana: "
+        "Hija, date una asomaíta por la despensa; desculcá por la cocina, "
+        "a ver si encontrás alguito que darles a estos señores. "
+        "Mirálos qué cansaos están; se les ve la fatiga"
     )
-    return chat_completion.choices[0].message.content
-```
 
-### Ejemplo de uso
+    # Definimos el estilo de traducción deseado
+    estilo_pirata = (
+        "Inglés en un tono pirata. Es decir, con un lenguaje que se asemeje "
+        "al de los piratas de los siglos XVI y XVII"
+    )
 
-```python
-# Ejemplo de uso
-completion = get_chat_completion("¿Cómo se llama el presidente de Colombia?")
-print(completion)
-```
+    # Formateamos el mensaje utilizando un template
+    mensaje_empacado = prompt_template.format_messages(estilo=estilo_pirata, mensaje=mensaje_original)
 
-## Uso de Langchain con OpenAI
+    # Mostramos el mensaje traducido y estilizado
+    from IPython.display import Markdown
+    display(Markdown(mensaje_empacado[0].content))
+    ```
+=== "Salida"
+    ```bash
+    # Salida esperada: Mensaje en inglés con estilo pirata.
+    # Ejemplo ficticio de salida:
+    "Arrr, though Manque was deeply entranced, Peralta said to his sister: "
+    "Lass, take a peek in the pantry; rummage through the galley, "
+    "to see if ye find somethin' to offer these fine gentlemen. "
+    "Look at 'em, how weary they be; fatigue is written upon their faces."
+    ``` 
 
-Langchain permite utilizar modelos de lenguaje para generar respuestas estilizadas.
 
-```python
-from langchain_openai import ChatOpenAI
-
-# Inicializar el modelo de chat de OpenAI
-chat_model = ChatOpenAI(model=llm_model)
-
-response = chat_model.invoke("¿Cómo se llama el presidente de Colombia?")
-print(response.content)
-```
-
-## Plantillas de Prompts
-
-Las plantillas de prompts permiten personalizar las respuestas según el contexto o estilo deseado.
-
-```python
-from langchain.prompts import ChatPromptTemplate
-
-pais = ""
-str_template = "¿Cómo se llama el presidente de {pais}?"
-
-prompt_template = ChatPromptTemplate.from_template(str_template)
-print(prompt_template)
-
-mensaje = ""
-estilo = ""
-string_template = "Traduce el texto que está delimitado por asteriscos dobles a un estilo que es {estilo}.\ntexto: **{mensaje}**"
-
-prompt_template = ChatPromptTemplate.from_template(string_template)
-print(prompt_template)
-```
-
-### Ejemplo de traducción de estilo
-
-```python
-mensaje_atioquenhol = "Manque estaba muy embelesao, le dijo Peralta a la hermana: Hija, date una asomaíta por la despensa; desculcá por la cocina, a ver si encontrás alguito que darles a estos señores. Mirálos qué cansaos están; se les ve la fatiga"
-
-estilo_pirata = "Inglés en un tono pirata. Es decir, con un lenguaje que se asemeje al de los piratas de los siglos XVI y XVII"
-
-mensaje_empacado = prompt_template.format_messages(estilo=estilo_pirata, mensaje=mensaje_atioquenhol)
-
-from IPython.display import Markdown
-display(Markdown(mensaje_empacado[0].content))
-```
 
 ## Ejercicio Práctico
 

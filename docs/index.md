@@ -184,3 +184,51 @@ Anexo_N°_X_Guión_de_Video_Presentación_Curso
 
 
 -->
+
+## Configuración del sistema antes de comenzar
+
+Antes de empezar a trabajar con los módulos del curso, debes configurar tu sistema para poder ejecutar los ejemplos correctamente.
+
+La forma más sencilla de hacerlo es descargando el archivo de configuración [📄environment.yml](assets/resources/environment.yml)
+, el cual creará automáticamente un entorno de Conda llamado `DiplomadoIA_env` con todas las dependencias necesarias para el curso.
+
+### Requisitos previos
+
+- Tener **Anaconda** instalado en tu computador.
+- Usar una terminal Bash (en Windows puedes usar Anaconda Prompt, git bash, WSL o similares).
+
+### Instalación
+
+Una vez descargado el archivo de configuración, ejecuta el siguiente comando en tu terminal:
+
+```bash
+conda env create -f environment.yml
+```
+### Activación del entorno
+
+Para activar el entorno en tu terminal, ejecuta:
+
+```bash
+conda activate diplomado_IA
+```
+A partir de aquí, cualquier comando que ejecutes usará las dependencias definidas para el curso.
+
+Uso del entorno en Visual Studio Code
+
+!!! warning "Para tener en cuenta"
+   
+    Para ejecutar notebooks `.ipynb` en Visual Studio Code usando este entorno:
+
+    1. Abre **VS Code**.
+    2. Abre la carpeta del proyecto o el notebook deseado.
+    3. En la parte superior derecha del notebook, haz clic en la selección de kernel.
+    4. Elige el kernel correspondiente al entorno `diplomado_IA`.  
+    Si no aparece, reinicia VS Code o asegúrate de haber activado el entorno desde la terminal integrada.
+    5. Comienza a ejecutar celdas normalmente.
+
+!!! tip
+    Puedes asegurarte de que el entorno se registre correctamente como kernel ejecutando en la terminal:
+    ```bash
+    python -m ipykernel install --user --name diplomado_IA --display-name "Python (diplomado_IA)"
+    ```
+
