@@ -414,121 +414,197 @@ En el siguiente ejemplo, se muestra cómo crear una plantilla para consultar el 
 
 En este caso, `{pais}` es una variable de entrada a la que podemos asignar diferentes valores (por ejemplo, "Colombia", "Argentina", etc.) sin cambiar la estructura general del prompt. Esto hace que la plantilla sea flexible y reutilizable.
 
-Veamos un ejemplo práctico:
+Veamos ahora un ejemplo práctico en el que utilizamos dos variables de entrada en nuestro template:
+
+```python
+mensaje = ""
+estilo = ""
+```
+
+Definimos nuestro `string_template` de la siguiente manera:
+
+```python
+string_template = (
+    "Traduce el texto que está delimitado por asteriscos dobles a un estilo que es {estilo}.\n"
+    "texto: **{mensaje}**"
+)
+```
+
+Aquí, el `string_template` contiene las instrucciones generales, mientras que `mensaje` y `estilo` son variables que dejamos vacías para llenarlas más tarde. Luego, confeccionamos el *prompt template* utilizando:
+
+```python
+prompt_template = ChatPromptTemplate.from_template(string_template)
+```
+
+En esta línea usamos el método `from_template` de la clase `ChatPromptTemplate`. Si imprimimos el objeto `prompt_template` con:
+
+
+```python
+print(prompt_template)
+```
+=== "Salida"
+```bash
+input_variables=['estilo', 'mensaje']
+input_types={}
+partial_variables={}
+messages=[HumanMessagePromptTemplate(prompt=PromptTemplate(input_variables=['estilo', 'mensaje'], input_types={}, partial_variables={}, template='Traduce el texto que está delimitado por asteriscos dobles a un estilo que es {estilo}.\ntexto: **{mensaje}**'), additional_kwargs={})]
+```
+
+Veremos que tiene como `input_variables` los campos `'estilo'` y `'mensaje'`.
+
+Siguiendo la lógica del paradigma de la programación orientada a objetos, podemos imaginar que la creación de un *prompt template* se asemeja al trabajo de un carpintero. El carpintero (el constructor de la clase) toma un conjunto de maderas (el `string_template`) y las transforma en un gavetero (el objeto de la clase).
+
+<figure>
+  <img src="../assets/images/carpintero-1.png" alt="Carpintero construyendo gavetero a partir de un string" width="600">
+  <figcaption>Constructor de la clase `ChatPromptTemplate.from_template`. En nuestra analogía, el carpintero crea un contenedor apropiado para alojar el contenido de las dos variables de entrada definidas en el `string_template`. Fuente: <a href="#">Elaboración propia</a>.</figcaption>
+</figure>
+
+En este caso, como ilustra la figura, el *prompt template* sería el gavetero con cajones específicos etiquetados como `estilo` y `mensaje`, listos para ser llenados con valores.
+
+Supongamos que asignamos a estas variables de entrada los valores:
+
+
+```python
+mensaje_atioquenhol = (
+    "Manque estaba muy embelesado, le dijo Peralta a la hermana: "
+    "Hija, date una asomaíta por la despensa; desculcá por la cocina, "
+    "a ver si encontrás algo que darles a estos señores. "
+    "Míralos qué cansados están; se les ve la fatiga."
+)
+
+estilo_formal = "Español latino en un tono formal y sobrio"
+```
+
+El método `format_messages` nos permite llenar los cajones del gavetero, es decir, las variables de entrada, con los valores específicos con los que queremos completar nuestro *prompt*. Por ejemplo, si queremos que `estilo = estilo_formal`, podemos hacerlo de la siguiente manera:
+
+
+
+```python
+mensaje_empacado = prompt_template.format_messages(estilo=estilo_formal, mensaje=mensaje_atioquenhol)
+```
+
+El *prompt* completo lucirá así:
 
 === "Código"
     ```python
-    # Definimos un mensaje original en español
-    mensaje_original = (
-        "Manque estaba muy embelesao, le dijo Peralta a la hermana: "
-        "Hija, date una asomaíta por la despensa; desculcá por la cocina, "
-        "a ver si encontrás alguito que darles a estos señores. "
-        "Mirálos qué cansaos están; se les ve la fatiga"
-    )
-
-    # Definimos el estilo de traducción deseado
-    estilo_pirata = (
-        "Inglés en un tono pirata. Es decir, con un lenguaje que se asemeje "
-        "al de los piratas de los siglos XVI y XVII"
-    )
-
-    # Formateamos el mensaje utilizando un template
-    mensaje_empacado = prompt_template.format_messages(estilo=estilo_pirata, mensaje=mensaje_original)
-
-    # Mostramos el mensaje traducido y estilizado
-    from IPython.display import Markdown
-    display(Markdown(mensaje_empacado[0].content))
+    print(mensaje_empacado)
     ```
+
 === "Salida"
     ```bash
-    # Salida esperada: Mensaje en inglés con estilo pirata.
-    # Ejemplo ficticio de salida:
-    "Arrr, though Manque was deeply entranced, Peralta said to his sister: "
-    "Lass, take a peek in the pantry; rummage through the galley, "
-    "to see if ye find somethin' to offer these fine gentlemen. "
-    "Look at 'em, how weary they be; fatigue is written upon their faces."
-    ``` 
+    [HumanMessage(content='Traduce el texto que está delimitado por asteriscos dobles a un estilo que es Español latino en un tono formal y sobrio.\ntexto: **Manque estaba muy embelesao, le dijo Peralta a la hermana: Hija, date una asomaíta por la despensa; desculcá por la cocina, a ver si encontrás alguito que darles a estos señores. Mirálos qué cansaos están; se les ve la fatiga**', additional_kwargs={}, response_metadata={})]
+    ```
+<figure>
+  <img src="../assets/images/empacador.png" alt="Hombre con casco guardando un sobre en un gavetero" width="600">
+  <figcaption>Ilustración de la tarea del <code>format_messages()</code>. El método <code>format_messages()</code> reemplaza los valores de las variables de entrada en el template. Fuente: Elaboración propia.</figcaption>
+</figure>
+Como ilustra la figura, el método `format_messages()` asociado a la clase `ChatPromptTemplate` cumple la función de empaquetar en el objeto los valores específicos en las variables de entrada.
 
+Este tipo de objeto nos permite incorporar programáticamente llamadas a las APIs de los LLMs en el flujo de ejecución de un código Python convencional. Veamos cómo hacerlo:
 
+ Como ya tenemos nuestro *prompt* completo y lleno con las variables que queremos, lo podemos enviar al LLM:
 
-## Reto formativo
-
-Crear una aplicación que corrija una respuesta inadecuada de un operador de servicio al cliente.
+Primero, instanciamos un chat:
 
 ```python
-str_template_app = "Mejora la respuesta: {respuesta} para que cumpla las reglas: {reglas}."
-
-reglas = "Español latino en un tono formal y sobrio y respetuoso. Con buena gramática y ortografía. Tratar de ser muy amable y respetuoso."
-
-respuesta = " mijo, no me importa si le salió mala la licudora, vaya a que se lo lamba un zapo"
-
-prompt_template_app = ChatPromptTemplate.from_template(str_template_app)
-
-mensaje_empacado_app = prompt_template_app.format_messages(respuesta=respuesta, reglas=reglas)
-
-display(Markdown(mensaje_empacado_app[0].content))
-
-chat_app = ChatOpenAI(model=llm_model, temperature=0.3)
-respuesta_al_cliente = chat_app(mensaje_empacado_app)
-
-display(Markdown(respuesta_al_cliente.content))
+chat = ChatOpenAI(model=llm_model, temperature=0.0)
 ```
 
-Este documento ofrece una guía básica para utilizar la API de OpenAI y Langchain para crear aplicaciones de chat avanzadas y estilizadas.
+Luego, realizamos la llamada al LLM para que ejecute las instrucciones del *prompt*:
+
+```python
+respuesta = chat(mensaje_empacado)
+print(respuesta.content)
 ```
 
+=== "Salida"
+```bash
+Manque se encontraba muy absorto, le dijo Peralta a la hermana:
+"Hija, por favor, asómate a la despensa; revisa en la cocina
+para ver si encuentras algo que ofrecerles a estos caballeros.
+Observa cómo están de cansados; se les nota la fatiga."
+```
+
+El LLM recibe el mensaje empacado y realiza las tareas especificadas por el *prompt*.
+
+Lo interesante es que este no es un *prompt* fijo como los que usaríamos en ChatGPT; es un *prompt* que nos permite hacer llamadas al LLM de manera más flexible y programática. Por ejemplo, podríamos definir otro valor para `estilo`, como:
+
+```python
+estilo_cervantes = "Español en un estilo de Cervantes, como en Don Quijote"
+```
+
+```python
+mensaje_empacado = prompt_template.format_messages(estilo=estilo_cervantes, mensaje=mensaje_atioquenhol)
+respuesta = chat(mensaje_empacado)
+print(respuesta.content)
+```
+
+=== "Salida"
+```bash
+  Manque se hallaba en un profundo embeleso, dirigió  
+  Peralta a la hermana la siguiente exhortación: "Hija,
+   asómate, por favor, a la despensa; y, si no es mucho 
+   pedir, descúbrete por la cocina, a ver si logras 
+   hallar algún manjar que ofrecer a estos nobles señores. 
+   Observa cómo se encuentran, qué cansados están; la fatiga
+  se les dibuja en el semblante."
+```
+
+Este enfoque nos permite variar el estilo del texto generado de manera dinámica, adaptando el resultado a diferentes necesidades o contextos, simplemente modificando las variables de entrada del *prompt*.
 
 
 
+=== "Reto formativo"
 
+    <div class="grid cards" markdown>
 
-<!--  ESTAS SON ALGUNAS ADAPTACIONES DE LAS ADMINICIONES USADAS EN LAS PLATILLAS DE LA IU -->
+    - :fontawesome-solid-gears:{ .lg .middle } **Reto formativo**  
+      **Planteamiento**:  
+      Dado un mensaje de un cliente, un operador humano de servicio al cliente elabora una respuesta inadecuada (irrespetuosa, ofensiva, con mala ortografía o en otro idioma). Tu trabajo es crear una app que corrija la respuesta final para el cliente.
 
-!!! warning "Para tener en cuenta"
-    Asegúrate de evaluar los posibles sesgos en los datos antes de implementar un modelo de IA. Los sesgos no detectados pueden llevar a decisiones injustas, afectando la equidad y la confianza en la tecnología.
--
+    </div>
 
-!!! tip "📖 Para aprender más"
-    Si deseas conocer más sobre [tema], lee el siguiente material:
-    Artículo de [nombre del artículo]:
-    URL: [enlace]
+=== "Ver solución"
 
-<!-- Video -->
+    Compara tu solución con la siguienete implementación:
 
-<div class="grid cards" markdown>
+    ```python
+          # Define una plantilla de texto para el prompt que se enviará al modelo de lenguaje.
+      # Usa marcadores {respuesta} y {reglas} para insertar dinámicamente la respuesta y las reglas.
+      str_template_app = """Mejora la respuesta: {respuesta}\
+          para que cumpla las reglas:  {reglas}."""
 
-- :material-video-vintage:{ .lg .middle } **Video: Oportunidades en IA**  
-  **Autor**: Andrew Ng  
-  Para obtener una visión sobre el panorama actual de la inteligencia artificial, te invito a que veas la conferencia del profesor Andrew Ng *Oportunidades en IA*.  
-  [Ver Video](https://www.youtube.com/watch?v=5p248yoa3oE){ .md-button .md-button--primary }
+      # Define las reglas que debe seguir la respuesta mejorada.
+      # Especifica el idioma, tono, gramática y nivel de amabilidad requerido.
+      reglas = "Español latino en un tono formal y sobrio y respesuoso. Con buena gramática y ortografía. Trartar de se muy amable y respetuoso."
 
-</div>
+      # Define la respuesta original del operador, que es inadecuada (informal, ofensiva, con mala ortografía).
+      respuesta =  " mijo, no me importa si le salió mala \
+          la licudora, vaya a que se lo lamba un zapo"
 
-<div class="grid cards" markdown>
+      # Crea una plantilla de prompt usando la biblioteca LangChain, basada en la plantilla de texto.
+      # Esto permite estructurar el mensaje para el modelo de lenguaje.
+      promp_template_app = ChatPromptTemplate.from_template(str_template_app)
 
-- :octicons-megaphone-16:{ .lg .middle } **Sabias que**  
-  **Autor**: Andrew Ng  
-  Para obtener una visión sobre el panorama actual de la inteligencia artificial, te invito a que veas la conferencia del profesor Andrew Ng *Oportunidades en IA*.  
-  [Ver Video](https://www.youtube.com/watch?v=5p248yoa3oE){ .md-button .md-button--primary }
+      # Formatea la plantilla con la respuesta y las reglas, generando un mensaje listo para enviar al modelo.
+      mensaje_empacado_app =  promp_template_app.format_messages(respuesta=respuesta, reglas=reglas)
 
-</div>
+      # Especifica el modelo de lenguaje a usar (en este caso, GPT-4o-mini de OpenAI).
+      llm_model = "gpt-4o-mini"
 
-<div class="grid cards" markdown>
+      # Inicializa el cliente de chat de OpenAI con el modelo especificado y una temperatura de 0.3.
+      # La temperatura baja asegura respuestas más predecibles y menos creativas.
+      chat_app = ChatOpenAI(model = llm_model , temperature = 0.3)
 
-- :fontawesome-solid-gears:{ .lg .middle } **Reto formativo**  
-  **Plantemiento**:
-  Para obtener una visión sobre el panorama actual de la inteligencia artificial, te invito a que veas la conferencia del profesor Andrew Ng *Oportunidades en IA*.  
-  [Ver Video](https://www.youtube.com/watch?v=5p248yoa3oE){ .md-button .md-button--primary }
+      # Envía el mensaje formateado al modelo y obtiene la respuesta mejorada.
+      respuesta_al_cliente = chat_app(mensaje_empacado_app)
 
-</div>
-
-<div class="grid cards" markdown>
-
-- :simple-taketwointeractivesoftware:{ .lg .middle } **Recurso formativo**  
-  **Plantemiento**:
-  Para obtener una visión sobre el panorama actual de la inteligencia artificial, te invito a que veas la conferencia del profesor Andrew Ng *Oportunidades en IA*.  
-  [Ver Video](https://www.youtube.com/watch?v=5p248yoa3oE){ .md-button .md-button--primary }
-
-</div>
+      # Muestra la respuesta del modelo en formato Markdown para una mejor presentación (por ejemplo, en un entorno como Jupyter).
+      display(Markdown(respuesta_al_cliente.content))
+    ```
+    **salida esperada**    
+    *Agradezco su mensaje y entiendo su preocupación respecto a la situación con la licuadora. Sin embargo, le sugiero que considere la posibilidad de llevar el aparato a un servicio técnico autorizado para que puedan evaluar el problema y ofrecerle una solución adecuada. Es importante seguir las pautas establecidas para garantizar un manejo correcto de los productos.*
+    
+    *Quedo a su disposición para cualquier otra consulta o asistencia que necesite.*
 
 
