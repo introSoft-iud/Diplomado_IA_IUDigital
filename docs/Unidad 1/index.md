@@ -301,7 +301,7 @@ Por ejemplo, podemos configurar el modelo para que responda en un estilo poétic
     Un eco de esperanza en la tierra sencilla.
     ```
 
-## LangChain
+# LangChain
 
 En la sección anterior, tuviste tu primera interacción con un modelo de lenguaje de gran escala (LLM). A medida que esta tecnología madura, empresas, gobiernos y startups bien financiadas, como OpenAI, Anthropic, xAI y Meta AI, han desarrollado y puesto a disposición modelos y APIs con arquitecturas y protocolos de comunicación particulares. Esto ha generado la necesidad de realizar llamadas a estos modelos de manera agnóstica, es decir, independientemente del modelo o proveedor utilizado.
 
@@ -343,7 +343,7 @@ Y listo, eso es todo. Ahora simplemente invocamos el chat con el *prompt* que qu
     ```
 
 
-## Herramientas clave de LangChain
+## Herramientas en LangChain
 
 LangChain proporciona una variedad de herramientas que permiten construir aplicaciones basadas en modelos de lenguaje de manera modular y eficiente. A continuación, se describen algunas de las más importantes:
 
@@ -606,5 +606,236 @@ Este enfoque nos permite variar el estilo del texto generado de manera dinámica
     *Agradezco su mensaje y entiendo su preocupación respecto a la situación con la licuadora. Sin embargo, le sugiero que considere la posibilidad de llevar el aparato a un servicio técnico autorizado para que puedan evaluar el problema y ofrecerle una solución adecuada. Es importante seguir las pautas establecidas para garantizar un manejo correcto de los productos.*
     
     *Quedo a su disposición para cualquier otra consulta o asistencia que necesite.*
+## Anatomía de un Prompt de Chat
 
+Los prompts para agentes conversacionales en **LangChain**, como `ChatPromptTemplate`, se dividen en al menos tres componentes clave. Veamos cada uno:
+
+### 1. **Prompt del Sistema**  
+Este establece las reglas para el asistente. Indica al modelo cómo comportarse, cuál es su objetivo o incluso qué tono debe usar.
+
+**Ejemplo:**  
+```
+Eres experto en machine learning y das respuestas en una sola oración.
+```
+
+Aquí estamos restringiendo al modelo para que mantenga las respuestas cortas en un lenguaje relativo al machine learning.
+
+### 2. **Prompt del Usuario**  
+Este es el mensaje del usuario, es decir, la pregunta o entrada que se le proporciona al modelo.
+
+**Ejemplo:**  
+```
+Explica {tema} en una sola oración.
+```
+
+El `{tema}`, como vimos, es una variable de entrada que podemos cambiar por diferentes términos, como *"LangChain"* o *"Python"*.
+
+### 3. **Prompt del AI**  
+Este es el resultado generado por el modelo. En una conversación, las respuestas anteriores del AI se reutilizan como parte del historial de chat.
+
+Por ahora, mantenemos un solo turno de interacción humano-AI en el que el modelo no tiene memoria del contexto de las interacciones anteriores, pero más adelante veremos cómo se puede construir una conversación más compleja.
+
+El `ChatPromptTemplate` de LangChain ofrece dos formas principales de construir prompts:
+
+## 1. **`from_messages`**  
+Piensa en esto como escribir un guion para una conversación estructurada:  
+- El **mensaje del sistema** define el tono y las reglas.  
+- El **mensaje del usuario** plantea la pregunta o el input.  
+
+Es la opción recomendada cuando queremos prompts bien organizados.
+
+## 2. **`from_template`**  
+Más simple y directo, solo incluye un mensaje del usuario, como una nota rápida para el modelo.  
+- No tiene un **rol de sistema** a menos que lo agreguemos manualmente más adelante.
+
+En la sesión anterior usamos `from_template`:
+
+Veamos un ejemplo usamndo `from_messages`:
+
+
+```python
+# Importamos las librerías necesarias
+from langchain_openai import ChatOpenAI
+from langchain_core.prompts import ChatPromptTemplate
+```
+
+Vamos a instanciar dos modelos para comparar las respuestas al final:
+
+
+```python
+# Instanciamos los modelos
+llm_gpt3 = ChatOpenAI(model="gpt-3.5-turbo", temperature=0.7)
+llm_gpt4 = ChatOpenAI(model="gpt-4o-mini", temperature=0.7)
+
+# Definimos el prompt
+prompt = ChatPromptTemplate.from_messages([
+    ("system", "You are a concise explainer who gives one-sentence answers. If you don't know the answer, just say 'I don't know'."),
+    ("human", "Explain {topic} in one sentence.")
+])
+```
+
+La variable de entrada es `topic` y debemos empacarla en nuestro template.
+
+Llenamos el prompt con el tópico específico:
+
+
+```python
+messages = prompt.format_messages(topic="LangChain")
+```
+
+Ejecutamos los dos modelos:
+
+
+
+=== "Código con gpt3.5"
+    ```python
+    response = llm_gpt3.invoke(messages)
+    print(response.content)
+    ```
+=== "Salida"
+    ```bash
+    LangChain is a blockchain platform
+    that aims to facilitate cross-border
+    language services.
+    ```
+
+=== "Código con gpt4"
+    ```python
+    response = llm_gpt4.invoke(messages)
+    print(response.content)
+    ```
+=== "Salida"
+    ```bash
+    LangChain es una biblioteca para crear
+    flujos de trabajo de IA utilizando modelos
+    de lenguaje.
+    ```
+!!! warning "Para tener en cuenta"
+    Observa que la salida del modelo gpt-3.5 es completamente alucinada (no es verdadera). ¿A qué crees que se debe esto? 
+
+    ??? tip "Ver respuesta"
+        El modelo gpt-3.5 fue entrenado en datos hasta octubre de 2023, y en ese momento LangChain no existía.
+
+## De Prompts a Chains  
+
+Hasta ahora, hemos preparado *prompts* y los hemos enviado al LLM paso a paso.  
+
+Pero LangChain tiene una herramienta que facilita mas las cosas: **las chains**-
+
+Las *chains* nos permiten **combinar múltiples pasos**—como preparar un *prompt* y ejecutar el LLM—en un flujo continuo y automatizado.  
+
+puedes pensar en una*chain* como una **cinta transportadora**:
+
+<figure>
+  <img src="../assets/images/banda1.png" alt="Dibujo de una banda de supermercado con frutas" width="600">
+  <figcaption> Una cadena simple funciona como una banda transportadora en la que se van ejecutando órdenes de forma secuencial. Fuente: <a> Creado por Grok 3 (xAI) usando un prompt del usuario.</a></figcaption>
+</figure>
+
+- La configuras una vez.  
+- Luego, simplemente funciona sin necesidad de repetir cada paso manualmente.  
+
+Esto facilita la construcción de **pipelines más avanzados** dentro de nuestras aplicaciones con LLMs.  
+Una forma de encadenar ejecuciones en cadenas es utilizar el operador `|` (llamado *pipe*) para conectar los pasos. Para instanciar una cadena que realice las tareas de nuestro prompt anterior, tendríamos el prompt como:
+
+```python
+prompt = ChatPromptTemplate.from_messages([
+    ("system", "You are a concise explainer who gives one-sentence answers."),
+    ("human", "Explain {topic} in one sentence.")
+])
+```
+
+E instanciamos la cadena como:
+
+```python
+chain = prompt | llm_gpt4  # Create the chain
+```
+
+Es como decir: *"Toma este prompt y pásalo al LLM."*
+
+Y ejecutamos la cadena como:
+
+=== "Código" 
+    ```python
+    response = chain.invoke({"topic": "LangChain"})  # Run it in one go
+    print("With chain:", response.content)
+    ```
+
+=== "Salida"
+    ```bash
+    With chain: LangChain es una biblioteca para crear flujos de trabajo de IA utilizando modelos de lenguaje.
+    ```
+Las *chains* nos evitan tener que formatear e invocar manualmente el LLM cada vez.
+
+- **Definimos la cadena una vez.**
+- **Podemos reutilizarla fácilmente.**
+
+Esto simplifica el flujo de trabajo y hace que el código sea más limpio y modular.
+Ya no necesitamos formatear manualmente los mensajes—**la chain lo hace por nosotros**.  
+
+**Método Antiguo (Manual)**:  
+```python
+messages = prompt.format_messages()  
+llm.invoke(messages)
+``` 
+Una vez configurada la cadena, podemos reutilizarla con diferentes variables de entrada:
+
+=== "Código"
+    ```python
+    print(chain.invoke({"topic": "Python"}).content)
+    print(chain.invoke({"topic": "AI"}).content)
+    ```
+=== "Salida"
+    ```bash
+    Python es un lenguaje de programación versátil y popular.
+    AI es el campo de la informática que se centra en crear sistemas inteligentes.
+    ```
+
+### Cadenas con múltiples variables
+
+Veamos algunos ejemplos en los que usamos múltiples variables en nuestros prompts:
+
+=== "Código"
+    ```python
+    # Nuevo prompt con dos variables: topic y style
+    multi_prompt = ChatPromptTemplate.from_messages([
+        ("system", "You are an explainer who answers in a {style} way."),
+        ("human", "Explain {topic} in one sentence.")
+    ])
+    multi_chain = multi_prompt | llm
+
+    # Ejecutar con múltiples variables
+    response = multi_chain.invoke({
+        
+    # Run with multiple variables
+    response = multi_chain.invoke({
+        "topic": "Noether theorem",
+        "style": "Cervantes style in Spanish"
+    })
+    print(response.content)
+    ```
+
+=== "Salida"
+    ```bash
+    ¡Por la fe de Dulcinea del Toboso! La teorema 
+    de Noether establece que para cada simetría continua
+    de un sistema físico, existe una cantidad conservada!
+    ```
+## Output Parsers: Dando Forma a la Salida del LLM
+
+Los LLMs son sistemas que reciben texto plano y devuelven texto, incluso cuando devuelven imágenes, lo que realmente están haciendo en el fondo es generar descripciones textuales de esas imágenes. Sin embargo, cuando estamos construyendo aplicaciones asistidas por LLMs, lo que queremos es utilizar la salida de la llamada al LLM para emplearla en otros flujos de ejecución de nuestra aplicación.
+
+Ahí es donde entran los *output parsers*.
+
+Los *output parsers* toman la salida en bruto del LLM y la convierten en algo que podamos usar en nuestro código, como un string, una lista, un diccionario, un JSON, etc.
+
+Ejemplo:
+- Si el LLM responde con `"Las herramientas más usadas son: Python, SQL, LangChain."`, podemos transformarlo en una **lista** `["Python", "SQL", "LangChain"]`.
+
+Vemos algunos mas usados
+## 🔹 StrOutputParser: El Parser Más Básico  
+
+Comencemos con un *output parser* básico: `StrOutputParser`.  
+
+Es simple: solo se asegura de que obtengamos el texto de manera limpia.  
+Pero sienta las bases para parsers más avanzados.  
 
