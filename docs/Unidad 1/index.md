@@ -157,10 +157,11 @@ Es muy posible que en el futuro estos modelos hoy considerados **LLMs** sean vis
       Transfiere el conocimiento de un modelo grande (profesor) a uno más pequeño (estudiante) manteniendo un rendimiento competitivo.
 
     Estas estrategias permiten que modelos más pequeños logren mejor desempeño, aprovechando conocimiento preexistente o la generación sintética de datos.
-
+<!--WARNING: Crear esta seccion @Juan Camilo
 ## De ML Igeniringa a IA Ingering
 
 (Fata terminar)
+-->
 ## Usando la API de OpenAI
 
 Para gran parte del curso usaremos la API de OpenAI. Si aún no tienes una cuenta, puedes crearla en el siguiente enlace: [https://platform.openai.com/signup](https://platform.openai.com/signup).
@@ -831,11 +832,312 @@ Los *output parsers* toman la salida en bruto del LLM y la convierten en algo qu
 Ejemplo:
 - Si el LLM responde con `"Las herramientas más usadas son: Python, SQL, LangChain."`, podemos transformarlo en una **lista** `["Python", "SQL", "LangChain"]`.
 
-Vemos algunos mas usados
-## 🔹 StrOutputParser: El Parser Más Básico  
+Vemos algunos mas usados:
 
-Comencemos con un *output parser* básico: `StrOutputParser`.  
+## `StrOutputParser`: El Parser Más Básico  
 
-Es simple: solo se asegura de que obtengamos el texto de manera limpia.  
-Pero sienta las bases para parsers más avanzados.  
+Comencemos con un *output parser* básico: `StrOutputParser`. Este parser simplemente asegura que la salida de la llamada al LLM sea un string. En el contexto de LangChain, esto es útil para garantizar que los datos procesados sean siempre de tipo string, facilitando su manipulación posterior. Una vez instanciado, puede agregarse a la cadena para que, al invocarla, la salida sea en el formato especificado por el parser. Para ilustrar el uso de los parsers, veamos esta cadena sin parser y comparemosla con el resultado cuando agregamos el `StrOutputParser`.
 
+=== "Código sin Parser"
+    ```python
+    multi_prompt = ChatPromptTemplate.from_messages([
+        ("system", "You are an explainer who answers in a {style} way."),
+        ("human", "Explain {topic} in one sentence.")
+    ])
+    multi_chain = multi_prompt | llm  # LCEL
+    response = multi_chain.invoke({"topic": "LangChain", "style": "funny"})
+    print("Raw output:", response)
+    ```
+
+=== "Salida"
+    ```bash
+    AIMessage(content='LangChain is like that friend who translates all your texts for you, but in a more high-tech and less judgmental way.', additional_kwargs={'refusal': None}, response_metadata={'token_usage': {'completion_tokens': 27, 'prompt_tokens': 31, 'total_tokens': 58, 'completion_tokens_details': {'accepted_prediction_tokens': 0, 'audio_tokens': 0, 'reasoning_tokens': 0, 'rejected_prediction_tokens': 0}, 'prompt_tokens_details': {'audio_tokens': 0, 'cached_tokens': 0}}, 'model_name': 'gpt-3.5-turbo-0125', 'system_fingerprint': None, 'finish_reason': 'stop', 'logprobs': None}, id='run-d4e4009b-87db-40ca-89de-9fe42d850dab-0', usage_metadata={'input_tokens': 31, 'output_tokens': 27, 'total_tokens': 58, 'input_token_details': {'audio': 0, 'cache_read': 0}, 'output_token_details': {'audio': 0, 'reasoning': 0}})
+    ```
+
+Aquí el string de salida está dentro de la instancia `content` del `AIMessagePara`. El parser nos posibilitará que la salida sea solo el string. Para  usar el parser, importamos el módulo:
+
+```python
+from langchain_core.output_parsers import StrOutputParser
+```
+
+E instanciamos el parser como:
+
+```python
+# Add the parser to the chain
+parser = StrOutputParser()
+```
+
+Luego lo agregamos a la cadena con el operador pipe.
+
+=== "Código con Parser"
+    ```python hl_lines="4"
+    parsed_chain = multi_prompt | llm | parser
+
+    # Run it
+    response = parsed_chain.invoke({"topic": "LangChain", "style": "funny"})
+    print("Parsed output:", response)
+    ```
+
+=== "Salida con el Parser"
+    ```bash
+    Parsed output: LangChain is like a multilingual party where everyone speaks their own language but magically understands each other perfectly.
+    ```
+
+!!! warning "Para tener en cuenta"
+    `StrOutputParser` 
+    - Extrae el `.content` del objeto `AIMessage` generado por el LLM.  
+    - Nos garantiza que obtenemos solo el texto limpio sin información adicional.  
+
+    🔹 **Sin el parser:**  
+    Obtenemos un objeto `AIMessage` y debemos extraer manualmente `.content`.  
+
+    🔹 **Con el parser:**  
+    Recibimos directamente el texto limpio.  
+
+    ✅ **Es un pequeño avance, pero marca la diferencia.**  
+    Nos ahorra pasos manuales y sienta la base para mejoras más avanzadas.  
+
+
+### `CommaSeparatedListOutputParser`  
+
+Este parser toma una cadena de texto separada por comas y la convierte en una lista estructurada.
+
+**Ejemplo:**  
+**Entrada:** `"manzana, banana, cereza"`  
+**Salida:** `["manzana", "banana", "cereza"]`  
+
+Veámoslo en detalle:
+
+=== "Código"
+    ```python linenums="1", hl_lines="12"
+    # Import the parser
+    from langchain_core.output_parsers import CommaSeparatedListOutputParser
+
+    # New prompt asking for a list
+    list_prompt = ChatPromptTemplate.from_messages([
+        ("system", "You are a helpful assistant that delivers comma-separated items."),
+        ("human", "Give me 8 examples of {category}, separated by commas, omit additional comments only list the objects like a Python list.")
+    ])
+
+    # Create the chain with the new parser
+    list_parser = CommaSeparatedListOutputParser()
+    list_chain = list_prompt | llm | list_parser
+
+    # Run it
+    response = list_chain.invoke({"category": "programming languages"})
+    print("List output:", response)
+    ```
+
+=== "Salida"
+    ```bash
+    List output: ['Python', 'Java', 'C++', 'JavaScript', 'Ruby', 'Swift', 'PHP', 'Go']
+    ```
+
+Puedes verificar que el tipo de la salida es una lista:
+
+=== "Código"
+    ```python
+    print(type(response))
+    ```
+
+=== "Salida"
+    ```bash
+    <class 'list'>
+    ```
+
+Esto nos permite, por ejemplo, usar índices para acceder a los elementos de la lista:
+
+=== "Código"
+    ```python
+    response[1]
+    ```
+
+=== "Salida"
+    ```bash
+    'Java'
+    ```
+
+Es decir, el LLM nos proporciona texto, pero el *parser* lo convierte en una lista que podemos usar en código.
+Los parsers nos permiten agregar pasos adicionales a las cadenas de ejecución; puedes pensarlo como una línea de ensamblaje con el flujo:
+
+``` bash
+[Prompt] --> [LLM] --> [Parser] --> Structured Output
+```
+<figure>
+  <img src="../assets/images/car_asembly.png" alt="Dibujo de una banda de supermercado con frutas" width="600">
+  <figcaption>Analogía de una cadena con parser. Las instrucciones se ejecutan en orden como en una línea de ensamblaje. Fuente: <a>Creado por Grok 3 (xAI) usando un prompt del usuario.</a></figcaption>
+</figure>
+
+### `JsonOutputParser`
+
+El `JsonOutputParser` es un parser que toma una cadena de texto en formato JSON y la convierte en un objeto de Python, como un diccionario o una lista, dependiendo de la estructura del JSON. Esto es particularmente útil cuando trabajamos con datos estructurados que vienen de una base de datos en la nube o de una API.
+
+**Ejemplo:**
+
+=== "Código"
+    ```python
+    from langchain_core.output_parsers import JsonOutputParser
+
+    # Prompt asking for JSON with varied types
+    json_prompt = ChatPromptTemplate.from_messages([
+        ("system", "Return a JSON object with 'name' (string), 'age' (number or null), 'is_student' (true/false), and 'city' (string or null)."),
+        ("human", "Give me details for {person} in JSON format.")
+    ])
+
+    # Create the chain with the parser
+    json_chain = json_prompt | llm | JsonOutputParser()
+
+    # Chain without parser
+    no_parse_chain = json_prompt | llm
+    ```
+
+Para ver más claramente lo que hace el `JsonOutputParser`, corramos la cadena sin el parser:
+
+=== "Código sin Parser"
+    ```python
+    no_parse_response = no_parse_chain.invoke({"person": "Alice"}).content
+    print("Respuesta sin parser:", no_parse_response)
+    print("Type:", type(no_parse_response))
+    ```
+
+=== "Salida"
+    ```bash
+    Respuesta sin parser: {"name": "Alice", "age": 30, "is_student": false, "city": "Paris"}
+    Type: <class 'str'>
+    ```
+
+La respuesta es un `str`, es decir, texto simple, por lo que no puedo acceder a los elementos del JSON usando `keys`:
+
+=== "Código"
+    ```python
+    # Esto causará un error
+    no_parse_response["name"]
+    ```
+=== "Salida"
+    ```python
+    TypeError                                 Traceback (most recent call last)
+    Cell In[34], line 1
+    ----> 1 no_parse_response["name"]
+
+    TypeError: string indices must be integers, not 'str'
+    ```
+
+
+Ahora, ejecutemos la cadena con el `JsonOutputParser`:
+
+=== "Código con Parser"
+    ```python
+    json_response = json_chain.invoke({"person": "Alice"})
+    print("JsonOutputParser result:", json_response)
+    print("Type:", type(json_response))
+    ```
+
+=== "Salida"
+    ```bash
+    JsonOutputParser result: {'name': 'Alice', 'age': 30, 'is_student': False, 'city': 'Paris'}
+    Type: <class 'dict'>
+    ```
+
+Puedes acceder a los valores del JSON usando claves:
+
+=== "Código"
+    ```python
+    json_response["city"]
+    ```
+
+=== "Salida"
+    ```bash
+    'Paris'
+    ```
+
+El LLM produce JSON: `{"name": "Alice", "age": 30, "is_student": false, "city": "Paris"}`. `JsonOutputParser` convierte `null` en JSON a `None` en Python, `true/false` a `True/False`, y retorna un diccionario de Python.
+<div class="grid cards" markdown>
+
+- :fontawesome-solid-gears:{ .lg .middle } **Reto Formativo**  
+  **Planteamiento**:  
+      El siguiente es el comentario de un cliente en una tienda virtual:
+
+      `
+      review_cliente = "Compré los auriculares inalámbricos XYZ y estoy muy satisfecho con mi compra. El tiempo de entrega fue excelente, ya que llegaron dos días antes de lo previsto, lo cual superó mis expectativas. En cuanto al precio, aunque hay opciones más económicas en el mercado, considero que la calidad del sonido, la duración de la batería y la comodidad justifican totalmente el coste. Además, los compré como regalo para mi pareja y fueron un éxito total, gracias a su elegante presentación y la impresionante calidad del sonido."
+      `
+
+      Extraer información de la reseña en un objeto JSON `Reseñas`.
+
+    📥 **Entrada**  
+      Cadena `review_cliente` con la opinión del cliente.
+
+      📤 **Salida (JSON)**  
+      `
+      {
+        "sentiment": "Positive" | "Negative" | "Neutral",
+        "delivery_time": <int> | null,
+        "quality_rating": "Good" | "Fair" | "Poor" | null,
+        "extra_comment": <string> | null
+      }
+      `
+
+</div>
+
+## `StructuredOutputParser`: JSON con Estructura Definida  
+
+Este parser toma JSON y lo convierte en un diccionario de Python **siguiendo un esquema específico** que definimos con `ResponseSchema`. Solo extrae los campos que especificamos, garantizando una estructura clara y predecible. Veamos:
+
+=== "Código"
+    ```python
+    from langchain.output_parsers import StructuredOutputParser, ResponseSchema
+
+    # Define the schema for the structured output
+    schemas = [
+        ResponseSchema(name="sentiment", description="Sentiment: Positive/Negative/Neutral", type="string"),
+        ResponseSchema(name="delivery_time", description="Delivery time in days (or null if not mentioned)", type="integer"),
+        ResponseSchema(name="quality_rating", description="Quality: Good/Fair/Poor (or null)", type="string"),
+        ResponseSchema(name="extra_comment", description="Additional note (or null)", type="string")
+    ]
+
+    structured_parser = StructuredOutputParser.from_response_schemas(schemas)
+    # Get the format instructions as a string
+    format_instructions = structured_parser.get_format_instructions()
+
+    # Escape curly braces in format_instructions
+    escaped_format_instructions = format_instructions.replace('{', '{{').replace('}', '}}')
+
+    # Define the system message with escaped format instructions
+    system_message = (
+        "Analyze this review and return a JSON object. "
+        "Format: ```json\n"
+        f"{escaped_format_instructions}\n"
+        "```"
+    )
+
+    # Create the prompt template with {review} as the only variable
+    structured_prompt = ChatPromptTemplate.from_messages([
+        ("system", system_message),
+        ("human", "Review: {review}")
+    ])
+
+    # Create the chain 
+    structured_chain = structured_prompt | llm | structured_parser
+
+    # Run the chain with the review (assuming review_cliente is defined)
+    structured_response = structured_chain.invoke({"review": review_cliente})
+    print("StructuredOutputParser result:", structured_response)
+    print("Type:", type(structured_response))
+    ```
+
+=== "Salida"
+    ```bash
+    StructuredOutputParser result: {'sentiment': 'Positive', 'delivery_time': 2, 'quality_rating': 'Good', 'extra_comment': 'The headphones were a total success as a gift for my partner, thanks to their elegant presentation and impressive sound quality.'}
+    Type: <class 'dict'>
+    ```
+
+
+En este código, el usuario final del mensaje estructurado es el modelo de lenguaje (LLM). Este mensaje está estructurado de tal manera que incluye instrucciones de ensamblaje para que el LLM procese el formato correctamente. La función que nos permite especificar estas instrucciones es `get_format_instructions()`.
+
+La función `get_format_instructions()` crea un string que contiene las instrucciones de formato basadas en los objetos `ResponseSchema`. Este string describe cómo debe estructurarse la salida del modelo de lenguaje (LLM) para que sea fácil de interpretar y procesar posteriormente.
+
+En analogía con el constructor de la clase `ChatPromptTemplate.from_template`, que describimos como un carpintero que crea un cajón a partir de maderas brutas, este tipo de template con instrucciones de formato se asemejaría a construir un cajón modular con instrucciones de armado, como el de la figura:
+![alt text](image-1.png)
+
+  <img src="../assets/images/modular_drawer.png" alt="Cajón modular con instrucciones de armado" width="600">
+  <figcaption>Analogía de un template con instrucciones de formato. Fuente: <a> Captura de pantalla de internet.<!-- Nota para produccion. La imagen es meramene ilustrativa, por favor crear una propia--> </a></figcaption>
+</figure>
