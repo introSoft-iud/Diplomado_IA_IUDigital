@@ -1141,3 +1141,200 @@ En analogía con el constructor de la clase `ChatPromptTemplate.from_template`, 
   <img src="../assets/images/modular_drawer.png" alt="Cajón modular con instrucciones de armado" width="600">
   <figcaption>Analogía de un template con instrucciones de formato. Fuente: <a> Captura de pantalla de internet.<!-- Nota para produccion. La imagen es meramene ilustrativa, por favor crear una propia--> </a></figcaption>
 </figure>
+
+<!--
+
+
+Cierre de la unidad
+Es una síntesis del contenido desarrollado a lo largo de la unidad en la que se destacan los aprendizajes más importantes. Asimismo, motiva al estudiante a continuar en el proceso formativo destacando la importancia de lo que está por venir en unidades o cursos posteriores.
+
+-->Aquí termina nuestra primera unidad. ¡Felicidades por llegar hasta el final! Ahora conoces el contexto general de las tecnologías involucradas en el desarrollo de aplicaciones asistidas por IA. Este campo apenas está comenzando, y ahora tienes las bases para utilizar herramientas más sofisticadas, como las cadenas y la gestión de memoria, que serán el tema de la siguiente unidad.
+
+
+
+
+<!--Glosario
+Es una lista de palabras, expresiones o conceptos que requieren de una explicación o su significado para un mejor contexto dentro del contenido. 
+
+
+Recomendaciones:
+Elabora una lista de términos que puedan suponer alguna dificultad para el estudiante (máximo 10 términos por unidad).
+Describe brevemente su significado o explicación (máximo 700 caracteres).
+Si uno de los términos es central para la unidad temática, su explicación debe estar en el contenido principal.
+Cada término del glosario debe estar citado y referenciado bajo normas APA (cuando se empleen definiciones de terceros). Las referencias se agregan en la parte final.
+Evita utilizar definiciones sacadas de Wikipedia, blogs, Definición.de, o Significados.com.
+Apóyate en diccionarios especializados del área, o en definiciones de autores de peso académico.
+Asegúrate de que las definiciones sean comprensibles y se ajusten al contexto específico de los temas que se desarrollan en la unidad.
+Los términos se deben organizar en orden alfabético.
+Incluir términos que no fueron definidos en las unidades temáticas.
+
+-->
+
+# Glosario
+
+1. **API (Application Programming Interface):**  
+   Un conjunto de definiciones y protocolos que permite a las aplicaciones comunicarse entre sí. Las APIs facilitan la integración y el intercambio de datos entre diferentes sistemas y servicios.
+
+2. **Parser:**  
+   Un componente que analiza y transforma texto en un formato estructurado, facilitando su manipulación y análisis en aplicaciones de software.
+
+3. **JSON (JavaScript Object Notation):**  
+   Un formato de intercambio de datos ligero y fácil de leer que utiliza una estructura basada en pares clave-valor. Comúnmente usado para representar objetos en aplicaciones web.
+
+4. **LangChain:**  
+   Un marco de trabajo que permite la creación de aplicaciones asistidas por IA mediante la integración de modelos de lenguaje con herramientas y flujos de trabajo personalizados.
+
+5. **ChatPromptTemplate:**  
+   Una plantilla utilizada para crear mensajes estructurados que se envían a los modelos de lenguaje, permitiendo la personalización de las interacciones.
+
+6. **Output Parser:**  
+   Un tipo de parser que se utiliza para definir cómo debe estructurarse la salida de un modelo de lenguaje, asegurando que sea fácil de interpretar y procesar.
+
+7. **Ventana de contexto:**  
+   La cantidad de texto que un modelo de lenguaje puede procesar a la vez. Limita la cantidad de información que puede ser considerada en una sola interacción.
+
+8. **LangChain Expression Language (LCEL):**  
+   Un lenguaje de expresión utilizado en LangChain para definir y manipular flujos de trabajo y cadenas de procesamiento de manera eficiente.
+
+9. **Pipeline (Cadena de Procesamiento):**  
+   Un flujo de trabajo secuencial donde los datos pasan por diferentes etapas o componentes, cada uno realizando una tarea específica.
+
+10. **Memoria en cadenas de conversación:**  
+    La capacidad de un sistema de inteligencia artificial para almacenar y utilizar información de interacciones pasadas, mejorando la coherencia y personalización en futuras interacciones.
+
+    
+<!--
+Evidencia de aprendizaje
+Actividad que permite verificar, validar o demostrar el conocimiento, las habilidades y las competencias que los estudiantes han adquirido a lo largo del proceso de aprendizaje. 
+
+La evidencia de aprendizaje (EA) debe orientarse a estimular la reflexión con el saber y su aplicabilidad, especialmente, cuando se trata de temas relacionados con los contextos y medios donde habitan los estudiantes.
+
+Por otro lado, proporciona a los profesores información sobre la evolución y resultado del proceso de aprendizaje, lo que los estudiantes están aprendiendo y comprendiendo qué funciona o debe mejorar; asimismo, ofrece a los estudiantes retroalimentación específica y constructiva acerca de su desempeño.
+
+
+Recomendaciones:
+Lee el documento “Estrategias didácticas” como apoyo para el desarrollo de la evidencia de aprendizaje.
+La evidencia debe ser clara en sus instrucciones y expectativas, para que los estudiantes comprendan lo que se espera de ellos.
+Asegúrate de que la evidencia evalúe habilidades como el pensamiento crítico, la resolución de problemas y la creatividad.
+En caso de que el conocimiento sea muy teórico, elabora una estrategia didáctica que permita entender de qué manera esa teoría puede o no aplicarse a una situación específica.
+    -->
+
+## Evidencia de Aprendizaje
+
+
+| **Unidad 1** | **Introducción a la construcción de aplicaciones con LLMs** |
+|--------------|-------------------------------------------------------------|
+| **EA1.**     | Templates y Output Parsers  
+
+**Ejercicio 1 - Corrección de respuestas inapropiadas en atención al cliente:**
+
+En este ejercicio, debes usar la IA para mejorar respuestas inapropiadas escritas por un operador de servicio al cliente. La IA corregirá el tono, la cortesía y errores ortográficos, asegurando que la respuesta sea adecuada para el cliente.  
+**Input:** Un mensaje del cliente y una respuesta inapropiada del operador.  
+**Output:** Una respuesta final corregida y apropiada para enviar al cliente.  
+**Requisitos:**  
+- Utiliza un prompt template para generar la respuesta apropiada.  
+- Implementa un output parser para validar que la respuesta cumple con los criterios de cortesía y ortografía.  
+**Bonus:** Investiga sobre memoria.  Si el cliente ha escrito varios mensajes, utiliza memoria para recordar el contexto de la conversación.
+
+---
+
+**Ejercicio 2 (Fácil) - Extracción de información clave en reseñas de productos:**
+
+Dado un review de un producto en un sitio de e-commerce, crea un modelo que extraiga información específica.  
+**Tareas:**  
+- Identificar si el producto fue comprado como regalo.  
+- Extraer la opinión del cliente sobre el precio.  
+- Extraer comentarios sobre el tiempo de entrega.  
+**Requisitos:**  
+- Utiliza output parsers para extraer los campos relevantes en forma de estructuras de datos de Python como un diccionario.  
+- Diseña un prompt template que permita a la IA identificar y organizar estos elementos de manera eficiente.
+
+---
+
+Guarda los documentos con la siguiente nomenclatura:
+
+- **Apellido_Nombre del estudiante.ipynb**  
+**Ejemplo:**  
+- López_Karla.ipynb
+
+Finalmente, haz clic en el botón **Cargar Tarea**, sube tu archivo y presiona el botón **Enviar** para remitirlo a tu profesor con el fin de que lo evalúe y retroalimente. |
+
+!!! tip "📖 Nota"
+    Conoce los criterios de evaluación de esta evidencia de aprendizaje consultando la rúbrica que encontrarás a continuación.
+
+| **Criterios**             | **Ponderación** |                       |                       |                       |                       | **Totales** |
+|---------------------------|------------------|-----------------------|-----------------------|-----------------------|-----------------------|------------|
+|                           | **70**           | **50**                | **5**                 | **0**                 |                       |            |
+| **Calidad de las Soluciones** | Las soluciones a los ejercicios son correctas, demostrando una implementación adecuada de los conceptos y técnicas requeridos. El estudiante muestra un dominio completo de los temas abordados. | Aunque las soluciones no son completamente correctas, se observa un entendimiento y aplicación adecuada de los conceptos y técnicas involucradas. Hay evidencia de esfuerzo y comprensión de los temas. | Las soluciones presentadas son en su mayoría incorrectas. Se percibe un intento de resolver los ejercicios, pero hay una falta de comprensión de los conceptos y técnicas esenciales. | No realiza la entrega |                       | **70**      |
+| **Calidad de la entrega** | El notebook es claro y fácil de seguir, incluyendo comentarios detallados sobre el funcionamiento del código en las celdas Markdown, lo que facilita la comprensión de las soluciones propuestas. | El notebook no es particularmente fácil de leer, pero aún así incluye comentarios que explican el funcionamiento del código en las celdas Markdown, mostrando un esfuerzo por aclarar la lógica detrás del código. | El notebook carece de comentarios acerca del funcionamiento del código en las celdas Markdown, lo que dificulta la comprensión de las soluciones implementadas. | No realiza la entrega |                       | **20**      |
+| **Tiempo de la entrega**  | La entrega se realiza a tiempo, cumpliendo con el plazo establecido para la presentación de la actividad. | La entrega se realiza con una semana de atraso. Aunque fuera del plazo original, se considera adecuada para evaluar el trabajo presentado. | La entrega se realiza con más de una semana de atraso, lo que indica un retraso significativo en la presentación de la actividad. | No realiza la entrega |                       | **10**      |
+|                           |                  |                       |                       |                       | **Ponderación de la actividad** | **100 puntos** |
+
+# Referencias
+
+Chase, H., & Ng, A. (2023). *LangChain for LLM Application Development* [Curso en línea]. DeepLearning.AI. Disponible en [https://www.deeplearning.ai/short-courses/langchain-for-llm-application-development/](https://www.deeplearning.ai/short-courses/langchain-for-llm-application-development/)
+
+Huyen, C. (2025). *AI Engineering: Building Applications with Foundation Models* (1.ª ed.). O'Reilly Media. Disponible en [https://www.amazon.com/AI-Engineering-Building-Applications-Foundation/dp/1098166302](https://www.amazon.com/AI-Engineering-Building-Applications-Foundation/dp/1098166302)
+
+LangChain. (s.f.). *LangChain Documentation*. Disponible en [https://python.langchain.com/docs/introduction/](https://python.langchain.com/docs/introduction/)
+
+<!--
+Lecturas y material complementario
+
+
+Libros, recursos interactivos o videos que complementan los temas de la unidad y que permiten al estudiante ampliar y enriquecer su conocimiento promoviendo un espíritu investigativo y de autoformación.
+-->
+
+Te invitamos a explorar el siguiente material para ampliar tus conocimientos sobre modelos de lenguaje (LLMs), LangChain, plantillas de prompts y parsers de salida. Estos recursos te proporcionarán una comprensión más profunda y práctica de los temas abordados en el curso.
+
+---
+# Lecturas y material complementario
+
+## 📚 Lecturas recomendadas
+
+### **Título:** *LangChain for LLM Application Development*
+
+**Autor:** Harrison Chase & Andrew Ng  
+**URL:** [LangChain for LLM Application Development](https://www.deeplearning.ai/short-courses/langchain-for-llm-application-development/)  
+Este curso gratuito de DeepLearning.AI ofrece una introducción práctica al desarrollo de aplicaciones con modelos de lenguaje utilizando LangChain. Cubre temas como plantillas de prompts, parsers de salida y encadenamiento de componentes.
+
+### **Título:** *LangChain Output Parser Guide*
+
+**Autor:** Restack  
+**URL:** [LangChain Output Parser Guide](https://www.restack.io/docs/langchain-knowledge-langchain-output-parser-guide)  
+Este artículo profundiza en el uso de los parsers de salida de LangChain, explicando cómo transformar las respuestas de los modelos de lenguaje en formatos estructurados como JSON, y cómo integrarlos en aplicaciones prácticas.
+
+### **Título:** *Prompt Template | LangChain OpenTutorial*
+
+**Autor:** Hye-yoon Jeong  
+**URL:** [Prompt Template | LangChain OpenTutorial](https://langchain-opentutorial.gitbook.io/langchain-opentutorial/02-prompt/01-prompttemplate)  
+Este tutorial cubre cómo crear y utilizar plantillas de prompts en LangChain, esenciales para generar prompts dinámicos y flexibles que se adapten a diversos casos de uso.
+
+### **Título:** *JsonOutputParser | LangChain OpenTutorial*
+
+**Autor:** LangChain OpenTutorial  
+**URL:** [JsonOutputParser | LangChain OpenTutorial](https://langchain-opentutorial.gitbook.io/langchain-opentutorial/03-outputparser/04-jsonoutputparser)  
+Este tutorial muestra cómo utilizar el `JsonOutputParser` de LangChain para estructurar las salidas de los modelos de lenguaje en formato JSON, facilitando su integración en aplicaciones que requieren datos estructurados.
+
+---
+
+## 🎥 Videos recomendados
+
+### **Título:** *Transformers (how LLMs work) explained visually | DL5*
+
+**Autor:** 3Blue1Brown  
+**URL:** [Transformers (how LLMs work) explained visually](https://www.youtube.com/watch?v=wjZofJX0v4M)  
+Este video ofrece una explicación visual de cómo funcionan los modelos de lenguaje grandes (LLMs) mediante la arquitectura de transformers, facilitando la comprensión de conceptos complejos.
+
+### **Título:** *Attention in transformers, step-by-step | DL6*
+
+**Autor:** 3Blue1Brown  
+**URL:** [Attention in transformers, step-by-step](https://www.youtube.com/watch?v=eMlx5fFNoYc)  
+Este video desglosa paso a paso el mecanismo de atención en los transformers, una parte crucial en el funcionamiento de los LLMs.
+
+### **Título:** *How might LLMs store facts | DL7*
+
+**Autor:** 3Blue1Brown  
+**URL:** [How might LLMs store facts](https://www.youtube.com/watch?v=9-Jl0dxWQs8)  
+Este video explora cómo los modelos de lenguaje grandes pueden almacenar hechos y conocimientos, proporcionando una visión más profunda de su funcionamiento interno.
+
