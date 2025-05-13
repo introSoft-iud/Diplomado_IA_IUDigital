@@ -1,19 +1,6 @@
 <!--  Nombre de la Unidad __
---># Unidad 1. Introducción a la construcción de aplicaciones con LLMs
-
-## Introducción a la unidad
-
-Bienvenidos a la primera unidad. En esta unidad aprenderás, de manera general, cómo funciona un modelo de lenguaje.  
-Comenzaremos usando la API de OpenAI y exploraremos cómo conectar sus servicios con nuestras aplicaciones.  
-Luego aprenderás a utilizar esta misma API a través del framework LangChain.
-
-Finalmente, introduciremos los aspectos fundamentales de la interacción con los LLMs usando LangChain: **prompts**, **templates** y **output parsers**.
-
-Como actividad práctica, elaborarás un sistema asistido por IA para extraer datos de comentarios de usuarios en un e-commerce.
-
-¡Comencemos!
-
-
+-->
+# Unidad 1. Introducción a la construcción de aplicaciones con LLMs
 <!--
 Introducción a la unidad
 Teniendo en cuenta que cada unidad es un saber específico, en la introducción se destaca la importancia y relevancia del saber que se abordará en función de los resultados de aprendizaje planteados. Describe brevemente cómo el tema central de la unidad se integra en el panorama más amplio del aprendizaje y de la vida cotidiana o profesional del estudiante. Su propósito es despertar la curiosidad y el interés del estudiante sobre los contenidos que explorará.
@@ -28,9 +15,15 @@ Inicia presentando al estudiante cómo se relaciona el conocimiento de la unidad
 Incluye el propósito de la unidad y lo que el estudiante aprenderá mediante su estudio.
 Vale la pena destacar algunos de los temas más importantes que se abordarán.
 Procura no superar las 300 palabras (1500 caracteres) al redactar la introducción.
-
 -->
 
+## Introducción a la unidad
+
+Bienvenidos a la primera unidad. En esta unidad, aprenderás de manera general cómo funciona un modelo de lenguaje. Comenzaremos utilizando la API de OpenAI y exploraremos cómo conectar sus modelos en aplicaciones. Luego, aprenderás a utilizar esta misma API a través del framework LangChain. Introduciremos los aspectos fundamentales de la interacción con los LLMs usando LangChain: **prompts**, **templates** y **output parsers**.
+
+Como actividad práctica, elaborarás un sistema asistido por IA para extraer datos de comentarios de usuarios en un e-commerce.
+
+¡Comencemos!
 <!-- Resultados de aprendizaje
 Los objetos de aprendizaje se asumen como aquello que los estudiantes serán capaces de hacer a partir de lo que aprendieron a lo largo de la unidad.
 
@@ -43,14 +36,13 @@ Recuerda que los resultados se establecen en función del aprendizaje, no de la 
 Utiliza verbos conjugados en presente (describen la acción).  
 Los resultados deben ser medibles y alcanzables. 
 
-
-
-
 -->
 
 ## Resultados de aprendizaje
 
+Al finalizar esta unidad, estarás en capacidad de realizar llamadas a los modelos de lenguaje de OpenAI a través de la API para crear código Python cuya ejecución es asistida por LLMs.
 
+Aprenderás a configurar cadenas de ejecución simples en LangChain usando LCEL, junto con *prompt templates* y *output parsers*, para convertir las salidas de los LLMs en objetos nativos de Python.
 <!--Cronograma de actividades de la unidad  
 Permite la proyección de los contenidos tanto teóricos como prácticos, la ubicación temporal dentro del curso y los porcentajes que corresponden a la evidencia de aprendizaje.
 
@@ -61,14 +53,11 @@ Plantea una evidencia de aprendizaje por unidad, y otra más para el cierre del 
 
  -->
 
-## Cronograma de actividades de la unidad  
-**
 ## Cronograma de actividades - Unidad 1
 | Actividad de aprendizaje       | Evidencia de aprendizaje | Semana       | Ponderación |
-|-------------------------------|---------------------------|--------------|--------------|
-| Actividades de aprendizaje 1 y 2 | EA1                      | Semana 1 y 2 | 25%         |
+|--------------------------------|---------------------------|--------------|--------------|
+| Reto Formativo 1 y 2           | EA1:  Templates y Output Parsers | Semana 1, 2 y 3 | 25%         |
 | **Total**                      |                           |              | **25 %**     |
-**
 
 
 <!--
@@ -1289,6 +1278,7 @@ Te invitamos a explorar el siguiente material para ampliar tus conocimientos sob
 
 ---
 # Lecturas y material complementario
+
 
 ## 📚 Lecturas recomendadas
 
