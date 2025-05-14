@@ -87,12 +87,11 @@ Organiza y jerarquiza los temas y subtemas numéricamente.
 
 Un modelo de lenguaje es un sistema basado en *deep learning* que encapsula información sobre uno o varios lenguajes. Este sistema es entrenado para predecir qué tan probable es que una palabra aparezca en un determinado contexto.
 
-Por ejemplo, dado el contexto:
+Por ejemplo, dado el contexto:---
+title: Introducción a la construcción de aplicaciones con LLMs
+---
 
-> "Mi plato favorito es el ____"
-
-un modelo de lenguaje que codifique el español de Antioquia podría predecir "sancocho" con más frecuencia que "ajiaco".
-### Tokens
+## Tokens
 
 La unidad básica de predicción de un modelo de lenguaje es el **token**, y el **tokenizador** es el software que utiliza el modelo para dividir los textos en tokens.
 
@@ -101,8 +100,6 @@ Por ejemplo, el tokenizador de GPT-4 divide la frase:
 > "El sol está brillando intensamente"
 
 de la siguiente manera:
-
-<!--WARNING: El numerado automático de figuras no está funcionando. Arreglar-->
 
 <figure>
   <img src="../assets/images/tokenizer.png" alt="División en tokens de una frase en GPT-4" width="600">
@@ -117,7 +114,11 @@ de la siguiente manera:
     Esto también implica que hay **menos tokens únicos que palabras únicas**, lo que hace que el vocabulario del modelo sea más pequeño y, por lo tanto, más eficiente.
 
     Finalmente, los tokens permiten al modelo **entender palabras desconocidas**. Por ejemplo, si se le presenta la palabra *"WhatsAppeando"*, el modelo puede inferir su significado a partir del contexto en que aparecen los tokens "WhatsApp" y "ando".
-# ¿Qué son los grandes modelos de lenguaje (LLM)?
+
+## ¿Qué son los grandes modelos de lenguaje (LLM)?
+
+<!-- Your content for this section goes here -->
+Los grandes modelos de lenguaje (LLM) son sistemas de inteligencia artificial diseñados para procesar y generar texto de manera avanzada, basándose en grandes cantidades de datos de entrenamiento.
 
 Lo que diferencia un **LLM** (Large Language Model) de un modelo de lenguaje tradicional es el **número de parámetros**. Los parámetros son los pesos que el modelo ajusta durante el proceso de entrenamiento, y que determinan cómo interpreta y genera texto a partir de los datos.
 
@@ -129,7 +130,6 @@ Por supuesto, el concepto de "grande" es relativo. ¿A partir de cuántos parám
 
 Es muy posible que en el futuro estos modelos hoy considerados **LLMs** sean vistos como simples modelos de lenguaje, a medida que la tecnología y los recursos computacionales avancen.
 
-Es muy posible que en el futuro estos modelos hoy considerados **LLMs** sean vistos como simples modelos de lenguaje, a medida que la tecnología y los recursos computacionales avancen.
 
 !!! warning "Para tener en cuenta"
     El crecimiento en la cantidad de parámetros no garantiza una mejora si **no hay suficientes datos** disponibles para el entrenamiento. Entrenar un modelo grande con un conjunto de datos pequeño puede causar **sobreajuste (overfitting)**, lo que significa que el modelo funciona bien con los datos de entrenamiento pero falla al generalizar a nuevos datos. Esto no solo desperdicia recursos computacionales, sino que también produce un modelo con poca utilidad práctica.
@@ -186,9 +186,9 @@ Para que la llave no sea pública, podemos cargarla como una variable de ambient
 Para ello, crea un archivo con el nombre `.env` y guárdalo en la misma carpeta en la que estás trabajando.
 
 Dentro del archivo `.env`, la llave debe guardarse bajo el nombre `OPENAI_API_KEY`, de la siguiente manera:
+
 ```bash
-OPENAI_API_KEY=your-api-key-here
-```
+OPENAI_API_KEY=your-api-key-here```
 
 # Usando la API de OpenAI
 
@@ -196,8 +196,8 @@ Para comenzar a trabajar con la API de OpenAI, primero debes importar la librer�
 
 ```python
 import openai
-from openai import OpenAI  
-```
+from openai import OpenAI ```
+
 Luego, debes cargar la llave desde un archivo `.env` para mantenerla oculta y segura:
 
 ```python
@@ -226,8 +226,9 @@ def get_chat_completion(prompt, model=llm_model):
         messages=[{"role": "user", "content": prompt}]
     )
     
-    return chat_completion.choices[0].message.content  # Devuelve la respuesta del modelo
-```
+    return chat_completion.choices[0].message.content  # Devuelve la respuesta del modelo```
+    
+
 La función `get_chat_completion` la utilizaremos para interactuar con el modelo de OpenAI y obtener una respuesta a partir de un mensaje proporcionado. El modelo que se utiliza por defecto es `gpt-4o-mini`, pero puedes especificar otro modelo si lo deseas. La lista completa de modelos puedes consultarla en la [documentación oficial de OpenAI](https://platform.openai.com/docs/models).
 
 
@@ -288,8 +289,7 @@ Por ejemplo, podemos configurar el modelo para que responda en un estilo poétic
     Con sueños de cambio, justicia y verdad,  
     Dirige su pueblo hacia la prosperidad.  
     Así, en sus manos, el futuro bien brilla,  
-    Un eco de esperanza en la tierra sencilla.
-    ```
+    Un eco de esperanza en la tierra sencilla.```
 
 # LangChain
 
@@ -731,14 +731,12 @@ Una forma de encadenar ejecuciones en cadenas es utilizar el operador `|` (llama
 prompt = ChatPromptTemplate.from_messages([
     ("system", "You are a concise explainer who gives one-sentence answers."),
     ("human", "Explain {topic} in one sentence.")
-])
-```
+])```
 
 E instanciamos la cadena como:
 
 ```python
-chain = prompt | llm_gpt4  # Create the chain
-```
+chain = prompt | llm_gpt4  # Create the chain```
 
 Es como decir: *"Toma este prompt y pásalo al LLM."*
 
