@@ -188,7 +188,8 @@ Para ello, crea un archivo con el nombre `.env` y guárdalo en la misma carpeta 
 Dentro del archivo `.env`, la llave debe guardarse bajo el nombre `OPENAI_API_KEY`, de la siguiente manera:
 
 ```bash
-OPENAI_API_KEY=your-api-key-here```
+OPENAI_API_KEY=your-api-key-here
+```
 
 # Usando la API de OpenAI
 
@@ -196,7 +197,8 @@ Para comenzar a trabajar con la API de OpenAI, primero debes importar la librer�
 
 ```python
 import openai
-from openai import OpenAI ```
+from openai import OpenAI 
+```
 
 Luego, debes cargar la llave desde un archivo `.env` para mantenerla oculta y segura:
 
@@ -226,7 +228,8 @@ def get_chat_completion(prompt, model=llm_model):
         messages=[{"role": "user", "content": prompt}]
     )
     
-    return chat_completion.choices[0].message.content  # Devuelve la respuesta del modelo```
+    return chat_completion.choices[0].message.content  # Devuelve la respuesta del modelo
+```
     
 
 La función `get_chat_completion` la utilizaremos para interactuar con el modelo de OpenAI y obtener una respuesta a partir de un mensaje proporcionado. El modelo que se utiliza por defecto es `gpt-4o-mini`, pero puedes especificar otro modelo si lo deseas. La lista completa de modelos puedes consultarla en la [documentación oficial de OpenAI](https://platform.openai.com/docs/models).
@@ -731,14 +734,16 @@ Una forma de encadenar ejecuciones en cadenas es utilizar el operador `|` (llama
 prompt = ChatPromptTemplate.from_messages([
     ("system", "You are a concise explainer who gives one-sentence answers."),
     ("human", "Explain {topic} in one sentence.")
-])```
+])
+```
 
 E instanciamos la cadena como:
 
 ```python
-chain = prompt | llm_gpt4  # Create the chain```
+chain = prompt | llm_gpt4  # Create the chain
+```
 
-Es como decir: *"Toma este prompt y pásalo al LLM."*
+Es como decir: *"Toma este prompt y pásalo al LLM."
 
 Y ejecutamos la cadena como:
 

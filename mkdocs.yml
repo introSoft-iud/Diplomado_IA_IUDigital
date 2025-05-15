@@ -8,7 +8,9 @@ theme:
   font:
     text: Montserrat
     code: Red Hat Mono
-  logo: assets/logo.png
+  icon:
+    logo: material/robot
+    
   favicon: assets/favicon.ico
   features:
     - navigation.footer
@@ -58,3 +60,4 @@ extra_css:
 nav:
   - Presentación del curso: index.md
   - Unidad 1: Unidad 1/index.md
+  - Unidad 2: Unidad2/unidad2.md
