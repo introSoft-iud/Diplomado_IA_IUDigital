@@ -720,9 +720,7 @@ En caso de que el conocimiento sea muy teórico, elabora una estrategia didácti
 
 En este proyecto practicarás el uso de cadenas para desrrollar un sistema que reliza tareas secuenciales y ramificadas, cargarás los resitado de estas operacones en el bufer de memoria de un chatbot.
 ## Instrucciones
-
-Descarga el archivo `.csv` proporcionado y usando LCEL desarrolla un sistema capaz de:
-
+Descarga el archivo [healthcare_report.csv](docs/assets/resources/healthcare_report.csv) proporcionado y, usando LECL, desarrolla un sistema capaz de:
 1. **Procesar un informe de salud original en español**: Lee el informe desde el archivo CSV.
 2. **Traducir el informe al inglés**: Usa una cadena para traducir el texto.
 3. **Resumir el informe traducido**: Genera un resumen breve en inglés.
