@@ -20,9 +20,7 @@ Procura no superar las 300 palabras (1500 caracteres) al redactar la introducci�
 
 ## Introducción a la unidad
 
-Bienvenidos a la primera unidad. En esta unidad, aprenderás de manera general cómo funciona un modelo de lenguaje. Comenzaremos utilizando la API de OpenAI y exploraremos cómo conectar sus modelos en aplicaciones. Luego, aprenderás a utilizar esta misma API a través del framework LangChain. Introduciremos los aspectos fundamentales de la interacción con los LLMs usando LangChain: **prompts**, **templates** y **output parsers**.
-
-Como actividad práctica, elaborarás un sistema asistido por IA para extraer datos de comentarios de usuarios en un e-commerce.
+Bienvenidos a la segunda unidad de nuestro diplomado sobre construcción de aplicaciones asistidas por LLMs. En la primera unidad aprendiste a confeccionar instrucciones reutilizables para LLMs, los prompt templates, y exploraste cómo acoplar estas instrucciones en cadenas con especificadores de formato llamados output parsers. Sin embargo, estas cadenas de ejecución eran cadenas de un solo turno de interacción entre la IA y el usuario humano. En esta unidad aprenderás a darle memoria y contexto a tus cadenas de ejecución. Profundizaremos aún más en el funcionamiento de las cadenas y como limitar su memoria en el contexto del LCEL. Finalmente, pondrás a prueba tu conocimiento creando un chatbot que asiste las labores de un médico realizando tareas secuenciales y que tiene como contexto en su memoria los datos específicos de un paciente.
 
 ¡Comencemos!
 <!-- Resultados de aprendizaje
@@ -40,10 +38,11 @@ Los resultados deben ser medibles y alcanzables.
 -->
 
 ## Resultados de aprendizaje
+Al finalizar esta unidad, estarás en capacidad de:
 
-Al finalizar esta unidad, estarás en capacidad de realizar llamadas a los modelos de lenguaje de OpenAI a través de la API para crear código Python cuya ejecución es asistida por LLMs.
+- Usar cadenas dotadas de memoria usando el LECL.
+- Limitar el tamaño del contexto cargado en la memoria de tus cadenas.
 
-Aprenderás a configurar cadenas de ejecución simples en LangChain usando LCEL, junto con *prompt templates* y *output parsers*, para convertir las salidas de los LLMs en objetos nativos de Python.
 <!--Cronograma de actividades de la unidad  
 Permite la proyección de los contenidos tanto teóricos como prácticos, la ubicación temporal dentro del curso y los porcentajes que corresponden a la evidencia de aprendizaje.
 
@@ -57,7 +56,7 @@ Plantea una evidencia de aprendizaje por unidad, y otra más para el cierre del 
 ## Cronograma de actividades - Unidad 1
 | Actividad de aprendizaje       | Evidencia de aprendizaje | Semana       | Ponderación |
 |--------------------------------|---------------------------|--------------|--------------|
-| Reto Formativo 1 y 2           | EA1:  Templates y Output Parsers | Semana 1, 2 y 3 | 25%         |
+| EA1:  Cadenas y memoria         | EA1: Cadenas y memoria| Semana 4 y 5 | 25%         |
 | **Total**                      |                           |              | **25 %**     |
 
 
@@ -693,6 +692,108 @@ for msg in chat.messages:
     Hasta aquí hemos reproducido el comportamiento de la clase `ConversationBufferMemory` que describimos al principio. Sin embargo, esta clase será deprecada en las versiones futuras de LangChain. Para ver cómo crear *wrappers* de los demás tipos de memoria, puedes consultar el siguiente material:
     **Artículo**: Introducción a los Tipos de Memoria en LangChain  
     **URL**: [https://www.aurelio.ai/learn/langchain-memory-types](https://www.aurelio.ai/learn/langchain-memory-types)
+
+
+<!--
+Evidencia de aprendizaje
+Actividad que permite verificar, validar o demostrar el conocimiento, las habilidades y las competencias que los estudiantes han adquirido a lo largo del proceso de aprendizaje. 
+
+La evidencia de aprendizaje (EA) debe orientarse a estimular la reflexión con el saber y su aplicabilidad, especialmente, cuando se trata de temas relacionados con los contextos y medios donde habitan los estudiantes.
+
+Por otro lado, proporciona a los profesores información sobre la evolución y resultado del proceso de aprendizaje, lo que los estudiantes están aprendiendo y comprendiendo qué funciona o debe mejorar; asimismo, ofrece a los estudiantes retroalimentación específica y constructiva acerca de su desempeño.
+
+
+Recomendaciones:
+Lee el documento “Estrategias didácticas” como apoyo para el desarrollo de la evidencia de aprendizaje.
+La evidencia debe ser clara en sus instrucciones y expectativas, para que los estudiantes comprendan lo que se espera de ellos.
+Asegúrate de que la evidencia evalúe habilidades como el pensamiento crítico, la resolución de problemas y la creatividad.
+En caso de que el conocimiento sea muy teórico, elabora una estrategia didáctica que permita entender de qué manera esa teoría puede o no aplicarse a una situación específica.
+    -->
+
+## Evidencia de Aprendizaje                 
+
+
+| **Unidad 1** | **Cadenas y Memoria** |
+|--------------|-------------------------------------------------------------|
+| **EA1.**     |   **Generación de Informes de Salud Utilizando Archivos CSV **|
+
+
+En este proyecto practicarás el uso de cadenas para desrrollar un sistema que reliza tareas secuenciales y ramificadas, cargarás los resitado de estas operacones en el bufer de memoria de un chatbot.
+## Instrucciones
+
+Descarga el archivo `.csv` proporcionado y usando LCEL desarrolla un sistema capaz de:
+
+1. **Procesar un informe de salud original en español**: Lee el informe desde el archivo CSV.
+2. **Traducir el informe al inglés**: Usa una cadena para traducir el texto.
+3. **Resumir el informe traducido**: Genera un resumen breve en inglés.
+4. **Extraer indicadores clave de salud del resumen**: Identifica elementos clave (e.g., síntomas, duración).
+5. **Generar un plan de tratamiento basado en los indicadores clave**: Propón pasos de tratamiento.
+6. **Detectar el idioma original del informe**: Determina si el informe original está en español.
+7. **Generar una recomendación de seguimiento en el idioma detectado**: Devuelve una recomendación en español.
+
+Finalmete carga el infome médico del paciente en la memoria y crea un chat bot que esté en capacidad de responder preguntas sobre el tratamiento indicado. Demuestra su uso con algunas llamas al chat
+
+
+---
+
+Guarda los documentos con la siguiente nomenclatura:
+
+- **Apellido_Nombre del estudiante.ipynb**  
+**Ejemplo:**  
+- López_Karla.ipynb
+
+Finalmente, haz clic en el botón **Cargar Tarea**, sube tu archivo y presiona el botón **Enviar** para remitirlo a tu profesor con el fin de que lo evalúe y retroalimente. |
+
+!!! tip "📖 Nota"
+    Conoce los criterios de evaluación de esta evidencia de aprendizaje consultando la rúbrica que encontrarás a continuación.
+
+| **Criterios**             | **Ponderación** |                       |                       |                       |                       | **Totales** |
+|---------------------------|------------------|-----------------------|-----------------------|-----------------------|-----------------------|------------|
+|                           | **70**           | **50**                | **5**                 | **0**                 |                       |            |
+| **Calidad de las Soluciones** | Las soluciones a los ejercicios son correctas, demostrando una implementación adecuada de los conceptos y técnicas requeridos. El estudiante muestra un dominio completo de los temas abordados. | Aunque las soluciones no son completamente correctas, se observa un entendimiento y aplicación adecuada de los conceptos y técnicas involucradas. Hay evidencia de esfuerzo y comprensión de los temas. | Las soluciones presentadas son en su mayoría incorrectas. Se percibe un intento de resolver los ejercicios, pero hay una falta de comprensión de los conceptos y técnicas esenciales. | No realiza la entrega |                       | **70**      |
+| **Calidad de la entrega** | El notebook es claro y fácil de seguir, incluyendo comentarios detallados sobre el funcionamiento del código en las celdas Markdown, lo que facilita la comprensión de las soluciones propuestas. | El notebook no es particularmente fácil de leer, pero aún así incluye comentarios que explican el funcionamiento del código en las celdas Markdown, mostrando un esfuerzo por aclarar la lógica detrás del código. | El notebook carece de comentarios acerca del funcionamiento del código en las celdas Markdown, lo que dificulta la comprensión de las soluciones implementadas. | No realiza la entrega |                       | **20**      |
+| **Tiempo de la entrega**  | La entrega se realiza a tiempo, cumpliendo con el plazo establecido para la presentación de la actividad. | La entrega se realiza con una semana de atraso. Aunque fuera del plazo original, se considera adecuada para evaluar el trabajo presentado. | La entrega se realiza con más de una semana de atraso, lo que indica un retraso significativo en la presentación de la actividad. | No realiza la entrega |                       | **10**      |
+|                           |                  |                       |                       |                       | **Ponderación de la actividad** | **100 puntos** |
+
+# Referencias
+
+Aurelio AI. (s.f.). *LangChain Course*. Recuperado el 21 de mayo de 2025, de [https://www.aurelio.ai/course/langchain](https://www.aurelio.ai/course/langchain)
+
+Chase, H., & Ng, A. (2023). *LangChain for LLM Application Development* [Curso en línea]. DeepLearning.AI. Disponible en [https://www.deeplearning.ai/short-courses/langchain-for-llm-application-development/](https://www.deeplearning.ai/short-courses/langchain-for-llm-application-development/)
+
+
+<!--
+Lecturas y material complementario
+
+Libros, recursos interactivos o videos que complementan los temas de la unidad y que permiten al estudiante ampliar y enriquecer su conocimiento promoviendo un espíritu investigativo y de autoformación.
+-->
+
+---
+# Lecturas y material complementario
+
+## 📚 Lecturas recomendadas
+
+### **Título:** *How Trellix Uses LangChain to Enhance Cybersecurity*  
+**Autor:** [LangChain]  
+**Fecha de recuperación:** 21 de mayo de 2025  
+**URL:** [How Trellix Uses LangChain to Enhance Cybersecurity](https://blog.langchain.dev/customers-trellix/)
+## 🎥 Videos recomendados
+
+### **Título:** *LangChain: Prompts, Parsers and Chaining | for Beginners*  
+**Autor:** [Anub Gupta on Learn4Tarakki]  
+**URL:** [LangChain: Prompts, Parsers and Chaining | for Beginners](https://www.youtube.com/watch?v=FHhJYxuIIA0)  
+Este video ofrece una introducción amigable para principiantes sobre cómo crear plantillas de prompts, utilizar parsers y encadenar componentes en LangChain.
+
+### Título: Interrupt 2025 Keynote | Harrison Chase | LangChain
+**Autor:** [LangChain]
+**URL:** Interrupt 2025 Keynote | Harrison Chase | LangChain
+
+Este video presenta la keynote de Harrison Chase en la conferencia Interrupt 2025 de LangChain, donde se discute la evolución de la ingeniería de agentes y la visión de la compañía para agentes inteligentes. Incluye reflexiones sobre la trayectoria de LangChain y anuncios de nuevas herramientas de desarrollo.
+
+
+
+
+
 
 
 
