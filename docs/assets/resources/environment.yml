@@ -4,7 +4,9 @@ channels:
 dependencies:
   - python=3.12.7
   - pip
-  - pandas 
+  - pandas
+  - poppler  # Required for pdf2image (used by unstructured for hi_res)
+  - tesseract  # Tesseract OCR engine
   - pip:
       - langchain==0.3.20
       - langchain-core==0.3.41
@@ -15,5 +17,6 @@ dependencies:
       - pypdf
       - beautifulsoup4
       - youtube-transcript-api
-      - pytube 
-
+      - pytube
+      - unstructured[local-inference]  # Includes dependencies for hi_res and table extraction
+      - pytesseract  # Python wrapper for Tesseract OCR
