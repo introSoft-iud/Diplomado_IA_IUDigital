@@ -7,7 +7,9 @@ dependencies:
   - pandas
   - poppler  # Required for pdf2image (used by unstructured for hi_res)
   - tesseract  # Tesseract OCR engine
+  - scikit-learn  # Added for cosine_similarity and other sklearn functionality
   - pip:
+      - chromadb
       - langchain==0.3.20
       - langchain-core==0.3.41
       - langchain-openai==0.3.3

@@ -470,4 +470,455 @@ except Exception as e:
 ```
 ## Text Splitters
 
-Una vez hemos cargado el o los documentos sobre los cuales queremos realizar RAG (Recuperación de Información Asistida por Generación), debemos separarlos en fragmentos sobre los cuales crearemos nuestra base de datos de embeddings, es decir, una base de datos vectorial (ver [Figura 2](#fig-retrieval-subsystems)). La herramienta que nos permite hacer esto son los llamados **Text Splitters**.
+Una vez hemos cargado el o los documentos sobre los cuales queremos realizar RAG , debemos separarlos en fragmentos sobre los cuales crearemos nuestra base de datos de embeddings, es decir, una base de datos vectorial (ver [Figura 2](#fig-retrieval-subsystems)). La herramienta que nos permite hacer esto son los llamados **Text Splitters**.
+LangChain ofrece varias implementaciones de **Text Splitters** para dividir texto basándose en:
+
+- **Caracteres**  
+- **Tokens**  
+- **Líneas**  
+- **Oraciones**  
+
+Por ejemplo, el **CharacterTextSplitter** divide el texto en función de caracteres, mientras que el **RecursiveCharacterTextSplitter** intenta dividir por varios delimitadores (como `\n` o espacios) hasta encontrar el tamaño adecuado.
+
+En general, el texto completo será dividido según un parámetro que limita el tamaño del fragmento (`chunk_size`) y otro parámetro que le indica al text splitter el nivel de superposición de textos en dos fragmentos contiguos (`chunk_overlap`). El solapamiento es deseable para garantizar que las ideas que no estén completas en un fragmento queden completas en el siguiente, como lo ilustra la figura:
+
+![alt text](../assets/images/chunck_overlap.png)
+
+Para usar el `RecursiveCharacterTextSplitter` y el `CharacterTextSplitter`, cargaremos el módulo:
+
+```python
+from langchain.text_splitter import RecursiveCharacterTextSplitter, CharacterTextSplitter
+```
+
+### RecursiveCharacterTextSplitter
+
+Dividamos un texto usando un tamaño de fragmento de 26 caracteres y un solapamiento de 4 caracteres.
+
+```python
+chunk_size = 26
+chunk_overlap = 4
+
+# Instanciamos los dos splitters
+r_splitter = RecursiveCharacterTextSplitter(
+    chunk_size=chunk_size,
+    chunk_overlap=chunk_overlap
+)
+
+c_splitter = CharacterTextSplitter(
+    chunk_size=chunk_size,
+    chunk_overlap=chunk_overlap
+)
+```
+Usemos el divisor en la cadena de texto:
+
+```python
+text1 = 'abcdefghijklmnopqrstuvwxyz'
+r_splitter.split_text(text1)
+```
+
+=== "Salida"
+    ```bash
+    ['abcdefghijklmnopqrstuvwxyz']
+    ```
+
+Como el texto es demasiado corto, el splitter solo genera un fragmento. Un texto un poco más largo, como en:
+
+```python
+text2 = 'abcdefghijklmnopqrstuvwxyznopqrstuvwxyz'
+r_splitter.split_text(text2)
+```
+
+Dividirá el texto en dos fragmentos.
+
+=== "Salida"
+    ```bash
+    ['abcdefghijklmnopqrstuvwxyz', 'wxyznopqrstuvwxyz']
+    ```
+Ahora hagámoslo con el splitter de caracteres:
+
+```python
+c_splitter.split_text(text3)
+```
+
+Lo que vemos es que no trata de dividirlo. ¿Qué está pasando? Debemos escoger el carácter separador. Por ejemplo, `separator = ' '`.
+
+```python
+c_splitter = CharacterTextSplitter(
+    chunk_size=chunk_size,
+    chunk_overlap=chunk_overlap,
+    separator=' '
+)
+c_splitter.split_text(text3)
+```
+
+=== "Salida"
+    ```bash
+    ['a b c d e f g h i j k l m', 'l m n o p q r s t u v w x', 'w x y z']
+    ```
+
+Vemos otro ejemplo:
+```python
+# Reemplaza la variable some_text por otro texto del mismo tamaño sobre lo que opinaba Einstein sobre termodinámica
+some_text = """Albert Einstein consideraba que la termodinámica era 
+una de las teorías más fundamentales y sólidas de la física. En sus
+ propias palabras, decía que la termodinámica era la única teoría 
+ física que él estaba convencido de que nunca sería refutada, dentro 
+ del marco de aplicabilidad de sus conceptos básicos. Esto resaltaba 
+ su profundo respeto por la capacidad de la termodinámica para describir 
+ fenómenos naturales con precisión. Einstein veía en la termodinámica una
+  belleza que se derivaba de su simplicidad y universalidad, y la consideraba
+   una piedra angular en el entendimiento científico del mundo físico."""
+
+len(some_text)
+```
+
+=== "Salida"
+```bash
+625
+```
+
+```python
+c_splitter = CharacterTextSplitter(
+    chunk_size=450,
+    chunk_overlap=0,
+    separator=' '
+)
+r_splitter = RecursiveCharacterTextSplitter(
+    chunk_size=450,
+    chunk_overlap=0,
+    separators=["\n\n", "\n", " ", ""]
+)
+```
+
+Cuando especificamos `separators=["\n\n", "\n", " ", ""]`, significa que el splitter usa estos separadores en ese orden hasta que encuentra un tipo de separador que le sirva.
+
+```python
+c_splitter.split_text(some_text)
+from IPython.display import Markdown, display
+print(c_splitter.split_text(some_text))
+display(Markdown(c_splitter.split_text(some_text)[0]))
+display(Markdown(c_splitter.split_text(some_text)[1]))
+```
+
+=== "Salida"
+![alt text](../assets/images/recursive.png)
+<div class="grid cards" markdown>
+
+- :fontawesome-solid-gears:{ .lg .middle } **Reto formativo**  
+  **Planteamiento**:
+  Utiliza PyPDFLoader para cargar el documento [attention.pdf](../assets/documents/attention.pdf) u otro de tu preferencia.
+  * Usa `CharacterTextSplitter` y experimenta con diferentes parámetros, por ejemplo: 
+    ```python
+    separator="\n",
+    chunk_size=1000,
+    chunk_overlap=150,
+    length_function=len
+    ```
+  * Visualiza el número de documentos cargados.
+  * ¿Cuántas páginas tiene el documento?
+  
+</div>
+## Almacenamiento en la base de datos vectorial
+
+El paso siguiente en la construcción de nuestro RAG (ver figura 2) consiste en crear representaciones vectoriales de los fragmentos. Las representaciones vectoriales de texto, o *embeddings*, son creadas a partir de modelos de lenguaje (LLM). Un *embedding* se genera utilizando un LLM que convierte texto en vectores numéricos, capturando el contexto y el significado semántico del texto. El flujo es mostrado en la figura:
+
+![alt text](image-1.png)
+
+!!! Tip "Para aprender más"
+    Las bases de datos vectoriales son sistemas especializados en el almacenamiento, indexación y recuperación eficiente de vectores de alta dimensión. Estos vectores, que comúnmente representan características numéricas extraídas de datos como texto, imágenes, audio o video, permiten realizar búsquedas basadas en similitud (por ejemplo, utilizando distancia euclidiana, coseno o HNSW). A diferencia de las bases de datos tradicionales orientadas a registros, las bases de datos vectoriales están optimizadas para operaciones de búsqueda aproximada de vecinos más cercanos (Approximate Nearest Neighbor Search, ANNS), lo que las hace ideales para tareas de recuperación semántica, sistemas de recomendación, reconocimiento de patrones y aplicaciones en inteligencia artificial.
+
+    Estos sistemas son clave en entornos de aprendizaje automático y procesamiento de lenguaje natural (PLN), donde se requiere comparar representaciones vectoriales de datos embebidos (embeddings). Algunas implementaciones populares incluyen FAISS (Facebook AI Similarity Search), Annoy (Spotify), Milvus y Weaviate, que ofrecen distintos enfoques y estructuras para manejar escalabilidad, latencia y precisión.
+
+    Para profundizar en el tema, se recomienda la siguiente referencia técnica:  
+    **Johnson, J., Douze, M., & Jégou, H. (2019). [Billion-scale similarity search with GPUs](https://arxiv.org/abs/1702.08734)**. *arXiv preprint arXiv:1702.08734*.
+### Embeddings
+
+Los embeddings son las representaciones vectoriales de los fragmentos de texto entregados por el `TextSplitter`. Textos similares tienen representaciones similares en el espacio de embeddings, lo que significa que podemos comparar estos vectores y encontrar fragmentos de texto que son similares o relevantes dada una consulta. Crearemos nuestros embeddings usando `OpenAIEmbeddings`.
+
+Veamos su funcionamiento con un ejemplo sencillo:
+```python
+from dotenv import load_dotenv
+import os
+from langchain_openai import OpenAIEmbeddings
+import numpy as np
+from sklearn.metrics.pairwise import cosine_similarity
+
+# Cargar variables de entorno (por ejemplo, OPENAI_API_KEY)
+load_dotenv()
+
+# Definir oraciones menos creativas con temas de comida/cocina y clima
+sentence1 = "I like pasta."
+sentence2 = "I like noodles."
+sentence3 = "The soup I made is bad."
+sentence4 = "The sky is blue."
+
+# Lista de todas las oraciones
+sentences = [sentence1, sentence2, sentence3, sentence4]
+
+# Inicializar embeddings de OpenAI
+embeddings_model = OpenAIEmbeddings() 
+
+# Generar embeddings para todas las oraciones
+embeddings = embeddings_model.embed_documents(sentences)
+
+# Convertir embeddings a un array de numpy para el cálculo de similitud
+embeddings_array = np.array(embeddings)
+
+# Calcular la similitud coseno entre todos los pares de oraciones
+similarity_matrix = cosine_similarity(embeddings_array)
+
+# Imprimir puntuaciones de similitud
+print("Cosine Similarity Matrix:")
+print("Sentences:")
+for i, sentence in enumerate(sentences):
+    print(f"{i+1}. {sentence}")
+print("\nSimilarity Scores:")
+for i in range(len(sentences)):
+    for j in range(i + 1, len(sentences)):
+        print(f"Similarity between '{sentences[i][:50]}...' and '{sentences[j][:50]}...': {similarity_matrix[i][j]:.4f}")
+```
+
+=== "Salida"
+```bash
+Cosine Similarity Matrix:
+Sentences:
+1. I like pasta.
+2. I like noodles.
+3. The soup I made is bad.
+4. The sky is blue.
+
+Similarity Scores:
+Similarity between 'I like pasta....' and 'I like noodles....': 0.9300
+Similarity between 'I like pasta....' and 'The soup I made is bad....': 0.6500
+Similarity between 'I like pasta....' and 'The sky is blue....': 0.6100
+Similarity between 'I like noodles....' and 'The soup I made is bad....': 0.6400
+Similarity between 'I like noodles....' and 'The sky is blue....': 0.6000
+Similarity between 'The soup I made is bad....' and 'The sky is blue....': 0.6700
+```
+Con mayor similitud entre la oración 3 y la oración 4 debido a que ambas están relacionadas con el clima, e incluso una similitud mayor entre las oraciones 1 y 2 ya que están relacionadas con comidas italianas.
+
+El modelo `text-embedding-ada-002` es un Transformer optimizado para tareas de embeddings, entrenado en grandes cantidades de datos de texto para capturar relaciones semánticas.
+
+!!! warning "Para tener en cuenta"
+    El modelo `text-embedding-ada-002` de OpenAI es un Transformer optimizado para tareas de embeddings, entrenado en grandes cantidades de datos de texto para capturar relaciones semánticas. El texto de entrada (por ejemplo, "I like pasta.") se tokeniza, dividiendo las palabras o subpalabras en unidades (tokens) que el modelo entiende.
+
+    Cada token se convierte en un vector inicial (word embedding) basado en un vocabulario aprendido durante el entrenamiento.
+
+    Un Transformer procesa los tokens a través de múltiples capas de redes neuronales.
+
+    Las capas de atención capturan la importancia de cada token en relación con los demás, es decir, el contexto. Por ejemplo, en "I like pasta.", "pasta" se interpreta en el contexto de "like", lo que da un significado positivo.
+
+    Esto produce representaciones contextuales que reflejan no solo las palabras individuales, sino también su relación en la frase. Las capas finales del modelo combinan las representaciones contextuales en un solo vector fijo (por ejemplo, 1536 dimensiones para `text-embedding-ada-002`).
+
+    Este vector es una representación densa del significado semántico del texto, donde textos con significados similares (por ejemplo, "I like pasta." y "I like noodles.") tienen vectores cercanos en el espacio.
+
+Hemos usado el producto escalar para compararlos, ya que este es proporcional a la distancia entre los vectores. Recordemos que dados dos vectores $\mathbf{A}$ y $\mathbf{B}$, el producto escalar está definido como $\mathbf{A} \cdot \mathbf{B} = AB \cos(\theta)$, como $\cos(0) = 1$ entonces los vectores son más cercanos entre más próximo esté este número de 1.
+### Creando la Vectorstore
+
+Existen diversas opciones de almacenamiento vectorial, cada una con características específicas. Algunas de las opciones más populares incluyen:
+
+- **Pinecone**: Ofrece un servicio escalable y rápido para almacenar y buscar vectores, ideal para aplicaciones en la nube.
+- **Faiss**: Un framework de Facebook AI Research que es eficiente para búsquedas de similitud y clustering, especialmente útil para grandes cantidades de datos.
+- **Annoy**: Desarrollado por Spotify, es adecuado para búsquedas aproximadas en grandes datasets, optimizando el uso de memoria.
+- **Chroma**: Es una opción versátil que puede funcionar tanto localmente como en la nube, facilitando la integración con aplicaciones que requieren búsquedas rápidas y eficientes.
+
+En este ejemplo, utilizaremos **Chroma** debido a su flexibilidad y facilidad de uso cuando se implementa localmente. Chroma permite almacenar los embeddings generados y realizar búsquedas de similitud de manera eficiente, lo cual es ideal para aplicaciones que requieren procesamiento rápido sin depender de servicios externos.
+
+Volvemos al ejemplo del PDF (`attention.pdf`). Lo cargaremos con `PyPDFLoader` y lo dividiremos en fragmentos usando `RecursiveCharacterTextSplitter`.
+
+```python
+from langchain.document_loaders import PyPDFLoader
+from langchain.text_splitter import RecursiveCharacterTextSplitter
+
+# Cargamos el PDF
+output_path = ".content/"
+file_path = output_path + "attention.pdf"
+loader = PyPDFLoader(file_path)
+documents = loader.load()
+
+# Dividimos en fragmentos
+text_splitter = RecursiveCharacterTextSplitter(
+    chunk_size=500,  # Tamaño de cada fragmento
+    chunk_overlap=50  # Solapamiento entre fragmentos
+)
+split_docs = text_splitter.split_documents(documents)
+
+# Verificamos cuántos fragmentos tenemos
+print(f"Se generaron {len(split_docs)} fragmentos del PDF.")
+```
+
+```bash
+Se generaron 93 fragmentos del PDF.
+```
+
+A continuación, crearemos los embeddings.
+
+```python
+from langchain_openai import OpenAIEmbeddings
+
+# Configuramos el modelo de embeddings de OpenAI
+embedding_model = OpenAIEmbeddings()  # Usa la variable de entorno OPENAI_API_KEY
+
+# Probamos con un fragmento para verificar
+sample_chunk = split_docs[0].page_content
+sample_embedding = embedding_model.embed_query(sample_chunk)
+print(f"Dimensión del embedding: {len(sample_embedding)}")
+print(f"Primeros 5 valores: {sample_embedding[:5]}")
+```
+
+```bash
+Dimensión del embedding: 1536
+Primeros 5 valores: [-0.012028052471578121, 0.01199324894696474, 0.017206797376275063, -0.027745263651013374, -0.0014739236794412136]
+```
+
+### Creando labase de datos
+
+Guardaremos los fragmentos y sus embeddings generados por OpenAI en una vectorstore de `Chroma`.
+
+& code: &
+
+from langchain.vectorstores import Chroma
+
+# Creamos la vectorstore con Chroma
+vectorstore = Chroma.from_documents(
+    documents=split_docs,  # Los fragmentos del PDF
+    embedding=embedding_model,  # Embeddings de OpenAI
+    persist_directory="./chroma_db_openai"  # Directorio para esta versión
+)
+
+# Verificamos cuántos documentos se almacenaron
+print(f"Se almacenaron {vectorstore._collection.count()} fragmentos en la vectorstore.")
+
+&salida&
+Se almacenaron 93 fragmentos en la vectorstore.
+
+Con la vectorstore lista, podemos buscar fragmentos relevantes para una consulta como "attention mechanism".
+& code &
+# Realizamos una búsqueda semántica
+query = "attention mechanism"
+results = vectorstore.similarity_search(query, k=3)  # Top 3 fragmentos más similares
+
+# Mostramos los resultados
+for i, result in enumerate(results):
+    print(f"Resultado {i + 1}:")
+    print(result.page_content)
+    print(f"Metadatos: {result.metadata}")
+    print("-" * 50)
+& salida &
+Resultado 1:
+tion models in various tasks, allowing modeling of dependencies without regard to their distance in
+the input or output sequences [2, 19]. In all but a few cases [27], however, such attention mechanisms
+are used in conjunction with a recurrent network.
+In this work we propose the Transformer, a model architecture eschewing recurrence and instead
+relying entirely on an attention mechanism to draw global dependencies between input and output.
+Metadatos: {'page': 1, 'page_label': '2', 'source': '.content/attention.pdf'}
+--------------------------------------------------
+Resultado 2:
+but
+its
+application
+should
+be
+just
+-
+this
+is
+what
+we
+are
+missing
+,
+in
+my
+...
+
+### Persistencia de la Vectorstore
+
+La base de datos se guarda en `./chroma_db_openai`. Para carala en otros scripts, de esta manera no tendremosque pagar por los embedigs cada vez que un script requiera realizar querys sobre el documento
+# Cargar la vectorstore existente
+loaded_vectorstore = Chroma(
+    persist_directory="./chroma_db_openai",
+    embedding_function=embedding_model
+)
+
+# Verificamos que se cargó
+print(f"Fragmentos cargados desde disco: {loaded_vectorstore._collection.count()}")
+
+&salida&
+Fragmentos cargados desde disco: 93
+
+Veamos:
+
+query = "embeddings"
+results = loaded_vectorstore.similarity_search(query, k=3)  # Top 3 fragmentos más similares
+
+# Mostramos los resultados
+for i, result in enumerate(results):
+    print(f"Resultado {i + 1}:")
+    print(result.page_content)
+    print(f"Metadatos: {result.metadata}")
+    print("-" * 50)
+
+&salida&
+
+Resultado 1:
+Zhou, and Yoshua Bengio. A structured self-attentive sentence embedding. arXiv preprint
+arXiv:1703.03130, 2017.
+[23] Minh-Thang Luong, Quoc V . Le, Ilya Sutskever, Oriol Vinyals, and Lukasz Kaiser. Multi-task
+sequence to sequence learning. arXiv preprint arXiv:1511.06114, 2015.
+[24] Minh-Thang Luong, Hieu Pham, and Christopher D Manning. Effective approaches to attention-
+based neural machine translation. arXiv preprint arXiv:1508.04025, 2015.
+11
+Metadatos: {'page': 10, 'page_label': '11', 'source': '.content/attention.pdf'}
+--------------------------------------------------
+Resultado 2:
+2006.
+[30] Ofir Press and Lior Wolf. Using the output embedding to improve language models. arXiv
+preprint arXiv:1608.05859, 2016.
+[31] Rico Sennrich, Barry Haddow, and Alexandra Birch. Neural machine translation of rare words
+with subword units. arXiv preprint arXiv:1508.07909, 2015.
+[32] Noam Shazeer, Azalia Mirhoseini, Krzysztof Maziarz, Andy Davis, Quoc Le, Geoffrey Hinton,
+and Jeff Dean. Outrageously large neural networks: The sparsely-gated mixture-of-experts
+Metadatos: {'page': 11, 'page_label': '12', 'source': '.content/attention.pdf'}
+--------------------------------------------------
+...
+
+## RetrievalQA
+
+Combinaremos la vectorstore con un modelo de lenguaje de OpenAI (`gpt-3.5-turbo` por defecto) para responder preguntas. `RetrievalQA` buscará fragmentos relevantes en la vectorstore y los usará como contexto para generar respuestas.
+
+& code &
+from langchain.chains import RetrievalQA
+from langchain.chat_models import ChatOpenAI
+
+# Configuramos el modelo de lenguaje
+llm = ChatOpenAI(
+    model_name="gpt-3.5-turbo",
+    temperature=0  # Respuestas más precisas y menos creativas
+)
+
+# Creamos la cadena RetrievalQA
+qa_chain = RetrievalQA.from_chain_type(
+    llm=llm,
+    chain_type="stuff",  # Usa todos los fragmentos relevantes directamente
+    retriever=vectorstore.as_retriever(search_kwargs={"k": 3}),  # Top 3 fragmentos más similares
+    return_source_documents=True  # Devuelve los fragmentos usados como fuente
+)
+
+## Preguntas al PDF
+
+Ahora podemos preguntar algo sobre el contenido del PDF:
+
+ Otra pregunta
+query2 = "¿Cómo se usa la atención ?"
+result2 = qa_chain({"query": query2})
+
+# Mostramos la respuesta
+print("Respuesta:")
+print(result2["result"])
+print("\nFragmentos utilizados como fuente:")
+for i, doc in enumerate(result2["source_documents"]):
+    print(f"Fuente {i + 1}:")
+    print(doc.page_content)
+    print(f"Metadatos: {doc.metadata}")
+    print("-" * 50)

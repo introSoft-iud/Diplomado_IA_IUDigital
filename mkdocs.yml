@@ -55,8 +55,18 @@ markdown_extensions:
       alternate_style: true
   - admonition
   - pymdownx.details
+  - pymdownx.arithmatex:
+      generic: true
+
+extra_javascript:
+  - https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js
+  - https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js
+  - js/katex.js  # We'll create this file
+
+
 extra_css:
  - css/custom.css
+ - https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css
 nav:
   - Presentación del curso: index.md
   - Unidad 1: Unidad 1/index.md
