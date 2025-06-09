@@ -39,17 +39,15 @@ Finaliza con un párrafo de cierre en el cual motives al estudiante a realizar e
 
 
 -->
-
- Bienvenidos al diploma en construcción de aplicaciones asistidas por modelos de lenguaje de la IUDigital de Antioquia
+Bienvenidos al diplomado en construcción de aplicaciones asistidas por modelos de lenguaje de la IUDigital de Antioquia.
 
 Aunque la inteligencia artificial ha existido como un campo exitoso y prometedor entre los expertos durante varias décadas, la llegada de capacidades computacionales más avanzadas —ofrecidas por las GPU modernas— y las habilidades demostradas con el lanzamiento de ChatGPT fueron una gran sorpresa para muchos.
 
 No está del todo claro cómo este "pequeño" avance en la escala de los modelos pudo desencadenar la gran cantidad de aplicaciones asistidas por IA que estamos viendo explotar cada semana. Lo que sí es claro es que el campo de la ingeniería de software está siendo revolucionado, y que el nuevo paradigma de construcción de software ya no consiste en los tradicionales flujos de ejecución, sino que la nueva ingeniería de sistemas debe integrar a los LLMs en dichos flujos.
 
-Hemos diseñado este diplomado para introducirte a este nuevo paradigma. 
+Hemos diseñado este diplomado para introducirte a este nuevo paradigma. Este curso está basado en LangChain, el framework más popular de la actualidad para interactuar con las APIs de los principales modelos de lenguaje.
 
-<!--  Terminar....->
-
+En la Unidad 1 comenzarás por aprender a crear instrucciones reutilizables para los LLM, los llamados `prompt templates`, luego verás cómo encadenar estas instrucciones a través de las cadenas usando  el Lenguaje de Expresión de LangChain (LCEL). Aprenderás a especificar el formato de salida de tus cadenas de ejecución mediante los `output parsers`. A continuación, en la Unidad 2, crearás tus primeros chatbots y aprenderás a gestionar sus memorias. Como ejercicio práctico, implementarás un chatbot asistente de un médico que carga en su memoria la historia clínica de los pacientes. Finalmente, en la Unidad 3, estarás preparado para incorporar los componentes de las dos unidades anteriores junto con loaders de documentos, retrievers y bases de datos vectoriales, para crear y desplegar un sistema RAG sobre documentos en PDF, de manera que podrás conversar con tus archivos PDF.
 
 <!--
 
@@ -60,10 +58,13 @@ Establecen las dinámicas de enseñanza-aprendizaje dentro del curso y encaminan
 Esta información se extrae de la carta descriptiva, por esa razón es importante consultarla antes de redactar esta parte. Ten presente que la versión en Word contiene el objetivo general y los específicos; mientras que la versión en Excel contiene los resultados de aprendizaje.
 
 -->
+## Resultados de Aprendizaje
 
-## Resultados de Aprendizage
+1. **Diseñar y aplicar prompt templates y cadenas de ejecución en LangChain:** Los estudiantes serán capaces de crear instrucciones reutilizables (prompt templates) y encadenarlas utilizando el Lenguaje de Expresión de LangChain (LCEL), especificando formatos de salida con output parsers para interactuar eficazmente con modelos de lenguaje.
 
+2. **Desarrollar chatbots con gestión de memoria contextual:** Los estudiantes podrán construir chatbots funcionales utilizando LangChain, integrando memorias para almacenar y gestionar información contextual.
 
+3. **Construir y desplegar sistemas RAG para interacción con documentos:** Los estudiantes estarán capacitados para integrar componentes como loaders de documentos, retrievers y bases de datos vectoriales en LangChain, creando sistemas de Retrieval-Augmented Generation (RAG) que permitan conversar con archivos PDF.
 
 <!--
 Pregunta orientadora
@@ -78,8 +79,19 @@ La respuesta a esta pregunta se afianza o ejercita durante todo el proceso por m
 
 **Procura no emplear más de 200 palabras. 
 -->
+### Pregunta Orientadora
 
-## Pregunta Orientadora
+La siguiente imagen es la respuesta de ChatGPT al prompt:
+
+*“Based on what you know about me, draw a picture of what you think my current life looks like.”*
+
+![alt text](image.png)
+
+*Figura 1: Representación visual generada por ChatGPT sobre la vida del autor del diplomado.*
+
+¿Qué tan parecida es esta imagen a tu vida en tu caso? ¿Te sorprende que ChatGPT tenga tanta información sobre tu vida y tus gustos o todo lo contrario? ¿Qué opinas que va a pasar con los datos en un futuro donde todo es asistido por IA? ¿Le daremos a las IAs la información sensible de las personas y las empresas?
+
+***¿Cómo podemos asegurarnos de que nuestros datos permanezcan privados, y al mismo tiempo aprovechar todo el poder de los modelos de lenguaje en los datos privados?***
 
 <!--
 
@@ -95,6 +107,7 @@ Ejemplos:
 ** Tanto el mapa del curso como cualquier gráfico de autoría propia y/o adaptado de otros autores deben entregarse en formato editable. 
 
 -->
+
 ## Mapa del curso
 crea a aquí el mapa del curso
 
@@ -112,7 +125,24 @@ Menciona las actividades y evidencias de aprendizaje que deberá realizar el est
  
 -->
 
+# Mapa del Curso: Diplomado en Construcción de Aplicaciones Asistidas por Modelos de Lenguaje
 
+## Unidad 1: Introducción a la Construcción de Aplicaciones con LLMs
+- Fundamentos de modelos de lenguaje grandes (LLMs) y su integración en flujos de software
+- Creación y uso de *prompt templates* para instrucciones reutilizables
+- Encadenamiento de instrucciones con el Lenguaje de Expresión de LangChain (LCEL)
+- Especificación de formatos de salida mediante *output parsers*
+
+## Unidad 2: Cadenas y Memoria
+- Desarrollo de chatbots funcionales con LangChain
+- Gestión de memoria contextual para mantener el historial de interacciones
+- Implementación práctica de un chatbot asistente médico con memoria de historias clínicas
+
+## Unidad 3: Proyecto Integrador - Construcción y Despliegue de un Sistema RAG
+- Integración de *document loaders* para procesar archivos PDF
+- Uso de *retrievers* y bases de datos vectoriales para recuperación de información
+- Construcción de sistemas Retrieval-Augmented Generation (RAG)
+- Despliegue de una aplicación RAG para interacción conversacional con documentos PDF
 
 <!-- 
 

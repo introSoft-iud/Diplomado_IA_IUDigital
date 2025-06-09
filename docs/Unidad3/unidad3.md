@@ -769,14 +769,11 @@ print(f"Primeros 5 valores: {sample_embedding[:5]}")
 ```bash
 Dimensión del embedding: 1536
 Primeros 5 valores: [-0.012028052471578121, 0.01199324894696474, 0.017206797376275063, -0.027745263651013374, -0.0014739236794412136]
-```
-
-### Creando labase de datos
+`### Creando la base de datos
 
 Guardaremos los fragmentos y sus embeddings generados por OpenAI en una vectorstore de `Chroma`.
 
-& code: &
-
+```python
 from langchain.vectorstores import Chroma
 
 # Creamos la vectorstore con Chroma
@@ -788,12 +785,15 @@ vectorstore = Chroma.from_documents(
 
 # Verificamos cuántos documentos se almacenaron
 print(f"Se almacenaron {vectorstore._collection.count()} fragmentos en la vectorstore.")
+```
 
-&salida&
+```bash
 Se almacenaron 93 fragmentos en la vectorstore.
+```
 
 Con la vectorstore lista, podemos buscar fragmentos relevantes para una consulta como "attention mechanism".
-& code &
+
+```python
 # Realizamos una búsqueda semántica
 query = "attention mechanism"
 results = vectorstore.similarity_search(query, k=3)  # Top 3 fragmentos más similares
@@ -804,7 +804,9 @@ for i, result in enumerate(results):
     print(result.page_content)
     print(f"Metadatos: {result.metadata}")
     print("-" * 50)
-& salida &
+```
+
+```bash
 Resultado 1:
 tion models in various tasks, allowing modeling of dependencies without regard to their distance in
 the input or output sequences [2, 19]. In all but a few cases [27], however, such attention mechanisms
@@ -831,10 +833,13 @@ missing
 in
 my
 ...
+```
 
 ### Persistencia de la Vectorstore
 
-La base de datos se guarda en `./chroma_db_openai`. Para carala en otros scripts, de esta manera no tendremosque pagar por los embedigs cada vez que un script requiera realizar querys sobre el documento
+La base de datos se guarda en `./chroma_db_openai`. Para cargarla en otros scripts, de esta manera no tendremos que pagar por los embeddings cada vez que un script requiera realizar consultas sobre el documento.
+
+```python
 # Cargar la vectorstore existente
 loaded_vectorstore = Chroma(
     persist_directory="./chroma_db_openai",
@@ -843,12 +848,15 @@ loaded_vectorstore = Chroma(
 
 # Verificamos que se cargó
 print(f"Fragmentos cargados desde disco: {loaded_vectorstore._collection.count()}")
+```
 
-&salida&
+```bash
 Fragmentos cargados desde disco: 93
+```
 
 Veamos:
 
+```python
 query = "embeddings"
 results = loaded_vectorstore.similarity_search(query, k=3)  # Top 3 fragmentos más similares
 
@@ -858,9 +866,9 @@ for i, result in enumerate(results):
     print(result.page_content)
     print(f"Metadatos: {result.metadata}")
     print("-" * 50)
+```
 
-&salida&
-
+```bash
 Resultado 1:
 Zhou, and Yoshua Bengio. A structured self-attentive sentence embedding. arXiv preprint
 arXiv:1703.03130, 2017.
@@ -882,12 +890,13 @@ and Jeff Dean. Outrageously large neural networks: The sparsely-gated mixture-of
 Metadatos: {'page': 11, 'page_label': '12', 'source': '.content/attention.pdf'}
 --------------------------------------------------
 ...
+```
 
 ## RetrievalQA
 
 Combinaremos la vectorstore con un modelo de lenguaje de OpenAI (`gpt-3.5-turbo` por defecto) para responder preguntas. `RetrievalQA` buscará fragmentos relevantes en la vectorstore y los usará como contexto para generar respuestas.
 
-& code &
+```python
 from langchain.chains import RetrievalQA
 from langchain.chat_models import ChatOpenAI
 
@@ -904,21 +913,195 @@ qa_chain = RetrievalQA.from_chain_type(
     retriever=vectorstore.as_retriever(search_kwargs={"k": 3}),  # Top 3 fragmentos más similares
     return_source_documents=True  # Devuelve los fragmentos usados como fuente
 )
-
+```
 ## Preguntas al PDF
 
 Ahora podemos preguntar algo sobre el contenido del PDF:
 
- Otra pregunta
-query2 = "¿Cómo se usa la atención ?"
-result2 = qa_chain({"query": query2})
+=== "Código"
+    ```python
+    query2 = "¿Cómo se usa la atención?"
+    result2 = qa_chain({"query": query2})
 
-# Mostramos la respuesta
-print("Respuesta:")
-print(result2["result"])
-print("\nFragmentos utilizados como fuente:")
-for i, doc in enumerate(result2["source_documents"]):
-    print(f"Fuente {i + 1}:")
-    print(doc.page_content)
-    print(f"Metadatos: {doc.metadata}")
-    print("-" * 50)
+    # Mostramos la respuesta
+    print("Respuesta:")
+    print(result2["result"])
+    print("Fragmentos utilizados como fuente:")
+    for i, doc in enumerate(result2["source_documents"]):
+        print(f"Fuente {i + 1}:")
+        print(doc.page_content)
+        print(f"Metadatos: {doc.metadata}")
+        print("-" * 50)
+    ```
+=== "Salida"
+    ```bash
+    Respuesta:
+    La atención se utiliza en el contexto de modelos de aprendizaje automático, como en el caso de la atención en el mecanismo de atención de un modelo de lenguaje. La atención se aplica para que el modelo pueda enfocarse en partes específicas de la entrada durante el proceso de aprendizaje y toma de decisiones.
+
+    Fragmentos utilizados como fuente:
+    Fuente 1:
+    but
+    its
+    application
+    should
+    be
+    just
+    -
+    this
+    is
+    what
+    we
+    are
+    missing
+    ,
+    in
+    my
+    opinion
+    .
+    <EOS>
+    <pad>
+    Figure 5: Many of the attention heads exhibit behaviour that seems related to the structure of the
+    sentence. We give two such examples above, from two different heads from the encoder self-attention
+    at layer 5 of 6. The heads clearly learned to perform different tasks.
+    15
+    Metadatos: {'page_label': '15', 'page': 14, 'source': '.content/attention.pdf'}
+    --------------------------------------------------
+    Fuente 2:
+    .
+    <EOS>
+    <pad>
+    <pad>
+    <pad>
+    <pad>
+    <pad>
+    <pad>
+    Figure 3: An example of the attention mechanism following long-distance dependencies in the
+    encoder self-attention in layer 5 of 6. Many of the attention heads attend to a distant dependency of
+    the verb ‘making’, completing the phrase ‘making...more difficult’. Attentions here shown only for
+    the word ‘making’. Different colors represent different heads. Best viewed in color.
+    13
+    Metadatos: {'page_label': '13', 'page': 12, 'source': '.content/attention.pdf'}
+    --------------------------------------------------
+    Fuente 3:
+    but
+    its
+    application
+    should
+    be
+    just
+    -
+    this
+    is
+    what
+    we
+    are
+    missing
+    ,
+    in
+    my
+    opinion
+    .
+    <EOS>
+    <pad>
+    Figure 4: Two attention heads, also in layer 5 of 6, apparently involved in anaphora resolution. Top:
+    Full attentions for head 5. Bottom: Isolated attentions from just the word ‘its’ for attention heads 5
+    and 6. Note that the attentions are very sharp for this word.
+    14
+    Metadatos: {'source': '.content/attention.pdf', 'page_label': '14', 'page': 13}
+    --------------------------------------------------
+    ```
+
+¡Felicidades por llegar hasta el final de la unidad y del curso! Has aprendido a integrar plantillas de prompt con cadenas y parsers de salida, implementaste cadenas con memoria y, finalmente, practicado cómo dividir documentos en fragmentos, almacenar embeddings de los fragmentos en una base de datos vectorial y realizar RAG sobre esta base de datos. Te invito a realizar la [actividad de aprendizaje](#evidencia-de-aprendizaje), donde crearás y desplegarás tu aplicación RAG siguiendo los pasos que acabas de estudiar.
+
+## Glosario
+
+- **AIMessageChunk**: Una respuesta parcial de un mensaje de IA. Se utiliza al transmitir respuestas de un modelo de chat.
+- **Configurable runnables**: Creación de Runnables configurables.
+- **Context window**: El tamaño máximo de entrada que un modelo de chat puede procesar.
+- **Document**: Representación de un documento en LangChain.
+- **Embedding models**: Modelos que generan embeddings vectoriales para varios tipos de datos.
+- **HumanMessage**: Representa un mensaje de un usuario humano.
+- **Vector stores**: Almacenes de datos especializados para almacenar y buscar eficientemente embeddings vectoriales.
+
+## Evidencia de Aprendizaje
+
+| **Unidad 3** | **Proyecto Integrador. Construcción y despliegue de un sistema RAG** |
+|--------------|-------------------------------------------------------------|
+| **EA3.**     | Chat con tus datos
+
+¡Felicidades por llegar al final del curso! En tu última entrega, practicarás las siguientes habilidades:
+
+**Instrucciones**
+1. **Carga de documentos**: Usa PyPDFLoader para cargar 5 documentos en PDF de tu interés.
+
+2. **División de documentos**: Utiliza RecursiveCharacterTextSplitter o CharacterTextSplitter para dividir los documentos en fragmentos.
+
+3. **Embeddings**: Emplea OpenAIEmbeddings para crear embeddings para tus fragmentos.
+
+4. **Almacenamiento vectorial**: Carga los embeddings en una base de datos vectorial, como Chroma.
+
+5. **Instrucciones**: Ilustra el uso de consultas sobre tus datos cargados en la base de datos vectorial, utilizando consultas por similitud y consultas usando el algoritmo MMR.
+
+Desarrolla tu proyecto en un Jupyter Notebook y carga tu solución. No olvides agregar comentarios en celdas de Markdown que expliquen el código y tus razonamientos.
+
+**Opcional**: Investiga sobre plataformas de despliegue de tu aplicación, como Streamlit, Hugging Face, Gradio, etc., y despliega tu RAG para que otros usuarios puedan usarla. También, investiga sobre retrievers y escoge la estrategia de retrieval que mejor se adapte a las necesidades de tu app desplegada.
+
+Guarda los documentos con la siguiente nomenclatura:
+
+- **Apellido_Nombre del estudiante.ipynb**  
+**Ejemplo:**  
+- López_Karla.ipynb
+
+Finalmente, haz clic en el botón **Cargar Tarea**, sube tu archivo y presiona el botón **Enviar** para remitirlo a tu profesor con el fin de que lo evalúe y retroalimente. |
+
+!!! tip "📖 Nota"
+    Conoce los criterios de evaluación de esta evidencia de aprendizaje consultando la rúbrica que encontrarás a continuación.
+
+| **Criterios**             | **Ponderación** |                       |                       |                       |                       | **Totales** |
+|---------------------------|------------------|-----------------------|-----------------------|-----------------------|-----------------------|------------|
+|                           | **70**           | **50**                | **5**                 | **0**                 |                       |            |
+| **Calidad de las Soluciones** | Las soluciones a los ejercicios son correctas, demostrando una implementación adecuada de los conceptos y técnicas requeridos. El estudiante muestra un dominio completo de los temas abordados. | Aunque las soluciones no son completamente correctas, se observa un entendimiento y aplicación adecuada de los conceptos y técnicas involucradas. Hay evidencia de esfuerzo y comprensión de los temas. | Las soluciones presentadas son en su mayoría incorrectas. Se percibe un intento de resolver los ejercicios, pero hay una falta de comprensión de los conceptos y técnicas esenciales. | No realiza la entrega |                       | **70**      |
+| **Calidad de la entrega** | El notebook es claro y fácil de seguir, incluyendo comentarios detallados sobre el funcionamiento del código en las celdas Markdown, lo que facilita la comprensión de las soluciones propuestas. | El notebook no es particularmente fácil de leer, pero aún así incluye comentarios que explican el funcionamiento del código en las celdas Markdown, mostrando un esfuerzo por aclarar la lógica detrás del código. | El notebook carece de comentarios acerca del funcionamiento del código en las celdas Markdown, lo que dificulta la comprensión de las soluciones implementadas. | No realiza la entrega |                       | **20**      |
+| **Tiempo de la entrega**  | La entrega se realiza a tiempo, cumpliendo con el plazo establecido para la presentación de la actividad. | La entrega se realiza con una semana de atraso. Aunque fuera del plazo original, se considera adecuada para evaluar el trabajo presentado. | La entrega se realiza con más de una semana de atraso, lo que indica un retraso significativo en la presentación de la actividad. | No realiza la entrega |                       | **10**      |
+|                           |                  |                       |                       |                       | **Ponderación de la actividad** | **100 puntos** |
+
+# Referencias
+
+DeepLearning.AI. (2025). *LangChain: Chat with Your Data* [Curso en línea]. [https://learn.deeplearning.ai/langchain-chat-with-your-data](https://learn.deeplearning.ai/langchain-chat-with-your-data)
+
+LangChain. (2024). Document loaders. *Python LangChain Documentation*. [https://python.langchain.com/docs/integrations/document_loaders/](https://python.langchain.com/docs/integrations/document_loaders/)
+
+# Lecturas y material complementario
+
+Te invitamos a explorar el siguiente material para ampliar tus conocimientos sobre Retrieval-Augmented Generation (RAG) y su implementación con LangChain.
+
+## 📚 Lecturas recomendadas
+
+
+### **Título:** *LangChain: Chat with Your Data*  
+**Autor:** DeepLearning.AI  
+**URL:** [https://learn.deeplearning.ai/langchain-chat-with-your-data](https://learn.deeplearning.ai/langchain-chat-with-your-data)  
+Este curso gratuito de DeepLearning.AI ofrece una introducción práctica a la creación de aplicaciones RAG utilizando LangChain. Cubre la carga de documentos, la generación de embeddings, la recuperación de información relevante y la integración con modelos de lenguaje.
+
+### **Título:** *Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks*  
+**Autor:** Lewis, P., Perez, E., Piktus, A., Petroni, F., Karpukhin, V., Goyal, N., ... & Kiela, D.  
+**URL:** [https://arxiv.org/abs/2005.11401](https://arxiv.org/abs/2005.11401)  
+Este artículo seminal introduce el concepto de Retrieval-Augmented Generation (RAG), explicando cómo combina modelos de recuperación de información con generación de texto para mejorar el rendimiento en tareas intensivas en conocimiento.
+
+### **Título:** *LangChain Documentation: Retrieval-Augmented Generation*  
+**Autor:** LangChain  
+**URL:** [https://python.langchain.com/docs/use_cases/question_answering/](https://python.langchain.com/docs/use_cases/question_answering/)  
+La documentación oficial de LangChain ofrece una guía detallada sobre cómo implementar flujos de trabajo RAG, incluyendo ejemplos prácticos de carga de documentos, creación de índices vectoriales y uso de retrievers para aplicaciones de preguntas y respuestas.
+
+## 🎥 Videos recomendados
+
+
+### **Título:** *Building RAG Applications with LangChain*  
+**Autor:** DataCamp  
+**URL:** [[https://www.datacamp.com/courses/building-rag-applications-with-langchain](https://www.datacamp.com/courses/retrieval-augmented-generation-rag-with-langchain)]
+Este curso en video explora paso a paso cómo construir aplicaciones RAG utilizando LangChain, con ejemplos prácticos de integración de bases de datos vectoriales y modelos de lenguaje.
+
+### **Título:** *What is Retrieval-Augmented Generation (RAG)?*  
+**Autor:** IBM Technology  
+**URL:** [https://www.youtube.com/watch?v=T-D1OfcDW1M](https://www.youtube.com/watch?v=T-D1OfcDW1M)  
+Este video proporciona una explicación concisa de RAG, destacando cómo combina recuperación de información y generación de texto para mejorar las respuestas de modelos de lenguaje.

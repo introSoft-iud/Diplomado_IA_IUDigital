@@ -1,8 +1,8 @@
 site_name: Diplomado en Aplicaciones asistidas por IA
 site_description: Diplomado en Aplicaciones asistidas por IA
-site_author: Intitucion iniversitaria Digital de Antioquia
+site_author: Institución Universitaria Digital de Antioquia
+site_url: https://introsoft-iud.github.io/Diplomado_IA_IUDigital/ 
 
-site_url: https://sitename.example
 theme:
   name: material
   font:
@@ -10,20 +10,18 @@ theme:
     code: Red Hat Mono
   icon:
     logo: material/robot
-    
   favicon: assets/favicon.ico
   features:
     - navigation.footer
-    - content.code.copy  # Enable copy code button
+    - content.code.copy
   palette:
-    # Dark Mode
+    # Dark Mode
     - scheme: slate
       toggle:
         icon: material/weather-sunny
         name: Dark mode
       primary: green
       accent: deep purple
-
     # Light Mode
     - scheme: default
       toggle:
@@ -35,11 +33,6 @@ theme:
 markdown_extensions:
   - attr_list
   - md_in_html
-  - pymdownx.highlight
-  - pymdownx.superfences
-  - pymdownx.emoji:
-      emoji_index: !!python/name:material.extensions.emoji.twemoji
-      emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - pymdownx.highlight:
       anchor_linenums: true
       line_spans: __span
@@ -50,23 +43,33 @@ markdown_extensions:
       custom_fences:
         - name: mermaid
           class: mermaid
-          format: !!python/name:pymdownx.superfences.fence_code_format
+          format: !!python/name:mermaid2.fence_mermaid_custom
   - pymdownx.tabbed:
       alternate_style: true
   - admonition
   - pymdownx.details
   - pymdownx.arithmatex:
       generic: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+plugins:
+  - search
+  - mermaid2:
+      arguments:
+        theme: |
+          ^(JSON.parse(__md_get("__palette").index == 1)) ? 'dark' : 'light'
 
 extra_javascript:
   - https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js
   - https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js
-  - js/katex.js  # We'll create this file
-
+  - js/katex.js
 
 extra_css:
- - css/custom.css
- - https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css
+  - css/custom.css
+  - https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css
+
 nav:
   - Presentación del curso: index.md
   - Unidad 1: Unidad 1/index.md
