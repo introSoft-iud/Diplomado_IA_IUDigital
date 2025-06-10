@@ -693,6 +693,29 @@ for msg in chat.messages:
     **Artículo**: Introducción a los Tipos de Memoria en LangChain  
     **URL**: [https://www.aurelio.ai/learn/langchain-memory-types](https://www.aurelio.ai/learn/langchain-memory-types)
 
+¡Felicidades por llegar al final de la unidad 2! Has aprendido cómo crear cadenas con memoria utilizando el LCEL. Ahora estás en capacidad de crear chatbots funcionales. Te invito a realizar la actividad de aprendizaje para que pongas en práctica lo aprendido.
+
+ **Glosario**
+
+- **Configurable runnables**: En LangChain, son funciones ejecutables que pueden personalizarse dinámicamente en tiempo de ejecución utilizando un objeto `RunnableConfig`. Esto permite pasar parámetros como el nombre de la ejecución, etiquetas o metadatos para controlar el comportamiento, como los límites de concurrencia o recursión.
+
+- **Context window**: La cantidad máxima de tokens de entrada (texto, datos, etc.) que un modelo de chat puede procesar en una sola interacción, determinada por la arquitectura del modelo.
+
+- **langchain**: Un paquete de Python que proporciona componentes de alto nivel para construir aplicaciones con modelos de lenguaje, como cadenas preconstruidas y herramientas para tareas comunes.
+
+- **langchain-community**: Una colección de componentes e integraciones contribuidas por la comunidad para LangChain, que extiende su funcionalidad con herramientas de terceros.
+
+- **langchain-core**: El paquete fundamental de LangChain, que contiene interfaces centrales, abstracciones base e implementaciones en memoria para construir cadenas y funciones ejecutables.
+
+- **langgraph**: Una extensión de LangChain para orquestar flujos de trabajo y pipelines complejos, permitiendo una gestión avanzada de estado y procesos de múltiples pasos.
+
+- **langserve**: Una herramienta para desplegar funciones ejecutables de LangChain como endpoints de API REST utilizando FastAPI. Principalmente soporta funciones ejecutables de LangChain, con compatibilidad limitada para LangGraph.
+
+- **Managing chat history**: Métodos y técnicas para almacenar, recuperar y mantener el contexto conversacional a través de múltiples interacciones en una aplicación basada en chat.
+
+- **RunnableConfig**: Un objeto de configuración en LangChain para pasar parámetros de tiempo de ejecución a funciones ejecutables, incluyendo `run_name`, `run_id`, etiquetas, metadatos, `max_concurrency`, `recursion_limit` y otras configuraciones personalizables.
+
+
 
 <!--
 Evidencia de aprendizaje

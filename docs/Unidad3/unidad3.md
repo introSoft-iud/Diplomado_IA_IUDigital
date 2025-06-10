@@ -17,11 +17,9 @@ Incluye el propósito de la unidad y lo que el estudiante aprenderá mediante su
 Vale la pena destacar algunos de los temas más importantes que se abordarán.
 Procura no superar las 300 palabras (1500 caracteres) al redactar la introducción.
 -->
-
 ## Introducción a la unidad
 
-
-Bienvenodos a la última unidad de nuestro curso sobre aplicacionea asistidas por LLMs. En esta unidad aperndereos sobre dument loaders y deplegaremos una aplicación Rag funcional para conversar con alrchivos en pdf.
+Bienvenidos a la última unidad de nuestro curso sobre aplicaciones asistidas por LLMs. En esta unidad aprenderemos sobre document loaders y desplegaremos una aplicación RAG funcional para conversar con archivos en PDF. ¡Comencemos!
 
 <!-- Resultados de aprendizaje
 Los objetos de aprendizaje se asumen como aquello que los estudiantes serán capaces de hacer a partir de lo que aprendieron a lo largo de la unidad.
@@ -36,13 +34,12 @@ Utiliza verbos conjugados en presente (describen la acción).
 Los resultados deben ser medibles y alcanzables. 
 
 -->
+## Cronograma de actividades - Unidad 3
 
-## Cronograma de actividades - Unidad 1
-| Actividad de aprendizaje       | Evidencia de aprendizaje | Semana       | Ponderación |
-|--------------------------------|---------------------------|--------------|--------------|
-| Reto Formativo 1 y 2           | EA1:  Templates y Output Parsers | Semana 1, 2 y 3 | 25%         |
-| **Total**                      |                           |              | **25 %**     |
-
+| Actividad de aprendizaje                                      | Evidencia de aprendizaje                               | Semana         | Ponderación |
+|---------------------------------------------------------------|--------------------------------------------------------|----------------|-------------|
+| Reto Formativo 3: Carga y división de documentos en PDF       | EA3: Chat con tus datos                                | Semanas 6, 7 y 8 | 30%         |
+| **Total**                                                     |                                                        |                | **30%**     |
 
 <!--
 Desarrollo temático

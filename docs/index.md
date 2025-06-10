@@ -109,7 +109,7 @@ Ejemplos:
 -->
 
 ## Mapa del curso
-crea a aquí el mapa del curso
+
 
 <!-- Cronograma de actividades 
 Organiza las actividades y evidencias de aprendizaje que deben llevarse a cabo dentro del curso. Este cronograma incluye información sobre la secuencia de las actividades en cada unidad, la ubicación temporal (en qué semana se presentan) y los porcentajes correspondientes a las evidencias de aprendizaje.
@@ -125,7 +125,7 @@ Menciona las actividades y evidencias de aprendizaje que deberá realizar el est
  
 -->
 
-# Mapa del Curso: Diplomado en Construcción de Aplicaciones Asistidas por Modelos de Lenguaje
+
 
 ## Unidad 1: Introducción a la Construcción de Aplicaciones con LLMs
 - Fundamentos de modelos de lenguaje grandes (LLMs) y su integración en flujos de software
@@ -136,7 +136,7 @@ Menciona las actividades y evidencias de aprendizaje que deberá realizar el est
 ## Unidad 2: Cadenas y Memoria
 - Desarrollo de chatbots funcionales con LangChain
 - Gestión de memoria contextual para mantener el historial de interacciones
-- Implementación práctica de un chatbot asistente médico con memoria de historias clínicas
+- Implementación práctica de un chatbot funcional
 
 ## Unidad 3: Proyecto Integrador - Construcción y Despliegue de un Sistema RAG
 - Integración de *document loaders* para procesar archivos PDF
@@ -158,18 +158,19 @@ Menciona las actividades y evidencias de aprendizaje que deberá realizar el est
 -->
 ## Cronograma de actividades
 
-| Actividad de aprendizaje                          | Evidencia de aprendizaje                        | Semana    | Ponderación |
-|---------------------------------------------------|-------------------------------------------------|-----------|--------------|
-| Características principales del reino Fungi       | Actividad de conocimientos previos             | Semana 1  | 10 %         |
-| Principios de la teoría del aprendizaje           | Mapa mental sobre teoría del aprendizaje        | Semana 2  | 20 %         |
-| *Agrega aquí otra actividad si aplica*            | *Agrega aquí otra evidencia*                   | Semana    | %            |
-| *Agrega aquí otra actividad si aplica*            | *Agrega aquí otra evidencia*                   | Semana    | %            |
-| *Agrega aquí otra actividad si aplica*            | *Agrega aquí otra evidencia*                   | Semana    | %            |
-| **Total**                                         |                                                 |           | **100 %**    |
+| Actividad de aprendizaje                                      | Evidencia de aprendizaje                               | Semana         | Ponderación |
+|---------------------------------------------------------------|--------------------------------------------------------|----------------|-------------|
+| Actividad de conocimientos previos                            | Actividad de conocimientos previos                      | Semana 1       | 0%          |
+| Reto formativo 1 y 2                                          | EA1: Templates y Output Parsers                         | Semanas 2 y 3  | 35%         |
+| Cadenas                                                      | EA2: Generación de Informes de Salud Utilizando Archivos CSV | Semanas 4 y 5  | 35%         |
+| Reto formativo: "Carga y división de archivos PDF"            | EA3: Chat con tus datos. Proyecto integrador            | Semanas 6, 7 y 8 | 30%         |
+| **Total**                                                     |                                                        |                | **100%**    |
 
+
+<!--
 ### Actividad de refuerzo
 *Agrega el nombre de la actividad de refuerzo (cuando así se requiera).*
-  
+  -->
 
 <!--
 Actividad de conocimientos previos
@@ -215,6 +216,9 @@ Anexo_N°_X_Guión_de_Video_Presentación_Curso
 
 -->
 
+
+## Actividad de conocimientos previos. Foro: Transformers y Mecanismo de Atención
+Como actividad de conocimientos previos, te invitamos a participar en el [foro de discusión](assets/resources/conociemientosPrevios_foro.md) sobre el funcionamiento de los LLM.
 ## Configuración del sistema antes de comenzar
 
 Antes de empezar a trabajar con los módulos del curso, debes configurar tu sistema para poder ejecutar los ejemplos correctamente.
