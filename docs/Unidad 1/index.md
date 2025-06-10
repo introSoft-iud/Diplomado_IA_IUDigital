@@ -85,11 +85,15 @@ Organiza y jerarquiza los temas y subtemas numéricamente.
 -->
 ## ¿Qué es un modelo de lenguaje?
 
+
 Un modelo de lenguaje es un sistema basado en *deep learning* que encapsula información sobre uno o varios lenguajes. Este sistema es entrenado para predecir qué tan probable es que una palabra aparezca en un determinado contexto.
 
-Por ejemplo, dado el contexto:---
-title: Introducción a la construcción de aplicaciones con LLMs
----
+Por ejemplo, dado el contexto:
+
+> "Mi plato favorito es el ____"
+
+un modelo de lenguaje que codifique el español de Antioquia podría predecir "sancocho" con más frecuencia que "ajiaco".
+
 
 ## Tokens
 
@@ -188,8 +192,7 @@ Para ello, crea un archivo con el nombre `.env` y guárdalo en la misma carpeta 
 Dentro del archivo `.env`, la llave debe guardarse bajo el nombre `OPENAI_API_KEY`, de la siguiente manera:
 
 ```bash
-OPENAI_API_KEY=your-api-key-here
-```
+OPENAI_API_KEY=your-api-key-here```
 
 # Usando la API de OpenAI
 
@@ -736,7 +739,6 @@ prompt = ChatPromptTemplate.from_messages([
     ("human", "Explain {topic} in one sentence.")
 ])
 ```
-
 E instanciamos la cadena como:
 
 ```python
@@ -752,7 +754,6 @@ Y ejecutamos la cadena como:
     response = chain.invoke({"topic": "LangChain"})  # Run it in one go
     print("With chain:", response.content)
     ```
-
 === "Salida"
     ```bash
     With chain: LangChain es una biblioteca para crear flujos de trabajo de IA utilizando modelos de lenguaje.
