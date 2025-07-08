@@ -1,59 +1,23 @@
-<!--  Nombre de la Unidad __
--->
-
-# Unidad 2: Cadenas y Memoria
-<!--
-Introducción a la unidad
-Teniendo en cuenta que cada unidad es un saber específico, en la introducción se destaca la importancia y relevancia del saber que se abordará en función de los resultados de aprendizaje planteados. Describe brevemente cómo el tema central de la unidad se integra en el panorama más amplio del aprendizaje y de la vida cotidiana o profesional del estudiante. Su propósito es despertar la curiosidad y el interés del estudiante sobre los contenidos que explorará.
-
-En definitiva, se trata de responder a las preguntas: ¿Qué va a aprender el estudiante? ¿Cómo lo va a aprender? ¿Para qué lo va a aprender?  
 
 
+# Módulo 2: Cadenas y Memoria
 
 
-Recomendaciones:
-Inicia presentando al estudiante cómo se relaciona el conocimiento de la unidad con su contexto. 
-Incluye el propósito de la unidad y lo que el estudiante aprenderá mediante su estudio.
-Vale la pena destacar algunos de los temas más importantes que se abordarán.
-Procura no superar las 300 palabras (1500 caracteres) al redactar la introducción.
--->
+## Introducción al módulo
 
-## Introducción a la unidad
-
-Bienvenidos a la segunda unidad de nuestro diplomado sobre construcción de aplicaciones asistidas por LLMs. En la primera unidad aprendiste a confeccionar instrucciones reutilizables para LLMs, los prompt templates, y exploraste cómo acoplar estas instrucciones en cadenas con especificadores de formato llamados output parsers. Sin embargo, estas cadenas de ejecución eran cadenas de un solo turno de interacción entre la IA y el usuario humano. En esta unidad aprenderás a darle memoria y contexto a tus cadenas de ejecución. Profundizaremos aún más en el funcionamiento de las cadenas y como limitar su memoria en el contexto del LCEL. Finalmente, pondrás a prueba tu conocimiento creando un chatbot que asiste las labores de un médico realizando tareas secuenciales y que tiene como contexto en su memoria los datos específicos de un paciente.
+Bienvenidos al segundo módulo de nuestro diplomado sobre construcción de aplicaciones asistidas por LLM. En el primer módulo aprendiste a confeccionar instrucciones reutilizables para LLM, los prompt templates, y exploraste cómo acoplar estas instrucciones en cadenas con especificadores de formato llamados output parsers. Sin embargo, estas cadenas de ejecución eran cadenas de un solo turno de interacción entre la IA y el usuario humano. En este módulo aprenderás a darle memoria y contexto a tus cadenas de ejecución. Profundizaremos aún más en el funcionamiento de las cadenas y como limitar su memoria en el contexto del LCEL. Finalmente, pondrás a prueba tu conocimiento creando un chatbot que asiste las labores de un médico realizando tareas secuenciales y que tiene como contexto en su memoria los datos específicos de un paciente.
 
 ¡Comencemos!
-<!-- Resultados de aprendizaje
-Los objetos de aprendizaje se asumen como aquello que los estudiantes serán capaces de hacer a partir de lo que aprendieron a lo largo de la unidad.
 
-
-Recomendaciones:
-Formula máximo dos resultados por unidad. 
-Asegúrate que tengan relación con los objetivos de aprendizaje planteados en la carta descriptiva. 
-Redacta los resultados a partir de tres elementos: qué, cómo y para qué.
-Recuerda que los resultados se establecen en función del aprendizaje, no de la enseñanza. 
-Utiliza verbos conjugados en presente (describen la acción).  
-Los resultados deben ser medibles y alcanzables. 
-
--->
 
 ## Resultados de aprendizaje
-Al finalizar esta unidad, estarás en capacidad de:
+Al finalizar esta módulo, estarás en capacidad de:
 
 - Usar cadenas dotadas de memoria usando el LECL.
 - Limitar el tamaño del contexto cargado en la memoria de tus cadenas.
 
-<!--Cronograma de actividades de la unidad  
-Permite la proyección de los contenidos tanto teóricos como prácticos, la ubicación temporal dentro del curso y los porcentajes que corresponden a la evidencia de aprendizaje.
 
-
-Recomendaciones:
-Toma del cronograma general que realizaste (plantillas preliminares) las actividades que correspondan a la presente unidad.
-Plantea una evidencia de aprendizaje por unidad, y otra más para el cierre del curso. 
-
- -->
-
-## Cronograma de actividades - Unidad 1
+## Cronograma de actividades - Módulo 2
 | Actividad de aprendizaje       | Evidencia de aprendizaje | Semana       | Ponderación |
 |--------------------------------|---------------------------|--------------|--------------|
 | EA1:  Cadenas y memoria         | EA1: Cadenas y memoria| Semana 4 y 5 | 25%         |
@@ -62,30 +26,11 @@ Plantea una evidencia de aprendizaje por unidad, y otra más para el cierre del 
 
 <!--
 Desarrollo temático
-Aquí comienza la elaboración del contenido que hará parte de la unidad temática. Para ello, es preciso identificar qué requiere el estudiante para aprender y comprender aquello que debe explorar, desarrollar nuevas habilidades, aplicar el conocimiento y cumplir con los resultados de aprendizaje. 
-
-Los textos se construyen con cohesión y claridad, de manera que facilite al estudiante apropiarse del conocimiento de manera efectiva. Esta elaboración debe estar respaldada por enfoques didácticos, garantizando un proceso de aprendizaje sólido y bien fundamentado.
-
-
-
-
-Recomendaciones:
-Ten en cuenta las siguientes recomendaciones para desarrollar las temáticas de la actividad de aprendizaje:
-Lee el documento “Manual del contenidista” en el cual encontrarás consejos para redactar los contenidos.
-Ten a la mano el “Manual de redacción” para resolver dudas o inquietudes sobre el uso de las normas APA para citas y referencias. 
-Cada unidad debe tener una cantidad mínima de 30 páginas de contenido temático. Esto equivale aproximadamente a 8500 palabras, en Arial 12, espaciado 1.0 y texto justificado. 
-El desarrollo del contenido requiere un 70 % de producción propia y un 30 % para contenidos de terceros (fuentes primarias). Monitorea permanentemente tu documento con ayuda de la herramienta Turnitin para revisar el porcentaje de similitud.
-Los textos e imágenes de terceros obligatoriamente se deben citar y referenciar, procurando que no superen el porcentaje exigido (30 %). Debes suministrar los enlaces de los recursos digitales empleados (PDF, sitios web, artículos online, videos, imágenes, etc.). Todos estos recursos deben ser de uso libre.
-No incluir artículos, tesis, textos o documentos propios que han sido previamente publicados o presentados a otra institución. 
-Los recursos como imágenes, infografías, ilustraciones, tablas, etc., no hacen parte de las 30 páginas del desarrollo de contenido.
-Las figuras propias deben ser editables y se entregan en una carpeta aparte, cuidando que tengan el nombre y número correspondiente. 
-Las fuentes se pueden tomar de bases de datos de suscripción como EBSCO o de uso libre como Redalyc y Google Académico, las cuales cuentas con licencia Creative Commons (LCC) para su reproducción (solicitar el acceso a los repositorios en caso de no tenerlo).
-Organiza y jerarquiza los temas y subtemas numéricamente.
-
 -->
+
 ## Cadenas
 
-Hay varias maneras de instanciar cadenas de ejecución en LangChain, algunas de las cuales fueron exploradas en la unidad 1. Recientemente, LangChain introdujo LangChain Expression Language (LCEL) como el estándar para construir cadenas. Revisemos más detalladamente de qué se trata:
+Hay varias maneras de instanciar cadenas de ejecución en LangChain, algunas de las cuales fueron exploradas en el módulo 1. Recientemente, LangChain introdujo LangChain Expression Language (LCEL) como el estándar para construir cadenas. Revisemos más detalladamente de qué se trata:
 !!! warning "Para tener en cuenta"
     Recuerda cargar tu llave en las variables de sistema si no lo has hecho:
     ```python
@@ -103,7 +48,7 @@ Hay varias maneras de instanciar cadenas de ejecución en LangChain, algunas de 
 
 LangChain Expression Language (LCEL) es una sintaxis para definir cadenas. Permite componer objetos ejecutables (runnables)—objetos que pueden ser ejecutados o encadenados—usando el operador **pipe** (|). Un runnable es cualquier componente que implementa la interfaz Runnable, lo que significa que puede procesar entradas y producir salidas. Ejemplos incluyen:
 
-- Plantillas de prompt (ChatPromptTemplate), como lo hicimos en la unidad 1.
+- Plantillas de prompt (ChatPromptTemplate), como lo hicimos en el módulo 1.
 
 El operador de tubería (|) conecta estos componentes, pasando la salida de un Runnable como la entrada al siguiente. Por ejemplo:
 
@@ -305,7 +250,7 @@ Si pregunto aluna cosa adicional, por ejeplo cuando es 2 + 2. No olvidará mi no
     'history': 'Human: Hola, mi nombre es Juan, ¿cómo estás?\nAI: ¡Hola, Juan! Estoy muy bien, gracias por preguntar. Soy una inteligencia artificial, así que no tengo emociones como los humanos, pero estoy aquí para ayudarte y conversar contigo. ¿En qué puedo asistirte hoy?\nHuman: cuanto es 2 + 2?\nAI: 2 + 2 es igual a 4. Es una de las operaciones matemáticas más básicas y es un buen ejemplo de cómo funcionan las sumas. Si tienes más preguntas de matemáticas o cualquier otro tema, estaré encantado de ayudarte.',
     'response': 'Tu nombre es Juan. Me lo dijiste al comienzo de nuestra conversación. Si tienes más preguntas o necesitas ayuda con algo más, no dudes en decírmelo.'}
     ```
-La IA responde que *Tu nombre es Juan. Me lo dijiste al comienzo de nuestra conversación*. Lo cual no era posible en la unidad 1 cuando invocábamos el modelo sin memoria.
+La IA responde que *Tu nombre es Juan. Me lo dijiste al comienzo de nuestra conversación*. Lo cual no era posible en el módulo 1 cuando invocábamos el modelo sin memoria.
 
 ## La ventana de contexto
 
@@ -693,7 +638,7 @@ for msg in chat.messages:
     **Artículo**: Introducción a los Tipos de Memoria en LangChain  
     **URL**: [https://www.aurelio.ai/learn/langchain-memory-types](https://www.aurelio.ai/learn/langchain-memory-types)
 
-¡Felicidades por llegar al final de la unidad 2! Has aprendido cómo crear cadenas con memoria utilizando el LCEL. Ahora estás en capacidad de crear chatbots funcionales. Te invito a realizar la actividad de aprendizaje para que pongas en práctica lo aprendido.
+¡Felicidades por llegar al final del módulo 2! Has aprendido cómo crear cadenas con memoria utilizando el LCEL. Ahora estás en capacidad de crear chatbots funcionales. Te invito a realizar la actividad de aprendizaje para que pongas en práctica lo aprendido.
 
  **Glosario**
 
@@ -717,26 +662,10 @@ for msg in chat.messages:
 
 
 
-<!--
-Evidencia de aprendizaje
-Actividad que permite verificar, validar o demostrar el conocimiento, las habilidades y las competencias que los estudiantes han adquirido a lo largo del proceso de aprendizaje. 
-
-La evidencia de aprendizaje (EA) debe orientarse a estimular la reflexión con el saber y su aplicabilidad, especialmente, cuando se trata de temas relacionados con los contextos y medios donde habitan los estudiantes.
-
-Por otro lado, proporciona a los profesores información sobre la evolución y resultado del proceso de aprendizaje, lo que los estudiantes están aprendiendo y comprendiendo qué funciona o debe mejorar; asimismo, ofrece a los estudiantes retroalimentación específica y constructiva acerca de su desempeño.
-
-
-Recomendaciones:
-Lee el documento “Estrategias didácticas” como apoyo para el desarrollo de la evidencia de aprendizaje.
-La evidencia debe ser clara en sus instrucciones y expectativas, para que los estudiantes comprendan lo que se espera de ellos.
-Asegúrate de que la evidencia evalúe habilidades como el pensamiento crítico, la resolución de problemas y la creatividad.
-En caso de que el conocimiento sea muy teórico, elabora una estrategia didáctica que permita entender de qué manera esa teoría puede o no aplicarse a una situación específica.
-    -->
-
 ## Evidencia de Aprendizaje                 
 
 
-| **Unidad 1** | **Cadenas y Memoria** |
+| **Módulo 2** | **Cadenas y Memoria** |
 |--------------|-------------------------------------------------------------|
 | **EA1.**     |   **Generación de Informes de Salud Utilizando Archivos CSV **|
 
@@ -744,13 +673,13 @@ En caso de que el conocimiento sea muy teórico, elabora una estrategia didácti
 En este proyecto practicarás el uso de cadenas para desrrollar un sistema que reliza tareas secuenciales y ramificadas, cargarás los resitado de estas operacones en el bufer de memoria de un chatbot.
 ## Instrucciones
 Descarga el archivo [healthcare_report.csv](../assets/resources/healthcare_report.csv) proporcionado y, usando LECL, desarrolla un sistema capaz de:
-1. **Procesar un informe de salud original en español**: Lee el informe desde el archivo CSV.
-2. **Traducir el informe al inglés**: Usa una cadena para traducir el texto.
-3. **Resumir el informe traducido**: Genera un resumen breve en inglés.
-4. **Extraer indicadores clave de salud del resumen**: Identifica elementos clave (e.g., síntomas, duración).
-5. **Generar un plan de tratamiento basado en los indicadores clave**: Propón pasos de tratamiento.
-6. **Detectar el idioma original del informe**: Determina si el informe original está en español.
-7. **Generar una recomendación de seguimiento en el idioma detectado**: Devuelve una recomendación en español.
+1. **Procesar un informe de salud original en español**: lee el informe desde el archivo CSV.
+2. **Traducir el informe al inglés**: usa una cadena para traducir el texto.
+3. **Resumir el informe traducido**: genera un resumen breve en inglés.
+4. **Extraer indicadores clave de salud del resumen**: identifica elementos clave (e.g., síntomas, duración).
+5. **Generar un plan de tratamiento basado en los indicadores clave**: propón pasos de tratamiento.
+6. **Detectar el idioma original del informe**: determina si el informe original está en español.
+7. **Generar una recomendación de seguimiento en el idioma detectado**: devuelve una recomendación en español.
 
 Finalmete carga el infome médico del paciente en la memoria y crea un chat bot que esté en capacidad de responder preguntas sobre el tratamiento indicado. Demuestra su uso con algunas llamas al chat
 
@@ -782,12 +711,6 @@ Aurelio AI. (s.f.). *LangChain Course*. Recuperado el 21 de mayo de 2025, de [ht
 
 Chase, H., & Ng, A. (2023). *LangChain for LLM Application Development* [Curso en línea]. DeepLearning.AI. Disponible en [https://www.deeplearning.ai/short-courses/langchain-for-llm-application-development/](https://www.deeplearning.ai/short-courses/langchain-for-llm-application-development/)
 
-
-<!--
-Lecturas y material complementario
-
-Libros, recursos interactivos o videos que complementan los temas de la unidad y que permiten al estudiante ampliar y enriquecer su conocimiento promoviendo un espíritu investigativo y de autoformación.
--->
 
 ---
 # Lecturas y material complementario
