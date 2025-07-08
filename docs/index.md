@@ -39,15 +39,16 @@ Finaliza con un párrafo de cierre en el cual motives al estudiante a realizar e
 
 
 -->
-Bienvenidos al diplomado en construcción de aplicaciones asistidas por modelos de lenguaje de la IU Digital de Antioquia.
+Bienvenidos al diplomado en construcción de aplicaciones asistidas por modelos de lenguaje de la Institución Universitaria Digital de Antioquia.
 
 Aunque la inteligencia artificial ha existido como un campo exitoso y prometedor entre los expertos durante varias décadas, la llegada de capacidades computacionales más avanzadas —ofrecidas por las GPU modernas— y las habilidades demostradas con el lanzamiento de ChatGPT fueron una gran sorpresa para muchos.
 
 No está del todo claro cómo este "pequeño" avance en la escala de los modelos pudo desencadenar la gran cantidad de aplicaciones asistidas por IA que estamos viendo explotar cada semana. Lo que sí es claro es que el campo de la ingeniería de software está siendo revolucionado, y que el nuevo paradigma de construcción de software ya no consiste en los tradicionales flujos de ejecución, sino que la nueva ingeniería de sistemas debe integrar a los LLM en dichos flujos.
+No está del todo claro cómo este "pequeño" avance en la escala de los modelos pudo desencadenar la gran cantidad de aplicaciones asistidas por IA que estamos viendo explotar cada semana. Lo que sí es claro es que el campo de la ingeniería de software está siendo revolucionado, y que el nuevo paradigma de construcción de software ya no consiste en los tradicionales flujos de ejecución, sino que la nueva ingeniería de sistemas debe integrar a los LLM en dichos flujos.
 
 Hemos diseñado este diplomado para introducirte a este nuevo paradigma. Este curso está basado en LangChain, el framework más popular de la actualidad para interactuar con las APIs de los principales modelos de lenguaje.
 
-En el módulo 1 comenzarás por aprender a crear instrucciones reutilizables para los LLM, los llamados `prompt templates`, luego verás cómo encadenar estas instrucciones a través de las cadenas usando  el Lenguaje de Expresión de LangChain (LCEL). Aprenderás a especificar el formato de salida de tus cadenas de ejecución mediante los `output parsers`. A continuación, en el módulo 2, crearás tus primeros chatbots y aprenderás a gestionar sus memorias. Como ejercicio práctico, implementarás un chatbot asistente de un médico que carga en su memoria la historia clínica de los pacientes. Finalmente, en el moódulo 3, estarás preparado para incorporar los componentes de los dos módulos anteriores junto con loaders de documentos, retrievers y bases de datos vectoriales, para crear y desplegar un sistema RAG sobre documentos en PDF, de manera que podrás conversar con tus archivos PDF.
+En el módulo 1 comenzarás por aprender a crear instrucciones reutilizables para los LLM, los llamados `prompt templates`, luego verás cómo encadenar estas instrucciones a través de las cadenas usando  el Lenguaje de Expresión de LangChain (LCEL). Aprenderás a especificar el formato de salida de tus cadenas de ejecución mediante los `output parsers`. A continuación, en el módulo 2, crearás tus primeros chatbots y aprenderás a gestionar sus memorias. Como ejercicio práctico, implementarás un chatbot asistente de un médico que carga en su memoria la historia clínica de los pacientes. Finalmente, en el módulo, estarás preparado para incorporar los componentes de los dos módulos anteriores junto con loaders de documentos, retrievers y bases de datos vectoriales, para crear y desplegar un sistema RAG sobre documentos en PDF, de manera que podrás conversar con tus archivos PDF.
 
 <!--
 
@@ -113,7 +114,7 @@ Estos son los módulos que conforman nuestro diploma:
 (INSERTAR MAPA DEL CURSO: https://drive.google.com/file/d/1abV1RCEsFKhH16yNCnV1w9pI5xRk0EQ5/view?usp=sharing) 
 
 <!-- Cronograma de actividades 
-Organiza las actividades y evidencias de aprendizaje que deben llevarse a cabo dentro del curso. Este cronograma incluye información sobre la secuencia de las actividades en cada unidad, la ubicación temporal (en qué semana se presentan) y los porcentajes correspondientes a las evidencias de aprendizaje.
+Organiza las actividades y evidencias de aprendizaje que deben llevarse a cabo dentro del curso. Este cronograma incluye información sobre la secuencia de las actividades en cada módulo, la ubicación temporal (en qué semana se presentan) y los porcentajes correspondientes a las evidencias de aprendizaje.
 
 
 
@@ -128,18 +129,18 @@ Menciona las actividades y evidencias de aprendizaje que deberá realizar el est
 
 
 
-## Módulo 1. Introducción a la Construcción de Aplicaciones con LLM
+## Módulo 1: introducción a la Construcción de Aplicaciones con LLM
 - Fundamentos de modelos de lenguaje grandes (LLM) y su integración en flujos de software
 - Creación y uso de *prompt templates* para instrucciones reutilizables
 - Encadenamiento de instrucciones con el Lenguaje de Expresión de LangChain (LCEL)
 - Especificación de formatos de salida mediante *output parsers*
 
-## Módulo 2. Cadenas y Memoria
+## Módulo 2: Cadenas y Memoria
 - Desarrollo de chatbots funcionales con LangChain
 - Gestión de memoria contextual para mantener el historial de interacciones
 - Implementación práctica de un chatbot funcional
 
-## Módulo 3. Proyecto Integrador - Construcción y despliegue de un Sistema RAG
+## Módulo 3: Proyecto integrador: construcción y Despliegue de un Sistema RAG
 - Integración de *document loaders* para procesar archivos PDF
 - Uso de *retrievers* y bases de datos vectoriales para recuperación de información
 - Construcción de sistemas Retrieval-Augmented Generation (RAG)
@@ -218,8 +219,9 @@ Anexo_N°_X_Guión_de_Video_Presentación_Curso
 -->
 
 
-## Actividad de conocimientos previos. Foro: Transformers y Mecanismo de Atención
+## Actividad de conocimientos previos. Foro: Transformers y mecanismo de atención
 Como actividad de conocimientos previos, te invitamos a participar en el [foro de discusión](assets/resources/conociemientosPrevios_foro.md) sobre el funcionamiento de los LLM.
+
 ## Configuración del sistema antes de comenzar
 
 Antes de empezar a trabajar con los módulos del curso, debes configurar tu sistema para poder ejecutar los ejemplos correctamente.
@@ -248,7 +250,7 @@ conda activate diplomado_IA
 ```
 A partir de aquí, cualquier comando que ejecutes usará las dependencias definidas para el curso.
 
-Uso del entorno en Visual Studio Code
+### Uso del entorno en Visual Studio Code
 
 !!! warning "Para tener en cuenta"
    
