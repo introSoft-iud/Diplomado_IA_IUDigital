@@ -1,7 +1,11 @@
 <!--  Nombre de la módulo __
+<!--  Nombre de la módulo __
 -->
 # Módulo 1. Introducción a la construcción de aplicaciones con LLM
+# Módulo 1. Introducción a la construcción de aplicaciones con LLM
 <!--
+Introducción a la módulo
+Teniendo en cuenta que cada módulo es un saber específico, en la introducción se destaca la importancia y relevancia del saber que se abordará en función de los resultados de aprendizaje planteados. Describe brevemente cómo el tema central de la módulo se integra en el panorama más amplio del aprendizaje y de la vida cotidiana o profesional del estudiante. Su propósito es despertar la curiosidad y el interés del estudiante sobre los contenidos que explorará.
 Introducción a la módulo
 Teniendo en cuenta que cada módulo es un saber específico, en la introducción se destaca la importancia y relevancia del saber que se abordará en función de los resultados de aprendizaje planteados. Describe brevemente cómo el tema central de la módulo se integra en el panorama más amplio del aprendizaje y de la vida cotidiana o profesional del estudiante. Su propósito es despertar la curiosidad y el interés del estudiante sobre los contenidos que explorará.
 
@@ -13,24 +17,26 @@ En definitiva, se trata de responder a las preguntas: ¿Qué va a aprender el es
 Recomendaciones:
 Inicia presentando al estudiante cómo se relaciona el conocimiento de la módulo con su contexto. 
 Incluye el propósito de la módulo y lo que el estudiante aprenderá mediante su estudio.
+Inicia presentando al estudiante cómo se relaciona el conocimiento de la módulo con su contexto. 
+Incluye el propósito de la módulo y lo que el estudiante aprenderá mediante su estudio.
 Vale la pena destacar algunos de los temas más importantes que se abordarán.
 Procura no superar las 300 palabras (1500 caracteres) al redactar la introducción.
 -->
 
-## Introducción al módulo
+## Introducción a la módulo
 
-Bienvenidos al primer módulo.  Aquí aprenderás de manera general cómo funciona un modelo de lenguaje. Comenzaremos utilizando la API de OpenAI y exploraremos cómo conectar sus modelos en aplicaciones. Luego, aprenderás a utilizar esta misma API a través del framework LangChain. Introduciremos los aspectos fundamentales de la interacción con los LLM usando LangChain: **prompts**, **templates** y **output parsers**.
+Bienvenidos al primer módulo. Aquí aprenderás de manera general cómo funciona un modelo de lenguaje. Comenzaremos utilizando la API de OpenAI y exploraremos cómo conectar sus modelos en aplicaciones. Luego, aprenderás a utilizar esta misma API a través del framework LangChain. Introduciremos los aspectos fundamentales de la interacción con los LLM usando LangChain: **prompts**, **templates** y **output parsers**.
 
 Como actividad práctica, elaborarás un sistema asistido por IA para extraer datos de comentarios de usuarios en un e-commerce.
 
 ¡Comencemos!
 <!-- Resultados de aprendizaje
-Los objetos de aprendizaje se asumen como aquello que los estudiantes serán capaces de hacer a partir de lo que aprendieron a lo largo de la .
+Los objetos de aprendizaje se asumen como aquello que los estudiantes serán capaces de hacer a partir de lo que aprendieron a lo largo de la módulo.
 
 
 Recomendaciones:
-Formula máximo dos resultados por . 
-Asegúrate que tengan relación con los objetivos de aprendizaje planteados en la carta descriptiva. 
+Formula máximo dos resultados por módulo. 
+Asegúrate de que tengan relación con los objetivos de aprendizaje planteados en la carta descriptiva. 
 Redacta los resultados a partir de tres elementos: qué, cómo y para qué.
 Recuerda que los resultados se establecen en función del aprendizaje, no de la enseñanza. 
 Utiliza verbos conjugados en presente (describen la acción).  
@@ -40,19 +46,22 @@ Los resultados deben ser medibles y alcanzables.
 
 ## Resultados de aprendizaje
 
-Al finalizar este módulo estarás en capacidad de realizar llamadas a los modelos de lenguaje de OpenAI a través de la API para crear código Python cuya ejecución es asistida por LLM.
+Al finalizar esta módulo, estarás en capacidad de realizar llamadas a los modelos de lenguaje de OpenAI a través de la API para crear código Python, cuya ejecución es asistida por LLM.
 
+Aprenderás a configurar cadenas de ejecución simples en LangChain usando LCEL, junto con *prompt templates* y *output parsers*, para convertir las salidas de los LLM en objetos nativos de Python.
+<!--Cronograma de actividades de la módulo  
 Aprenderás a configurar cadenas de ejecución simples en LangChain usando LCEL, junto con *prompt templates* y *output parsers*, para convertir las salidas de los LLM en objetos nativos de Python.
 <!--Cronograma de actividades de la módulo  
 Permite la proyección de los contenidos tanto teóricos como prácticos, la ubicación temporal dentro del curso y los porcentajes que corresponden a la evidencia de aprendizaje.
 
 
 Recomendaciones:
-Toma del cronograma general que realizaste (plantillas preliminares) las actividades que correspondan a la presente módulo.
+Toma del cronograma general que realizaste (plantillas preliminares) las actividades que correspondan  al presente módulo.
 Plantea una evidencia de aprendizaje por módulo, y otra más para el cierre del curso. 
 
  -->
 
+## Cronograma de actividades - Módulo 1
 ## Cronograma de actividades - Módulo 1
 | Actividad de aprendizaje       | Evidencia de aprendizaje | Semana       | Ponderación |
 |--------------------------------|---------------------------|--------------|--------------|
@@ -61,30 +70,9 @@ Plantea una evidencia de aprendizaje por módulo, y otra más para el cierre del
 
 
 <!--
-Desarrollo temático
-Aquí comienza la elaboración del contenido que hará parte de la módulo temática. Para ello, es preciso identificar qué requiere el estudiante para aprender y comprender aquello que debe explorar, desarrollar nuevas habilidades, aplicar el conocimiento y cumplir con los resultados de aprendizaje. 
-
-Los textos se construyen con cohesión y claridad, de manera que facilite al estudiante apropiarse del conocimiento de manera efectiva. Esta elaboración debe estar respaldada por enfoques didácticos, garantizando un proceso de aprendizaje sólido y bien fundamentado.
-
-
-
-
-Recomendaciones:
-Ten en cuenta las siguientes recomendaciones para desarrollar las temáticas de la actividad de aprendizaje:
-Lee el documento “Manual del contenidista” en el cual encontrarás consejos para redactar los contenidos.
-Ten a la mano el “Manual de redacción” para resolver dudas o inquietudes sobre el uso de las normas APA para citas y referencias. 
-Cada módulo debe tener una cantidad mínima de 30 páginas de contenido temático. Esto equivale aproximadamente a 8500 palabras, en Arial 12, espaciado 1.0 y texto justificado. 
-El desarrollo del contenido requiere un 70 % de producción propia y un 30 % para contenidos de terceros (fuentes primarias). Monitorea permanentemente tu documento con ayuda de la herramienta Turnitin para revisar el porcentaje de similitud.
-Los textos e imágenes de terceros obligatoriamente se deben citar y referenciar, procurando que no superen el porcentaje exigido (30 %). Debes suministrar los enlaces de los recursos digitales empleados (PDF, sitios web, artículos online, videos, imágenes, etc.). Todos estos recursos deben ser de uso libre.
-No incluir artículos, tesis, textos o documentos propios que han sido previamente publicados o presentados a otra institución. 
-Los recursos como imágenes, infografías, ilustraciones, tablas, etc., no hacen parte de las 30 páginas del desarrollo de contenido.
-Las figuras propias deben ser editables y se entregan en una carpeta aparte, cuidando que tengan el nombre y número correspondiente. 
-Las fuentes se pueden tomar de bases de datos de suscripción como EBSCO o de uso libre como Redalyc y Google Académico, las cuales cuentas con licencia Creative Commons (LCC) para su reproducción (solicitar el acceso a los repositorios en caso de no tenerlo).
-Organiza y jerarquiza los temas y subtemas numéricamente.
-
+## Desarrollo temático
 -->
 ## ¿Qué es un modelo de lenguaje?
-
 
 Un modelo de lenguaje es un sistema basado en *deep learning* que encapsula información sobre uno o varios lenguajes. Este sistema es entrenado para predecir qué tan probable es que una palabra aparezca en un determinado contexto.
 
@@ -133,6 +121,7 @@ Por supuesto, el concepto de "grande" es relativo. ¿A partir de cuántos parám
 - Hasta abril de 2025, el modelo de lenguaje más grande conocido públicamente es **GPT-4** de OpenAI, con aproximadamente **1.76 billones de parámetros**.
 
 Es muy posible que en el futuro estos modelos hoy considerados **LLM** sean vistos como simples modelos de lenguaje, a medida que la tecnología y los recursos computacionales avancen.
+Es muy posible que en el futuro estos modelos hoy considerados **LLM** sean vistos como simples modelos de lenguaje, a medida que la tecnología y los recursos computacionales avancen.
 
 
 !!! warning "Para tener en cuenta"
@@ -150,10 +139,11 @@ Es muy posible que en el futuro estos modelos hoy considerados **LLM** sean vist
       Transfiere el conocimiento de un modelo grande (profesor) a uno más pequeño (estudiante) manteniendo un rendimiento competitivo.
 
     Estas estrategias permiten que modelos más pequeños logren mejor desempeño, aprovechando conocimiento preexistente o la generación sintética de datos.
+    
 <!--WARNING: Crear esta seccion @Juan Camilo
 ## De ML Igeniringa a IA Ingering
 
-(Fata terminar)
+(Fata terminar) 
 -->
 ## Usando la API de OpenAI
 
@@ -302,6 +292,7 @@ Por ejemplo, podemos configurar el modelo para que responda en un estilo poétic
 En la sección anterior, tuviste tu primera interacción con un modelo de lenguaje de gran escala (LLM). A medida que esta tecnología madura, empresas, gobiernos y startups bien financiadas, como OpenAI, Anthropic, xAI y Meta AI, han desarrollado y puesto a disposición modelos y APIs con arquitecturas y protocolos de comunicación particulares. Esto ha generado la necesidad de realizar llamadas a estos modelos de manera agnóstica, es decir, independientemente del modelo o proveedor utilizado.
 
 En este contexto, el framework más popular hasta el momento es LangChain. LangChain permite realizar las mismas tareas que podríamos llevar a cabo directamente con las APIs de los modelos, pero a través de abstracciones de validez general. Este marco proporciona una interfaz unificada que simplifica la integración con diferentes LLM, el manejo de prompts, la gestión de contexto y la incorporación de herramientas externas, como bases de datos o funciones personalizadas. De esta forma, LangChain facilita el desarrollo de aplicaciones robustas y escalables basadas en modelos de lenguaje, sin depender de las particularidades de cada API.
+En este contexto, el framework más popular hasta el momento es LangChain. LangChain permite realizar las mismas tareas que podríamos llevar a cabo directamente con las APIs de los modelos, pero a través de abstracciones de validez general. Este marco proporciona una interfaz unificada que simplifica la integración con diferentes LLM, el manejo de prompts, la gestión de contexto y la incorporación de herramientas externas, como bases de datos o funciones personalizadas. De esta forma, LangChain facilita el desarrollo de aplicaciones robustas y escalables basadas en modelos de lenguaje, sin depender de las particularidades de cada API.
 <figure>
   <img src="../assets/images/langchain.png" alt="Logo de LangChain" width="600">
   <figcaption>
@@ -345,6 +336,7 @@ LangChain proporciona una variedad de herramientas que permiten construir aplica
 
 - **Models (Modelos)**  
   Representan los modelos de lenguaje que LangChain puede integrar, como `ChatOpenAI`. Permiten interactuar con LLM de distintos proveedores, incluyendo OpenAI, Anthropic, Cohere, entre otros.
+  Representan los modelos de lenguaje que LangChain puede integrar, como `ChatOpenAI`. Permiten interactuar con LLM de distintos proveedores, incluyendo OpenAI, Anthropic, Cohere, entre otros.
 
 - **Prompts (Prompts)**  
   Herramientas para diseñar y gestionar *prompts*, como `ChatPromptTemplate`. Facilitan la construcción de entradas dinámicas, reutilizables y bien estructuradas para los modelos.
@@ -376,6 +368,7 @@ LangChain proporciona una variedad de herramientas que permiten construir aplica
 
 ### Plantillas de Prompts
 
+Comenzaremos estudiando los prompt templates. Los prompts son el componente fundamental para proporcionar instrucciones a los LLM. Al desarrollar aplicaciones asistidas por inteligencia artificial, es útil crear plantillas de prompts que permitan personalizar las instrucciones de forma dinámica. Estas plantillas mantienen constante una parte de la instrucción mientras incorporan elementos variables, como valores proporcionados durante la ejecución, a través de variables de entrada.
 Comenzaremos estudiando los prompt templates. Los prompts son el componente fundamental para proporcionar instrucciones a los LLM. Al desarrollar aplicaciones asistidas por inteligencia artificial, es útil crear plantillas de prompts que permitan personalizar las instrucciones de forma dinámica. Estas plantillas mantienen constante una parte de la instrucción mientras incorporan elementos variables, como valores proporcionados durante la ejecución, a través de variables de entrada.
 
 Por ejemplo, una plantilla puede definir la estructura de una pregunta, dejando espacios para insertar valores específicos, como el nombre de un país. Esto se logra utilizando herramientas como `ChatPromptTemplate` de LangChain, que simplifica la creación de prompts reutilizables.
@@ -496,6 +489,7 @@ El *prompt* completo lucirá así:
 </figure>
 Como ilustra la figura, el método `format_messages()` asociado a la clase `ChatPromptTemplate` cumple la función de empaquetar en el objeto los valores específicos en las variables de entrada.
 
+Este tipo de objeto nos permite incorporar programáticamente llamadas a las APIs de los LLM en el flujo de ejecución de un código Python convencional. Veamos cómo hacerlo:
 Este tipo de objeto nos permite incorporar programáticamente llamadas a las APIs de los LLM en el flujo de ejecución de un código Python convencional. Veamos cómo hacerlo:
 
  Como ya tenemos nuestro *prompt* completo y lleno con las variables que queremos, lo podemos enviar al LLM:
@@ -731,6 +725,7 @@ puedes pensar en una*chain* como una **cinta transportadora**:
 - Luego, simplemente funciona sin necesidad de repetir cada paso manualmente.  
 
 Esto facilita la construcción de **pipelines más avanzados** dentro de nuestras aplicaciones con LLM.  
+Esto facilita la construcción de **pipelines más avanzados** dentro de nuestras aplicaciones con LLM.  
 Una forma de encadenar ejecuciones en cadenas es utilizar el operador `|` (llamado *pipe*) para conectar los pasos. Para instanciar una cadena que realice las tareas de nuestro prompt anterior, tendríamos el prompt como:
 
 ```python
@@ -816,6 +811,7 @@ Veamos algunos ejemplos en los que usamos múltiples variables en nuestros promp
     ```
 ## Output Parsers: Dando Forma a la Salida del LLM
 
+Los LLM son sistemas que reciben texto plano y devuelven texto, incluso cuando devuelven imágenes, lo que realmente están haciendo en el fondo es generar descripciones textuales de esas imágenes. Sin embargo, cuando estamos construyendo aplicaciones asistidas por LLM, lo que queremos es utilizar la salida de la llamada al LLM para emplearla en otros flujos de ejecución de nuestra aplicación.
 Los LLM son sistemas que reciben texto plano y devuelven texto, incluso cuando devuelven imágenes, lo que realmente están haciendo en el fondo es generar descripciones textuales de esas imágenes. Sin embargo, cuando estamos construyendo aplicaciones asistidas por LLM, lo que queremos es utilizar la salida de la llamada al LLM para emplearla en otros flujos de ejecución de nuestra aplicación.
 
 Ahí es donde entran los *output parsers*.
@@ -1138,30 +1134,11 @@ En analogía con el constructor de la clase `ChatPromptTemplate.from_template`, 
 <!--
 
 
-Cierre de la módulo
-Es una síntesis del contenido desarrollado a lo largo de la módulo en la que se destacan los aprendizajes más importantes. Asimismo, motiva al estudiante a continuar en el proceso formativo destacando la importancia de lo que está por venir en móduloes o cursos posteriores.
+Cierre del módulo
 
 -->Aquí termina nuestro primer módulo. ¡Felicidades por llegar hasta el final! Ahora conoces el contexto general de las tecnologías involucradas en el desarrollo de aplicaciones asistidas por IA. Este campo apenas está comenzando, y ahora tienes las bases para utilizar herramientas más sofisticadas, como las cadenas y la gestión de memoria, que serán el tema del siguiente módulo.
 
 
-
-
-<!--Glosario
-Es una lista de palabras, expresiones o conceptos que requieren de una explicación o su significado para un mejor contexto dentro del contenido. 
-
-
-Recomendaciones:
-Elabora una lista de términos que puedan suponer alguna dificultad para el estudiante (máximo 10 términos por módulo).
-Describe brevemente su significado o explicación (máximo 700 caracteres).
-Si uno de los términos es central para la módulo temática, su explicación debe estar en el contenido principal.
-Cada término del glosario debe estar citado y referenciado bajo normas APA (cuando se empleen definiciones de terceros). Las referencias se agregan en la parte final.
-Evita utilizar definiciones sacadas de Wikipedia, blogs, Definición.de, o Significados.com.
-Apóyate en diccionarios especializados del área, o en definiciones de autores de peso académico.
-Asegúrate de que las definiciones sean comprensibles y se ajusten al contexto específico de los temas que se desarrollan en la módulo.
-Los términos se deben organizar en orden alfabético.
-Incluir términos que no fueron definidos en las móduloes temáticas.
-
--->
 
 # Glosario
 
@@ -1196,22 +1173,6 @@ Incluir términos que no fueron definidos en las móduloes temáticas.
     La capacidad de un sistema de inteligencia artificial para almacenar y utilizar información de interacciones pasadas, mejorando la coherencia y personalización en futuras interacciones.
 
     
-<!--
-Evidencia de aprendizaje
-Actividad que permite verificar, validar o demostrar el conocimiento, las habilidades y las competencias que los estudiantes han adquirido a lo largo del proceso de aprendizaje. 
-
-La evidencia de aprendizaje (EA) debe orientarse a estimular la reflexión con el saber y su aplicabilidad, especialmente, cuando se trata de temas relacionados con los contextos y medios donde habitan los estudiantes.
-
-Por otro lado, proporciona a los profesores información sobre la evolución y resultado del proceso de aprendizaje, lo que los estudiantes están aprendiendo y comprendiendo qué funciona o debe mejorar; asimismo, ofrece a los estudiantes retroalimentación específica y constructiva acerca de su desempeño.
-
-
-Recomendaciones:
-Lee el documento “Estrategias didácticas” como apoyo para el desarrollo de la evidencia de aprendizaje.
-La evidencia debe ser clara en sus instrucciones y expectativas, para que los estudiantes comprendan lo que se espera de ellos.
-Asegúrate de que la evidencia evalúe habilidades como el pensamiento crítico, la resolución de problemas y la creatividad.
-En caso de que el conocimiento sea muy teórico, elabora una estrategia didáctica que permita entender de qué manera esa teoría puede o no aplicarse a una situación específica.
-    -->
-
 ## Evidencia de Aprendizaje
 
 
@@ -1222,12 +1183,12 @@ En caso de que el conocimiento sea muy teórico, elabora una estrategia didácti
 **Ejercicio 1 - Corrección de respuestas inapropiadas en atención al cliente:**
 
 En este ejercicio, debes usar la IA para mejorar respuestas inapropiadas escritas por un operador de servicio al cliente. La IA corregirá el tono, la cortesía y errores ortográficos, asegurando que la respuesta sea adecuada para el cliente.  
-**Input:** Un mensaje del cliente y una respuesta inapropiada del operador.  
-**Output:** Una respuesta final corregida y apropiada para enviar al cliente.  
+**Input:** un mensaje del cliente y una respuesta inapropiada del operador.  
+**Output:** una respuesta final corregida y apropiada para enviar al cliente.  
 **Requisitos:**  
 - Utiliza un prompt template para generar la respuesta apropiada.  
 - Implementa un output parser para validar que la respuesta cumple con los criterios de cortesía y ortografía.  
-**Bonus:** Investiga sobre memoria.  Si el cliente ha escrito varios mensajes, utiliza memoria para recordar el contexto de la conversación.
+**Bonus:** investiga sobre memoria.  Si el cliente ha escrito varios mensajes, utiliza memoria para recordar el contexto de la conversación.
 
 ---
 
@@ -1235,9 +1196,10 @@ En este ejercicio, debes usar la IA para mejorar respuestas inapropiadas escrita
 
 Dado un review de un producto en un sitio de e-commerce, crea un modelo que extraiga información específica.  
 **Tareas:**  
-- Identificar si el producto fue comprado como regalo.  
-- Extraer la opinión del cliente sobre el precio.  
-- Extraer comentarios sobre el tiempo de entrega.  
+- Identifica si el producto fue comprado como regalo.  
+- Extrae la opinión del cliente sobre el precio.  
+- Extrae comentarios sobre el tiempo de entrega.
+  
 **Requisitos:**  
 - Utiliza output parsers para extraer los campos relevantes en forma de estructuras de datos de Python como un diccionario.  
 - Diseña un prompt template que permita a la IA identificar y organizar estos elementos de manera eficiente.
@@ -1271,18 +1233,10 @@ Huyen, C. (2025). *AI Engineering: Building Applications with Foundation Models*
 
 LangChain. (s.f.). *LangChain Documentation*. Disponible en [https://python.langchain.com/docs/introduction/](https://python.langchain.com/docs/introduction/)
 
-<!--
-Lecturas y material complementario
-
-
-Libros, recursos interactivos o videos que complementan los temas de la módulo y que permiten al estudiante ampliar y enriquecer su conocimiento promoviendo un espíritu investigativo y de autoformación.
--->
-
-Te invitamos a explorar el siguiente material para ampliar tus conocimientos sobre modelos de lenguaje (LLM), LangChain, plantillas de prompts y parsers de salida. Estos recursos te proporcionarán una comprensión más profunda y práctica de los temas abordados en el curso.
 
 ---
 # Lecturas y material complementario
-
+Te invitamos a explorar el siguiente material para ampliar tus conocimientos sobre modelos de lenguaje (LLM), LangChain, plantillas de prompts y parsers de salida. Estos recursos te proporcionarán una comprensión más profunda y práctica de los temas abordados en el curso.
 
 ## 📚 Lecturas recomendadas
 
@@ -1315,8 +1269,11 @@ Este tutorial muestra cómo utilizar el `JsonOutputParser` de LangChain para est
 ## 🎥 Videos recomendados
 
 ### **Título:** *Transformers (how LLM work) explained visually | DL5*
+### **Título:** *Transformers (how LLM work) explained visually | DL5*
 
 **Autor:** 3Blue1Brown  
+**URL:** [Transformers (how LLM work) explained visually](https://www.youtube.com/watch?v=wjZofJX0v4M)  
+Este video ofrece una explicación visual de cómo funcionan los modelos de lenguaje grandes (LLM) mediante la arquitectura de transformers, facilitando la comprensión de conceptos complejos.
 **URL:** [Transformers (how LLM work) explained visually](https://www.youtube.com/watch?v=wjZofJX0v4M)  
 Este video ofrece una explicación visual de cómo funcionan los modelos de lenguaje grandes (LLM) mediante la arquitectura de transformers, facilitando la comprensión de conceptos complejos.
 
@@ -1325,10 +1282,13 @@ Este video ofrece una explicación visual de cómo funcionan los modelos de leng
 **Autor:** 3Blue1Brown  
 **URL:** [Attention in transformers, step-by-step](https://www.youtube.com/watch?v=eMlx5fFNoYc)  
 Este video desglosa paso a paso el mecanismo de atención en los transformers, una parte crucial en el funcionamiento de los LLM.
+Este video desglosa paso a paso el mecanismo de atención en los transformers, una parte crucial en el funcionamiento de los LLM.
 
+### **Título:** *How might LLM store facts | DL7*
 ### **Título:** *How might LLM store facts | DL7*
 
 **Autor:** 3Blue1Brown  
+**URL:** [How might LLM store facts](https://www.youtube.com/watch?v=9-Jl0dxWQs8)  
 **URL:** [How might LLM store facts](https://www.youtube.com/watch?v=9-Jl0dxWQs8)  
 Este video explora cómo los modelos de lenguaje grandes pueden almacenar hechos y conocimientos, proporcionando una visión más profunda de su funcionamiento interno.
 
