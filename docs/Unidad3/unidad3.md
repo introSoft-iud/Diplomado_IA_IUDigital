@@ -1,40 +1,13 @@
-<!--  Nombre de la Unidad __
--->
 
-# Unidad 3: Proyecto Integtrador. Construcción y depliegue de un sisitema RAG
-<!--
-Introducción a la unidad
-Teniendo en cuenta que cada unidad es un saber específico, en la introducción se destaca la importancia y relevancia del saber que se abordará en función de los resultados de aprendizaje planteados. Describe brevemente cómo el tema central de la unidad se integra en el panorama más amplio del aprendizaje y de la vida cotidiana o profesional del estudiante. Su propósito es despertar la curiosidad y el interés del estudiante sobre los contenidos que explorará.
-
-En definitiva, se trata de responder a las preguntas: ¿Qué va a aprender el estudiante? ¿Cómo lo va a aprender? ¿Para qué lo va a aprender?  
+# Módulo 3: Proyecto Integrador: construcción y depliegue de un sisitema RAG
 
 
+## Introducción al módulo
+
+Bienvenidos al última módulo de nuestro curso sobre aplicaciones asistidas por LLM. En este módulo aprenderemos sobre document loaders y desplegaremos una aplicación RAG funcional para conversar con archivos en PDF. ¡Comencemos!
 
 
-Recomendaciones:
-Inicia presentando al estudiante cómo se relaciona el conocimiento de la unidad con su contexto. 
-Incluye el propósito de la unidad y lo que el estudiante aprenderá mediante su estudio.
-Vale la pena destacar algunos de los temas más importantes que se abordarán.
-Procura no superar las 300 palabras (1500 caracteres) al redactar la introducción.
--->
-## Introducción a la unidad
-
-Bienvenidos a la última unidad de nuestro curso sobre aplicaciones asistidas por LLMs. En esta unidad aprenderemos sobre document loaders y desplegaremos una aplicación RAG funcional para conversar con archivos en PDF. ¡Comencemos!
-
-<!-- Resultados de aprendizaje
-Los objetos de aprendizaje se asumen como aquello que los estudiantes serán capaces de hacer a partir de lo que aprendieron a lo largo de la unidad.
-
-
-Recomendaciones:
-Formula máximo dos resultados por unidad. 
-Asegúrate que tengan relación con los objetivos de aprendizaje planteados en la carta descriptiva. 
-Redacta los resultados a partir de tres elementos: qué, cómo y para qué.
-Recuerda que los resultados se establecen en función del aprendizaje, no de la enseñanza. 
-Utiliza verbos conjugados en presente (describen la acción).  
-Los resultados deben ser medibles y alcanzables. 
-
--->
-## Cronograma de actividades - Unidad 3
+## Cronograma de actividades - Módulo 3
 
 | Actividad de aprendizaje                                      | Evidencia de aprendizaje                               | Semana         | Ponderación |
 |---------------------------------------------------------------|--------------------------------------------------------|----------------|-------------|
@@ -43,31 +16,7 @@ Los resultados deben ser medibles y alcanzables.
 
 <!--
 Desarrollo temático
-Aquí comienza la elaboración del contenido que hará parte de la unidad temática. Para ello, es preciso identificar qué requiere el estudiante para aprender y comprender aquello que debe explorar, desarrollar nuevas habilidades, aplicar el conocimiento y cumplir con los resultados de aprendizaje. 
-
-Los textos se construyen con cohesión y claridad, de manera que facilite al estudiante apropiarse del conocimiento de manera efectiva. Esta elaboración debe estar respaldada por enfoques didácticos, garantizando un proceso de aprendizaje sólido y bien fundamentado.
-
-
-
-
-Recomendaciones:
-Ten en cuenta las siguientes recomendaciones para desarrollar las temáticas de la actividad de aprendizaje:
-Lee el documento “Manual del contenidista” en el cual encontrarás consejos para redactar los contenidos.
-Ten a la mano el “Manual de redacción” para resolver dudas o inquietudes sobre el uso de las normas APA para citas y referencias. 
-Cada unidad debe tener una cantidad mínima de 30 páginas de contenido temático. Esto equivale aproximadamente a 8500 palabras, en Arial 12, espaciado 1.0 y texto justificado. 
-El desarrollo del contenido requiere un 70 % de producción propia y un 30 % para contenidos de terceros (fuentes primarias). Monitorea permanentemente tu documento con ayuda de la herramienta Turnitin para revisar el porcentaje de similitud.
-Los textos e imágenes de terceros obligatoriamente se deben citar y referenciar, procurando que no superen el porcentaje exigido (30 %). Debes suministrar los enlaces de los recursos digitales empleados (PDF, sitios web, artículos online, videos, imágenes, etc.). Todos estos recursos deben ser de uso libre.
-No incluir artículos, tesis, textos o documentos propios que han sido previamente publicados o presentados a otra institución. 
-Los recursos como imágenes, infografías, ilustraciones, tablas, etc., no hacen parte de las 30 páginas del desarrollo de contenido.
-Las figuras propias deben ser editables y se entregan en una carpeta aparte, cuidando que tengan el nombre y número correspondiente. 
-Las fuentes se pueden tomar de bases de datos de suscripción como EBSCO o de uso libre como Redalyc y Google Académico, las cuales cuentas con licencia Creative Commons (LCC) para su reproducción (solicitar el acceso a los repositorios en caso de no tenerlo).
-Organiza y jerarquiza los temas y subtemas numéricamente.
-
 -->
-
-
-
-<!-- Your content for this section goes here -->
 
 ## Retival Aumented generation (RAG)
 
@@ -79,9 +28,9 @@ En una RAG, un LLM recupera documentos contextuales a partir de una base de dato
 
 El sistema de Recuperación (Retrieval) es el encargado de devolver los documentos relevantes para que el LMM (Modelo de Lenguaje de Máquina) elabore la respuesta a partir de una solicitud. Este sistema está compuesto por tres subsistemas:
 
-- **Cargador de Documentos (Document Loader):** Carga documentos desde diversas fuentes, como archivos locales, sitios web, bases de datos, etc.
-- **Divisor de Texto (Text Splitter):** Divide los documentos en fragmentos manejables para su procesamiento.
-- **Almacén Vectorial (Vector Store):** Almacena representaciones vectoriales de los documentos para una recuperación eficiente.
+- **Cargador de Documentos (Document Loader):** carga documentos desde diversas fuentes, como archivos locales, sitios web, bases de datos, etc.
+- **Divisor de Texto (Text Splitter):** divide los documentos en fragmentos manejables para su procesamiento.
+- **Almacén Vectorial (Vector Store):** almacena representaciones vectoriales de los documentos para una recuperación eficiente.
 
 La Figura ilustra cómo estos subsistemas interactúan en el pipeline de RAG:
 
@@ -98,9 +47,9 @@ En esencia, un Cargador de Documentos en LangChain es un componente que obtiene 
 
 Una vez que un cargador de documentos ingiere datos, usualmente los transforma en uno o más objetos Documento. Piensa en esto como nuestro contenedor estandarizado para datos de texto. Un objeto Documento en LangChain consiste principalmente en dos atributos clave:
 
-- **page_content:** Contiene el contenido de texto real del documento o un fragmento de él.
+- **page_content:** contiene el contenido de texto real del documento o un fragmento de él.
 
-- **metadata (diccionario):** Es un diccionario que contiene información adicional sobre el contenido. ¡Esto es muy importante! Los metadatos pueden incluir cosas como:
+- **metadata (diccionario):** es un diccionario que contiene información adicional sobre el contenido. ¡Esto es muy importante! Los metadatos pueden incluir información como la siguiente:
     - La fuente del documento (por ejemplo, nombre del archivo, URL, ID de base de datos)
     - Fecha de creación, autor
     - Número de página (para PDFs)
@@ -109,7 +58,7 @@ Una vez que un cargador de documentos ingiere datos, usualmente los transforma e
 
 El uso efectivo de metadatos puede mejorar significativamente la capacidad de tu aplicación para filtrar, buscar y entender el contexto de la información.
 
-## Categorías y Ejemplos de Cargadores de Documentos
+## Categorías y ejemplos de cargadores de documentos
 
 LangChain ofrece un vasto ecosistema de cargadores de documentos, ¡actualmente más de 80, y la comunidad sigue añadiendo más! Exploremos algunos:
 
@@ -1008,7 +957,7 @@ Ahora podemos preguntar algo sobre el contenido del PDF:
     --------------------------------------------------
     ```
 
-¡Felicidades por llegar hasta el final de la unidad y del curso! Has aprendido a integrar plantillas de prompt con cadenas y parsers de salida, implementaste cadenas con memoria y, finalmente, practicado cómo dividir documentos en fragmentos, almacenar embeddings de los fragmentos en una base de datos vectorial y realizar RAG sobre esta base de datos. Te invito a realizar la [actividad de aprendizaje](#evidencia-de-aprendizaje), donde crearás y desplegarás tu aplicación RAG siguiendo los pasos que acabas de estudiar.
+¡Felicidades por llegar hasta el final del módulo y del curso! Has aprendido a integrar plantillas de prompt con cadenas y parsers de salida, implementaste cadenas con memoria y, finalmente, has practicado cómo dividir documentos en fragmentos, almacenar embeddings de los fragmentos en una base de datos vectorial y realizar RAG sobre esta base de datos. Te invito a realizar la [actividad de aprendizaje](#evidencia-de-aprendizaje), donde crearás y desplegarás tu aplicación RAG siguiendo los pasos que acabas de estudiar.
 
 ## Glosario
 
@@ -1022,26 +971,26 @@ Ahora podemos preguntar algo sobre el contenido del PDF:
 
 ## Evidencia de Aprendizaje
 
-| **Unidad 3** | **Proyecto Integrador. Construcción y despliegue de un sistema RAG** |
+| **Módulo 3** | **Proyecto Integrador: construcción y despliegue de un sistema RAG** |
 |--------------|-------------------------------------------------------------|
 | **EA3.**     | Chat con tus datos
 
 ¡Felicidades por llegar al final del curso! En tu última entrega, practicarás las siguientes habilidades:
 
 **Instrucciones**
-1. **Carga de documentos**: Usa PyPDFLoader para cargar 5 documentos en PDF de tu interés.
+1. **Carga de documentos**: usa PyPDFLoader para cargar 5 documentos en PDF de tu interés.
 
 2. **División de documentos**: Utiliza RecursiveCharacterTextSplitter o CharacterTextSplitter para dividir los documentos en fragmentos.
 
-3. **Embeddings**: Emplea OpenAIEmbeddings para crear embeddings para tus fragmentos.
+3. **Embeddings**: emplea OpenAIEmbeddings para crear embeddings para tus fragmentos.
 
-4. **Almacenamiento vectorial**: Carga los embeddings en una base de datos vectorial, como Chroma.
+4. **Almacenamiento vectorial**: carga los embeddings en una base de datos vectorial, como Chroma.
 
-5. **Instrucciones**: Ilustra el uso de consultas sobre tus datos cargados en la base de datos vectorial, utilizando consultas por similitud y consultas usando el algoritmo MMR.
+5. **Instrucciones**: ilustra el uso de consultas sobre tus datos cargados en la base de datos vectorial, utilizando consultas por similitud y consultas usando el algoritmo MMR.
 
 Desarrolla tu proyecto en un Jupyter Notebook y carga tu solución. No olvides agregar comentarios en celdas de Markdown que expliquen el código y tus razonamientos.
 
-**Opcional**: Investiga sobre plataformas de despliegue de tu aplicación, como Streamlit, Hugging Face, Gradio, etc., y despliega tu RAG para que otros usuarios puedan usarla. También, investiga sobre retrievers y escoge la estrategia de retrieval que mejor se adapte a las necesidades de tu app desplegada.
+**Opcional**: investiga sobre plataformas de despliegue de tu aplicación, como Streamlit, Hugging Face, Gradio, etc., y despliega tu RAG para que otros usuarios puedan usarla. También, investiga sobre retrievers y escoge la estrategia de retrieval que mejor se adapte a las necesidades de tu app desplegada.
 
 Guarda los documentos con la siguiente nomenclatura:
 
