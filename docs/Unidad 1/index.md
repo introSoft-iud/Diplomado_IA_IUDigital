@@ -302,6 +302,9 @@ Por ejemplo, podemos configurar el modelo para que responda en un estilo poétic
 En la sección anterior, tuviste tu primera interacción con un modelo de lenguaje de gran escala (LLM). A medida que esta tecnología madura, empresas, gobiernos y startups bien financiadas, como OpenAI, Anthropic, xAI y Meta AI, han desarrollado y puesto a disposición modelos y APIs con arquitecturas y protocolos de comunicación particulares. Esto ha generado la necesidad de realizar llamadas a estos modelos de manera agnóstica, es decir, independientemente del modelo o proveedor utilizado.
 
 En este contexto, el framework más popular hasta el momento es LangChain. LangChain permite realizar las mismas tareas que podríamos llevar a cabo directamente con las APIs de los modelos, pero a través de abstracciones de validez general. Este marco proporciona una interfaz unificada que simplifica la integración con diferentes LLMs, el manejo de prompts, la gestión de contexto y la incorporación de herramientas externas, como bases de datos o funciones personalizadas. De esta forma, LangChain facilita el desarrollo de aplicaciones robustas y escalables basadas en modelos de lenguaje, sin depender de las particularidades de cada API.
+
+(REEMPLAZAR FIGURA POR ESTA EN MEJOR RESOLUCIÓN: https://drive.google.com/file/d/1foDh3L_48XUlUJ53HRekkVBXBOgruzKp/view?usp=drive_link )
+
 <figure>
   <img src="../assets/images/langchain.png" alt="Logo de LangChain" width="600">
   <figcaption>
@@ -366,6 +369,9 @@ LangChain proporciona una variedad de herramientas que permiten construir aplica
 
 - **Output Parsers (Parsers de Salida)**  
   Utilizados para estructurar y formatear las respuestas del modelo. Por ejemplo, permiten convertir la salida del modelo en JSON, listas, tablas o formatos específicos para una aplicación.
+
+REEMPLAZAR IMAGEN POR ESTA: https://drive.google.com/file/d/1oCSWBu03JBg1nWFZIRJBfshsllp0ozJ1/view?usp=drive_link
+
 <figure>
   <img src="../assets/images/langchain_tools.png" alt="Logo de LangChain" width="600">
   <figcaption>
@@ -450,6 +456,8 @@ Veremos que tiene como `input_variables` los campos `'estilo'` y `'mensaje'`.
 
 Siguiendo la lógica del paradigma de la programación orientada a objetos, podemos imaginar que la creación de un *prompt template* se asemeja al trabajo de un carpintero. El carpintero (el constructor de la clase) toma un conjunto de maderas (el `string_template`) y las transforma en un gavetero (el objeto de la clase).
 
+REEMPLAZAR IMAGEN POR ESTA: https://drive.google.com/file/d/16-8m5D5Uwz8dVQmXtKB3ODKVBgOM1I50/view?usp=drive_link
+
 <figure>
   <img src="../assets/images/carpintero-1.png" alt="Carpintero construyendo gavetero a partir de un string" width="600">
   <figcaption>Constructor de la clase `ChatPromptTemplate.from_template`. En nuestra analogía, el carpintero crea un contenedor apropiado para alojar el contenido de las dos variables de entrada definidas en el `string_template`. Fuente: <a href="#">Elaboración propia</a>.</figcaption>
@@ -490,6 +498,8 @@ El *prompt* completo lucirá así:
     ```bash
     [HumanMessage(content='Traduce el texto que está delimitado por asteriscos dobles a un estilo que es Español latino en un tono formal y sobrio.\ntexto: **Manque estaba muy embelesao, le dijo Peralta a la hermana: Hija, date una asomaíta por la despensa; desculcá por la cocina, a ver si encontrás alguito que darles a estos señores. Mirálos qué cansaos están; se les ve la fatiga**', additional_kwargs={}, response_metadata={})]
     ```
+REEMPLAZAR IMAGEN POR LA SIGUIENTE: https://drive.google.com/file/d/1rifgJVmUDfMeph1NR5yH4Une6W0TPjB9/view?usp=drive_link
+
 <figure>
   <img src="../assets/images/empacador.png" alt="Hombre con casco guardando un sobre en un gavetero" width="600">
   <figcaption>Ilustración de la tarea del <code>format_messages()</code>. El método <code>format_messages()</code> reemplaza los valores de las variables de entrada en el template. Fuente: Elaboración propia.</figcaption>
@@ -721,6 +731,8 @@ Pero LangChain tiene una herramienta que facilita mas las cosas: **las chains**-
 Las *chains* nos permiten **combinar múltiples pasos**—como preparar un *prompt* y ejecutar el LLM—en un flujo continuo y automatizado.  
 
 puedes pensar en una*chain* como una **cinta transportadora**:
+
+REEMPLAZAR FIGURA POR LA SIGUIENTE: https://drive.google.com/file/d/1TsR2dl2eKiAT0LSKwfE9eQcpS4uCxqzp/view?usp=drive_link
 
 <figure>
   <img src="../assets/images/banda1.png" alt="Dibujo de una banda de supermercado con frutas" width="600">
@@ -956,6 +968,8 @@ Los parsers nos permiten agregar pasos adicionales a las cadenas de ejecución; 
 ``` bash
 [Prompt] --> [LLM] --> [Parser] --> Structured Output
 ```
+
+REEMPLAZAR IMAGEN POR LA SIGUIENTE:  https://drive.google.com/file/d/1Vb0eyzw5WUuAs5a1JPER6AB_VwKYUSuP/view?usp=drive_link
 <figure>
   <img src="../assets/images/car_asembly.png" alt="Dibujo de una banda de supermercado con frutas" width="600">
   <figcaption>Analogía de una cadena con parser. Las instrucciones se ejecutan en orden como en una línea de ensamblaje. Fuente: <a>Creado por Grok 3 (xAI) usando un prompt del usuario.</a></figcaption>
@@ -1131,8 +1145,10 @@ La función `get_format_instructions()` crea un string que contiene las instrucc
 En analogía con el constructor de la clase `ChatPromptTemplate.from_template`, que describimos como un carpintero que crea un cajón a partir de maderas brutas, este tipo de template con instrucciones de formato se asemejaría a construir un cajón modular con instrucciones de armado, como el de la figura:
 ![alt text](image-1.png)
 
+REEMPLAZAR FIGURA POR ESTA: https://drive.google.com/file/d/1yLVWjA672eLDv6EupKmTVZjUhu_SZzsm/view?usp=drive_link
+
   <img src="../assets/images/modular_drawer.png" alt="Cajón modular con instrucciones de armado" width="600">
-  <figcaption>Analogía de un template con instrucciones de formato. Fuente: <a> Captura de pantalla de internet.<!-- Nota para produccion. La imagen es meramene ilustrativa, por favor crear una propia--> </a></figcaption>
+  <figcaption> Analogía de un template con instrucciones de formato. </a></figcaption>
 </figure>
 
 <!--
