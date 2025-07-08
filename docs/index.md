@@ -52,7 +52,7 @@ En el módulo 1 comenzarás por aprender a crear instrucciones reutilizables par
 <!--
 
 *******************************Resultados de aprendizaje******************
-Establecen las dinámicas de enseñanza-aprendizaje dentro del curso y encaminan el proceso hacia lo que queremos que los estudiantes sepan, comprendan y sean capaces de hacer al finalizar el curso.
+Establecen las dinámicas de ENSEÑANZA-APRENDIZAJE dentro del curso y encaminan el proceso hacia lo que queremos que los estudiantes sepan, comprendan y sean capaces de hacer al finalizar el curso.
 
 
 Esta información se extrae de la carta descriptiva, por esa razón es importante consultarla antes de redactar esta parte. Ten presente que la versión en Word contiene el objetivo general y los específicos; mientras que la versión en Excel contiene los resultados de aprendizaje.
