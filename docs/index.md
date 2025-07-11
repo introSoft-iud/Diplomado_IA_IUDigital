@@ -39,7 +39,7 @@ Finaliza con un párrafo de cierre en el cual motives al estudiante a realizar e
 
 
 -->
-Bienvenidos al diplomado en construcción de aplicaciones asistidas por modelos de lenguaje de la IUDigital de Antioquia.
+Bienvenidos al diplomado en construcción de aplicaciones asistidas por modelos de lenguaje de la IU Digital de Antioquia.
 
 Aunque la inteligencia artificial ha existido como un campo exitoso y prometedor entre los expertos durante varias décadas, la llegada de capacidades computacionales más avanzadas —ofrecidas por las GPU modernas— y las habilidades demostradas con el lanzamiento de ChatGPT fueron una gran sorpresa para muchos.
 
@@ -60,11 +60,11 @@ Esta información se extrae de la carta descriptiva, por esa razón es important
 -->
 ## Resultados de Aprendizaje
 
-1. **Diseñar y aplicar prompt templates y cadenas de ejecución en LangChain:** Los estudiantes serán capaces de crear instrucciones reutilizables (prompt templates) y encadenarlas utilizando el Lenguaje de Expresión de LangChain (LCEL), especificando formatos de salida con output parsers para interactuar eficazmente con modelos de lenguaje.
+1. **Diseñar y aplicar prompt templates y cadenas de ejecución en LangChain:** los estudiantes serán capaces de crear instrucciones reutilizables (prompt templates) y encadenarlas utilizando el Lenguaje de Expresión de LangChain (LCEL), especificando formatos de salida con output parsers para interactuar eficazmente con modelos de lenguaje.
 
-2. **Desarrollar chatbots con gestión de memoria contextual:** Los estudiantes podrán construir chatbots funcionales utilizando LangChain, integrando memorias para almacenar y gestionar información contextual.
+2. **Desarrollar chatbots con gestión de memoria contextual:** los estudiantes podrán construir chatbots funcionales utilizando LangChain, integrando memorias para almacenar y gestionar información contextual.
 
-3. **Construir y desplegar sistemas RAG para interacción con documentos:** Los estudiantes estarán capacitados para integrar componentes como loaders de documentos, retrievers y bases de datos vectoriales en LangChain, creando sistemas de Retrieval-Augmented Generation (RAG) que permitan conversar con archivos PDF.
+3. **Construir y desplegar sistemas RAG para interacción con documentos:** los estudiantes estarán capacitados para integrar componentes como loaders de documentos, retrievers y bases de datos vectoriales en LangChain, creando sistemas de Retrieval-Augmented Generation (RAG) que permitan conversar con archivos PDF.
 
 <!--
 Pregunta orientadora
@@ -127,18 +127,18 @@ Menciona las actividades y evidencias de aprendizaje que deberá realizar el est
 
 
 
-## Unidad 1: Introducción a la Construcción de Aplicaciones con LLMs
+## Módulo 1. Introducción a la Construcción de Aplicaciones con LLMs
 - Fundamentos de modelos de lenguaje grandes (LLMs) y su integración en flujos de software
 - Creación y uso de *prompt templates* para instrucciones reutilizables
 - Encadenamiento de instrucciones con el Lenguaje de Expresión de LangChain (LCEL)
 - Especificación de formatos de salida mediante *output parsers*
 
-## Unidad 2: Cadenas y Memoria
+## Módulo 2. Cadenas y Memoria
 - Desarrollo de chatbots funcionales con LangChain
 - Gestión de memoria contextual para mantener el historial de interacciones
 - Implementación práctica de un chatbot funcional
 
-## Unidad 3: Proyecto Integrador - Construcción y Despliegue de un Sistema RAG
+## Módulo 3. Proyecto Integrador - Construcción y despliegue de un Sistema RAG
 - Integración de *document loaders* para procesar archivos PDF
 - Uso de *retrievers* y bases de datos vectoriales para recuperación de información
 - Construcción de sistemas Retrieval-Augmented Generation (RAG)
