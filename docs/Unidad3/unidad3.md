@@ -1,10 +1,10 @@
 
-# Módulo 3: Proyecto Integrador: construcción y depliegue de un sisitema RAG
+# Módulo 3: Proyecto Integrador: construcción y despliegue de un sisitema RAG
 
 
 ## Introducción al módulo
 
-Bienvenidos al última módulo de nuestro curso sobre aplicaciones asistidas por LLM. En este módulo aprenderemos sobre document loaders y desplegaremos una aplicación RAG funcional para conversar con archivos en PDF. ¡Comencemos!
+Bienvenidos al último módulo de nuestro curso sobre aplicaciones asistidas por LLM. En este módulo aprenderemos sobre document loaders y desplegaremos una aplicación RAG funcional para conversar con archivos en PDF. ¡Comencemos!
 
 
 ## Cronograma de actividades - Módulo 3
