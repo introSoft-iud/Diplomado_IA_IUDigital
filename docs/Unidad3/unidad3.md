@@ -1,7 +1,7 @@
 <!--  Nombre de la Unidad __
 -->
 
-# Unidad 3: Proyecto Integtrador. Construcción y depliegue de un sisitema RAG
+# Módulo 3. Proyecto Integrador: construcción y depliegue de un sisitema RAG
 <!--
 Introducción a la unidad
 Teniendo en cuenta que cada unidad es un saber específico, en la introducción se destaca la importancia y relevancia del saber que se abordará en función de los resultados de aprendizaje planteados. Describe brevemente cómo el tema central de la unidad se integra en el panorama más amplio del aprendizaje y de la vida cotidiana o profesional del estudiante. Su propósito es despertar la curiosidad y el interés del estudiante sobre los contenidos que explorará.
@@ -17,9 +17,9 @@ Incluye el propósito de la unidad y lo que el estudiante aprenderá mediante su
 Vale la pena destacar algunos de los temas más importantes que se abordarán.
 Procura no superar las 300 palabras (1500 caracteres) al redactar la introducción.
 -->
-## Introducción a la unidad
+## Introducción al módulo
 
-Bienvenidos a la última unidad de nuestro curso sobre aplicaciones asistidas por LLMs. En esta unidad aprenderemos sobre document loaders y desplegaremos una aplicación RAG funcional para conversar con archivos en PDF. ¡Comencemos!
+Bienvenidos al último módulo de nuestro curso sobre aplicaciones asistidas por LLM. En este módulo aprenderemos sobre document loaders y desplegaremos una aplicación RAG funcional para conversar con archivos en PDF. ¡Comencemos!
 
 <!-- Resultados de aprendizaje
 Los objetos de aprendizaje se asumen como aquello que los estudiantes serán capaces de hacer a partir de lo que aprendieron a lo largo de la unidad.
@@ -34,11 +34,11 @@ Utiliza verbos conjugados en presente (describen la acción).
 Los resultados deben ser medibles y alcanzables. 
 
 -->
-## Cronograma de actividades - Unidad 3
+## Cronograma de actividades - Módulo 3
 
 | Actividad de aprendizaje                                      | Evidencia de aprendizaje                               | Semana         | Ponderación |
 |---------------------------------------------------------------|--------------------------------------------------------|----------------|-------------|
-| Reto Formativo 3: Carga y división de documentos en PDF       | EA3: Chat con tus datos                                | Semanas 6, 7 y 8 | 30%         |
+| Reto Formativo 3: carga y división de documentos en PDF       | EA3: Chat con tus datos                                | Semanas 6, 7 y 8 | 30%         |
 | **Total**                                                     |                                                        |                | **30%**     |
 
 <!--
@@ -111,7 +111,7 @@ El uso efectivo de metadatos puede mejorar significativamente la capacidad de tu
 
 ## Categorías y Ejemplos de Cargadores de Documentos
 
-LangChain ofrece un vasto ecosistema de cargadores de documentos, ¡actualmente más de 80, y la comunidad sigue añadiendo más! Exploremos algunos:
+LangChain ofrece un vasto ecosistema de cargadores de documentos, ¡actualmente más de 80, y la com sigue añadiendo más! Exploremos algunos:
 
 ### Cargadores Basados en Archivos:
 Estos cargadores leen datos directamente de archivos. Vemos algunos:
@@ -1008,7 +1008,7 @@ Ahora podemos preguntar algo sobre el contenido del PDF:
     --------------------------------------------------
     ```
 
-¡Felicidades por llegar hasta el final de la unidad y del curso! Has aprendido a integrar plantillas de prompt con cadenas y parsers de salida, implementaste cadenas con memoria y, finalmente, practicado cómo dividir documentos en fragmentos, almacenar embeddings de los fragmentos en una base de datos vectorial y realizar RAG sobre esta base de datos. Te invito a realizar la [actividad de aprendizaje](#evidencia-de-aprendizaje), donde crearás y desplegarás tu aplicación RAG siguiendo los pasos que acabas de estudiar.
+¡Felicidades por llegar hasta el final del módulo y del curso! Has aprendido a integrar plantillas de prompt con cadenas y parsers de salida, implementaste cadenas con memoria y, finalmente, practicado cómo dividir documentos en fragmentos, almacenar embeddings de los fragmentos en una base de datos vectorial y realizar RAG sobre esta base de datos. Te invito a realizar la [actividad de aprendizaje](#evidencia-de-aprendizaje), donde crearás y desplegarás tu aplicación RAG siguiendo los pasos que acabas de estudiar.
 
 ## Glosario
 
@@ -1022,7 +1022,7 @@ Ahora podemos preguntar algo sobre el contenido del PDF:
 
 ## Evidencia de Aprendizaje
 
-| **Unidad 3** | **Proyecto Integrador. Construcción y despliegue de un sistema RAG** |
+| **Módulo 3** | **Proyecto Integrador. Construcción y despliegue de un sistema RAG** |
 |--------------|-------------------------------------------------------------|
 | **EA3.**     | Chat con tus datos
 
