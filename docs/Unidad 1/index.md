@@ -1,9 +1,9 @@
-<!--  Nombre de la Unidad __
+<!--  Nombre de la módulo __
 -->
-# Unidad 1. Introducción a la construcción de aplicaciones con LLMs
+# Módulo 1. Introducción a la construcción de aplicaciones con LLMs
 <!--
-Introducción a la unidad
-Teniendo en cuenta que cada unidad es un saber específico, en la introducción se destaca la importancia y relevancia del saber que se abordará en función de los resultados de aprendizaje planteados. Describe brevemente cómo el tema central de la unidad se integra en el panorama más amplio del aprendizaje y de la vida cotidiana o profesional del estudiante. Su propósito es despertar la curiosidad y el interés del estudiante sobre los contenidos que explorará.
+Introducción a la módulo
+Teniendo en cuenta que cada módulo es un saber específico, en la introducción se destaca la importancia y relevancia del saber que se abordará en función de los resultados de aprendizaje planteados. Describe brevemente cómo el tema central de la módulo se integra en el panorama más amplio del aprendizaje y de la vida cotidiana o profesional del estudiante. Su propósito es despertar la curiosidad y el interés del estudiante sobre los contenidos que explorará.
 
 En definitiva, se trata de responder a las preguntas: ¿Qué va a aprender el estudiante? ¿Cómo lo va a aprender? ¿Para qué lo va a aprender?  
 
@@ -11,25 +11,25 @@ En definitiva, se trata de responder a las preguntas: ¿Qué va a aprender el es
 
 
 Recomendaciones:
-Inicia presentando al estudiante cómo se relaciona el conocimiento de la unidad con su contexto. 
-Incluye el propósito de la unidad y lo que el estudiante aprenderá mediante su estudio.
+Inicia presentando al estudiante cómo se relaciona el conocimiento de la módulo con su contexto. 
+Incluye el propósito de la módulo y lo que el estudiante aprenderá mediante su estudio.
 Vale la pena destacar algunos de los temas más importantes que se abordarán.
 Procura no superar las 300 palabras (1500 caracteres) al redactar la introducción.
 -->
 
-## Introducción a la unidad
+## Introducción al módulo
 
-Bienvenidos a la primera unidad. En esta unidad, aprenderás de manera general cómo funciona un modelo de lenguaje. Comenzaremos utilizando la API de OpenAI y exploraremos cómo conectar sus modelos en aplicaciones. Luego, aprenderás a utilizar esta misma API a través del framework LangChain. Introduciremos los aspectos fundamentales de la interacción con los LLMs usando LangChain: **prompts**, **templates** y **output parsers**.
+Bienvenidos al primer módulo.  Aquí aprenderás de manera general cómo funciona un modelo de lenguaje. Comenzaremos utilizando la API de OpenAI y exploraremos cómo conectar sus modelos en aplicaciones. Luego, aprenderás a utilizar esta misma API a través del framework LangChain. Introduciremos los aspectos fundamentales de la interacción con los LLMs usando LangChain: **prompts**, **templates** y **output parsers**.
 
 Como actividad práctica, elaborarás un sistema asistido por IA para extraer datos de comentarios de usuarios en un e-commerce.
 
 ¡Comencemos!
 <!-- Resultados de aprendizaje
-Los objetos de aprendizaje se asumen como aquello que los estudiantes serán capaces de hacer a partir de lo que aprendieron a lo largo de la unidad.
+Los objetos de aprendizaje se asumen como aquello que los estudiantes serán capaces de hacer a partir de lo que aprendieron a lo largo de la .
 
 
 Recomendaciones:
-Formula máximo dos resultados por unidad. 
+Formula máximo dos resultados por . 
 Asegúrate que tengan relación con los objetivos de aprendizaje planteados en la carta descriptiva. 
 Redacta los resultados a partir de tres elementos: qué, cómo y para qué.
 Recuerda que los resultados se establecen en función del aprendizaje, no de la enseñanza. 
@@ -40,20 +40,20 @@ Los resultados deben ser medibles y alcanzables.
 
 ## Resultados de aprendizaje
 
-Al finalizar esta unidad, estarás en capacidad de realizar llamadas a los modelos de lenguaje de OpenAI a través de la API para crear código Python cuya ejecución es asistida por LLMs.
+Al finalizar este módulo estarás en capacidad de realizar llamadas a los modelos de lenguaje de OpenAI a través de la API para crear código Python cuya ejecución es asistida por LLMs.
 
 Aprenderás a configurar cadenas de ejecución simples en LangChain usando LCEL, junto con *prompt templates* y *output parsers*, para convertir las salidas de los LLMs en objetos nativos de Python.
-<!--Cronograma de actividades de la unidad  
+<!--Cronograma de actividades de la módulo  
 Permite la proyección de los contenidos tanto teóricos como prácticos, la ubicación temporal dentro del curso y los porcentajes que corresponden a la evidencia de aprendizaje.
 
 
 Recomendaciones:
-Toma del cronograma general que realizaste (plantillas preliminares) las actividades que correspondan a la presente unidad.
-Plantea una evidencia de aprendizaje por unidad, y otra más para el cierre del curso. 
+Toma del cronograma general que realizaste (plantillas preliminares) las actividades que correspondan a la presente módulo.
+Plantea una evidencia de aprendizaje por módulo, y otra más para el cierre del curso. 
 
  -->
 
-## Cronograma de actividades - Unidad 1
+## Cronograma de actividades - Módulo 1
 | Actividad de aprendizaje       | Evidencia de aprendizaje | Semana       | Ponderación |
 |--------------------------------|---------------------------|--------------|--------------|
 | Reto Formativo 1 y 2           | EA1:  Templates y Output Parsers | Semana 1, 2 y 3 | 25%         |
@@ -62,7 +62,7 @@ Plantea una evidencia de aprendizaje por unidad, y otra más para el cierre del 
 
 <!--
 Desarrollo temático
-Aquí comienza la elaboración del contenido que hará parte de la unidad temática. Para ello, es preciso identificar qué requiere el estudiante para aprender y comprender aquello que debe explorar, desarrollar nuevas habilidades, aplicar el conocimiento y cumplir con los resultados de aprendizaje. 
+Aquí comienza la elaboración del contenido que hará parte de la módulo temática. Para ello, es preciso identificar qué requiere el estudiante para aprender y comprender aquello que debe explorar, desarrollar nuevas habilidades, aplicar el conocimiento y cumplir con los resultados de aprendizaje. 
 
 Los textos se construyen con cohesión y claridad, de manera que facilite al estudiante apropiarse del conocimiento de manera efectiva. Esta elaboración debe estar respaldada por enfoques didácticos, garantizando un proceso de aprendizaje sólido y bien fundamentado.
 
@@ -73,7 +73,7 @@ Recomendaciones:
 Ten en cuenta las siguientes recomendaciones para desarrollar las temáticas de la actividad de aprendizaje:
 Lee el documento “Manual del contenidista” en el cual encontrarás consejos para redactar los contenidos.
 Ten a la mano el “Manual de redacción” para resolver dudas o inquietudes sobre el uso de las normas APA para citas y referencias. 
-Cada unidad debe tener una cantidad mínima de 30 páginas de contenido temático. Esto equivale aproximadamente a 8500 palabras, en Arial 12, espaciado 1.0 y texto justificado. 
+Cada módulo debe tener una cantidad mínima de 30 páginas de contenido temático. Esto equivale aproximadamente a 8500 palabras, en Arial 12, espaciado 1.0 y texto justificado. 
 El desarrollo del contenido requiere un 70 % de producción propia y un 30 % para contenidos de terceros (fuentes primarias). Monitorea permanentemente tu documento con ayuda de la herramienta Turnitin para revisar el porcentaje de similitud.
 Los textos e imágenes de terceros obligatoriamente se deben citar y referenciar, procurando que no superen el porcentaje exigido (30 %). Debes suministrar los enlaces de los recursos digitales empleados (PDF, sitios web, artículos online, videos, imágenes, etc.). Todos estos recursos deben ser de uso libre.
 No incluir artículos, tesis, textos o documentos propios que han sido previamente publicados o presentados a otra institución. 
@@ -1138,10 +1138,10 @@ En analogía con el constructor de la clase `ChatPromptTemplate.from_template`, 
 <!--
 
 
-Cierre de la unidad
-Es una síntesis del contenido desarrollado a lo largo de la unidad en la que se destacan los aprendizajes más importantes. Asimismo, motiva al estudiante a continuar en el proceso formativo destacando la importancia de lo que está por venir en unidades o cursos posteriores.
+Cierre de la módulo
+Es una síntesis del contenido desarrollado a lo largo de la módulo en la que se destacan los aprendizajes más importantes. Asimismo, motiva al estudiante a continuar en el proceso formativo destacando la importancia de lo que está por venir en móduloes o cursos posteriores.
 
--->Aquí termina nuestra primera unidad. ¡Felicidades por llegar hasta el final! Ahora conoces el contexto general de las tecnologías involucradas en el desarrollo de aplicaciones asistidas por IA. Este campo apenas está comenzando, y ahora tienes las bases para utilizar herramientas más sofisticadas, como las cadenas y la gestión de memoria, que serán el tema de la siguiente unidad.
+-->Aquí termina nuestro primer módulo. ¡Felicidades por llegar hasta el final! Ahora conoces el contexto general de las tecnologías involucradas en el desarrollo de aplicaciones asistidas por IA. Este campo apenas está comenzando, y ahora tienes las bases para utilizar herramientas más sofisticadas, como las cadenas y la gestión de memoria, que serán el tema del siguiente módulo.
 
 
 
@@ -1151,15 +1151,15 @@ Es una lista de palabras, expresiones o conceptos que requieren de una explicaci
 
 
 Recomendaciones:
-Elabora una lista de términos que puedan suponer alguna dificultad para el estudiante (máximo 10 términos por unidad).
+Elabora una lista de términos que puedan suponer alguna dificultad para el estudiante (máximo 10 términos por módulo).
 Describe brevemente su significado o explicación (máximo 700 caracteres).
-Si uno de los términos es central para la unidad temática, su explicación debe estar en el contenido principal.
+Si uno de los términos es central para la módulo temática, su explicación debe estar en el contenido principal.
 Cada término del glosario debe estar citado y referenciado bajo normas APA (cuando se empleen definiciones de terceros). Las referencias se agregan en la parte final.
 Evita utilizar definiciones sacadas de Wikipedia, blogs, Definición.de, o Significados.com.
 Apóyate en diccionarios especializados del área, o en definiciones de autores de peso académico.
-Asegúrate de que las definiciones sean comprensibles y se ajusten al contexto específico de los temas que se desarrollan en la unidad.
+Asegúrate de que las definiciones sean comprensibles y se ajusten al contexto específico de los temas que se desarrollan en la módulo.
 Los términos se deben organizar en orden alfabético.
-Incluir términos que no fueron definidos en las unidades temáticas.
+Incluir términos que no fueron definidos en las móduloes temáticas.
 
 -->
 
@@ -1215,7 +1215,7 @@ En caso de que el conocimiento sea muy teórico, elabora una estrategia didácti
 ## Evidencia de Aprendizaje
 
 
-| **Unidad 1** | **Introducción a la construcción de aplicaciones con LLMs** |
+| **Módulo 1** | **Introducción a la construcción de aplicaciones con LLMs** |
 |--------------|-------------------------------------------------------------|
 | **EA1.**     | Templates y Output Parsers  
 
@@ -1275,7 +1275,7 @@ LangChain. (s.f.). *LangChain Documentation*. Disponible en [https://python.lang
 Lecturas y material complementario
 
 
-Libros, recursos interactivos o videos que complementan los temas de la unidad y que permiten al estudiante ampliar y enriquecer su conocimiento promoviendo un espíritu investigativo y de autoformación.
+Libros, recursos interactivos o videos que complementan los temas de la módulo y que permiten al estudiante ampliar y enriquecer su conocimiento promoviendo un espíritu investigativo y de autoformación.
 -->
 
 Te invitamos a explorar el siguiente material para ampliar tus conocimientos sobre modelos de lenguaje (LLMs), LangChain, plantillas de prompts y parsers de salida. Estos recursos te proporcionarán una comprensión más profunda y práctica de los temas abordados en el curso.
