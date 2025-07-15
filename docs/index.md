@@ -20,7 +20,7 @@ Describe de manera precisa y comprensible el propósito general del curso o asig
 
 
 
-Describe la relevancia del contenido del curso para la formación, esto es: los saberes a explorar, las habilidades a desarrollar, qué metodología se empleará, cuál es el proceso de evaluación y cómo están estructuradas las unidades del curso. 
+Describe la relevancia del contenido del curso para la formación, esto es: los saberes a explorar, las habilidades a desarrollar, qué metodología se empleará, cuál es el proceso de evaluación y cómo están estructuradas los módulos del curso. 
 
 Para redactar la presentación, ten en cuenta las siguientes recomendaciones:
 
@@ -47,7 +47,7 @@ No está del todo claro cómo este "pequeño" avance en la escala de los modelos
 
 Hemos diseñado este diplomado para introducirte a este nuevo paradigma. Este curso está basado en LangChain, el framework más popular de la actualidad para interactuar con las APIs de los principales modelos de lenguaje.
 
-En la Unidad 1 comenzarás por aprender a crear instrucciones reutilizables para los LLM, los llamados `prompt templates`, luego verás cómo encadenar estas instrucciones a través de las cadenas usando  el Lenguaje de Expresión de LangChain (LCEL). Aprenderás a especificar el formato de salida de tus cadenas de ejecución mediante los `output parsers`. A continuación, en la Unidad 2, crearás tus primeros chatbots y aprenderás a gestionar sus memorias. Como ejercicio práctico, implementarás un chatbot asistente de un médico que carga en su memoria la historia clínica de los pacientes. Finalmente, en la Unidad 3, estarás preparado para incorporar los componentes de las dos unidades anteriores junto con loaders de documentos, retrievers y bases de datos vectoriales, para crear y desplegar un sistema RAG sobre documentos en PDF, de manera que podrás conversar con tus archivos PDF.
+En el módulo 1 comenzarás por aprender a crear instrucciones reutilizables para los LLM, los llamados `prompt templates`, luego verás cómo encadenar estas instrucciones a través de las cadenas usando  el Lenguaje de Expresión de LangChain (LCEL). Aprenderás a especificar el formato de salida de tus cadenas de ejecución mediante los `output parsers`. A continuación, en el módulo 2, crearás tus primeros chatbots y aprenderás a gestionar sus memorias. Como ejercicio práctico, implementarás un chatbot asistente de un médico que carga en su memoria la historia clínica de los pacientes. Finalmente, en el moódulo 3, estarás preparado para incorporar los componentes de los dos módulos anteriores junto con loaders de documentos, retrievers y bases de datos vectoriales, para crear y desplegar un sistema RAG sobre documentos en PDF, de manera que podrás conversar con tus archivos PDF.
 
 <!--
 
@@ -109,7 +109,8 @@ Ejemplos:
 -->
 
 ## Mapa del curso
-
+Estos son los módulos que conforman nuestro diploma:
+(INSERTAR MAPA DEL CURSO: https://drive.google.com/file/d/1abV1RCEsFKhH16yNCnV1w9pI5xRk0EQ5/view?usp=sharing) 
 
 <!-- Cronograma de actividades 
 Organiza las actividades y evidencias de aprendizaje que deben llevarse a cabo dentro del curso. Este cronograma incluye información sobre la secuencia de las actividades en cada unidad, la ubicación temporal (en qué semana se presentan) y los porcentajes correspondientes a las evidencias de aprendizaje.
@@ -118,7 +119,7 @@ Organiza las actividades y evidencias de aprendizaje que deben llevarse a cabo d
 
 Diligencia el cuadro siguiendo las indicaciones que encontrarás en cada celda. 
 Recuerda la taxonomía y las definiciones establecidas en la carta descriptiva.
-Menciona las actividades y evidencias de aprendizaje que deberá realizar el estudiante durante el estudio del curso (bien sea de 2 o 3 unidades, según el caso).
+Menciona las actividades y evidencias de aprendizaje que deberá realizar el estudiante durante el estudio del curso (bien sea de 2 o 3 es, según el caso).
 
 
 
@@ -147,13 +148,13 @@ Menciona las actividades y evidencias de aprendizaje que deberá realizar el est
 <!-- 
 
 Cronograma de actividades 
-Organiza las actividades y evidencias de aprendizaje que deben llevarse a cabo dentro del curso. Este cronograma incluye información sobre la secuencia de las actividades en cada unidad, la ubicación temporal (en qué semana se presentan) y los porcentajes correspondientes a las evidencias de aprendizaje.
+Organiza las actividades y evidencias de aprendizaje que deben llevarse a cabo dentro del curso. Este cronograma incluye información sobre la secuencia de las actividades en cada , la ubicación temporal (en qué semana se presentan) y los porcentajes correspondientes a las evidencias de aprendizaje.
 
 
 
 Diligencia el cuadro siguiendo las indicaciones que encontrarás en cada celda. 
 Recuerda la taxonomía y las definiciones establecidas en la carta descriptiva.
-Menciona las actividades y evidencias de aprendizaje que deberá realizar el estudiante durante el estudio del curso (bien sea de 2 o 3 unidades, según el caso).
+Menciona las actividades y evidencias de aprendizaje que deberá realizar el estudiante durante el estudio del curso (bien sea de 2 o 3 es, según el caso).
 
 -->
 ## Cronograma de actividades
