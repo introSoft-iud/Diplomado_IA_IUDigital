@@ -43,7 +43,7 @@ Bienvenidos al diplomado en construcción de aplicaciones asistidas por modelos 
 
 Aunque la inteligencia artificial ha existido como un campo exitoso y prometedor entre los expertos durante varias décadas, la llegada de capacidades computacionales más avanzadas —ofrecidas por las GPU modernas— y las habilidades demostradas con el lanzamiento de ChatGPT fueron una gran sorpresa para muchos.
 
-No está del todo claro cómo este "pequeño" avance en la escala de los modelos pudo desencadenar la gran cantidad de aplicaciones asistidas por IA que estamos viendo explotar cada semana. Lo que sí es claro es que el campo de la ingeniería de software está siendo revolucionado, y que el nuevo paradigma de construcción de software ya no consiste en los tradicionales flujos de ejecución, sino que la nueva ingeniería de sistemas debe integrar a los LLMs en dichos flujos.
+No está del todo claro cómo este "pequeño" avance en la escala de los modelos pudo desencadenar la gran cantidad de aplicaciones asistidas por IA que estamos viendo explotar cada semana. Lo que sí es claro es que el campo de la ingeniería de software está siendo revolucionado, y que el nuevo paradigma de construcción de software ya no consiste en los tradicionales flujos de ejecución, sino que la nueva ingeniería de sistemas debe integrar a los LLM en dichos flujos.
 
 Hemos diseñado este diplomado para introducirte a este nuevo paradigma. Este curso está basado en LangChain, el framework más popular de la actualidad para interactuar con las APIs de los principales modelos de lenguaje.
 
@@ -89,9 +89,9 @@ La siguiente imagen es la respuesta de ChatGPT al prompt:
 
 *Figura 1: Representación visual generada por ChatGPT sobre la vida del autor del diplomado.*
 
-¿Qué tan parecida es esta imagen a tu vida en tu caso? ¿Te sorprende que ChatGPT tenga tanta información sobre tu vida y tus gustos o todo lo contrario? ¿Qué opinas que va a pasar con los datos en un futuro donde todo es asistido por IA? ¿Le daremos a las IAs la información sensible de las personas y las empresas?
+¿Qué tan parecida es esta imagen a tu vida en tu caso? ¿Te sorprende que ChatGPT tenga tanta información sobre tu vida y tus gustos o todo lo contrario? ¿Qué opinas que va a pasar con los datos en un futuro donde todo es asistido por IA? ¿Le daremos a las IA la información sensible de las personas y las empresas?
 
-***¿Cómo podemos asegurarnos de que nuestros datos permanezcan privados, y al mismo tiempo aprovechar todo el poder de los modelos de lenguaje en los datos privados?***
+***¿Cómo podemos asegurarnos de que nuestros datos permanezcan privados, y al mismo tiempo, aprovechar todo el poder de los modelos de lenguaje en los datos privados?***
 
 <!--
 
@@ -128,8 +128,8 @@ Menciona las actividades y evidencias de aprendizaje que deberá realizar el est
 
 
 
-## Módulo 1. Introducción a la Construcción de Aplicaciones con LLMs
-- Fundamentos de modelos de lenguaje grandes (LLMs) y su integración en flujos de software
+## Módulo 1. Introducción a la Construcción de Aplicaciones con LLM
+- Fundamentos de modelos de lenguaje grandes (LLM) y su integración en flujos de software
 - Creación y uso de *prompt templates* para instrucciones reutilizables
 - Encadenamiento de instrucciones con el Lenguaje de Expresión de LangChain (LCEL)
 - Especificación de formatos de salida mediante *output parsers*
