@@ -11,7 +11,7 @@ Nombre del curso: Diplomado en construcción de Aplicaciones Asistidas por IA
 
 -->
 # Diplomado en construcción de Aplicaciones Asistidas por IA
-
+SUBIR BANNER DEL CURSO: https://drive.google.com/file/d/1gQfMuG5mIBnUS6srf2fkkN8t15ua7BtC/view?usp=drive_link
 <!--
 *********           PRELIMINARES  *****************************
 
@@ -36,7 +36,7 @@ Finaliza con un párrafo de cierre en el cual motives al estudiante a realizar e
  
 ** Esta presentación no debe superar las 300 palabras.  
 
-SUBIR BANNER DEL CURSO: https://drive.google.com/file/d/1gQfMuG5mIBnUS6srf2fkkN8t15ua7BtC/view?usp=drive_link
+
 
 -->
 Bienvenidos al diplomado en construcción de aplicaciones asistidas por modelos de lenguaje de la IU Digital de Antioquia.
