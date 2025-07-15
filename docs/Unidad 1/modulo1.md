@@ -724,7 +724,7 @@ puedes pensar en una*chain* como una **cinta transportadora**:
 
 <figure>
   <img src="../assets/images/banda1.png" alt="Dibujo de una banda de supermercado con frutas" width="600">
-  <figcaption> Una cadena simple funciona como una banda transportadora en la que se van ejecutando órdenes de forma secuencial. Fuente: <a> Creado por Grok 3 (xAI) usando un prompt del usuario.</a></figcaption>
+  <figcaption> Una cadena simple funciona como una banda transportadora en la que se van ejecutando órdenes de forma secuencial.</a></figcaption>
 </figure>
 
 - La configuras una vez.  
@@ -958,7 +958,7 @@ Los parsers nos permiten agregar pasos adicionales a las cadenas de ejecución; 
 ```
 <figure>
   <img src="../assets/images/car_asembly.png" alt="Dibujo de una banda de supermercado con frutas" width="600">
-  <figcaption>Analogía de una cadena con parser. Las instrucciones se ejecutan en orden como en una línea de ensamblaje. Fuente: <a>Creado por Grok 3 (xAI) usando un prompt del usuario.</a></figcaption>
+  <figcaption>Analogía de una cadena con parser. Las instrucciones se ejecutan en orden como en una línea de ensamblaje. </figcaption>
 </figure>
 
 ### `JsonOutputParser`
