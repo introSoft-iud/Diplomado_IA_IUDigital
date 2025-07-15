@@ -1,6 +1,6 @@
 <!--  Nombre de la módulo __
 -->
-# Módulo 1. Introducción a la construcción de aplicaciones con LLMs
+# Módulo 1. Introducción a la construcción de aplicaciones con LLM
 <!--
 Introducción a la módulo
 Teniendo en cuenta que cada módulo es un saber específico, en la introducción se destaca la importancia y relevancia del saber que se abordará en función de los resultados de aprendizaje planteados. Describe brevemente cómo el tema central de la módulo se integra en el panorama más amplio del aprendizaje y de la vida cotidiana o profesional del estudiante. Su propósito es despertar la curiosidad y el interés del estudiante sobre los contenidos que explorará.
@@ -19,7 +19,7 @@ Procura no superar las 300 palabras (1500 caracteres) al redactar la introducci�
 
 ## Introducción al módulo
 
-Bienvenidos al primer módulo.  Aquí aprenderás de manera general cómo funciona un modelo de lenguaje. Comenzaremos utilizando la API de OpenAI y exploraremos cómo conectar sus modelos en aplicaciones. Luego, aprenderás a utilizar esta misma API a través del framework LangChain. Introduciremos los aspectos fundamentales de la interacción con los LLMs usando LangChain: **prompts**, **templates** y **output parsers**.
+Bienvenidos al primer módulo.  Aquí aprenderás de manera general cómo funciona un modelo de lenguaje. Comenzaremos utilizando la API de OpenAI y exploraremos cómo conectar sus modelos en aplicaciones. Luego, aprenderás a utilizar esta misma API a través del framework LangChain. Introduciremos los aspectos fundamentales de la interacción con los LLM usando LangChain: **prompts**, **templates** y **output parsers**.
 
 Como actividad práctica, elaborarás un sistema asistido por IA para extraer datos de comentarios de usuarios en un e-commerce.
 
@@ -40,9 +40,9 @@ Los resultados deben ser medibles y alcanzables.
 
 ## Resultados de aprendizaje
 
-Al finalizar este módulo estarás en capacidad de realizar llamadas a los modelos de lenguaje de OpenAI a través de la API para crear código Python cuya ejecución es asistida por LLMs.
+Al finalizar este módulo estarás en capacidad de realizar llamadas a los modelos de lenguaje de OpenAI a través de la API para crear código Python cuya ejecución es asistida por LLM.
 
-Aprenderás a configurar cadenas de ejecución simples en LangChain usando LCEL, junto con *prompt templates* y *output parsers*, para convertir las salidas de los LLMs en objetos nativos de Python.
+Aprenderás a configurar cadenas de ejecución simples en LangChain usando LCEL, junto con *prompt templates* y *output parsers*, para convertir las salidas de los LLM en objetos nativos de Python.
 <!--Cronograma de actividades de la módulo  
 Permite la proyección de los contenidos tanto teóricos como prácticos, la ubicación temporal dentro del curso y los porcentajes que corresponden a la evidencia de aprendizaje.
 
@@ -132,7 +132,7 @@ Por supuesto, el concepto de "grande" es relativo. ¿A partir de cuántos parám
 - En 2019, **GPT-2** aumentó ese número a **1.5 billones de parámetros**.
 - Hasta abril de 2025, el modelo de lenguaje más grande conocido públicamente es **GPT-4** de OpenAI, con aproximadamente **1.76 billones de parámetros**.
 
-Es muy posible que en el futuro estos modelos hoy considerados **LLMs** sean vistos como simples modelos de lenguaje, a medida que la tecnología y los recursos computacionales avancen.
+Es muy posible que en el futuro estos modelos hoy considerados **LLM** sean vistos como simples modelos de lenguaje, a medida que la tecnología y los recursos computacionales avancen.
 
 
 !!! warning "Para tener en cuenta"
@@ -301,7 +301,7 @@ Por ejemplo, podemos configurar el modelo para que responda en un estilo poétic
 
 En la sección anterior, tuviste tu primera interacción con un modelo de lenguaje de gran escala (LLM). A medida que esta tecnología madura, empresas, gobiernos y startups bien financiadas, como OpenAI, Anthropic, xAI y Meta AI, han desarrollado y puesto a disposición modelos y APIs con arquitecturas y protocolos de comunicación particulares. Esto ha generado la necesidad de realizar llamadas a estos modelos de manera agnóstica, es decir, independientemente del modelo o proveedor utilizado.
 
-En este contexto, el framework más popular hasta el momento es LangChain. LangChain permite realizar las mismas tareas que podríamos llevar a cabo directamente con las APIs de los modelos, pero a través de abstracciones de validez general. Este marco proporciona una interfaz unificada que simplifica la integración con diferentes LLMs, el manejo de prompts, la gestión de contexto y la incorporación de herramientas externas, como bases de datos o funciones personalizadas. De esta forma, LangChain facilita el desarrollo de aplicaciones robustas y escalables basadas en modelos de lenguaje, sin depender de las particularidades de cada API.
+En este contexto, el framework más popular hasta el momento es LangChain. LangChain permite realizar las mismas tareas que podríamos llevar a cabo directamente con las APIs de los modelos, pero a través de abstracciones de validez general. Este marco proporciona una interfaz unificada que simplifica la integración con diferentes LLM, el manejo de prompts, la gestión de contexto y la incorporación de herramientas externas, como bases de datos o funciones personalizadas. De esta forma, LangChain facilita el desarrollo de aplicaciones robustas y escalables basadas en modelos de lenguaje, sin depender de las particularidades de cada API.
 <figure>
   <img src="../assets/images/langchain.png" alt="Logo de LangChain" width="600">
   <figcaption>
@@ -344,7 +344,7 @@ Y listo, eso es todo. Ahora simplemente invocamos el chat con el *prompt* que qu
 LangChain proporciona una variedad de herramientas que permiten construir aplicaciones basadas en modelos de lenguaje de manera modular y eficiente. A continuación, se describen algunas de las más importantes:
 
 - **Models (Modelos)**  
-  Representan los modelos de lenguaje que LangChain puede integrar, como `ChatOpenAI`. Permiten interactuar con LLMs de distintos proveedores, incluyendo OpenAI, Anthropic, Cohere, entre otros.
+  Representan los modelos de lenguaje que LangChain puede integrar, como `ChatOpenAI`. Permiten interactuar con LLM de distintos proveedores, incluyendo OpenAI, Anthropic, Cohere, entre otros.
 
 - **Prompts (Prompts)**  
   Herramientas para diseñar y gestionar *prompts*, como `ChatPromptTemplate`. Facilitan la construcción de entradas dinámicas, reutilizables y bien estructuradas para los modelos.
@@ -376,7 +376,7 @@ LangChain proporciona una variedad de herramientas que permiten construir aplica
 
 ### Plantillas de Prompts
 
-Comenzaremos estudiando los prompt templates. Los prompts son el componente fundamental para proporcionar instrucciones a los LLMs. Al desarrollar aplicaciones asistidas por inteligencia artificial, es útil crear plantillas de prompts que permitan personalizar las instrucciones de forma dinámica. Estas plantillas mantienen constante una parte de la instrucción mientras incorporan elementos variables, como valores proporcionados durante la ejecución, a través de variables de entrada.
+Comenzaremos estudiando los prompt templates. Los prompts son el componente fundamental para proporcionar instrucciones a los LLM. Al desarrollar aplicaciones asistidas por inteligencia artificial, es útil crear plantillas de prompts que permitan personalizar las instrucciones de forma dinámica. Estas plantillas mantienen constante una parte de la instrucción mientras incorporan elementos variables, como valores proporcionados durante la ejecución, a través de variables de entrada.
 
 Por ejemplo, una plantilla puede definir la estructura de una pregunta, dejando espacios para insertar valores específicos, como el nombre de un país. Esto se logra utilizando herramientas como `ChatPromptTemplate` de LangChain, que simplifica la creación de prompts reutilizables.
 
@@ -496,7 +496,7 @@ El *prompt* completo lucirá así:
 </figure>
 Como ilustra la figura, el método `format_messages()` asociado a la clase `ChatPromptTemplate` cumple la función de empaquetar en el objeto los valores específicos en las variables de entrada.
 
-Este tipo de objeto nos permite incorporar programáticamente llamadas a las APIs de los LLMs en el flujo de ejecución de un código Python convencional. Veamos cómo hacerlo:
+Este tipo de objeto nos permite incorporar programáticamente llamadas a las APIs de los LLM en el flujo de ejecución de un código Python convencional. Veamos cómo hacerlo:
 
  Como ya tenemos nuestro *prompt* completo y lleno con las variables que queremos, lo podemos enviar al LLM:
 
@@ -730,7 +730,7 @@ puedes pensar en una*chain* como una **cinta transportadora**:
 - La configuras una vez.  
 - Luego, simplemente funciona sin necesidad de repetir cada paso manualmente.  
 
-Esto facilita la construcción de **pipelines más avanzados** dentro de nuestras aplicaciones con LLMs.  
+Esto facilita la construcción de **pipelines más avanzados** dentro de nuestras aplicaciones con LLM.  
 Una forma de encadenar ejecuciones en cadenas es utilizar el operador `|` (llamado *pipe*) para conectar los pasos. Para instanciar una cadena que realice las tareas de nuestro prompt anterior, tendríamos el prompt como:
 
 ```python
@@ -816,7 +816,7 @@ Veamos algunos ejemplos en los que usamos múltiples variables en nuestros promp
     ```
 ## Output Parsers: Dando Forma a la Salida del LLM
 
-Los LLMs son sistemas que reciben texto plano y devuelven texto, incluso cuando devuelven imágenes, lo que realmente están haciendo en el fondo es generar descripciones textuales de esas imágenes. Sin embargo, cuando estamos construyendo aplicaciones asistidas por LLMs, lo que queremos es utilizar la salida de la llamada al LLM para emplearla en otros flujos de ejecución de nuestra aplicación.
+Los LLM son sistemas que reciben texto plano y devuelven texto, incluso cuando devuelven imágenes, lo que realmente están haciendo en el fondo es generar descripciones textuales de esas imágenes. Sin embargo, cuando estamos construyendo aplicaciones asistidas por LLM, lo que queremos es utilizar la salida de la llamada al LLM para emplearla en otros flujos de ejecución de nuestra aplicación.
 
 Ahí es donde entran los *output parsers*.
 
@@ -1215,7 +1215,7 @@ En caso de que el conocimiento sea muy teórico, elabora una estrategia didácti
 ## Evidencia de Aprendizaje
 
 
-| **Módulo 1** | **Introducción a la construcción de aplicaciones con LLMs** |
+| **Módulo 1** | **Introducción a la construcción de aplicaciones con LLM** |
 |--------------|-------------------------------------------------------------|
 | **EA1.**     | Templates y Output Parsers  
 
@@ -1278,7 +1278,7 @@ Lecturas y material complementario
 Libros, recursos interactivos o videos que complementan los temas de la módulo y que permiten al estudiante ampliar y enriquecer su conocimiento promoviendo un espíritu investigativo y de autoformación.
 -->
 
-Te invitamos a explorar el siguiente material para ampliar tus conocimientos sobre modelos de lenguaje (LLMs), LangChain, plantillas de prompts y parsers de salida. Estos recursos te proporcionarán una comprensión más profunda y práctica de los temas abordados en el curso.
+Te invitamos a explorar el siguiente material para ampliar tus conocimientos sobre modelos de lenguaje (LLM), LangChain, plantillas de prompts y parsers de salida. Estos recursos te proporcionarán una comprensión más profunda y práctica de los temas abordados en el curso.
 
 ---
 # Lecturas y material complementario
@@ -1314,21 +1314,21 @@ Este tutorial muestra cómo utilizar el `JsonOutputParser` de LangChain para est
 
 ## 🎥 Videos recomendados
 
-### **Título:** *Transformers (how LLMs work) explained visually | DL5*
+### **Título:** *Transformers (how LLM work) explained visually | DL5*
 
 **Autor:** 3Blue1Brown  
-**URL:** [Transformers (how LLMs work) explained visually](https://www.youtube.com/watch?v=wjZofJX0v4M)  
-Este video ofrece una explicación visual de cómo funcionan los modelos de lenguaje grandes (LLMs) mediante la arquitectura de transformers, facilitando la comprensión de conceptos complejos.
+**URL:** [Transformers (how LLM work) explained visually](https://www.youtube.com/watch?v=wjZofJX0v4M)  
+Este video ofrece una explicación visual de cómo funcionan los modelos de lenguaje grandes (LLM) mediante la arquitectura de transformers, facilitando la comprensión de conceptos complejos.
 
 ### **Título:** *Attention in transformers, step-by-step | DL6*
 
 **Autor:** 3Blue1Brown  
 **URL:** [Attention in transformers, step-by-step](https://www.youtube.com/watch?v=eMlx5fFNoYc)  
-Este video desglosa paso a paso el mecanismo de atención en los transformers, una parte crucial en el funcionamiento de los LLMs.
+Este video desglosa paso a paso el mecanismo de atención en los transformers, una parte crucial en el funcionamiento de los LLM.
 
-### **Título:** *How might LLMs store facts | DL7*
+### **Título:** *How might LLM store facts | DL7*
 
 **Autor:** 3Blue1Brown  
-**URL:** [How might LLMs store facts](https://www.youtube.com/watch?v=9-Jl0dxWQs8)  
+**URL:** [How might LLM store facts](https://www.youtube.com/watch?v=9-Jl0dxWQs8)  
 Este video explora cómo los modelos de lenguaje grandes pueden almacenar hechos y conocimientos, proporcionando una visión más profunda de su funcionamiento interno.
 
