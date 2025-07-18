@@ -182,8 +182,8 @@ Para ello, crea un archivo con el nombre `.env` y guárdalo en la misma carpeta 
 Dentro del archivo `.env`, la llave debe guardarse bajo el nombre `OPENAI_API_KEY`, de la siguiente manera:
 
 ```bash
-OPENAI_API_KEY=your-api-key-here```
-
+OPENAI_API_KEY=your-api-key-here
+```
 # Usando la API de OpenAI
 
 Para comenzar a trabajar con la API de OpenAI, primero debes importar la librería:
@@ -296,12 +296,9 @@ En este contexto, el framework más popular hasta el momento es LangChain. LangC
 En este contexto, el framework más popular hasta el momento es LangChain. LangChain permite realizar las mismas tareas que podríamos llevar a cabo directamente con las APIs de los modelos, pero a través de abstracciones de validez general. Este marco proporciona una interfaz unificada que simplifica la integración con diferentes LLM, el manejo de prompts, la gestión de contexto y la incorporación de herramientas externas, como bases de datos o funciones personalizadas. De esta forma, LangChain facilita el desarrollo de aplicaciones robustas y escalables basadas en modelos de lenguaje, sin depender de las particularidades de cada API.
 =======
 En este contexto, el framework más popular hasta el momento es LangChain. LangChain permite realizar las mismas tareas que podríamos llevar a cabo directamente con las APIs de los modelos, pero a través de abstracciones de validez general. Este marco proporciona una interfaz unificada que simplifica la integración con diferentes LLMs, el manejo de prompts, la gestión de contexto y la incorporación de herramientas externas, como bases de datos o funciones personalizadas. De esta forma, LangChain facilita el desarrollo de aplicaciones robustas y escalables basadas en modelos de lenguaje, sin depender de las particularidades de cada API.
-
-(REEMPLAZAR FIGURA POR ESTA EN MEJOR RESOLUCIÓN: https://drive.google.com/file/d/1foDh3L_48XUlUJ53HRekkVBXBOgruzKp/view?usp=drive_link )
-
 >>>>>>> bd3dbc9 (Update index.md):docs/Unidad 1/index.md
 <figure>
-  <img src="../assets/images/langchain.png" alt="Logo de LangChain" width="600">
+  <img src="../assets/images/langchain.jpg" alt="Logo de LangChain" width="600">
   <figcaption>
     Logo  de <strong>LangChain</strong>, un framework para construir aplicaciones con modelos de lenguaje de gran escala.
     Fuente: <a href="https://www.linkedin.com/pulse/dark-side-langchain-major-problems-facing-generative-ai-matt-gallo-g0rpe" target="_blank">Matt Gallo en LinkedIn</a>.
