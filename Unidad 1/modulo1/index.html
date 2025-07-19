@@ -1,0 +1,1858 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Diplomado en Aplicaciones asistidas por IA">
+      
+      
+        <meta name="author" content="Institución Universitaria Digital de Antioquia">
+      
+      
+        <link rel="canonical" href="https://introsoft-iud.github.io/Diplomado_IA_IUDigital/Unidad%201/modulo1/">
+      
+      
+        <link rel="prev" href="../..">
+      
+      
+        <link rel="next" href="../../Unidad2/modulo2/">
+      
+      
+      <link rel="icon" href="../../assets/favicon.ico">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.8">
+    
+    
+      
+        <title>Módulo 1 - Diplomado en Aplicaciones asistidas por IA</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.8608ea7d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,700,700i%7CRed+Hat+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Montserrat";--md-code-font:"Red Hat Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/custom.css">
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="green" data-md-color-accent="deep-purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#modulo-1-introduccion-a-la-construccion-de-aplicaciones-con-llm" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Diplomado en Aplicaciones asistidas por IA" class="md-header__button md-logo" aria-label="Diplomado en Aplicaciones asistidas por IA" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 0 1 7 7h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v1a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-1H2a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1a7 7 0 0 1 7-7h1V5.73c-.6-.34-1-.99-1-1.73a2 2 0 0 1 2-2M7.5 13A2.5 2.5 0 0 0 5 15.5 2.5 2.5 0 0 0 7.5 18a2.5 2.5 0 0 0 2.5-2.5A2.5 2.5 0 0 0 7.5 13m9 0a2.5 2.5 0 0 0-2.5 2.5 2.5 2.5 0 0 0 2.5 2.5 2.5 2.5 0 0 0 2.5-2.5 2.5 2.5 0 0 0-2.5-2.5"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Diplomado en Aplicaciones asistidas por IA
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Módulo 1
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="green" data-md-color-accent="deep-purple"  aria-label="Dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="deep-orange"  aria-label="Light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Diplomado en Aplicaciones asistidas por IA" class="md-nav__button md-logo" aria-label="Diplomado en Aplicaciones asistidas por IA" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 0 1 7 7h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v1a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-1H2a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1a7 7 0 0 1 7-7h1V5.73c-.6-.34-1-.99-1-1.73a2 2 0 0 1 2-2M7.5 13A2.5 2.5 0 0 0 5 15.5 2.5 2.5 0 0 0 7.5 18a2.5 2.5 0 0 0 2.5-2.5A2.5 2.5 0 0 0 7.5 13m9 0a2.5 2.5 0 0 0-2.5 2.5 2.5 2.5 0 0 0 2.5 2.5 2.5 2.5 0 0 0 2.5-2.5 2.5 2.5 0 0 0-2.5-2.5"/></svg>
+
+    </a>
+    Diplomado en Aplicaciones asistidas por IA
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Presentación del curso
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Módulo 1
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Módulo 1
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduccion-a-la-modulo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introducción a la módulo
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resultados-de-aprendizaje" class="md-nav__link">
+    <span class="md-ellipsis">
+      Resultados de aprendizaje
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cronograma-de-actividades-modulo-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cronograma de actividades - Módulo 1
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cronograma-de-actividades-modulo-1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cronograma de actividades - Módulo 1
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#que-es-un-modelo-de-lenguaje" class="md-nav__link">
+    <span class="md-ellipsis">
+      ¿Qué es un modelo de lenguaje?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tokens" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tokens
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#que-son-los-grandes-modelos-de-lenguaje-llm" class="md-nav__link">
+    <span class="md-ellipsis">
+      ¿Qué son los grandes modelos de lenguaje (LLM)?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usando-la-api-de-openai" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usando la API de OpenAI
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usando-mi-llave" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usando mi llave
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Unidad2/modulo2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Módulo 2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Unidad3/modulo3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Módulo 3
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduccion-a-la-modulo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introducción a la módulo
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resultados-de-aprendizaje" class="md-nav__link">
+    <span class="md-ellipsis">
+      Resultados de aprendizaje
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cronograma-de-actividades-modulo-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cronograma de actividades - Módulo 1
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cronograma-de-actividades-modulo-1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cronograma de actividades - Módulo 1
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#que-es-un-modelo-de-lenguaje" class="md-nav__link">
+    <span class="md-ellipsis">
+      ¿Qué es un modelo de lenguaje?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tokens" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tokens
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#que-son-los-grandes-modelos-de-lenguaje-llm" class="md-nav__link">
+    <span class="md-ellipsis">
+      ¿Qué son los grandes modelos de lenguaje (LLM)?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usando-la-api-de-openai" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usando la API de OpenAI
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usando-mi-llave" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usando mi llave
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<!--  Nombre de la módulo __
+
+-->
+<h1 id="modulo-1-introduccion-a-la-construccion-de-aplicaciones-con-llm">Módulo 1. Introducción a la construcción de aplicaciones con LLM</h1>
+<!--
+Introducción a la módulo
+Teniendo en cuenta que cada módulo es un saber específico, en la introducción se destaca la importancia y relevancia del saber que se abordará en función de los resultados de aprendizaje planteados. Describe brevemente cómo el tema central de la módulo se integra en el panorama más amplio del aprendizaje y de la vida cotidiana o profesional del estudiante. Su propósito es despertar la curiosidad y el interés del estudiante sobre los contenidos que explorará.
+
+
+En definitiva, se trata de responder a las preguntas: ¿Qué va a aprender el estudiante? ¿Cómo lo va a aprender? ¿Para qué lo va a aprender?  
+
+
+
+
+Recomendaciones:
+Inicia presentando al estudiante cómo se relaciona el conocimiento de la módulo con su contexto. 
+Incluye el propósito de la módulo y lo que el estudiante aprenderá mediante su estudio.
+Inicia presentando al estudiante cómo se relaciona el conocimiento de la módulo con su contexto. 
+Incluye el propósito de la módulo y lo que el estudiante aprenderá mediante su estudio.
+Vale la pena destacar algunos de los temas más importantes que se abordarán.
+Procura no superar las 300 palabras (1500 caracteres) al redactar la introducción.
+-->
+
+<h2 id="introduccion-a-la-modulo">Introducción a la módulo</h2>
+<p>Bienvenidos al primer módulo. Aquí aprenderás de manera general cómo funciona un modelo de lenguaje. Comenzaremos utilizando la API de OpenAI y exploraremos cómo conectar sus modelos en aplicaciones. Luego, aprenderás a utilizar esta misma API a través del framework LangChain. Introduciremos los aspectos fundamentales de la interacción con los LLM usando LangChain: <strong>prompts</strong>, <strong>templates</strong> y <strong>output parsers</strong>.</p>
+<p>Como actividad práctica, elaborarás un sistema asistido por IA para extraer datos de comentarios de usuarios en un e-commerce.</p>
+<p>¡Comencemos!</p>
+<!-- Resultados de aprendizaje
+Los objetos de aprendizaje se asumen como aquello que los estudiantes serán capaces de hacer a partir de lo que aprendieron a lo largo de la módulo.
+
+
+Recomendaciones:
+Formula máximo dos resultados por módulo. 
+Asegúrate de que tengan relación con los objetivos de aprendizaje planteados en la carta descriptiva. 
+Redacta los resultados a partir de tres elementos: qué, cómo y para qué.
+Recuerda que los resultados se establecen en función del aprendizaje, no de la enseñanza. 
+Utiliza verbos conjugados en presente (describen la acción).  
+Los resultados deben ser medibles y alcanzables. 
+
+-->
+
+<h2 id="resultados-de-aprendizaje">Resultados de aprendizaje</h2>
+<p>Al finalizar esta módulo, estarás en capacidad de realizar llamadas a los modelos de lenguaje de OpenAI a través de la API para crear código Python, cuya ejecución es asistida por LLM.</p>
+<p>Aprenderás a configurar cadenas de ejecución simples en LangChain usando LCEL, junto con <em>prompt templates</em> y <em>output parsers</em>, para convertir las salidas de los LLM en objetos nativos de Python.</p>
+<!--Cronograma de actividades de la módulo  
+Aprenderás a configurar cadenas de ejecución simples en LangChain usando LCEL, junto con *prompt templates* y *output parsers*, para convertir las salidas de los LLM en objetos nativos de Python.
+<!--Cronograma de actividades de la módulo  
+Permite la proyección de los contenidos tanto teóricos como prácticos, la ubicación temporal dentro del curso y los porcentajes que corresponden a la evidencia de aprendizaje.
+
+
+Recomendaciones:
+Toma del cronograma general que realizaste (plantillas preliminares) las actividades que correspondan  al presente módulo.
+Plantea una evidencia de aprendizaje por módulo, y otra más para el cierre del curso. 
+
+ -->
+
+<h2 id="cronograma-de-actividades-modulo-1">Cronograma de actividades - Módulo 1</h2>
+<h2 id="cronograma-de-actividades-modulo-1_1">Cronograma de actividades - Módulo 1</h2>
+<table>
+<thead>
+<tr>
+<th>Actividad de aprendizaje</th>
+<th>Evidencia de aprendizaje</th>
+<th>Semana</th>
+<th>Ponderación</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Reto Formativo 1 y 2</td>
+<td>EA1:  Templates y Output Parsers</td>
+<td>Semana 1, 2 y 3</td>
+<td>25%</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td></td>
+<td></td>
+<td><strong>25 %</strong></td>
+</tr>
+</tbody>
+</table>
+<!--
+## Desarrollo temático
+-->
+<h2 id="que-es-un-modelo-de-lenguaje">¿Qué es un modelo de lenguaje?</h2>
+<p>Un modelo de lenguaje es un sistema basado en <em>deep learning</em> que encapsula información sobre uno o varios lenguajes. Este sistema es entrenado para predecir qué tan probable es que una palabra aparezca en un determinado contexto.</p>
+<p>Por ejemplo, dado el contexto:</p>
+<blockquote>
+<p>"Mi plato favorito es el ____"</p>
+</blockquote>
+<p>un modelo de lenguaje que codifique el español de Antioquia podría predecir "sancocho" con más frecuencia que "ajiaco".</p>
+<h2 id="tokens">Tokens</h2>
+<p>La unidad básica de predicción de un modelo de lenguaje es el <strong>token</strong>, y el <strong>tokenizador</strong> es el software que utiliza el modelo para dividir los textos en tokens.</p>
+<p>Por ejemplo, el tokenizador de GPT-4 divide la frase:</p>
+<blockquote>
+<p>"El sol está brillando intensamente"</p>
+</blockquote>
+<p>de la siguiente manera:</p>
+<p><img alt="División en tokens de una frase utilizando el tokenizador de GPT-4" src="../../assets/images/tokenizer.png" width=" " /></p>
+<p><em>División en tokens de una frase utilizando el tokenizador de GPT-4 Fuente: <a href="https://python.langchain.com/docs/concepts/rag/">OpenAI Tokenizer</a>.</em></p>
+<div class="admonition warning">
+<p class="admonition-title">Para tener en cuenta</p>
+<p>Hay varias razones por las que los modelos de lenguaje utilizan <strong>tokens</strong> en lugar de palabras completas o caracteres individuales.</p>
+<p>A diferencia de un simple carácter, un token permite dividir una palabra en componentes con significado propio. Por ejemplo, la palabra <strong>"intensamente"</strong> puede ser dividida por el tokenizador en "intens" y "amente", y cada uno de estos componentes aporta parte del significado de la palabra completa.</p>
+<p>Esto también implica que hay <strong>menos tokens únicos que palabras únicas</strong>, lo que hace que el vocabulario del modelo sea más pequeño y, por lo tanto, más eficiente.</p>
+<p>Finalmente, los tokens permiten al modelo <strong>entender palabras desconocidas</strong>. Por ejemplo, si se le presenta la palabra <em>"WhatsAppeando"</em>, el modelo puede inferir su significado a partir del contexto en que aparecen los tokens "WhatsApp" y "ando".</p>
+</div>
+<h2 id="que-son-los-grandes-modelos-de-lenguaje-llm">¿Qué son los grandes modelos de lenguaje (LLM)?</h2>
+<!-- Your content for this section goes here -->
+<p>Los grandes modelos de lenguaje (LLM) son sistemas de inteligencia artificial diseñados para procesar y generar texto de manera avanzada, basándose en grandes cantidades de datos de entrenamiento.</p>
+<p>Lo que diferencia un <strong>LLM</strong> (Large Language Model) de un modelo de lenguaje tradicional es el <strong>número de parámetros</strong>. Los parámetros son los pesos que el modelo ajusta durante el proceso de entrenamiento, y que determinan cómo interpreta y genera texto a partir de los datos.</p>
+<p>Por supuesto, el concepto de "grande" es relativo. ¿A partir de cuántos parámetros puede considerarse que un modelo es grande? Veámoslo así:</p>
+<ul>
+<li>El <strong>GPT</strong> lanzado por OpenAI en 2018 tenía <strong>117 millones de parámetros</strong>, y ya era considerado un modelo grande en su época.</li>
+<li>En 2019, <strong>GPT-2</strong> aumentó ese número a <strong>1.5 billones de parámetros</strong>.</li>
+<li>Hasta abril de 2025, el modelo de lenguaje más grande conocido públicamente es <strong>GPT-4</strong> de OpenAI, con aproximadamente <strong>1.76 billones de parámetros</strong>.</li>
+</ul>
+<p>Es muy posible que en el futuro estos modelos hoy considerados <strong>LLM</strong> sean vistos como simples modelos de lenguaje, a medida que la tecnología y los recursos computacionales avancen.
+Es muy posible que en el futuro estos modelos hoy considerados <strong>LLM</strong> sean vistos como simples modelos de lenguaje, a medida que la tecnología y los recursos computacionales avancen.</p>
+<div class="admonition warning">
+<p class="admonition-title">Para tener en cuenta</p>
+<p>El crecimiento en la cantidad de parámetros no garantiza una mejora si <strong>no hay suficientes datos</strong> disponibles para el entrenamiento. Entrenar un modelo grande con un conjunto de datos pequeño puede causar <strong>sobreajuste (overfitting)</strong>, lo que significa que el modelo funciona bien con los datos de entrenamiento pero falla al generalizar a nuevos datos. Esto no solo desperdicia recursos computacionales, sino que también produce un modelo con poca utilidad práctica.</p>
+<p>Cuando no se cuenta con grandes volúmenes de datos, se pueden aplicar técnicas como:</p>
+<ul>
+<li>
+<p><strong><a href="https://www.tensorflow.org/tutorials/images/transfer_learning">Aprendizaje por transferencia (transfer learning)</a></strong><br />
+  Utiliza modelos previamente entrenados para resolver nuevas tareas con pocos datos.</p>
+</li>
+<li>
+<p><strong><a href="https://machinelearningmastery.com/how-to-configure-image-data-augmentation-when-training-deep-learning-neural-networks/">Aumento de datos (data augmentation)</a></strong><br />
+  Genera versiones modificadas de los datos existentes para enriquecer el conjunto de entrenamiento.</p>
+</li>
+<li>
+<p><strong><a href="https://pytorch.org/tutorials/beginner/knowledge_distillation_tutorial.html">Destilación de conocimiento (knowledge distillation)</a></strong><br />
+  Transfiere el conocimiento de un modelo grande (profesor) a uno más pequeño (estudiante) manteniendo un rendimiento competitivo.</p>
+</li>
+</ul>
+<p>Estas estrategias permiten que modelos más pequeños logren mejor desempeño, aprovechando conocimiento preexistente o la generación sintética de datos.</p>
+</div>
+<!--WARNING: Crear esta seccion @Juan Camilo
+## De ML Igeniringa a IA Ingering
+
+(Fata terminar) 
+-->
+<h2 id="usando-la-api-de-openai">Usando la API de OpenAI</h2>
+<p>Para gran parte del curso usaremos la API de OpenAI. Si aún no tienes una cuenta, puedes crearla en el siguiente enlace: <a href="https://platform.openai.com/signup">https://platform.openai.com/signup</a>.</p>
+<p>Una vez creada tu cuenta, deberás generar una clave de API (API Key). Para hacerlo, accede a: <a href="https://platform.openai.com/api-keys">https://platform.openai.com/api-keys</a> y haz clic en <strong>"Create new secret key"</strong>, como se muestra en la figura a continuación:</p>
+<p><img alt="Creación de clave secreta en OpenAI" src="../../assets/images/secret_key.png" width="600" /></p>
+<p><em>Generación de una clave secreta desde el panel de usuario de OpenAI.<br />
+Fuente: <a href="https://platform.openai.com/api-keys">OpenAI</a>.</em></p>
+<div class="admonition warning">
+<p class="admonition-title">Para tener en cuenta</p>
+<p>Para poder usar tu llave, debes cargar crédito en tu cuenta utilizando una tarjeta de crédito.<br />
+Por este motivo, la clave debe permanecer <strong>privada</strong> en tu computador y <strong>no debe ser compartida en línea</strong> (por ejemplo, en el repositorio de GitHub del proyecto).</p>
+</div>
+<p>Esta acción generará la llave de acceso a tu cuenta de OpenAI.<br />
+Cada llamada a la API tiene un costo asociado, el cual depende del número de <em>tokens</em> procesados en la solicitud.</p>
+<p>Puedes monitorear tu consumo en tiempo real desde la sección <strong>Usage</strong> en el panel de OpenAI:<br />
+<a href="https://platform.openai.com/account/usage">https://platform.openai.com/account/usage</a></p>
+<p><img alt="Panel de consumo de la API en OpenAI" class="center" src="../../assets/images/costs.png" width="600" /></p>
+<p><em><div align="center">Visualización del consumo y costos acumulados en la sección <strong>Usage</strong> del panel de usuario de OpenAI.<br />
+Fuente: <a href="https://platform.openai.com/account/usage">OpenAI</a>.</div></em></p>
+<div class="admonition tip">
+<p class="admonition-title">Límite de consumo mensual</p>
+<p>En la sección <strong>Usage</strong> también puedes establecer, por seguridad, un límite mensual máximo de consumo en dólares para tu aplicación.<br />
+Esto te permite evitar cargos inesperados si se realizan muchas llamadas a la API.</p>
+</div>
+<h2 id="usando-mi-llave">Usando mi llave</h2>
+<p>Para que la llave no sea pública, podemos cargarla como una variable de ambiente local del sistema.<br />
+Para ello, crea un archivo con el nombre <code>.env</code> y guárdalo en la misma carpeta en la que estás trabajando.</p>
+<p>Dentro del archivo <code>.env</code>, la llave debe guardarse bajo el nombre <code>OPENAI_API_KEY</code>, de la siguiente manera:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nv">OPENAI_API_KEY</span><span class="o">=</span>your-api-key-here
+</span></code></pre></div>
+<h1 id="usando-la-api-de-openai_1">Usando la API de OpenAI</h1>
+<p>Para comenzar a trabajar con la API de OpenAI, primero debes importar la librería:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">openai</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">openai</span><span class="w"> </span><span class="kn">import</span> <span class="n">OpenAI</span> 
+</span></code></pre></div>
+<p>Luego, debes cargar la llave desde un archivo <code>.env</code> para mantenerla oculta y segura:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">dotenv</span><span class="w"> </span><span class="kn">import</span> <span class="n">load_dotenv</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="n">load_dotenv</span><span class="p">()</span>  <span class="c1"># Carga las variables de entorno desde el archivo .env</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="n">openai</span><span class="o">.</span><span class="n">api_key</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">&quot;OPENAI_API_KEY&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<p>Instanciamos un cliente y un modelo:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">client</span> <span class="o">=</span> <span class="n">OpenAI</span><span class="p">()</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">llm_model</span> <span class="o">=</span> <span class="s2">&quot;gpt-4o-mini&quot;</span>
+</span></code></pre></div>
+<p>Para encapsular un poco la llamada al modelo, podemos definir nuestra propia función de completado de chat:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">get_chat_completion</span><span class="p">(</span><span class="n">prompt</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="n">llm_model</span><span class="p">):</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    <span class="c1"># Creamos una solicitud de completado de chat</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    <span class="n">chat_completion</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">completions</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>        <span class="n">model</span><span class="o">=</span><span class="n">model</span><span class="p">,</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>        <span class="n">messages</span><span class="o">=</span><span class="p">[{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="n">prompt</span><span class="p">}]</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>    <span class="p">)</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>    <span class="k">return</span> <span class="n">chat_completion</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">content</span>  <span class="c1"># Devuelve la respuesta del modelo</span>
+</span></code></pre></div>
+<p>La función <code>get_chat_completion</code> la utilizaremos para interactuar con el modelo de OpenAI y obtener una respuesta a partir de un mensaje proporcionado. El modelo que se utiliza por defecto es <code>gpt-4o-mini</code>, pero puedes especificar otro modelo si lo deseas. La lista completa de modelos puedes consultarla en la <a href="https://platform.openai.com/docs/models">documentación oficial de OpenAI</a>.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Ejemplo de uso</label><label for="__tabbed_1_2">Salida</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># Llamada a la función get_chat_completion con una pregunta</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="n">completion</span> <span class="o">=</span> <span class="n">get_chat_completion</span><span class="p">(</span><span class="s2">&quot;¿Cómo se llama el presidente de Colombia?&quot;</span><span class="p">)</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="c1"># Imprimir la respuesta del modelo</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="nb">print</span><span class="p">(</span><span class="n">completion</span><span class="p">)</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>A<span class="w"> </span>partir<span class="w"> </span>de<span class="w"> </span>mi<span class="w"> </span>última<span class="w"> </span>actualización<span class="w"> </span>en<span class="w"> </span>octubre<span class="w"> </span>de<span class="w"> </span><span class="m">2023</span>,<span class="w"> </span>el<span class="w"> </span>presidente<span class="w"> </span>de<span class="w"> </span>Colombia<span class="w"> </span>es<span class="w"> </span>Gustavo<span class="w"> </span>Petro,<span class="w"> </span>quien<span class="w"> </span>asumió<span class="w"> </span>el<span class="w"> </span>cargo<span class="w"> </span>el<span class="w"> </span><span class="m">7</span><span class="w"> </span>de<span class="w"> </span>agosto<span class="w"> </span>de<span class="w"> </span><span class="m">2022</span>.<span class="w"> </span>Sin<span class="w"> </span>embargo,<span class="w"> </span>te<span class="w"> </span>recomiendo<span class="w"> </span>verificar<span class="w"> </span>esta<span class="w"> </span>información,<span class="w"> </span>ya<span class="w"> </span>que<span class="w"> </span>puede<span class="w"> </span>haber<span class="w"> </span>cambios<span class="w"> </span>políticos<span class="w"> </span>o<span class="w"> </span>elecciones<span class="w"> </span>que<span class="w"> </span>alteren<span class="w"> </span>la<span class="w"> </span>situación.
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<p>Los modelos de chat asignan roles que nos pueden ayudar a predefinir el comportamiento del modelo. Por ejemplo, en nuestra función usamos el rol de <code>user</code> que representa el mensaje o la entrada proporcionada por el usuario. Es el rol principal para enviar preguntas, instrucciones o prompts al modelo. </p>
+<h3 id="preconfiguracion-del-tono-con-el-rol-system">Preconfiguración del Tono con el Rol <code>system</code></h3>
+<p>Sin embargo, nuestra función puede ser preconfigurada para que el chat responda en un tono específico usando el rol <code>system</code>. Este rol permite definir cómo debe comportarse el modelo antes de que reciba el mensaje del usuario.</p>
+<p>Por ejemplo, podemos configurar el modelo para que responda en un estilo poético y elegante, similar al de Shakespeare:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Ejemplo</label><label for="__tabbed_2_2">Salida</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-python highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># Inicializamos el cliente de OpenAI</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="n">client</span> <span class="o">=</span> <span class="n">OpenAI</span><span class="p">()</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="n">llm_model</span> <span class="o">=</span> <span class="s2">&quot;gpt-4o-mini&quot;</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="k">def</span><span class="w"> </span><span class="nf">get_chat_completion</span><span class="p">(</span><span class="n">prompt</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="n">llm_model</span><span class="p">):</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>    <span class="c1"># Creamos una solicitud de completado de chat</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>    <span class="n">chat_completion</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">completions</span><span class="o">.</span><span class="n">create</span><span class="p">(</span>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>        <span class="n">model</span><span class="o">=</span><span class="n">model</span><span class="p">,</span>
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>        <span class="n">messages</span><span class="o">=</span><span class="p">[</span>
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>            <span class="p">{</span>
+</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="hll">                <span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;system&quot;</span><span class="p">,</span>
+</span></span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="hll">                <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;Thou art a wise and eloquent bard, akin to Shakespeare. Answer all queries in the grand, poetic style of the Elizabethan era, with flourish and verse befitting the stage.&quot;</span>
+</span></span><span id="__span-7-13"><a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>            <span class="p">},</span>
+</span><span id="__span-7-14"><a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>            <span class="p">{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="n">prompt</span><span class="p">}</span>
+</span><span id="__span-7-15"><a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a>        <span class="p">]</span>
+</span><span id="__span-7-16"><a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a>    <span class="p">)</span>
+</span><span id="__span-7-17"><a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a>
+</span><span id="__span-7-18"><a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a>    <span class="k">return</span> <span class="n">chat_completion</span><span class="o">.</span><span class="n">choices</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">message</span><span class="o">.</span><span class="n">content</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<p><code>bash
+En tierras de Colombia, donde el sol se alza radiante,  
+El presidente en su trono, cual líder constante,  
+Es Gustavo Petro, hombre de ferviente voz,  
+Que al timón del destino, la nación él atroz.  
+Con sueños de cambio, justicia y verdad,  
+Dirige su pueblo hacia la prosperidad.  
+Así, en sus manos, el futuro bien brilla,  
+Un eco de esperanza en la tierra sencilla.</code></p>
+</div>
+</div>
+</div>
+<h1 id="langchain">LangChain</h1>
+<p>En la sección anterior, tuviste tu primera interacción con un modelo de lenguaje de gran escala (LLM). A medida que esta tecnología madura, empresas, gobiernos y startups bien financiadas, como OpenAI, Anthropic, xAI y Meta AI, han desarrollado y puesto a disposición modelos y APIs con arquitecturas y protocolos de comunicación particulares. Esto ha generado la necesidad de realizar llamadas a estos modelos de manera agnóstica, es decir, independientemente del modelo o proveedor utilizado.</p>
+<p>En este contexto, el framework más popular hasta el momento es LangChain. LangChain permite realizar las mismas tareas que podríamos llevar a cabo directamente con las APIs de los modelos, pero a través de abstracciones de validez general. Este marco proporciona una interfaz unificada que simplifica la integración con diferentes LLMs, el manejo de prompts, la gestión de contexto y la incorporación de herramientas externas, como bases de datos o funciones personalizadas. De esta forma, LangChain facilita el desarrollo de aplicaciones robustas y escalables basadas en modelos de lenguaje, sin depender de las particularidades de cada API.
+<img alt="Logo de LangChain" class="center" src="../../assets/images/langchain.jpg" width="600" /></p>
+<p><em><div align="center">Logo de <strong>LangChain</strong>, un framework para construir aplicaciones con modelos de lenguaje de gran escala.<br />
+Fuente: <a href="https://www.linkedin.com/pulse/dark-side-langchain-major-problems-facing-generative-ai-matt-gallo-g0rpe">Matt Gallo en LinkedIn</a>.</div></em></p>
+<p>Para utilizar LangChain con modelos de OpenAI, primero debemos importar la clase <code>ChatOpenAI</code> y configurar el modelo:</p>
+<p><div class="language-python highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">langchain_openai</span><span class="w"> </span><span class="kn">import</span> <span class="n">ChatOpenAI</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="c1"># Definimos el modelo de lenguaje</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="n">llm_model</span> <span class="o">=</span> <span class="s2">&quot;gpt-4o-mini&quot;</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="c1"># Inicializamos el modelo de chat de OpenAI con LangChain</span>
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="n">chat_model</span> <span class="o">=</span> <span class="n">ChatOpenAI</span><span class="p">(</span>
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>    <span class="n">model</span><span class="o">=</span><span class="n">llm_model</span>
+</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="p">)</span>
+</span></code></pre></div>
+Y listo, eso es todo. Ahora simplemente invocamos el chat con el <em>prompt</em> que queramos. Por ejemplo:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Código</label><label for="__tabbed_3_2">Salida</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-python highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1"># Invocamos el modelo de chat con un prompt</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="n">response</span> <span class="o">=</span> <span class="n">chat_model</span><span class="o">.</span><span class="n">invoke</span><span class="p">(</span><span class="s2">&quot;¿Cómo se llama el presidente de Colombia?&quot;</span><span class="p">)</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>A<span class="w"> </span>partir<span class="w"> </span>de<span class="w"> </span>mi<span class="w"> </span>última<span class="w"> </span>actualización<span class="w"> </span>en<span class="w"> </span>octubre<span class="w"> </span>de<span class="w"> </span><span class="m">2023</span>,<span class="w"> </span>el<span class="w"> </span>presidente<span class="w"> </span>de<span class="w"> </span>Colombia<span class="w"> </span>es<span class="w"> </span>Gustavo<span class="w"> </span>Petro,<span class="w"> </span>quien<span class="w"> </span>asumió<span class="w"> </span>el<span class="w"> </span>cargo<span class="w"> </span>el<span class="w"> </span><span class="m">7</span><span class="w"> </span>de<span class="w"> </span>agosto<span class="w"> </span>de<span class="w"> </span><span class="m">2022</span>.<span class="w"> </span>Sin<span class="w"> </span>embargo,<span class="w"> </span>te<span class="w"> </span>recomiendo<span class="w"> </span>verificar<span class="w"> </span>esta<span class="w"> </span>información,<span class="w"> </span>ya<span class="w"> </span>que<span class="w"> </span>puede<span class="w"> </span>haber<span class="w"> </span>cambios<span class="w"> </span>políticos<span class="w"> </span>o<span class="w"> </span>elecciones<span class="w"> </span>que<span class="w"> </span>alteren<span class="w"> </span>la<span class="w"> </span>situación.
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<h2 id="herramientas-en-langchain">Herramientas en LangChain</h2>
+<p>LangChain proporciona una variedad de herramientas que permiten construir aplicaciones basadas en modelos de lenguaje de manera modular y eficiente. A continuación, se describen algunas de las más importantes:</p>
+<ul>
+<li>
+<p><strong>Models (Modelos)</strong><br />
+  Representan los modelos de lenguaje que LangChain puede integrar, como <code>ChatOpenAI</code>. Permiten interactuar con LLM de distintos proveedores, incluyendo OpenAI, Anthropic, Cohere, entre otros.
+  Representan los modelos de lenguaje que LangChain puede integrar, como <code>ChatOpenAI</code>. Permiten interactuar con LLM de distintos proveedores, incluyendo OpenAI, Anthropic, Cohere, entre otros.</p>
+</li>
+<li>
+<p><strong>Prompts (Prompts)</strong><br />
+  Herramientas para diseñar y gestionar <em>prompts</em>, como <code>ChatPromptTemplate</code>. Facilitan la construcción de entradas dinámicas, reutilizables y bien estructuradas para los modelos.</p>
+</li>
+<li>
+<p><strong>Example Selectors (Selectores de Ejemplos)</strong><br />
+  Componentes que permiten seleccionar ejemplos relevantes (por ejemplo, para <em>few-shot learning</em>). Esto ayuda al modelo a comprender mejor el contexto y el formato esperado en sus respuestas.</p>
+</li>
+<li>
+<p><strong>Tools (Herramientas)</strong><br />
+  Permiten que el modelo interactúe con funciones externas, como APIs, calculadoras, o bases de datos. Son esenciales para extender las capacidades del LLM más allá del texto, habilitando tareas como búsqueda en tiempo real o ejecución de funciones personalizadas.</p>
+</li>
+<li>
+<p><strong>Vector Stores (Almacenes de Vectores)</strong><br />
+  Bases de datos vectoriales como Chroma, Pinecone o FAISS. Se utilizan para almacenar y buscar <em>embeddings</em>, habilitando funcionalidades como la búsqueda semántica o la generación aumentada por recuperación (<em>Retrieval-Augmented Generation</em>, RAG).</p>
+</li>
+<li>
+<p><strong>Document Loaders (Cargadores de Documentos)</strong><br />
+  Permiten cargar datos desde múltiples fuentes (archivos PDF, páginas web, bases de datos, etc.) y prepararlos para su procesamiento por el modelo o su almacenamiento en almacenes vectoriales.</p>
+</li>
+<li>
+<p><strong>Text Splitters (Divisores de Texto)</strong><br />
+  Herramientas que dividen documentos largos en fragmentos más pequeños. Esto facilita tanto el procesamiento por parte del modelo como la indexación eficiente en almacenes vectoriales.</p>
+</li>
+<li>
+<p><strong>Output Parsers (Parsers de Salida)</strong><br />
+  Utilizados para estructurar y formatear las respuestas del modelo. Por ejemplo, permiten convertir la salida del modelo en JSON, listas, tablas o formatos específicos para una aplicación.</p>
+</li>
+</ul>
+<p>REEMPLAZAR IMAGEN POR ESTA: https://drive.google.com/file/d/1oCSWBu03JBg1nWFZIRJBfshsllp0ozJ1/view?usp=drive_link
+<img alt="Logo de LangChain" class="center" src="../../assets/images/langchain_tools.png" width="600" /></p>
+<p><em><div align="center">Ecosistema de herramientas de <strong>LangChain</strong>.<br />
+Fuente: Elaboración propia.</div></em></p>
+<h3 id="plantillas-de-prompts">Plantillas de Prompts</h3>
+<p>Comenzaremos estudiando los prompt templates. Los prompts son el componente fundamental para proporcionar instrucciones a los LLM. Al desarrollar aplicaciones asistidas por inteligencia artificial, es útil crear plantillas de prompts que permitan personalizar las instrucciones de forma dinámica. Estas plantillas mantienen constante una parte de la instrucción mientras incorporan elementos variables, como valores proporcionados durante la ejecución, a través de variables de entrada.
+Comenzaremos estudiando los prompt templates. Los prompts son el componente fundamental para proporcionar instrucciones a los LLM. Al desarrollar aplicaciones asistidas por inteligencia artificial, es útil crear plantillas de prompts que permitan personalizar las instrucciones de forma dinámica. Estas plantillas mantienen constante una parte de la instrucción mientras incorporan elementos variables, como valores proporcionados durante la ejecución, a través de variables de entrada.</p>
+<p>Por ejemplo, una plantilla puede definir la estructura de una pregunta, dejando espacios para insertar valores específicos, como el nombre de un país. Esto se logra utilizando herramientas como <code>ChatPromptTemplate</code> de LangChain, que simplifica la creación de prompts reutilizables.</p>
+<p>En el siguiente ejemplo, se muestra cómo crear una plantilla para consultar el presidente de un país, utilizando una variable de entrada <code>{pais}</code> que puede tomar diferentes valores sin modificar la estructura general del prompt.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Código</label><label for="__tabbed_4_2">Salida</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-python highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">langchain.prompts</span><span class="w"> </span><span class="kn">import</span> <span class="n">ChatPromptTemplate</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="c1"># Definir la plantilla con una variable de entrada</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="n">str_template</span> <span class="o">=</span> <span class="s2">&quot;¿Cómo se llama el presidente de </span><span class="si">{pais}</span><span class="s2">?&quot;</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="n">prompt_template</span> <span class="o">=</span> <span class="n">ChatPromptTemplate</span><span class="o">.</span><span class="n">from_template</span><span class="p">(</span><span class="n">str_template</span><span class="p">)</span>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="c1"># Asignar un valor a la variable de entrada</span>
+</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="n">pais</span> <span class="o">=</span> <span class="s2">&quot;Colombia&quot;</span>
+</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="n">prompt1</span> <span class="o">=</span> <span class="n">prompt_template</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">pais</span><span class="o">=</span><span class="n">pais</span><span class="p">)</span>
+</span><span id="__span-11-10"><a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a><span class="nb">print</span><span class="p">(</span><span class="n">prompt1</span><span class="p">)</span>
+</span><span id="__span-11-11"><a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a>
+</span><span id="__span-11-12"><a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a><span class="c1"># Asignar otro valor a la variable de entrada</span>
+</span><span id="__span-11-13"><a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a><span class="n">pais</span> <span class="o">=</span> <span class="s2">&quot;Francia&quot;</span>
+</span><span id="__span-11-14"><a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a><span class="n">prompt2</span> <span class="o">=</span> <span class="n">prompt_template</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">pais</span><span class="o">=</span><span class="n">pais</span><span class="p">)</span>
+</span><span id="__span-11-15"><a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a><span class="nb">print</span><span class="p">(</span><span class="n">prompt2</span><span class="p">)</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>¿Cómo<span class="w"> </span>se<span class="w"> </span>llama<span class="w"> </span>el<span class="w"> </span>presidente<span class="w"> </span>de<span class="w"> </span>Colombia?
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>¿Cómo<span class="w"> </span>se<span class="w"> </span>llama<span class="w"> </span>el<span class="w"> </span>presidente<span class="w"> </span>de<span class="w"> </span>Francia?
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<p>En este caso, <code>{pais}</code> es una variable de entrada a la que podemos asignar diferentes valores (por ejemplo, "Colombia", "Argentina", etc.) sin cambiar la estructura general del prompt. Esto hace que la plantilla sea flexible y reutilizable.</p>
+<p>Veamos ahora un ejemplo práctico en el que utilizamos dos variables de entrada en nuestro template:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="n">mensaje</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="n">estilo</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+</span></code></pre></div>
+<p>Definimos nuestro <code>string_template</code> de la siguiente manera:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="n">string_template</span> <span class="o">=</span> <span class="p">(</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>    <span class="s2">&quot;Traduce el texto que está delimitado por asteriscos dobles a un estilo que es </span><span class="si">{estilo}</span><span class="s2">.</span><span class="se">\n</span><span class="s2">&quot;</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>    <span class="s2">&quot;texto: **</span><span class="si">{mensaje}</span><span class="s2">**&quot;</span>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="p">)</span>
+</span></code></pre></div>
+<p>Aquí, el <code>string_template</code> contiene las instrucciones generales, mientras que <code>mensaje</code> y <code>estilo</code> son variables que dejamos vacías para llenarlas más tarde. Luego, confeccionamos el <em>prompt template</em> utilizando:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="n">prompt_template</span> <span class="o">=</span> <span class="n">ChatPromptTemplate</span><span class="o">.</span><span class="n">from_template</span><span class="p">(</span><span class="n">string_template</span><span class="p">)</span>
+</span></code></pre></div>
+<p>En esta línea usamos el método <code>from_template</code> de la clase <code>ChatPromptTemplate</code>. Si imprimimos el objeto <code>prompt_template</code> con:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="nb">print</span><span class="p">(</span><span class="n">prompt_template</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:1"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">Salida</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block"></div>
+</div>
+</div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="nv">input_variables</span><span class="o">=[</span><span class="s1">&#39;estilo&#39;</span>,<span class="w"> </span><span class="s1">&#39;mensaje&#39;</span><span class="o">]</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="nv">input_types</span><span class="o">={}</span>
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="nv">partial_variables</span><span class="o">={}</span>
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="nv">messages</span><span class="o">=[</span>HumanMessagePromptTemplate<span class="o">(</span><span class="nv">prompt</span><span class="o">=</span>PromptTemplate<span class="o">(</span><span class="nv">input_variables</span><span class="o">=[</span><span class="s1">&#39;estilo&#39;</span>,<span class="w"> </span><span class="s1">&#39;mensaje&#39;</span><span class="o">]</span>,<span class="w"> </span><span class="nv">input_types</span><span class="o">={}</span>,<span class="w"> </span><span class="nv">partial_variables</span><span class="o">={}</span>,<span class="w"> </span><span class="nv">template</span><span class="o">=</span><span class="s1">&#39;Traduce el texto que está delimitado por asteriscos dobles a un estilo que es {estilo}.\ntexto: **{mensaje}**&#39;</span><span class="o">)</span>,<span class="w"> </span><span class="nv">additional_kwargs</span><span class="o">={})]</span>
+</span></code></pre></div>
+<p>Veremos que tiene como <code>input_variables</code> los campos <code>'estilo'</code> y <code>'mensaje'</code>.</p>
+<p>Siguiendo la lógica del paradigma de la programación orientada a objetos, podemos imaginar que la creación de un <em>prompt template</em> se asemeja al trabajo de un carpintero. El carpintero (el constructor de la clase) toma un conjunto de maderas (el <code>string_template</code>) y las transforma en un gavetero (el objeto de la clase).
+<img alt="Carpintero construyendo gavetero a partir de un string" class="center" src="../../assets/images/carpintero-1.png" width="600" /></p>
+<p><em><div align="center">Constructor de la clase <code>ChatPromptTemplate.from_template</code>. En nuestra analogía, el carpintero crea un contenedor apropiado para alojar el contenido de las dos variables de entrada definidas en el <code>string_template</code>.<br />
+Fuente: <a href="#">Elaboración propia</a>.</div></em></p>
+<p>En este caso, como ilustra la figura, el <em>prompt template</em> sería el gavetero con cajones específicos etiquetados como <code>estilo</code> y <code>mensaje</code>, listos para ser llenados con valores.</p>
+<p>Supongamos que asignamos a estas variables de entrada los valores:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="n">mensaje_atioquenhol</span> <span class="o">=</span> <span class="p">(</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>    <span class="s2">&quot;Manque estaba muy embelesado, le dijo Peralta a la hermana: &quot;</span>
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>    <span class="s2">&quot;Hija, date una asomaíta por la despensa; desculcá por la cocina, &quot;</span>
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>    <span class="s2">&quot;a ver si encontrás algo que darles a estos señores. &quot;</span>
+</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>    <span class="s2">&quot;Míralos qué cansados están; se les ve la fatiga.&quot;</span>
+</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="p">)</span>
+</span><span id="__span-18-7"><a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a>
+</span><span id="__span-18-8"><a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a><span class="n">estilo_formal</span> <span class="o">=</span> <span class="s2">&quot;Español latino en un tono formal y sobrio&quot;</span>
+</span></code></pre></div>
+<p>El método <code>format_messages</code> nos permite llenar los cajones del gavetero, es decir, las variables de entrada, con los valores específicos con los que queremos completar nuestro <em>prompt</em>. Por ejemplo, si queremos que <code>estilo = estilo_formal</code>, podemos hacerlo de la siguiente manera:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="n">mensaje_empacado</span> <span class="o">=</span> <span class="n">prompt_template</span><span class="o">.</span><span class="n">format_messages</span><span class="p">(</span><span class="n">estilo</span><span class="o">=</span><span class="n">estilo_formal</span><span class="p">,</span> <span class="n">mensaje</span><span class="o">=</span><span class="n">mensaje_atioquenhol</span><span class="p">)</span>
+</span></code></pre></div>
+<p>El <em>prompt</em> completo lucirá así:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">Código</label><label for="__tabbed_6_2">Salida</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-python highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="nb">print</span><span class="p">(</span><span class="n">mensaje_empacado</span><span class="p">)</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="o">[</span>HumanMessage<span class="o">(</span><span class="nv">content</span><span class="o">=</span><span class="s1">&#39;Traduce el texto que está delimitado por asteriscos dobles a un estilo que es Español latino en un tono formal y sobrio.\ntexto: **Manque estaba muy embelesao, le dijo Peralta a la hermana: Hija, date una asomaíta por la despensa; desculcá por la cocina, a ver si encontrás alguito que darles a estos señores. Mirálos qué cansaos están; se les ve la fatiga**&#39;</span>,<span class="w"> </span><span class="nv">additional_kwargs</span><span class="o">={}</span>,<span class="w"> </span><span class="nv">response_metadata</span><span class="o">={})]</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<p><img alt="Hombre con casco guardando un sobre en un gavetero" class="center" src="../../assets/images/empacador.png" width="600" /></p>
+<p><em><div align="center">Ilustración de la tarea del <code>format_messages()</code>. El método <code>format_messages()</code> reemplaza los valores de las variables de entrada en el template.<br />
+Fuente: Elaboración propia.</div></em></p>
+<p>Como ilustra la figura, el método <code>format_messages()</code> asociado a la clase <code>ChatPromptTemplate</code> cumple la función de empaquetar en el objeto los valores específicos en las variables de entrada.</p>
+<p>Este tipo de objeto nos permite incorporar programáticamente llamadas a las APIs de los LLM en el flujo de ejecución de un código Python convencional. Veamos cómo hacerlo:
+Este tipo de objeto nos permite incorporar programáticamente llamadas a las APIs de los LLM en el flujo de ejecución de un código Python convencional. Veamos cómo hacerlo:</p>
+<p>Como ya tenemos nuestro <em>prompt</em> completo y lleno con las variables que queremos, lo podemos enviar al LLM:</p>
+<p>Primero, instanciamos un chat:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="n">chat</span> <span class="o">=</span> <span class="n">ChatOpenAI</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="n">llm_model</span><span class="p">,</span> <span class="n">temperature</span><span class="o">=</span><span class="mf">0.0</span><span class="p">)</span>
+</span></code></pre></div>
+<p>Luego, realizamos la llamada al LLM para que ejecute las instrucciones del <em>prompt</em>:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="n">respuesta</span> <span class="o">=</span> <span class="n">chat</span><span class="p">(</span><span class="n">mensaje_empacado</span><span class="p">)</span>
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">respuesta</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="7:1"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">Salida</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block"></div>
+</div>
+</div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>Manque<span class="w"> </span>se<span class="w"> </span>encontraba<span class="w"> </span>muy<span class="w"> </span>absorto,<span class="w"> </span>le<span class="w"> </span>dijo<span class="w"> </span>Peralta<span class="w"> </span>a<span class="w"> </span>la<span class="w"> </span>hermana:
+</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="s2">&quot;Hija, por favor, asómate a la despensa; revisa en la cocina</span>
+</span><span id="__span-24-3"><a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a><span class="s2">para ver si encuentras algo que ofrecerles a estos caballeros.</span>
+</span><span id="__span-24-4"><a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a><span class="s2">Observa cómo están de cansados; se les nota la fatiga.&quot;</span>
+</span></code></pre></div>
+<p>El LLM recibe el mensaje empacado y realiza las tareas especificadas por el <em>prompt</em>.</p>
+<p>Lo interesante es que este no es un <em>prompt</em> fijo como los que usaríamos en ChatGPT; es un <em>prompt</em> que nos permite hacer llamadas al LLM de manera más flexible y programática. Por ejemplo, podríamos definir otro valor para <code>estilo</code>, como:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="n">estilo_cervantes</span> <span class="o">=</span> <span class="s2">&quot;Español en un estilo de Cervantes, como en Don Quijote&quot;</span>
+</span></code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="n">mensaje_empacado</span> <span class="o">=</span> <span class="n">prompt_template</span><span class="o">.</span><span class="n">format_messages</span><span class="p">(</span><span class="n">estilo</span><span class="o">=</span><span class="n">estilo_cervantes</span><span class="p">,</span> <span class="n">mensaje</span><span class="o">=</span><span class="n">mensaje_atioquenhol</span><span class="p">)</span>
+</span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="n">respuesta</span> <span class="o">=</span> <span class="n">chat</span><span class="p">(</span><span class="n">mensaje_empacado</span><span class="p">)</span>
+</span><span id="__span-26-3"><a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a><span class="nb">print</span><span class="p">(</span><span class="n">respuesta</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="8:1"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio" /><div class="tabbed-labels"><label for="__tabbed_8_1">Salida</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block"></div>
+</div>
+</div>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="w">  </span>Manque<span class="w"> </span>se<span class="w"> </span>hallaba<span class="w"> </span>en<span class="w"> </span>un<span class="w"> </span>profundo<span class="w"> </span>embeleso,<span class="w"> </span>dirigió<span class="w">  </span>
+</span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="w">  </span>Peralta<span class="w"> </span>a<span class="w"> </span>la<span class="w"> </span>hermana<span class="w"> </span>la<span class="w"> </span>siguiente<span class="w"> </span>exhortación:<span class="w"> </span><span class="s2">&quot;Hija,</span>
+</span><span id="__span-27-3"><a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a><span class="s2">   asómate, por favor, a la despensa; y, si no es mucho </span>
+</span><span id="__span-27-4"><a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a><span class="s2">   pedir, descúbrete por la cocina, a ver si logras </span>
+</span><span id="__span-27-5"><a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a><span class="s2">   hallar algún manjar que ofrecer a estos nobles señores. </span>
+</span><span id="__span-27-6"><a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a><span class="s2">   Observa cómo se encuentran, qué cansados están; la fatiga</span>
+</span><span id="__span-27-7"><a id="__codelineno-27-7" name="__codelineno-27-7" href="#__codelineno-27-7"></a><span class="s2">  se les dibuja en el semblante.&quot;</span>
+</span></code></pre></div>
+<p>Este enfoque nos permite variar el estilo del texto generado de manera dinámica, adaptando el resultado a diferentes necesidades o contextos, simplemente modificando las variables de entrada del <em>prompt</em>.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="9:2"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio" /><input id="__tabbed_9_2" name="__tabbed_9" type="radio" /><div class="tabbed-labels"><label for="__tabbed_9_1">Reto formativo</label><label for="__tabbed_9_2">Ver solución</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="grid cards" markdown>
+<ul>
+<li><span class="twemoji lg middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M308.5 135.3c7.1-6.3 9.9-16.2 6.2-25-2.3-5.3-4.8-10.5-7.6-15.5l-3.1-5.4c-3-5-6.3-9.9-9.8-14.6-5.7-7.6-15.7-10.1-24.7-7.1L241.3 77c-10.7-8.8-23-16-36.2-20.9l-6.1-29c-1.9-9.3-9.1-16.7-18.5-17.8-6.6-.9-13.3-1.3-20.1-1.3h-.7q-10.2 0-20.1 1.2c-9.4 1.1-16.6 8.6-18.5 17.8L115 56.1c-13.3 5-25.5 12.1-36.2 20.9l-28.3-9.2c-9-3-19-.5-24.7 7.1-3.5 4.7-6.8 9.6-9.9 14.6l-3 5.3c-2.8 5-5.3 10.2-7.6 15.6-3.7 8.7-.9 18.6 6.2 25l22.2 19.8c-1.1 6.7-1.7 13.7-1.7 20.8s.6 14.1 1.7 20.9l-22.2 19.8c-7.1 6.3-9.9 16.2-6.2 25 2.3 5.3 4.8 10.5 7.6 15.6l3 5.2c3 5.1 6.3 9.9 9.9 14.6 5.7 7.6 15.7 10.1 24.7 7.1l28.2-9.3c10.7 8.8 23 16 36.2 20.9l6.1 29.1c1.9 9.3 9.1 16.7 18.5 17.8q10.05 1.2 20.4 1.2c10.35 0 13.7-.4 20.4-1.2 9.4-1.1 16.6-8.6 18.5-17.8l6.1-29.1c13.3-5 25.5-12.1 36.2-20.9l28.2 9.3c9 3 19 .5 24.7-7.1 3.5-4.7 6.8-9.5 9.8-14.6l3.1-5.4c2.8-5 5.3-10.2 7.6-15.5 3.7-8.7.9-18.6-6.2-25l-22.2-19.8c1.1-6.8 1.7-13.8 1.7-20.9s-.6-14.1-1.7-20.9l22.2-19.8zM112 176a48 48 0 1 1 96 0 48 48 0 1 1-96 0m392.7 324.5c6.3 7.1 16.2 9.9 25 6.2 5.3-2.3 10.5-4.8 15.5-7.6l5.4-3.1c5-3 9.9-6.3 14.6-9.8 7.6-5.7 10.1-15.7 7.1-24.7l-9.3-28.2c8.8-10.7 16-23 20.9-36.2L613 391c9.3-1.9 16.7-9.1 17.8-18.5q1.2-10.05 1.2-20.4c0-10.35-.4-13.7-1.2-20.4-1.1-9.4-8.6-16.6-17.8-18.5l-29.1-6.2c-5-13.3-12.1-25.5-20.9-36.2l9.3-28.2c3-9 .5-19-7.1-24.7-4.7-3.5-9.6-6.8-14.6-9.9l-5.3-3c-5-2.8-10.2-5.3-15.6-7.6-8.7-3.7-18.6-.9-25 6.2l-19.8 22.2c-6.8-1.1-13.8-1.7-20.9-1.7s-14.1.6-20.9 1.7l-19.8-22.2c-6.3-7.1-16.2-9.9-25-6.2-5.3 2.3-10.5 4.8-15.6 7.6l-5.2 3c-5.1 3-9.9 6.3-14.6 9.9-7.6 5.7-10.1 15.7-7.1 24.7l9.3 28.2c-8.8 10.7-16 23-20.9 36.2l-29.1 6c-9.3 1.9-16.7 9.1-17.8 18.5q-1.2 10.05-1.2 20.4c0 10.35.4 13.7 1.2 20.4 1.1 9.4 8.6 16.6 17.8 18.5l29.1 6.1c5 13.3 12.1 25.5 20.9 36.2l-9.3 28.2c-3 9-.5 19 7.1 24.7 4.7 3.5 9.5 6.8 14.6 9.8l5.4 3.1c5 2.8 10.2 5.3 15.5 7.6 8.7 3.7 18.6.9 25-6.2l19.8-22.2c6.8 1.1 13.8 1.7 20.9 1.7s14.1-.6 20.9-1.7l19.8 22.2zM464 304a48 48 0 1 1 0 96 48 48 0 1 1 0-96"/></svg></span> <strong>Reto formativo</strong><br />
+<strong>Planteamiento</strong>:<br />
+  Dado un mensaje de un cliente, un operador humano de servicio al cliente elabora una respuesta inadecuada (irrespetuosa, ofensiva, con mala ortografía o en otro idioma). Tu trabajo es crear una app que corrija la respuesta final para el cliente.</li>
+</ul>
+</div>
+</div>
+<div class="tabbed-block">
+<p>Compara tu solución con la siguienete implementación:</p>
+<p><div class="language-python highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>      <span class="c1"># Define una plantilla de texto para el prompt que se enviará al modelo de lenguaje.</span>
+</span><span id="__span-28-2"><a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a>  <span class="c1"># Usa marcadores {respuesta} y {reglas} para insertar dinámicamente la respuesta y las reglas.</span>
+</span><span id="__span-28-3"><a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a>  <span class="n">str_template_app</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;Mejora la respuesta: </span><span class="si">{respuesta}</span><span class="se">\</span>
+</span><span id="__span-28-4"><a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a><span class="s2">      para que cumpla las reglas:  </span><span class="si">{reglas}</span><span class="s2">.&quot;&quot;&quot;</span>
+</span><span id="__span-28-5"><a id="__codelineno-28-5" name="__codelineno-28-5" href="#__codelineno-28-5"></a>
+</span><span id="__span-28-6"><a id="__codelineno-28-6" name="__codelineno-28-6" href="#__codelineno-28-6"></a>  <span class="c1"># Define las reglas que debe seguir la respuesta mejorada.</span>
+</span><span id="__span-28-7"><a id="__codelineno-28-7" name="__codelineno-28-7" href="#__codelineno-28-7"></a>  <span class="c1"># Especifica el idioma, tono, gramática y nivel de amabilidad requerido.</span>
+</span><span id="__span-28-8"><a id="__codelineno-28-8" name="__codelineno-28-8" href="#__codelineno-28-8"></a>  <span class="n">reglas</span> <span class="o">=</span> <span class="s2">&quot;Español latino en un tono formal y sobrio y respesuoso. Con buena gramática y ortografía. Trartar de se muy amable y respetuoso.&quot;</span>
+</span><span id="__span-28-9"><a id="__codelineno-28-9" name="__codelineno-28-9" href="#__codelineno-28-9"></a>
+</span><span id="__span-28-10"><a id="__codelineno-28-10" name="__codelineno-28-10" href="#__codelineno-28-10"></a>  <span class="c1"># Define la respuesta original del operador, que es inadecuada (informal, ofensiva, con mala ortografía).</span>
+</span><span id="__span-28-11"><a id="__codelineno-28-11" name="__codelineno-28-11" href="#__codelineno-28-11"></a>  <span class="n">respuesta</span> <span class="o">=</span>  <span class="s2">&quot; mijo, no me importa si le salió mala </span><span class="se">\</span>
+</span><span id="__span-28-12"><a id="__codelineno-28-12" name="__codelineno-28-12" href="#__codelineno-28-12"></a><span class="s2">      la licudora, vaya a que se lo lamba un zapo&quot;</span>
+</span><span id="__span-28-13"><a id="__codelineno-28-13" name="__codelineno-28-13" href="#__codelineno-28-13"></a>
+</span><span id="__span-28-14"><a id="__codelineno-28-14" name="__codelineno-28-14" href="#__codelineno-28-14"></a>  <span class="c1"># Crea una plantilla de prompt usando la biblioteca LangChain, basada en la plantilla de texto.</span>
+</span><span id="__span-28-15"><a id="__codelineno-28-15" name="__codelineno-28-15" href="#__codelineno-28-15"></a>  <span class="c1"># Esto permite estructurar el mensaje para el modelo de lenguaje.</span>
+</span><span id="__span-28-16"><a id="__codelineno-28-16" name="__codelineno-28-16" href="#__codelineno-28-16"></a>  <span class="n">promp_template_app</span> <span class="o">=</span> <span class="n">ChatPromptTemplate</span><span class="o">.</span><span class="n">from_template</span><span class="p">(</span><span class="n">str_template_app</span><span class="p">)</span>
+</span><span id="__span-28-17"><a id="__codelineno-28-17" name="__codelineno-28-17" href="#__codelineno-28-17"></a>
+</span><span id="__span-28-18"><a id="__codelineno-28-18" name="__codelineno-28-18" href="#__codelineno-28-18"></a>  <span class="c1"># Formatea la plantilla con la respuesta y las reglas, generando un mensaje listo para enviar al modelo.</span>
+</span><span id="__span-28-19"><a id="__codelineno-28-19" name="__codelineno-28-19" href="#__codelineno-28-19"></a>  <span class="n">mensaje_empacado_app</span> <span class="o">=</span>  <span class="n">promp_template_app</span><span class="o">.</span><span class="n">format_messages</span><span class="p">(</span><span class="n">respuesta</span><span class="o">=</span><span class="n">respuesta</span><span class="p">,</span> <span class="n">reglas</span><span class="o">=</span><span class="n">reglas</span><span class="p">)</span>
+</span><span id="__span-28-20"><a id="__codelineno-28-20" name="__codelineno-28-20" href="#__codelineno-28-20"></a>
+</span><span id="__span-28-21"><a id="__codelineno-28-21" name="__codelineno-28-21" href="#__codelineno-28-21"></a>  <span class="c1"># Especifica el modelo de lenguaje a usar (en este caso, GPT-4o-mini de OpenAI).</span>
+</span><span id="__span-28-22"><a id="__codelineno-28-22" name="__codelineno-28-22" href="#__codelineno-28-22"></a>  <span class="n">llm_model</span> <span class="o">=</span> <span class="s2">&quot;gpt-4o-mini&quot;</span>
+</span><span id="__span-28-23"><a id="__codelineno-28-23" name="__codelineno-28-23" href="#__codelineno-28-23"></a>
+</span><span id="__span-28-24"><a id="__codelineno-28-24" name="__codelineno-28-24" href="#__codelineno-28-24"></a>  <span class="c1"># Inicializa el cliente de chat de OpenAI con el modelo especificado y una temperatura de 0.3.</span>
+</span><span id="__span-28-25"><a id="__codelineno-28-25" name="__codelineno-28-25" href="#__codelineno-28-25"></a>  <span class="c1"># La temperatura baja asegura respuestas más predecibles y menos creativas.</span>
+</span><span id="__span-28-26"><a id="__codelineno-28-26" name="__codelineno-28-26" href="#__codelineno-28-26"></a>  <span class="n">chat_app</span> <span class="o">=</span> <span class="n">ChatOpenAI</span><span class="p">(</span><span class="n">model</span> <span class="o">=</span> <span class="n">llm_model</span> <span class="p">,</span> <span class="n">temperature</span> <span class="o">=</span> <span class="mf">0.3</span><span class="p">)</span>
+</span><span id="__span-28-27"><a id="__codelineno-28-27" name="__codelineno-28-27" href="#__codelineno-28-27"></a>
+</span><span id="__span-28-28"><a id="__codelineno-28-28" name="__codelineno-28-28" href="#__codelineno-28-28"></a>  <span class="c1"># Envía el mensaje formateado al modelo y obtiene la respuesta mejorada.</span>
+</span><span id="__span-28-29"><a id="__codelineno-28-29" name="__codelineno-28-29" href="#__codelineno-28-29"></a>  <span class="n">respuesta_al_cliente</span> <span class="o">=</span> <span class="n">chat_app</span><span class="p">(</span><span class="n">mensaje_empacado_app</span><span class="p">)</span>
+</span><span id="__span-28-30"><a id="__codelineno-28-30" name="__codelineno-28-30" href="#__codelineno-28-30"></a>
+</span><span id="__span-28-31"><a id="__codelineno-28-31" name="__codelineno-28-31" href="#__codelineno-28-31"></a>  <span class="c1"># Muestra la respuesta del modelo en formato Markdown para una mejor presentación (por ejemplo, en un entorno como Jupyter).</span>
+</span><span id="__span-28-32"><a id="__codelineno-28-32" name="__codelineno-28-32" href="#__codelineno-28-32"></a>  <span class="n">display</span><span class="p">(</span><span class="n">Markdown</span><span class="p">(</span><span class="n">respuesta_al_cliente</span><span class="o">.</span><span class="n">content</span><span class="p">))</span>
+</span></code></pre></div>
+<strong>salida esperada</strong>  <br />
+<em>Agradezco su mensaje y entiendo su preocupación respecto a la situación con la licuadora. Sin embargo, le sugiero que considere la posibilidad de llevar el aparato a un servicio técnico autorizado para que puedan evaluar el problema y ofrecerle una solución adecuada. Es importante seguir las pautas establecidas para garantizar un manejo correcto de los productos.</em></p>
+<p><em>Quedo a su disposición para cualquier otra consulta o asistencia que necesite.</em></p>
+</div>
+</div>
+</div>
+<h2 id="anatomia-de-un-prompt-de-chat">Anatomía de un Prompt de Chat</h2>
+<p>Los prompts para agentes conversacionales en <strong>LangChain</strong>, como <code>ChatPromptTemplate</code>, se dividen en al menos tres componentes clave. Veamos cada uno:</p>
+<h3 id="1-prompt-del-sistema">1. <strong>Prompt del Sistema</strong></h3>
+<p>Este establece las reglas para el asistente. Indica al modelo cómo comportarse, cuál es su objetivo o incluso qué tono debe usar.</p>
+<p><strong>Ejemplo:</strong><br />
+<div class="language-text highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>Eres experto en machine learning y das respuestas en una sola oración.
+</span></code></pre></div></p>
+<p>Aquí estamos restringiendo al modelo para que mantenga las respuestas cortas en un lenguaje relativo al machine learning.</p>
+<h3 id="2-prompt-del-usuario">2. <strong>Prompt del Usuario</strong></h3>
+<p>Este es el mensaje del usuario, es decir, la pregunta o entrada que se le proporciona al modelo.</p>
+<p><strong>Ejemplo:</strong><br />
+<div class="language-text highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>Explica {tema} en una sola oración.
+</span></code></pre></div></p>
+<p>El <code>{tema}</code>, como vimos, es una variable de entrada que podemos cambiar por diferentes términos, como <em>"LangChain"</em> o <em>"Python"</em>.</p>
+<h3 id="3-prompt-del-ai">3. <strong>Prompt del AI</strong></h3>
+<p>Este es el resultado generado por el modelo. En una conversación, las respuestas anteriores del AI se reutilizan como parte del historial de chat.</p>
+<p>Por ahora, mantenemos un solo turno de interacción humano-AI en el que el modelo no tiene memoria del contexto de las interacciones anteriores, pero más adelante veremos cómo se puede construir una conversación más compleja.</p>
+<p>El <code>ChatPromptTemplate</code> de LangChain ofrece dos formas principales de construir prompts:</p>
+<h2 id="1-from_messages">1. <strong><code>from_messages</code></strong></h2>
+<p>Piensa en esto como escribir un guion para una conversación estructurada:<br />
+- El <strong>mensaje del sistema</strong> define el tono y las reglas.<br />
+- El <strong>mensaje del usuario</strong> plantea la pregunta o el input.  </p>
+<p>Es la opción recomendada cuando queremos prompts bien organizados.</p>
+<h2 id="2-from_template">2. <strong><code>from_template</code></strong></h2>
+<p>Más simple y directo, solo incluye un mensaje del usuario, como una nota rápida para el modelo.<br />
+- No tiene un <strong>rol de sistema</strong> a menos que lo agreguemos manualmente más adelante.</p>
+<p>En la sesión anterior usamos <code>from_template</code>:</p>
+<p>Veamos un ejemplo usamndo <code>from_messages</code>:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="c1"># Importamos las librerías necesarias</span>
+</span><span id="__span-31-2"><a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">langchain_openai</span><span class="w"> </span><span class="kn">import</span> <span class="n">ChatOpenAI</span>
+</span><span id="__span-31-3"><a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a><span class="kn">from</span><span class="w"> </span><span class="nn">langchain_core.prompts</span><span class="w"> </span><span class="kn">import</span> <span class="n">ChatPromptTemplate</span>
+</span></code></pre></div>
+<p>Vamos a instanciar dos modelos para comparar las respuestas al final:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="c1"># Instanciamos los modelos</span>
+</span><span id="__span-32-2"><a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a><span class="n">llm_gpt3</span> <span class="o">=</span> <span class="n">ChatOpenAI</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="s2">&quot;gpt-3.5-turbo&quot;</span><span class="p">,</span> <span class="n">temperature</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+</span><span id="__span-32-3"><a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a><span class="n">llm_gpt4</span> <span class="o">=</span> <span class="n">ChatOpenAI</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="s2">&quot;gpt-4o-mini&quot;</span><span class="p">,</span> <span class="n">temperature</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+</span><span id="__span-32-4"><a id="__codelineno-32-4" name="__codelineno-32-4" href="#__codelineno-32-4"></a>
+</span><span id="__span-32-5"><a id="__codelineno-32-5" name="__codelineno-32-5" href="#__codelineno-32-5"></a><span class="c1"># Definimos el prompt</span>
+</span><span id="__span-32-6"><a id="__codelineno-32-6" name="__codelineno-32-6" href="#__codelineno-32-6"></a><span class="n">prompt</span> <span class="o">=</span> <span class="n">ChatPromptTemplate</span><span class="o">.</span><span class="n">from_messages</span><span class="p">([</span>
+</span><span id="__span-32-7"><a id="__codelineno-32-7" name="__codelineno-32-7" href="#__codelineno-32-7"></a>    <span class="p">(</span><span class="s2">&quot;system&quot;</span><span class="p">,</span> <span class="s2">&quot;You are a concise explainer who gives one-sentence answers. If you don&#39;t know the answer, just say &#39;I don&#39;t know&#39;.&quot;</span><span class="p">),</span>
+</span><span id="__span-32-8"><a id="__codelineno-32-8" name="__codelineno-32-8" href="#__codelineno-32-8"></a>    <span class="p">(</span><span class="s2">&quot;human&quot;</span><span class="p">,</span> <span class="s2">&quot;Explain </span><span class="si">{topic}</span><span class="s2"> in one sentence.&quot;</span><span class="p">)</span>
+</span><span id="__span-32-9"><a id="__codelineno-32-9" name="__codelineno-32-9" href="#__codelineno-32-9"></a><span class="p">])</span>
+</span></code></pre></div>
+<p>La variable de entrada es <code>topic</code> y debemos empacarla en nuestro template.</p>
+<p>Llenamos el prompt con el tópico específico:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="n">messages</span> <span class="o">=</span> <span class="n">prompt</span><span class="o">.</span><span class="n">format_messages</span><span class="p">(</span><span class="n">topic</span><span class="o">=</span><span class="s2">&quot;LangChain&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<p>Ejecutamos los dos modelos:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="10:4"><input checked="checked" id="__tabbed_10_1" name="__tabbed_10" type="radio" /><input id="__tabbed_10_2" name="__tabbed_10" type="radio" /><input id="__tabbed_10_3" name="__tabbed_10" type="radio" /><input id="__tabbed_10_4" name="__tabbed_10" type="radio" /><div class="tabbed-labels"><label for="__tabbed_10_1">Código con gpt3.5</label><label for="__tabbed_10_2">Salida</label><label for="__tabbed_10_3">Código con gpt4</label><label for="__tabbed_10_4">Salida</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-python highlight"><pre><span></span><code><span id="__span-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="n">response</span> <span class="o">=</span> <span class="n">llm_gpt3</span><span class="o">.</span><span class="n">invoke</span><span class="p">(</span><span class="n">messages</span><span class="p">)</span>
+</span><span id="__span-34-2"><a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-35-1"><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a>LangChain<span class="w"> </span>is<span class="w"> </span>a<span class="w"> </span>blockchain<span class="w"> </span>platform
+</span><span id="__span-35-2"><a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a>that<span class="w"> </span>aims<span class="w"> </span>to<span class="w"> </span>facilitate<span class="w"> </span>cross-border
+</span><span id="__span-35-3"><a id="__codelineno-35-3" name="__codelineno-35-3" href="#__codelineno-35-3"></a>language<span class="w"> </span>services.
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-python highlight"><pre><span></span><code><span id="__span-36-1"><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a><span class="n">response</span> <span class="o">=</span> <span class="n">llm_gpt4</span><span class="o">.</span><span class="n">invoke</span><span class="p">(</span><span class="n">messages</span><span class="p">)</span>
+</span><span id="__span-36-2"><a id="__codelineno-36-2" name="__codelineno-36-2" href="#__codelineno-36-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-37-1"><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a>LangChain<span class="w"> </span>es<span class="w"> </span>una<span class="w"> </span>biblioteca<span class="w"> </span>para<span class="w"> </span>crear
+</span><span id="__span-37-2"><a id="__codelineno-37-2" name="__codelineno-37-2" href="#__codelineno-37-2"></a>flujos<span class="w"> </span>de<span class="w"> </span>trabajo<span class="w"> </span>de<span class="w"> </span>IA<span class="w"> </span>utilizando<span class="w"> </span>modelos
+</span><span id="__span-37-3"><a id="__codelineno-37-3" name="__codelineno-37-3" href="#__codelineno-37-3"></a>de<span class="w"> </span>lenguaje.
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Para tener en cuenta</p>
+<p>Observa que la salida del modelo gpt-3.5 es completamente alucinada (no es verdadera). ¿A qué crees que se debe esto? </p>
+<details class="tip">
+<summary>Ver respuesta</summary>
+<p>El modelo gpt-3.5 fue entrenado en datos hasta octubre de 2023, y en ese momento LangChain no existía.</p>
+</details>
+</div>
+<h2 id="de-prompts-a-chains">De Prompts a Chains</h2>
+<p>Hasta ahora, hemos preparado <em>prompts</em> y los hemos enviado al LLM paso a paso.  </p>
+<p>Pero LangChain tiene una herramienta que facilita mas las cosas: <strong>las chains</strong>-</p>
+<p>Las <em>chains</em> nos permiten <strong>combinar múltiples pasos</strong>—como preparar un <em>prompt</em> y ejecutar el LLM—en un flujo continuo y automatizado.  </p>
+<p>puedes pensar en una<em>chain</em> como una <strong>cinta transportadora</strong>:</p>
+<p><img alt="Dibujo de una banda de supermercado con frutas" class="center" src="../../assets/images/banda1.png" width="600" /></p>
+<p><em><div align="center">Una cadena simple funciona como una banda transportadora en la que se van ejecutando órdenes de forma secuencial.</div></em></p>
+<ul>
+<li>La configuras una vez.  </li>
+<li>Luego, simplemente funciona sin necesidad de repetir cada paso manualmente.  </li>
+</ul>
+<p>Esto facilita la construcción de <strong>pipelines más avanzados</strong> dentro de nuestras aplicaciones con LLM.<br />
+Una forma de encadenar ejecuciones en cadenas es utilizar el operador <code>|</code> (llamado <em>pipe</em>) para conectar los pasos. Para instanciar una cadena que realice las tareas de nuestro prompt anterior, tendríamos el prompt como:</p>
+<p><div class="language-python highlight"><pre><span></span><code><span id="__span-38-1"><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a><span class="n">prompt</span> <span class="o">=</span> <span class="n">ChatPromptTemplate</span><span class="o">.</span><span class="n">from_messages</span><span class="p">([</span>
+</span><span id="__span-38-2"><a id="__codelineno-38-2" name="__codelineno-38-2" href="#__codelineno-38-2"></a>    <span class="p">(</span><span class="s2">&quot;system&quot;</span><span class="p">,</span> <span class="s2">&quot;You are a concise explainer who gives one-sentence answers.&quot;</span><span class="p">),</span>
+</span><span id="__span-38-3"><a id="__codelineno-38-3" name="__codelineno-38-3" href="#__codelineno-38-3"></a>    <span class="p">(</span><span class="s2">&quot;human&quot;</span><span class="p">,</span> <span class="s2">&quot;Explain </span><span class="si">{topic}</span><span class="s2"> in one sentence.&quot;</span><span class="p">)</span>
+</span><span id="__span-38-4"><a id="__codelineno-38-4" name="__codelineno-38-4" href="#__codelineno-38-4"></a><span class="p">])</span>
+</span></code></pre></div>
+E instanciamos la cadena como:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-39-1"><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a><span class="n">chain</span> <span class="o">=</span> <span class="n">prompt</span> <span class="o">|</span> <span class="n">llm_gpt4</span>  <span class="c1"># Create the chain</span>
+</span></code></pre></div>
+<p>Es como decir: *"Toma este prompt y pásalo al LLM."</p>
+<p>Y ejecutamos la cadena como:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="11:2"><input checked="checked" id="__tabbed_11_1" name="__tabbed_11" type="radio" /><input id="__tabbed_11_2" name="__tabbed_11" type="radio" /><div class="tabbed-labels"><label for="__tabbed_11_1">Código</label><label for="__tabbed_11_2">Salida</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-python highlight"><pre><span></span><code><span id="__span-40-1"><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a><span class="n">response</span> <span class="o">=</span> <span class="n">chain</span><span class="o">.</span><span class="n">invoke</span><span class="p">({</span><span class="s2">&quot;topic&quot;</span><span class="p">:</span> <span class="s2">&quot;LangChain&quot;</span><span class="p">})</span>  <span class="c1"># Run it in one go</span>
+</span><span id="__span-40-2"><a id="__codelineno-40-2" name="__codelineno-40-2" href="#__codelineno-40-2"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;With chain:&quot;</span><span class="p">,</span> <span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-41-1"><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a>With<span class="w"> </span>chain:<span class="w"> </span>LangChain<span class="w"> </span>es<span class="w"> </span>una<span class="w"> </span>biblioteca<span class="w"> </span>para<span class="w"> </span>crear<span class="w"> </span>flujos<span class="w"> </span>de<span class="w"> </span>trabajo<span class="w"> </span>de<span class="w"> </span>IA<span class="w"> </span>utilizando<span class="w"> </span>modelos<span class="w"> </span>de<span class="w"> </span>lenguaje.
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<p>Las <em>chains</em> nos evitan tener que formatear e invocar manualmente el LLM cada vez.</p>
+<ul>
+<li><strong>Definimos la cadena una vez.</strong></li>
+<li><strong>Podemos reutilizarla fácilmente.</strong></li>
+</ul>
+<p>Esto simplifica el flujo de trabajo y hace que el código sea más limpio y modular.
+Ya no necesitamos formatear manualmente los mensajes—<strong>la chain lo hace por nosotros</strong>.  </p>
+<p><strong>Método Antiguo (Manual)</strong>:<br />
+<div class="language-python highlight"><pre><span></span><code><span id="__span-42-1"><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a><span class="n">messages</span> <span class="o">=</span> <span class="n">prompt</span><span class="o">.</span><span class="n">format_messages</span><span class="p">()</span>  
+</span><span id="__span-42-2"><a id="__codelineno-42-2" name="__codelineno-42-2" href="#__codelineno-42-2"></a><span class="n">llm</span><span class="o">.</span><span class="n">invoke</span><span class="p">(</span><span class="n">messages</span><span class="p">)</span>
+</span></code></pre></div>
+Una vez configurada la cadena, podemos reutilizarla con diferentes variables de entrada:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="12:2"><input checked="checked" id="__tabbed_12_1" name="__tabbed_12" type="radio" /><input id="__tabbed_12_2" name="__tabbed_12" type="radio" /><div class="tabbed-labels"><label for="__tabbed_12_1">Código</label><label for="__tabbed_12_2">Salida</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-python highlight"><pre><span></span><code><span id="__span-43-1"><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a><span class="nb">print</span><span class="p">(</span><span class="n">chain</span><span class="o">.</span><span class="n">invoke</span><span class="p">({</span><span class="s2">&quot;topic&quot;</span><span class="p">:</span> <span class="s2">&quot;Python&quot;</span><span class="p">})</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+</span><span id="__span-43-2"><a id="__codelineno-43-2" name="__codelineno-43-2" href="#__codelineno-43-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">chain</span><span class="o">.</span><span class="n">invoke</span><span class="p">({</span><span class="s2">&quot;topic&quot;</span><span class="p">:</span> <span class="s2">&quot;AI&quot;</span><span class="p">})</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-44-1"><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a>Python<span class="w"> </span>es<span class="w"> </span>un<span class="w"> </span>lenguaje<span class="w"> </span>de<span class="w"> </span>programación<span class="w"> </span>versátil<span class="w"> </span>y<span class="w"> </span>popular.
+</span><span id="__span-44-2"><a id="__codelineno-44-2" name="__codelineno-44-2" href="#__codelineno-44-2"></a>AI<span class="w"> </span>es<span class="w"> </span>el<span class="w"> </span>campo<span class="w"> </span>de<span class="w"> </span>la<span class="w"> </span>informática<span class="w"> </span>que<span class="w"> </span>se<span class="w"> </span>centra<span class="w"> </span>en<span class="w"> </span>crear<span class="w"> </span>sistemas<span class="w"> </span>inteligentes.
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<h3 id="cadenas-con-multiples-variables">Cadenas con múltiples variables</h3>
+<p>Veamos algunos ejemplos en los que usamos múltiples variables en nuestros prompts:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="13:2"><input checked="checked" id="__tabbed_13_1" name="__tabbed_13" type="radio" /><input id="__tabbed_13_2" name="__tabbed_13" type="radio" /><div class="tabbed-labels"><label for="__tabbed_13_1">Código</label><label for="__tabbed_13_2">Salida</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-python highlight"><pre><span></span><code><span id="__span-45-1"><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a><span class="c1"># Nuevo prompt con dos variables: topic y style</span>
+</span><span id="__span-45-2"><a id="__codelineno-45-2" name="__codelineno-45-2" href="#__codelineno-45-2"></a><span class="n">multi_prompt</span> <span class="o">=</span> <span class="n">ChatPromptTemplate</span><span class="o">.</span><span class="n">from_messages</span><span class="p">([</span>
+</span><span id="__span-45-3"><a id="__codelineno-45-3" name="__codelineno-45-3" href="#__codelineno-45-3"></a>    <span class="p">(</span><span class="s2">&quot;system&quot;</span><span class="p">,</span> <span class="s2">&quot;You are an explainer who answers in a </span><span class="si">{style}</span><span class="s2"> way.&quot;</span><span class="p">),</span>
+</span><span id="__span-45-4"><a id="__codelineno-45-4" name="__codelineno-45-4" href="#__codelineno-45-4"></a>    <span class="p">(</span><span class="s2">&quot;human&quot;</span><span class="p">,</span> <span class="s2">&quot;Explain </span><span class="si">{topic}</span><span class="s2"> in one sentence.&quot;</span><span class="p">)</span>
+</span><span id="__span-45-5"><a id="__codelineno-45-5" name="__codelineno-45-5" href="#__codelineno-45-5"></a><span class="p">])</span>
+</span><span id="__span-45-6"><a id="__codelineno-45-6" name="__codelineno-45-6" href="#__codelineno-45-6"></a><span class="n">multi_chain</span> <span class="o">=</span> <span class="n">multi_prompt</span> <span class="o">|</span> <span class="n">llm</span>
+</span><span id="__span-45-7"><a id="__codelineno-45-7" name="__codelineno-45-7" href="#__codelineno-45-7"></a>
+</span><span id="__span-45-8"><a id="__codelineno-45-8" name="__codelineno-45-8" href="#__codelineno-45-8"></a><span class="c1"># Ejecutar con múltiples variables</span>
+</span><span id="__span-45-9"><a id="__codelineno-45-9" name="__codelineno-45-9" href="#__codelineno-45-9"></a><span class="n">response</span> <span class="o">=</span> <span class="n">multi_chain</span><span class="o">.</span><span class="n">invoke</span><span class="p">({</span>
+</span><span id="__span-45-10"><a id="__codelineno-45-10" name="__codelineno-45-10" href="#__codelineno-45-10"></a>
+</span><span id="__span-45-11"><a id="__codelineno-45-11" name="__codelineno-45-11" href="#__codelineno-45-11"></a><span class="c1"># Run with multiple variables</span>
+</span><span id="__span-45-12"><a id="__codelineno-45-12" name="__codelineno-45-12" href="#__codelineno-45-12"></a><span class="n">response</span> <span class="o">=</span> <span class="n">multi_chain</span><span class="o">.</span><span class="n">invoke</span><span class="p">({</span>
+</span><span id="__span-45-13"><a id="__codelineno-45-13" name="__codelineno-45-13" href="#__codelineno-45-13"></a>    <span class="s2">&quot;topic&quot;</span><span class="p">:</span> <span class="s2">&quot;Noether theorem&quot;</span><span class="p">,</span>
+</span><span id="__span-45-14"><a id="__codelineno-45-14" name="__codelineno-45-14" href="#__codelineno-45-14"></a>    <span class="s2">&quot;style&quot;</span><span class="p">:</span> <span class="s2">&quot;Cervantes style in Spanish&quot;</span>
+</span><span id="__span-45-15"><a id="__codelineno-45-15" name="__codelineno-45-15" href="#__codelineno-45-15"></a><span class="p">})</span>
+</span><span id="__span-45-16"><a id="__codelineno-45-16" name="__codelineno-45-16" href="#__codelineno-45-16"></a><span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">)</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-46-1"><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a>¡Por<span class="w"> </span>la<span class="w"> </span>fe<span class="w"> </span>de<span class="w"> </span>Dulcinea<span class="w"> </span>del<span class="w"> </span>Toboso!<span class="w"> </span>La<span class="w"> </span>teorema<span class="w"> </span>
+</span><span id="__span-46-2"><a id="__codelineno-46-2" name="__codelineno-46-2" href="#__codelineno-46-2"></a>de<span class="w"> </span>Noether<span class="w"> </span>establece<span class="w"> </span>que<span class="w"> </span>para<span class="w"> </span>cada<span class="w"> </span>simetría<span class="w"> </span>continua
+</span><span id="__span-46-3"><a id="__codelineno-46-3" name="__codelineno-46-3" href="#__codelineno-46-3"></a>de<span class="w"> </span>un<span class="w"> </span>sistema<span class="w"> </span>físico,<span class="w"> </span>existe<span class="w"> </span>una<span class="w"> </span>cantidad<span class="w"> </span>conservada!
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<h2 id="output-parsers-dando-forma-a-la-salida-del-llm">Output Parsers: Dando Forma a la Salida del LLM</h2>
+<p>Los LLM son sistemas que reciben texto plano y devuelven texto, incluso cuando devuelven imágenes, lo que realmente están haciendo en el fondo es generar descripciones textuales de esas imágenes. Sin embargo, cuando estamos construyendo aplicaciones asistidas por LLM, lo que queremos es utilizar la salida de la llamada al LLM para emplearla en otros flujos de ejecución de nuestra aplicación.
+Los LLM son sistemas que reciben texto plano y devuelven texto, incluso cuando devuelven imágenes, lo que realmente están haciendo en el fondo es generar descripciones textuales de esas imágenes. Sin embargo, cuando estamos construyendo aplicaciones asistidas por LLM, lo que queremos es utilizar la salida de la llamada al LLM para emplearla en otros flujos de ejecución de nuestra aplicación.</p>
+<p>Ahí es donde entran los <em>output parsers</em>.</p>
+<p>Los <em>output parsers</em> toman la salida en bruto del LLM y la convierten en algo que podamos usar en nuestro código, como un string, una lista, un diccionario, un JSON, etc.</p>
+<p>Ejemplo:
+- Si el LLM responde con <code>"Las herramientas más usadas son: Python, SQL, LangChain."</code>, podemos transformarlo en una <strong>lista</strong> <code>["Python", "SQL", "LangChain"]</code>.</p>
+<p>Vemos algunos mas usados:</p>
+<h2 id="stroutputparser-el-parser-mas-basico"><code>StrOutputParser</code>: El Parser Más Básico</h2>
+<p>Comencemos con un <em>output parser</em> básico: <code>StrOutputParser</code>. Este parser simplemente asegura que la salida de la llamada al LLM sea un string. En el contexto de LangChain, esto es útil para garantizar que los datos procesados sean siempre de tipo string, facilitando su manipulación posterior. Una vez instanciado, puede agregarse a la cadena para que, al invocarla, la salida sea en el formato especificado por el parser. Para ilustrar el uso de los parsers, veamos esta cadena sin parser y comparemosla con el resultado cuando agregamos el <code>StrOutputParser</code>.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="14:2"><input checked="checked" id="__tabbed_14_1" name="__tabbed_14" type="radio" /><input id="__tabbed_14_2" name="__tabbed_14" type="radio" /><div class="tabbed-labels"><label for="__tabbed_14_1">Código sin Parser</label><label for="__tabbed_14_2">Salida</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-python highlight"><pre><span></span><code><span id="__span-47-1"><a id="__codelineno-47-1" name="__codelineno-47-1" href="#__codelineno-47-1"></a><span class="n">multi_prompt</span> <span class="o">=</span> <span class="n">ChatPromptTemplate</span><span class="o">.</span><span class="n">from_messages</span><span class="p">([</span>
+</span><span id="__span-47-2"><a id="__codelineno-47-2" name="__codelineno-47-2" href="#__codelineno-47-2"></a>    <span class="p">(</span><span class="s2">&quot;system&quot;</span><span class="p">,</span> <span class="s2">&quot;You are an explainer who answers in a </span><span class="si">{style}</span><span class="s2"> way.&quot;</span><span class="p">),</span>
+</span><span id="__span-47-3"><a id="__codelineno-47-3" name="__codelineno-47-3" href="#__codelineno-47-3"></a>    <span class="p">(</span><span class="s2">&quot;human&quot;</span><span class="p">,</span> <span class="s2">&quot;Explain </span><span class="si">{topic}</span><span class="s2"> in one sentence.&quot;</span><span class="p">)</span>
+</span><span id="__span-47-4"><a id="__codelineno-47-4" name="__codelineno-47-4" href="#__codelineno-47-4"></a><span class="p">])</span>
+</span><span id="__span-47-5"><a id="__codelineno-47-5" name="__codelineno-47-5" href="#__codelineno-47-5"></a><span class="n">multi_chain</span> <span class="o">=</span> <span class="n">multi_prompt</span> <span class="o">|</span> <span class="n">llm</span>  <span class="c1"># LCEL</span>
+</span><span id="__span-47-6"><a id="__codelineno-47-6" name="__codelineno-47-6" href="#__codelineno-47-6"></a><span class="n">response</span> <span class="o">=</span> <span class="n">multi_chain</span><span class="o">.</span><span class="n">invoke</span><span class="p">({</span><span class="s2">&quot;topic&quot;</span><span class="p">:</span> <span class="s2">&quot;LangChain&quot;</span><span class="p">,</span> <span class="s2">&quot;style&quot;</span><span class="p">:</span> <span class="s2">&quot;funny&quot;</span><span class="p">})</span>
+</span><span id="__span-47-7"><a id="__codelineno-47-7" name="__codelineno-47-7" href="#__codelineno-47-7"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Raw output:&quot;</span><span class="p">,</span> <span class="n">response</span><span class="p">)</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-48-1"><a id="__codelineno-48-1" name="__codelineno-48-1" href="#__codelineno-48-1"></a>AIMessage<span class="o">(</span><span class="nv">content</span><span class="o">=</span><span class="s1">&#39;LangChain is like that friend who translates all your texts for you, but in a more high-tech and less judgmental way.&#39;</span>,<span class="w"> </span><span class="nv">additional_kwargs</span><span class="o">={</span><span class="s1">&#39;refusal&#39;</span>:<span class="w"> </span>None<span class="o">}</span>,<span class="w"> </span><span class="nv">response_metadata</span><span class="o">={</span><span class="s1">&#39;token_usage&#39;</span>:<span class="w"> </span><span class="o">{</span><span class="s1">&#39;completion_tokens&#39;</span>:<span class="w"> </span><span class="m">27</span>,<span class="w"> </span><span class="s1">&#39;prompt_tokens&#39;</span>:<span class="w"> </span><span class="m">31</span>,<span class="w"> </span><span class="s1">&#39;total_tokens&#39;</span>:<span class="w"> </span><span class="m">58</span>,<span class="w"> </span><span class="s1">&#39;completion_tokens_details&#39;</span>:<span class="w"> </span><span class="o">{</span><span class="s1">&#39;accepted_prediction_tokens&#39;</span>:<span class="w"> </span><span class="m">0</span>,<span class="w"> </span><span class="s1">&#39;audio_tokens&#39;</span>:<span class="w"> </span><span class="m">0</span>,<span class="w"> </span><span class="s1">&#39;reasoning_tokens&#39;</span>:<span class="w"> </span><span class="m">0</span>,<span class="w"> </span><span class="s1">&#39;rejected_prediction_tokens&#39;</span>:<span class="w"> </span><span class="m">0</span><span class="o">}</span>,<span class="w"> </span><span class="s1">&#39;prompt_tokens_details&#39;</span>:<span class="w"> </span><span class="o">{</span><span class="s1">&#39;audio_tokens&#39;</span>:<span class="w"> </span><span class="m">0</span>,<span class="w"> </span><span class="s1">&#39;cached_tokens&#39;</span>:<span class="w"> </span><span class="m">0</span><span class="o">}}</span>,<span class="w"> </span><span class="s1">&#39;model_name&#39;</span>:<span class="w"> </span><span class="s1">&#39;gpt-3.5-turbo-0125&#39;</span>,<span class="w"> </span><span class="s1">&#39;system_fingerprint&#39;</span>:<span class="w"> </span>None,<span class="w"> </span><span class="s1">&#39;finish_reason&#39;</span>:<span class="w"> </span><span class="s1">&#39;stop&#39;</span>,<span class="w"> </span><span class="s1">&#39;logprobs&#39;</span>:<span class="w"> </span>None<span class="o">}</span>,<span class="w"> </span><span class="nv">id</span><span class="o">=</span><span class="s1">&#39;run-d4e4009b-87db-40ca-89de-9fe42d850dab-0&#39;</span>,<span class="w"> </span><span class="nv">usage_metadata</span><span class="o">={</span><span class="s1">&#39;input_tokens&#39;</span>:<span class="w"> </span><span class="m">31</span>,<span class="w"> </span><span class="s1">&#39;output_tokens&#39;</span>:<span class="w"> </span><span class="m">27</span>,<span class="w"> </span><span class="s1">&#39;total_tokens&#39;</span>:<span class="w"> </span><span class="m">58</span>,<span class="w"> </span><span class="s1">&#39;input_token_details&#39;</span>:<span class="w"> </span><span class="o">{</span><span class="s1">&#39;audio&#39;</span>:<span class="w"> </span><span class="m">0</span>,<span class="w"> </span><span class="s1">&#39;cache_read&#39;</span>:<span class="w"> </span><span class="m">0</span><span class="o">}</span>,<span class="w"> </span><span class="s1">&#39;output_token_details&#39;</span>:<span class="w"> </span><span class="o">{</span><span class="s1">&#39;audio&#39;</span>:<span class="w"> </span><span class="m">0</span>,<span class="w"> </span><span class="s1">&#39;reasoning&#39;</span>:<span class="w"> </span><span class="m">0</span><span class="o">}})</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<p>Aquí el string de salida está dentro de la instancia <code>content</code> del <code>AIMessagePara</code>. El parser nos posibilitará que la salida sea solo el string. Para  usar el parser, importamos el módulo:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-49-1"><a id="__codelineno-49-1" name="__codelineno-49-1" href="#__codelineno-49-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">langchain_core.output_parsers</span><span class="w"> </span><span class="kn">import</span> <span class="n">StrOutputParser</span>
+</span></code></pre></div>
+<p>E instanciamos el parser como:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-50-1"><a id="__codelineno-50-1" name="__codelineno-50-1" href="#__codelineno-50-1"></a><span class="c1"># Add the parser to the chain</span>
+</span><span id="__span-50-2"><a id="__codelineno-50-2" name="__codelineno-50-2" href="#__codelineno-50-2"></a><span class="n">parser</span> <span class="o">=</span> <span class="n">StrOutputParser</span><span class="p">()</span>
+</span></code></pre></div>
+<p>Luego lo agregamos a la cadena con el operador pipe.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="15:2"><input checked="checked" id="__tabbed_15_1" name="__tabbed_15" type="radio" /><input id="__tabbed_15_2" name="__tabbed_15" type="radio" /><div class="tabbed-labels"><label for="__tabbed_15_1">Código con Parser</label><label for="__tabbed_15_2">Salida con el Parser</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-python highlight"><pre><span></span><code><span id="__span-51-1"><a id="__codelineno-51-1" name="__codelineno-51-1" href="#__codelineno-51-1"></a><span class="n">parsed_chain</span> <span class="o">=</span> <span class="n">multi_prompt</span> <span class="o">|</span> <span class="n">llm</span> <span class="o">|</span> <span class="n">parser</span>
+</span><span id="__span-51-2"><a id="__codelineno-51-2" name="__codelineno-51-2" href="#__codelineno-51-2"></a>
+</span><span id="__span-51-3"><a id="__codelineno-51-3" name="__codelineno-51-3" href="#__codelineno-51-3"></a><span class="c1"># Run it</span>
+</span><span id="__span-51-4"><a id="__codelineno-51-4" name="__codelineno-51-4" href="#__codelineno-51-4"></a><span class="hll"><span class="n">response</span> <span class="o">=</span> <span class="n">parsed_chain</span><span class="o">.</span><span class="n">invoke</span><span class="p">({</span><span class="s2">&quot;topic&quot;</span><span class="p">:</span> <span class="s2">&quot;LangChain&quot;</span><span class="p">,</span> <span class="s2">&quot;style&quot;</span><span class="p">:</span> <span class="s2">&quot;funny&quot;</span><span class="p">})</span>
+</span></span><span id="__span-51-5"><a id="__codelineno-51-5" name="__codelineno-51-5" href="#__codelineno-51-5"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Parsed output:&quot;</span><span class="p">,</span> <span class="n">response</span><span class="p">)</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-52-1"><a id="__codelineno-52-1" name="__codelineno-52-1" href="#__codelineno-52-1"></a>Parsed<span class="w"> </span>output:<span class="w"> </span>LangChain<span class="w"> </span>is<span class="w"> </span>like<span class="w"> </span>a<span class="w"> </span>multilingual<span class="w"> </span>party<span class="w"> </span>where<span class="w"> </span>everyone<span class="w"> </span>speaks<span class="w"> </span>their<span class="w"> </span>own<span class="w"> </span>language<span class="w"> </span>but<span class="w"> </span>magically<span class="w"> </span>understands<span class="w"> </span>each<span class="w"> </span>other<span class="w"> </span>perfectly.
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Para tener en cuenta</p>
+<p><code>StrOutputParser</code> 
+- Extrae el <code>.content</code> del objeto <code>AIMessage</code> generado por el LLM.<br />
+- Nos garantiza que obtenemos solo el texto limpio sin información adicional.  </p>
+<p>🔹 <strong>Sin el parser:</strong><br />
+Obtenemos un objeto <code>AIMessage</code> y debemos extraer manualmente <code>.content</code>.  </p>
+<p>🔹 <strong>Con el parser:</strong><br />
+Recibimos directamente el texto limpio.  </p>
+<p>✅ <strong>Es un pequeño avance, pero marca la diferencia.</strong><br />
+Nos ahorra pasos manuales y sienta la base para mejoras más avanzadas.  </p>
+</div>
+<h3 id="commaseparatedlistoutputparser"><code>CommaSeparatedListOutputParser</code></h3>
+<p>Este parser toma una cadena de texto separada por comas y la convierte en una lista estructurada.</p>
+<p><strong>Ejemplo:</strong><br />
+<strong>Entrada:</strong> <code>"manzana, banana, cereza"</code><br />
+<strong>Salida:</strong> <code>["manzana", "banana", "cereza"]</code>  </p>
+<p>Veámoslo en detalle:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="16:2"><input checked="checked" id="__tabbed_16_1" name="__tabbed_16" type="radio" /><input id="__tabbed_16_2" name="__tabbed_16" type="radio" /><div class="tabbed-labels"><label for="__tabbed_16_1">Código</label><label for="__tabbed_16_2">Salida</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-53-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-53-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-53-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-53-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-53-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-53-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-53-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-53-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-53-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-53-10">10</a></span>
+<span class="normal"><a href="#__codelineno-53-11">11</a></span>
+<span class="normal"><a href="#__codelineno-53-12">12</a></span>
+<span class="normal"><a href="#__codelineno-53-13">13</a></span>
+<span class="normal"><a href="#__codelineno-53-14">14</a></span>
+<span class="normal"><a href="#__codelineno-53-15">15</a></span>
+<span class="normal"><a href="#__codelineno-53-16">16</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-53-1"><a id="__codelineno-53-1" name="__codelineno-53-1"></a><span class="c1"># Import the parser</span>
+</span><span id="__span-53-2"><a id="__codelineno-53-2" name="__codelineno-53-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">langchain_core.output_parsers</span><span class="w"> </span><span class="kn">import</span> <span class="n">CommaSeparatedListOutputParser</span>
+</span><span id="__span-53-3"><a id="__codelineno-53-3" name="__codelineno-53-3"></a>
+</span><span id="__span-53-4"><a id="__codelineno-53-4" name="__codelineno-53-4"></a><span class="c1"># New prompt asking for a list</span>
+</span><span id="__span-53-5"><a id="__codelineno-53-5" name="__codelineno-53-5"></a><span class="n">list_prompt</span> <span class="o">=</span> <span class="n">ChatPromptTemplate</span><span class="o">.</span><span class="n">from_messages</span><span class="p">([</span>
+</span><span id="__span-53-6"><a id="__codelineno-53-6" name="__codelineno-53-6"></a>    <span class="p">(</span><span class="s2">&quot;system&quot;</span><span class="p">,</span> <span class="s2">&quot;You are a helpful assistant that delivers comma-separated items.&quot;</span><span class="p">),</span>
+</span><span id="__span-53-7"><a id="__codelineno-53-7" name="__codelineno-53-7"></a>    <span class="p">(</span><span class="s2">&quot;human&quot;</span><span class="p">,</span> <span class="s2">&quot;Give me 8 examples of </span><span class="si">{category}</span><span class="s2">, separated by commas, omit additional comments only list the objects like a Python list.&quot;</span><span class="p">)</span>
+</span><span id="__span-53-8"><a id="__codelineno-53-8" name="__codelineno-53-8"></a><span class="p">])</span>
+</span><span id="__span-53-9"><a id="__codelineno-53-9" name="__codelineno-53-9"></a>
+</span><span id="__span-53-10"><a id="__codelineno-53-10" name="__codelineno-53-10"></a><span class="c1"># Create the chain with the new parser</span>
+</span><span id="__span-53-11"><a id="__codelineno-53-11" name="__codelineno-53-11"></a><span class="n">list_parser</span> <span class="o">=</span> <span class="n">CommaSeparatedListOutputParser</span><span class="p">()</span>
+</span><span id="__span-53-12"><a id="__codelineno-53-12" name="__codelineno-53-12"></a><span class="hll"><span class="n">list_chain</span> <span class="o">=</span> <span class="n">list_prompt</span> <span class="o">|</span> <span class="n">llm</span> <span class="o">|</span> <span class="n">list_parser</span>
+</span></span><span id="__span-53-13"><a id="__codelineno-53-13" name="__codelineno-53-13"></a>
+</span><span id="__span-53-14"><a id="__codelineno-53-14" name="__codelineno-53-14"></a><span class="c1"># Run it</span>
+</span><span id="__span-53-15"><a id="__codelineno-53-15" name="__codelineno-53-15"></a><span class="n">response</span> <span class="o">=</span> <span class="n">list_chain</span><span class="o">.</span><span class="n">invoke</span><span class="p">({</span><span class="s2">&quot;category&quot;</span><span class="p">:</span> <span class="s2">&quot;programming languages&quot;</span><span class="p">})</span>
+</span><span id="__span-53-16"><a id="__codelineno-53-16" name="__codelineno-53-16"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;List output:&quot;</span><span class="p">,</span> <span class="n">response</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-54-1"><a id="__codelineno-54-1" name="__codelineno-54-1" href="#__codelineno-54-1"></a>List<span class="w"> </span>output:<span class="w"> </span><span class="o">[</span><span class="s1">&#39;Python&#39;</span>,<span class="w"> </span><span class="s1">&#39;Java&#39;</span>,<span class="w"> </span><span class="s1">&#39;C++&#39;</span>,<span class="w"> </span><span class="s1">&#39;JavaScript&#39;</span>,<span class="w"> </span><span class="s1">&#39;Ruby&#39;</span>,<span class="w"> </span><span class="s1">&#39;Swift&#39;</span>,<span class="w"> </span><span class="s1">&#39;PHP&#39;</span>,<span class="w"> </span><span class="s1">&#39;Go&#39;</span><span class="o">]</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<p>Puedes verificar que el tipo de la salida es una lista:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="17:2"><input checked="checked" id="__tabbed_17_1" name="__tabbed_17" type="radio" /><input id="__tabbed_17_2" name="__tabbed_17" type="radio" /><div class="tabbed-labels"><label for="__tabbed_17_1">Código</label><label for="__tabbed_17_2">Salida</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-python highlight"><pre><span></span><code><span id="__span-55-1"><a id="__codelineno-55-1" name="__codelineno-55-1" href="#__codelineno-55-1"></a><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">response</span><span class="p">))</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-56-1"><a id="__codelineno-56-1" name="__codelineno-56-1" href="#__codelineno-56-1"></a>&lt;class<span class="w"> </span><span class="s1">&#39;list&#39;</span>&gt;
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<p>Esto nos permite, por ejemplo, usar índices para acceder a los elementos de la lista:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="18:2"><input checked="checked" id="__tabbed_18_1" name="__tabbed_18" type="radio" /><input id="__tabbed_18_2" name="__tabbed_18" type="radio" /><div class="tabbed-labels"><label for="__tabbed_18_1">Código</label><label for="__tabbed_18_2">Salida</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-python highlight"><pre><span></span><code><span id="__span-57-1"><a id="__codelineno-57-1" name="__codelineno-57-1" href="#__codelineno-57-1"></a><span class="n">response</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-58-1"><a id="__codelineno-58-1" name="__codelineno-58-1" href="#__codelineno-58-1"></a><span class="s1">&#39;Java&#39;</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<p>Es decir, el LLM nos proporciona texto, pero el <em>parser</em> lo convierte en una lista que podemos usar en código.
+Los parsers nos permiten agregar pasos adicionales a las cadenas de ejecución; puedes pensarlo como una línea de ensamblaje con el flujo:</p>
+<p><div class="language-bash highlight"><pre><span></span><code><span id="__span-59-1"><a id="__codelineno-59-1" name="__codelineno-59-1" href="#__codelineno-59-1"></a><span class="o">[</span>Prompt<span class="o">]</span><span class="w"> </span>--&gt;<span class="w"> </span><span class="o">[</span>LLM<span class="o">]</span><span class="w"> </span>--&gt;<span class="w"> </span><span class="o">[</span>Parser<span class="o">]</span><span class="w"> </span>--&gt;<span class="w"> </span>Structured<span class="w"> </span>Output
+</span></code></pre></div>
+<img alt="Dibujo de una banda de supermercado con frutas" class="center" src="../../assets/images/car_asembly.png" width="600" /></p>
+<p><em><div align="center">Analogía de una cadena con parser. Las instrucciones se ejecutan en orden como en una línea de ensamblaje.</div></em></p>
+<h3 id="jsonoutputparser"><code>JsonOutputParser</code></h3>
+<p>El <code>JsonOutputParser</code> es un parser que toma una cadena de texto en formato JSON y la convierte en un objeto de Python, como un diccionario o una lista, dependiendo de la estructura del JSON. Esto es particularmente útil cuando trabajamos con datos estructurados que vienen de una base de datos en la nube o de una API.</p>
+<p><strong>Ejemplo:</strong></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="19:1"><input checked="checked" id="__tabbed_19_1" name="__tabbed_19" type="radio" /><div class="tabbed-labels"><label for="__tabbed_19_1">Código</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-python highlight"><pre><span></span><code><span id="__span-60-1"><a id="__codelineno-60-1" name="__codelineno-60-1" href="#__codelineno-60-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">langchain_core.output_parsers</span><span class="w"> </span><span class="kn">import</span> <span class="n">JsonOutputParser</span>
+</span><span id="__span-60-2"><a id="__codelineno-60-2" name="__codelineno-60-2" href="#__codelineno-60-2"></a>
+</span><span id="__span-60-3"><a id="__codelineno-60-3" name="__codelineno-60-3" href="#__codelineno-60-3"></a><span class="c1"># Prompt asking for JSON with varied types</span>
+</span><span id="__span-60-4"><a id="__codelineno-60-4" name="__codelineno-60-4" href="#__codelineno-60-4"></a><span class="n">json_prompt</span> <span class="o">=</span> <span class="n">ChatPromptTemplate</span><span class="o">.</span><span class="n">from_messages</span><span class="p">([</span>
+</span><span id="__span-60-5"><a id="__codelineno-60-5" name="__codelineno-60-5" href="#__codelineno-60-5"></a>    <span class="p">(</span><span class="s2">&quot;system&quot;</span><span class="p">,</span> <span class="s2">&quot;Return a JSON object with &#39;name&#39; (string), &#39;age&#39; (number or null), &#39;is_student&#39; (true/false), and &#39;city&#39; (string or null).&quot;</span><span class="p">),</span>
+</span><span id="__span-60-6"><a id="__codelineno-60-6" name="__codelineno-60-6" href="#__codelineno-60-6"></a>    <span class="p">(</span><span class="s2">&quot;human&quot;</span><span class="p">,</span> <span class="s2">&quot;Give me details for </span><span class="si">{person}</span><span class="s2"> in JSON format.&quot;</span><span class="p">)</span>
+</span><span id="__span-60-7"><a id="__codelineno-60-7" name="__codelineno-60-7" href="#__codelineno-60-7"></a><span class="p">])</span>
+</span><span id="__span-60-8"><a id="__codelineno-60-8" name="__codelineno-60-8" href="#__codelineno-60-8"></a>
+</span><span id="__span-60-9"><a id="__codelineno-60-9" name="__codelineno-60-9" href="#__codelineno-60-9"></a><span class="c1"># Create the chain with the parser</span>
+</span><span id="__span-60-10"><a id="__codelineno-60-10" name="__codelineno-60-10" href="#__codelineno-60-10"></a><span class="n">json_chain</span> <span class="o">=</span> <span class="n">json_prompt</span> <span class="o">|</span> <span class="n">llm</span> <span class="o">|</span> <span class="n">JsonOutputParser</span><span class="p">()</span>
+</span><span id="__span-60-11"><a id="__codelineno-60-11" name="__codelineno-60-11" href="#__codelineno-60-11"></a>
+</span><span id="__span-60-12"><a id="__codelineno-60-12" name="__codelineno-60-12" href="#__codelineno-60-12"></a><span class="c1"># Chain without parser</span>
+</span><span id="__span-60-13"><a id="__codelineno-60-13" name="__codelineno-60-13" href="#__codelineno-60-13"></a><span class="n">no_parse_chain</span> <span class="o">=</span> <span class="n">json_prompt</span> <span class="o">|</span> <span class="n">llm</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<p>Para ver más claramente lo que hace el <code>JsonOutputParser</code>, corramos la cadena sin el parser:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="20:2"><input checked="checked" id="__tabbed_20_1" name="__tabbed_20" type="radio" /><input id="__tabbed_20_2" name="__tabbed_20" type="radio" /><div class="tabbed-labels"><label for="__tabbed_20_1">Código sin Parser</label><label for="__tabbed_20_2">Salida</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-python highlight"><pre><span></span><code><span id="__span-61-1"><a id="__codelineno-61-1" name="__codelineno-61-1" href="#__codelineno-61-1"></a><span class="n">no_parse_response</span> <span class="o">=</span> <span class="n">no_parse_chain</span><span class="o">.</span><span class="n">invoke</span><span class="p">({</span><span class="s2">&quot;person&quot;</span><span class="p">:</span> <span class="s2">&quot;Alice&quot;</span><span class="p">})</span><span class="o">.</span><span class="n">content</span>
+</span><span id="__span-61-2"><a id="__codelineno-61-2" name="__codelineno-61-2" href="#__codelineno-61-2"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Respuesta sin parser:&quot;</span><span class="p">,</span> <span class="n">no_parse_response</span><span class="p">)</span>
+</span><span id="__span-61-3"><a id="__codelineno-61-3" name="__codelineno-61-3" href="#__codelineno-61-3"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Type:&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">no_parse_response</span><span class="p">))</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-62-1"><a id="__codelineno-62-1" name="__codelineno-62-1" href="#__codelineno-62-1"></a>Respuesta<span class="w"> </span>sin<span class="w"> </span>parser:<span class="w"> </span><span class="o">{</span><span class="s2">&quot;name&quot;</span>:<span class="w"> </span><span class="s2">&quot;Alice&quot;</span>,<span class="w"> </span><span class="s2">&quot;age&quot;</span>:<span class="w"> </span><span class="m">30</span>,<span class="w"> </span><span class="s2">&quot;is_student&quot;</span>:<span class="w"> </span>false,<span class="w"> </span><span class="s2">&quot;city&quot;</span>:<span class="w"> </span><span class="s2">&quot;Paris&quot;</span><span class="o">}</span>
+</span><span id="__span-62-2"><a id="__codelineno-62-2" name="__codelineno-62-2" href="#__codelineno-62-2"></a>Type:<span class="w"> </span>&lt;class<span class="w"> </span><span class="s1">&#39;str&#39;</span>&gt;
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<p>La respuesta es un <code>str</code>, es decir, texto simple, por lo que no puedo acceder a los elementos del JSON usando <code>keys</code>:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="21:2"><input checked="checked" id="__tabbed_21_1" name="__tabbed_21" type="radio" /><input id="__tabbed_21_2" name="__tabbed_21" type="radio" /><div class="tabbed-labels"><label for="__tabbed_21_1">Código</label><label for="__tabbed_21_2">Salida</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-python highlight"><pre><span></span><code><span id="__span-63-1"><a id="__codelineno-63-1" name="__codelineno-63-1" href="#__codelineno-63-1"></a><span class="c1"># Esto causará un error</span>
+</span><span id="__span-63-2"><a id="__codelineno-63-2" name="__codelineno-63-2" href="#__codelineno-63-2"></a><span class="n">no_parse_response</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-python highlight"><pre><span></span><code><span id="__span-64-1"><a id="__codelineno-64-1" name="__codelineno-64-1" href="#__codelineno-64-1"></a><span class="ne">TypeError</span>                                 <span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">)</span>
+</span><span id="__span-64-2"><a id="__codelineno-64-2" name="__codelineno-64-2" href="#__codelineno-64-2"></a><span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">34</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+</span><span id="__span-64-3"><a id="__codelineno-64-3" name="__codelineno-64-3" href="#__codelineno-64-3"></a><span class="o">----&gt;</span> <span class="mi">1</span> <span class="n">no_parse_response</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span>
+</span><span id="__span-64-4"><a id="__codelineno-64-4" name="__codelineno-64-4" href="#__codelineno-64-4"></a>
+</span><span id="__span-64-5"><a id="__codelineno-64-5" name="__codelineno-64-5" href="#__codelineno-64-5"></a><span class="ne">TypeError</span><span class="p">:</span> <span class="n">string</span> <span class="n">indices</span> <span class="n">must</span> <span class="n">be</span> <span class="n">integers</span><span class="p">,</span> <span class="ow">not</span> <span class="s1">&#39;str&#39;</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<p>Ahora, ejecutemos la cadena con el <code>JsonOutputParser</code>:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="22:2"><input checked="checked" id="__tabbed_22_1" name="__tabbed_22" type="radio" /><input id="__tabbed_22_2" name="__tabbed_22" type="radio" /><div class="tabbed-labels"><label for="__tabbed_22_1">Código con Parser</label><label for="__tabbed_22_2">Salida</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-python highlight"><pre><span></span><code><span id="__span-65-1"><a id="__codelineno-65-1" name="__codelineno-65-1" href="#__codelineno-65-1"></a><span class="n">json_response</span> <span class="o">=</span> <span class="n">json_chain</span><span class="o">.</span><span class="n">invoke</span><span class="p">({</span><span class="s2">&quot;person&quot;</span><span class="p">:</span> <span class="s2">&quot;Alice&quot;</span><span class="p">})</span>
+</span><span id="__span-65-2"><a id="__codelineno-65-2" name="__codelineno-65-2" href="#__codelineno-65-2"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;JsonOutputParser result:&quot;</span><span class="p">,</span> <span class="n">json_response</span><span class="p">)</span>
+</span><span id="__span-65-3"><a id="__codelineno-65-3" name="__codelineno-65-3" href="#__codelineno-65-3"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Type:&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">json_response</span><span class="p">))</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-66-1"><a id="__codelineno-66-1" name="__codelineno-66-1" href="#__codelineno-66-1"></a>JsonOutputParser<span class="w"> </span>result:<span class="w"> </span><span class="o">{</span><span class="s1">&#39;name&#39;</span>:<span class="w"> </span><span class="s1">&#39;Alice&#39;</span>,<span class="w"> </span><span class="s1">&#39;age&#39;</span>:<span class="w"> </span><span class="m">30</span>,<span class="w"> </span><span class="s1">&#39;is_student&#39;</span>:<span class="w"> </span>False,<span class="w"> </span><span class="s1">&#39;city&#39;</span>:<span class="w"> </span><span class="s1">&#39;Paris&#39;</span><span class="o">}</span>
+</span><span id="__span-66-2"><a id="__codelineno-66-2" name="__codelineno-66-2" href="#__codelineno-66-2"></a>Type:<span class="w"> </span>&lt;class<span class="w"> </span><span class="s1">&#39;dict&#39;</span>&gt;
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<p>Puedes acceder a los valores del JSON usando claves:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="23:2"><input checked="checked" id="__tabbed_23_1" name="__tabbed_23" type="radio" /><input id="__tabbed_23_2" name="__tabbed_23" type="radio" /><div class="tabbed-labels"><label for="__tabbed_23_1">Código</label><label for="__tabbed_23_2">Salida</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-python highlight"><pre><span></span><code><span id="__span-67-1"><a id="__codelineno-67-1" name="__codelineno-67-1" href="#__codelineno-67-1"></a><span class="n">json_response</span><span class="p">[</span><span class="s2">&quot;city&quot;</span><span class="p">]</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-68-1"><a id="__codelineno-68-1" name="__codelineno-68-1" href="#__codelineno-68-1"></a><span class="s1">&#39;Paris&#39;</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<p>El LLM produce JSON: <code>{"name": "Alice", "age": 30, "is_student": false, "city": "Paris"}</code>. <code>JsonOutputParser</code> convierte <code>null</code> en JSON a <code>None</code> en Python, <code>true/false</code> a <code>True/False</code>, y retorna un diccionario de Python.</p>
+<div class="grid cards">
+<ul>
+<li>
+<p><span class="twemoji lg middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M308.5 135.3c7.1-6.3 9.9-16.2 6.2-25-2.3-5.3-4.8-10.5-7.6-15.5l-3.1-5.4c-3-5-6.3-9.9-9.8-14.6-5.7-7.6-15.7-10.1-24.7-7.1L241.3 77c-10.7-8.8-23-16-36.2-20.9l-6.1-29c-1.9-9.3-9.1-16.7-18.5-17.8-6.6-.9-13.3-1.3-20.1-1.3h-.7q-10.2 0-20.1 1.2c-9.4 1.1-16.6 8.6-18.5 17.8L115 56.1c-13.3 5-25.5 12.1-36.2 20.9l-28.3-9.2c-9-3-19-.5-24.7 7.1-3.5 4.7-6.8 9.6-9.9 14.6l-3 5.3c-2.8 5-5.3 10.2-7.6 15.6-3.7 8.7-.9 18.6 6.2 25l22.2 19.8c-1.1 6.7-1.7 13.7-1.7 20.8s.6 14.1 1.7 20.9l-22.2 19.8c-7.1 6.3-9.9 16.2-6.2 25 2.3 5.3 4.8 10.5 7.6 15.6l3 5.2c3 5.1 6.3 9.9 9.9 14.6 5.7 7.6 15.7 10.1 24.7 7.1l28.2-9.3c10.7 8.8 23 16 36.2 20.9l6.1 29.1c1.9 9.3 9.1 16.7 18.5 17.8q10.05 1.2 20.4 1.2c10.35 0 13.7-.4 20.4-1.2 9.4-1.1 16.6-8.6 18.5-17.8l6.1-29.1c13.3-5 25.5-12.1 36.2-20.9l28.2 9.3c9 3 19 .5 24.7-7.1 3.5-4.7 6.8-9.5 9.8-14.6l3.1-5.4c2.8-5 5.3-10.2 7.6-15.5 3.7-8.7.9-18.6-6.2-25l-22.2-19.8c1.1-6.8 1.7-13.8 1.7-20.9s-.6-14.1-1.7-20.9l22.2-19.8zM112 176a48 48 0 1 1 96 0 48 48 0 1 1-96 0m392.7 324.5c6.3 7.1 16.2 9.9 25 6.2 5.3-2.3 10.5-4.8 15.5-7.6l5.4-3.1c5-3 9.9-6.3 14.6-9.8 7.6-5.7 10.1-15.7 7.1-24.7l-9.3-28.2c8.8-10.7 16-23 20.9-36.2L613 391c9.3-1.9 16.7-9.1 17.8-18.5q1.2-10.05 1.2-20.4c0-10.35-.4-13.7-1.2-20.4-1.1-9.4-8.6-16.6-17.8-18.5l-29.1-6.2c-5-13.3-12.1-25.5-20.9-36.2l9.3-28.2c3-9 .5-19-7.1-24.7-4.7-3.5-9.6-6.8-14.6-9.9l-5.3-3c-5-2.8-10.2-5.3-15.6-7.6-8.7-3.7-18.6-.9-25 6.2l-19.8 22.2c-6.8-1.1-13.8-1.7-20.9-1.7s-14.1.6-20.9 1.7l-19.8-22.2c-6.3-7.1-16.2-9.9-25-6.2-5.3 2.3-10.5 4.8-15.6 7.6l-5.2 3c-5.1 3-9.9 6.3-14.6 9.9-7.6 5.7-10.1 15.7-7.1 24.7l9.3 28.2c-8.8 10.7-16 23-20.9 36.2l-29.1 6c-9.3 1.9-16.7 9.1-17.8 18.5q-1.2 10.05-1.2 20.4c0 10.35.4 13.7 1.2 20.4 1.1 9.4 8.6 16.6 17.8 18.5l29.1 6.1c5 13.3 12.1 25.5 20.9 36.2l-9.3 28.2c-3 9-.5 19 7.1 24.7 4.7 3.5 9.5 6.8 14.6 9.8l5.4 3.1c5 2.8 10.2 5.3 15.5 7.6 8.7 3.7 18.6.9 25-6.2l19.8-22.2c6.8 1.1 13.8 1.7 20.9 1.7s14.1-.6 20.9-1.7l19.8 22.2zM464 304a48 48 0 1 1 0 96 48 48 0 1 1 0-96"/></svg></span> <strong>Reto Formativo</strong><br />
+<strong>Planteamiento</strong>:<br />
+      El siguiente es el comentario de un cliente en una tienda virtual:</p>
+<p><code>review_cliente = "Compré los auriculares inalámbricos XYZ y estoy muy satisfecho con mi compra. El tiempo de entrega fue excelente, ya que llegaron dos días antes de lo previsto, lo cual superó mis expectativas. En cuanto al precio, aunque hay opciones más económicas en el mercado, considero que la calidad del sonido, la duración de la batería y la comodidad justifican totalmente el coste. Además, los compré como regalo para mi pareja y fueron un éxito total, gracias a su elegante presentación y la impresionante calidad del sonido."</code></p>
+<p>Extraer información de la reseña en un objeto JSON <code>Reseñas</code>.</p>
+<p>📥 <strong>Entrada</strong><br />
+  Cadena <code>review_cliente</code> con la opinión del cliente.</p>
+<p>📤 <strong>Salida (JSON)</strong><br />
+<code>{
+    "sentiment": "Positive" | "Negative" | "Neutral",
+    "delivery_time": &lt;int&gt; | null,
+    "quality_rating": "Good" | "Fair" | "Poor" | null,
+    "extra_comment": &lt;string&gt; | null
+  }</code></p>
+</li>
+</ul>
+</div>
+<h2 id="structuredoutputparser-json-con-estructura-definida"><code>StructuredOutputParser</code>: JSON con Estructura Definida</h2>
+<p>Este parser toma JSON y lo convierte en un diccionario de Python <strong>siguiendo un esquema específico</strong> que definimos con <code>ResponseSchema</code>. Solo extrae los campos que especificamos, garantizando una estructura clara y predecible. Veamos:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="24:2"><input checked="checked" id="__tabbed_24_1" name="__tabbed_24" type="radio" /><input id="__tabbed_24_2" name="__tabbed_24" type="radio" /><div class="tabbed-labels"><label for="__tabbed_24_1">Código</label><label for="__tabbed_24_2">Salida</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="language-python highlight"><pre><span></span><code><span id="__span-69-1"><a id="__codelineno-69-1" name="__codelineno-69-1" href="#__codelineno-69-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">langchain.output_parsers</span><span class="w"> </span><span class="kn">import</span> <span class="n">StructuredOutputParser</span><span class="p">,</span> <span class="n">ResponseSchema</span>
+</span><span id="__span-69-2"><a id="__codelineno-69-2" name="__codelineno-69-2" href="#__codelineno-69-2"></a>
+</span><span id="__span-69-3"><a id="__codelineno-69-3" name="__codelineno-69-3" href="#__codelineno-69-3"></a><span class="c1"># Define the schema for the structured output</span>
+</span><span id="__span-69-4"><a id="__codelineno-69-4" name="__codelineno-69-4" href="#__codelineno-69-4"></a><span class="n">schemas</span> <span class="o">=</span> <span class="p">[</span>
+</span><span id="__span-69-5"><a id="__codelineno-69-5" name="__codelineno-69-5" href="#__codelineno-69-5"></a>    <span class="n">ResponseSchema</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;sentiment&quot;</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Sentiment: Positive/Negative/Neutral&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;string&quot;</span><span class="p">),</span>
+</span><span id="__span-69-6"><a id="__codelineno-69-6" name="__codelineno-69-6" href="#__codelineno-69-6"></a>    <span class="n">ResponseSchema</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;delivery_time&quot;</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Delivery time in days (or null if not mentioned)&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;integer&quot;</span><span class="p">),</span>
+</span><span id="__span-69-7"><a id="__codelineno-69-7" name="__codelineno-69-7" href="#__codelineno-69-7"></a>    <span class="n">ResponseSchema</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;quality_rating&quot;</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Quality: Good/Fair/Poor (or null)&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;string&quot;</span><span class="p">),</span>
+</span><span id="__span-69-8"><a id="__codelineno-69-8" name="__codelineno-69-8" href="#__codelineno-69-8"></a>    <span class="n">ResponseSchema</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;extra_comment&quot;</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Additional note (or null)&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;string&quot;</span><span class="p">)</span>
+</span><span id="__span-69-9"><a id="__codelineno-69-9" name="__codelineno-69-9" href="#__codelineno-69-9"></a><span class="p">]</span>
+</span><span id="__span-69-10"><a id="__codelineno-69-10" name="__codelineno-69-10" href="#__codelineno-69-10"></a>
+</span><span id="__span-69-11"><a id="__codelineno-69-11" name="__codelineno-69-11" href="#__codelineno-69-11"></a><span class="n">structured_parser</span> <span class="o">=</span> <span class="n">StructuredOutputParser</span><span class="o">.</span><span class="n">from_response_schemas</span><span class="p">(</span><span class="n">schemas</span><span class="p">)</span>
+</span><span id="__span-69-12"><a id="__codelineno-69-12" name="__codelineno-69-12" href="#__codelineno-69-12"></a><span class="c1"># Get the format instructions as a string</span>
+</span><span id="__span-69-13"><a id="__codelineno-69-13" name="__codelineno-69-13" href="#__codelineno-69-13"></a><span class="n">format_instructions</span> <span class="o">=</span> <span class="n">structured_parser</span><span class="o">.</span><span class="n">get_format_instructions</span><span class="p">()</span>
+</span><span id="__span-69-14"><a id="__codelineno-69-14" name="__codelineno-69-14" href="#__codelineno-69-14"></a>
+</span><span id="__span-69-15"><a id="__codelineno-69-15" name="__codelineno-69-15" href="#__codelineno-69-15"></a><span class="c1"># Escape curly braces in format_instructions</span>
+</span><span id="__span-69-16"><a id="__codelineno-69-16" name="__codelineno-69-16" href="#__codelineno-69-16"></a><span class="n">escaped_format_instructions</span> <span class="o">=</span> <span class="n">format_instructions</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;{&#39;</span><span class="p">,</span> <span class="s1">&#39;{{&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;}&#39;</span><span class="p">,</span> <span class="s1">&#39;}}&#39;</span><span class="p">)</span>
+</span><span id="__span-69-17"><a id="__codelineno-69-17" name="__codelineno-69-17" href="#__codelineno-69-17"></a>
+</span><span id="__span-69-18"><a id="__codelineno-69-18" name="__codelineno-69-18" href="#__codelineno-69-18"></a><span class="c1"># Define the system message with escaped format instructions</span>
+</span><span id="__span-69-19"><a id="__codelineno-69-19" name="__codelineno-69-19" href="#__codelineno-69-19"></a><span class="n">system_message</span> <span class="o">=</span> <span class="p">(</span>
+</span><span id="__span-69-20"><a id="__codelineno-69-20" name="__codelineno-69-20" href="#__codelineno-69-20"></a>    <span class="s2">&quot;Analyze this review and return a JSON object. &quot;</span>
+</span><span id="__span-69-21"><a id="__codelineno-69-21" name="__codelineno-69-21" href="#__codelineno-69-21"></a>    <span class="s2">&quot;Format: ```json</span><span class="se">\n</span><span class="s2">&quot;</span>
+</span><span id="__span-69-22"><a id="__codelineno-69-22" name="__codelineno-69-22" href="#__codelineno-69-22"></a>    <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">escaped_format_instructions</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span>
+</span><span id="__span-69-23"><a id="__codelineno-69-23" name="__codelineno-69-23" href="#__codelineno-69-23"></a>    <span class="s2">&quot;```&quot;</span>
+</span><span id="__span-69-24"><a id="__codelineno-69-24" name="__codelineno-69-24" href="#__codelineno-69-24"></a><span class="p">)</span>
+</span><span id="__span-69-25"><a id="__codelineno-69-25" name="__codelineno-69-25" href="#__codelineno-69-25"></a>
+</span><span id="__span-69-26"><a id="__codelineno-69-26" name="__codelineno-69-26" href="#__codelineno-69-26"></a><span class="c1"># Create the prompt template with {review} as the only variable</span>
+</span><span id="__span-69-27"><a id="__codelineno-69-27" name="__codelineno-69-27" href="#__codelineno-69-27"></a><span class="n">structured_prompt</span> <span class="o">=</span> <span class="n">ChatPromptTemplate</span><span class="o">.</span><span class="n">from_messages</span><span class="p">([</span>
+</span><span id="__span-69-28"><a id="__codelineno-69-28" name="__codelineno-69-28" href="#__codelineno-69-28"></a>    <span class="p">(</span><span class="s2">&quot;system&quot;</span><span class="p">,</span> <span class="n">system_message</span><span class="p">),</span>
+</span><span id="__span-69-29"><a id="__codelineno-69-29" name="__codelineno-69-29" href="#__codelineno-69-29"></a>    <span class="p">(</span><span class="s2">&quot;human&quot;</span><span class="p">,</span> <span class="s2">&quot;Review: </span><span class="si">{review}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="__span-69-30"><a id="__codelineno-69-30" name="__codelineno-69-30" href="#__codelineno-69-30"></a><span class="p">])</span>
+</span><span id="__span-69-31"><a id="__codelineno-69-31" name="__codelineno-69-31" href="#__codelineno-69-31"></a>
+</span><span id="__span-69-32"><a id="__codelineno-69-32" name="__codelineno-69-32" href="#__codelineno-69-32"></a><span class="c1"># Create the chain </span>
+</span><span id="__span-69-33"><a id="__codelineno-69-33" name="__codelineno-69-33" href="#__codelineno-69-33"></a><span class="n">structured_chain</span> <span class="o">=</span> <span class="n">structured_prompt</span> <span class="o">|</span> <span class="n">llm</span> <span class="o">|</span> <span class="n">structured_parser</span>
+</span><span id="__span-69-34"><a id="__codelineno-69-34" name="__codelineno-69-34" href="#__codelineno-69-34"></a>
+</span><span id="__span-69-35"><a id="__codelineno-69-35" name="__codelineno-69-35" href="#__codelineno-69-35"></a><span class="c1"># Run the chain with the review (assuming review_cliente is defined)</span>
+</span><span id="__span-69-36"><a id="__codelineno-69-36" name="__codelineno-69-36" href="#__codelineno-69-36"></a><span class="n">structured_response</span> <span class="o">=</span> <span class="n">structured_chain</span><span class="o">.</span><span class="n">invoke</span><span class="p">({</span><span class="s2">&quot;review&quot;</span><span class="p">:</span> <span class="n">review_cliente</span><span class="p">})</span>
+</span><span id="__span-69-37"><a id="__codelineno-69-37" name="__codelineno-69-37" href="#__codelineno-69-37"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;StructuredOutputParser result:&quot;</span><span class="p">,</span> <span class="n">structured_response</span><span class="p">)</span>
+</span><span id="__span-69-38"><a id="__codelineno-69-38" name="__codelineno-69-38" href="#__codelineno-69-38"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Type:&quot;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">structured_response</span><span class="p">))</span>
+</span></code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-70-1"><a id="__codelineno-70-1" name="__codelineno-70-1" href="#__codelineno-70-1"></a>StructuredOutputParser<span class="w"> </span>result:<span class="w"> </span><span class="o">{</span><span class="s1">&#39;sentiment&#39;</span>:<span class="w"> </span><span class="s1">&#39;Positive&#39;</span>,<span class="w"> </span><span class="s1">&#39;delivery_time&#39;</span>:<span class="w"> </span><span class="m">2</span>,<span class="w"> </span><span class="s1">&#39;quality_rating&#39;</span>:<span class="w"> </span><span class="s1">&#39;Good&#39;</span>,<span class="w"> </span><span class="s1">&#39;extra_comment&#39;</span>:<span class="w"> </span><span class="s1">&#39;The headphones were a total success as a gift for my partner, thanks to their elegant presentation and impressive sound quality.&#39;</span><span class="o">}</span>
+</span><span id="__span-70-2"><a id="__codelineno-70-2" name="__codelineno-70-2" href="#__codelineno-70-2"></a>Type:<span class="w"> </span>&lt;class<span class="w"> </span><span class="s1">&#39;dict&#39;</span>&gt;
+</span></code></pre></div>
+</div>
+</div>
+</div>
+<p>En este código, el usuario final del mensaje estructurado es el modelo de lenguaje (LLM). Este mensaje está estructurado de tal manera que incluye instrucciones de ensamblaje para que el LLM procese el formato correctamente. La función que nos permite especificar estas instrucciones es <code>get_format_instructions()</code>.</p>
+<p>La función <code>get_format_instructions()</code> crea un string que contiene las instrucciones de formato basadas en los objetos <code>ResponseSchema</code>. Este string describe cómo debe estructurarse la salida del modelo de lenguaje (LLM) para que sea fácil de interpretar y procesar posteriormente.</p>
+<p>En analogía con el constructor de la clase <code>ChatPromptTemplate.from_template</code>, que describimos como un carpintero que crea un cajón a partir de maderas brutas, este tipo de template con instrucciones de formato se asemejaría a construir un cajón modular con instrucciones de armado, como el de la figura:</p>
+<p><img alt="Cajón modular con instrucciones de armado" class="center" src="../../assets/images/modular_drawer.png" width="600" /></p>
+<p><em><div align="center">Analogía de un template con instrucciones de formato.</div></em></p>
+<!--
+
+
+Cierre del módulo
+
+-->
+<p>Aquí termina nuestro primer módulo. ¡Felicidades por llegar hasta el final! Ahora conoces el contexto general de las tecnologías involucradas en el desarrollo de aplicaciones asistidas por IA. Este campo apenas está comenzando, y ahora tienes las bases para utilizar herramientas más sofisticadas, como las cadenas y la gestión de memoria, que serán el tema del siguiente módulo.</p>
+<h1 id="glosario">Glosario</h1>
+<ol>
+<li>
+<p><strong>API (Application Programming Interface):</strong><br />
+   Un conjunto de definiciones y protocolos que permite a las aplicaciones comunicarse entre sí. Las APIs facilitan la integración y el intercambio de datos entre diferentes sistemas y servicios.</p>
+</li>
+<li>
+<p><strong>Parser:</strong><br />
+   Un componente que analiza y transforma texto en un formato estructurado, facilitando su manipulación y análisis en aplicaciones de software.</p>
+</li>
+<li>
+<p><strong>JSON (JavaScript Object Notation):</strong><br />
+   Un formato de intercambio de datos ligero y fácil de leer que utiliza una estructura basada en pares clave-valor. Comúnmente usado para representar objetos en aplicaciones web.</p>
+</li>
+<li>
+<p><strong>LangChain:</strong><br />
+   Un marco de trabajo que permite la creación de aplicaciones asistidas por IA mediante la integración de modelos de lenguaje con herramientas y flujos de trabajo personalizados.</p>
+</li>
+<li>
+<p><strong>ChatPromptTemplate:</strong><br />
+   Una plantilla utilizada para crear mensajes estructurados que se envían a los modelos de lenguaje, permitiendo la personalización de las interacciones.</p>
+</li>
+<li>
+<p><strong>Output Parser:</strong><br />
+   Un tipo de parser que se utiliza para definir cómo debe estructurarse la salida de un modelo de lenguaje, asegurando que sea fácil de interpretar y procesar.</p>
+</li>
+<li>
+<p><strong>Ventana de contexto:</strong><br />
+   La cantidad de texto que un modelo de lenguaje puede procesar a la vez. Limita la cantidad de información que puede ser considerada en una sola interacción.</p>
+</li>
+<li>
+<p><strong>LangChain Expression Language (LCEL):</strong><br />
+   Un lenguaje de expresión utilizado en LangChain para definir y manipular flujos de trabajo y cadenas de procesamiento de manera eficiente.</p>
+</li>
+<li>
+<p><strong>Pipeline (Cadena de Procesamiento):</strong><br />
+   Un flujo de trabajo secuencial donde los datos pasan por diferentes etapas o componentes, cada uno realizando una tarea específica.</p>
+</li>
+<li>
+<p><strong>Memoria en cadenas de conversación:</strong><br />
+    La capacidad de un sistema de inteligencia artificial para almacenar y utilizar información de interacciones pasadas, mejorando la coherencia y personalización en futuras interacciones.</p>
+</li>
+</ol>
+<h2 id="evidencia-de-aprendizaje">Evidencia de Aprendizaje</h2>
+<table>
+<thead>
+<tr>
+<th><strong>Módulo 1</strong></th>
+<th><strong>Introducción a la construcción de aplicaciones con LLM</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>EA1.</strong></td>
+<td>Templates y Output Parsers</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Ejercicio 1 - Corrección de respuestas inapropiadas en atención al cliente:</strong></p>
+<p>En este ejercicio, debes usar la IA para mejorar respuestas inapropiadas escritas por un operador de servicio al cliente. La IA corregirá el tono, la cortesía y errores ortográficos, asegurando que la respuesta sea adecuada para el cliente.<br />
+<strong>Input:</strong> un mensaje del cliente y una respuesta inapropiada del operador.<br />
+<strong>Output:</strong> una respuesta final corregida y apropiada para enviar al cliente.<br />
+<strong>Requisitos:</strong><br />
+- Utiliza un prompt template para generar la respuesta apropiada.<br />
+- Implementa un output parser para validar que la respuesta cumple con los criterios de cortesía y ortografía.<br />
+<strong>Bonus:</strong> investiga sobre memoria.  Si el cliente ha escrito varios mensajes, utiliza memoria para recordar el contexto de la conversación.</p>
+<hr />
+<p><strong>Ejercicio 2 (Fácil) - Extracción de información clave en reseñas de productos:</strong></p>
+<p>Dado un review de un producto en un sitio de e-commerce, crea un modelo que extraiga información específica.<br />
+<strong>Tareas:</strong><br />
+- Identifica si el producto fue comprado como regalo.<br />
+- Extrae la opinión del cliente sobre el precio.<br />
+- Extrae comentarios sobre el tiempo de entrega.</p>
+<p><strong>Requisitos:</strong><br />
+- Utiliza output parsers para extraer los campos relevantes en forma de estructuras de datos de Python como un diccionario.<br />
+- Diseña un prompt template que permita a la IA identificar y organizar estos elementos de manera eficiente.</p>
+<hr />
+<p>Guarda los documentos con la siguiente nomenclatura:</p>
+<ul>
+<li><strong>Apellido_Nombre del estudiante.ipynb</strong><br />
+<strong>Ejemplo:</strong>  </li>
+<li>López_Karla.ipynb</li>
+</ul>
+<p>Finalmente, haz clic en el botón <strong>Cargar Tarea</strong>, sube tu archivo y presiona el botón <strong>Enviar</strong> para remitirlo a tu profesor con el fin de que lo evalúe y retroalimente. |</p>
+<div class="admonition tip">
+<p class="admonition-title">📖 Nota</p>
+<p>Conoce los criterios de evaluación de esta evidencia de aprendizaje consultando la rúbrica que encontrarás a continuación.</p>
+</div>
+<table>
+<thead>
+<tr>
+<th><strong>Criterios</strong></th>
+<th><strong>Ponderación</strong></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th><strong>Totales</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td><strong>70</strong></td>
+<td><strong>50</strong></td>
+<td><strong>5</strong></td>
+<td><strong>0</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Calidad de las Soluciones</strong></td>
+<td>Las soluciones a los ejercicios son correctas, demostrando una implementación adecuada de los conceptos y técnicas requeridos. El estudiante muestra un dominio completo de los temas abordados.</td>
+<td>Aunque las soluciones no son completamente correctas, se observa un entendimiento y aplicación adecuada de los conceptos y técnicas involucradas. Hay evidencia de esfuerzo y comprensión de los temas.</td>
+<td>Las soluciones presentadas son en su mayoría incorrectas. Se percibe un intento de resolver los ejercicios, pero hay una falta de comprensión de los conceptos y técnicas esenciales.</td>
+<td>No realiza la entrega</td>
+<td></td>
+<td><strong>70</strong></td>
+</tr>
+<tr>
+<td><strong>Calidad de la entrega</strong></td>
+<td>El notebook es claro y fácil de seguir, incluyendo comentarios detallados sobre el funcionamiento del código en las celdas Markdown, lo que facilita la comprensión de las soluciones propuestas.</td>
+<td>El notebook no es particularmente fácil de leer, pero aún así incluye comentarios que explican el funcionamiento del código en las celdas Markdown, mostrando un esfuerzo por aclarar la lógica detrás del código.</td>
+<td>El notebook carece de comentarios acerca del funcionamiento del código en las celdas Markdown, lo que dificulta la comprensión de las soluciones implementadas.</td>
+<td>No realiza la entrega</td>
+<td></td>
+<td><strong>20</strong></td>
+</tr>
+<tr>
+<td><strong>Tiempo de la entrega</strong></td>
+<td>La entrega se realiza a tiempo, cumpliendo con el plazo establecido para la presentación de la actividad.</td>
+<td>La entrega se realiza con una semana de atraso. Aunque fuera del plazo original, se considera adecuada para evaluar el trabajo presentado.</td>
+<td>La entrega se realiza con más de una semana de atraso, lo que indica un retraso significativo en la presentación de la actividad.</td>
+<td>No realiza la entrega</td>
+<td></td>
+<td><strong>10</strong></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td><strong>Ponderación de la actividad</strong></td>
+<td><strong>100 puntos</strong></td>
+</tr>
+</tbody>
+</table>
+<h1 id="referencias">Referencias</h1>
+<p>Chase, H., &amp; Ng, A. (2023). <em>LangChain for LLM Application Development</em> [Curso en línea]. DeepLearning.AI. Disponible en <a href="https://www.deeplearning.ai/short-courses/langchain-for-llm-application-development/">https://www.deeplearning.ai/short-courses/langchain-for-llm-application-development/</a></p>
+<p>Huyen, C. (2025). <em>AI Engineering: Building Applications with Foundation Models</em> (1.ª ed.). O'Reilly Media. Disponible en <a href="https://www.amazon.com/AI-Engineering-Building-Applications-Foundation/dp/1098166302">https://www.amazon.com/AI-Engineering-Building-Applications-Foundation/dp/1098166302</a></p>
+<p>LangChain. (s.f.). <em>LangChain Documentation</em>. Disponible en <a href="https://python.langchain.com/docs/introduction/">https://python.langchain.com/docs/introduction/</a></p>
+<hr />
+<h1 id="lecturas-y-material-complementario">Lecturas y material complementario</h1>
+<p>Te invitamos a explorar el siguiente material para ampliar tus conocimientos sobre modelos de lenguaje (LLM), LangChain, plantillas de prompts y parsers de salida. Estos recursos te proporcionarán una comprensión más profunda y práctica de los temas abordados en el curso.</p>
+<h2 id="lecturas-recomendadas">📚 Lecturas recomendadas</h2>
+<h3 id="titulo-langchain-for-llm-application-development"><strong>Título:</strong> <em>LangChain for LLM Application Development</em></h3>
+<p><strong>Autor:</strong> Harrison Chase &amp; Andrew Ng<br />
+<strong>URL:</strong> <a href="https://www.deeplearning.ai/short-courses/langchain-for-llm-application-development/">LangChain for LLM Application Development</a><br />
+Este curso gratuito de DeepLearning.AI ofrece una introducción práctica al desarrollo de aplicaciones con modelos de lenguaje utilizando LangChain. Cubre temas como plantillas de prompts, parsers de salida y encadenamiento de componentes.</p>
+<h3 id="titulo-langchain-output-parser-guide"><strong>Título:</strong> <em>LangChain Output Parser Guide</em></h3>
+<p><strong>Autor:</strong> Restack<br />
+<strong>URL:</strong> <a href="https://www.restack.io/docs/langchain-knowledge-langchain-output-parser-guide">LangChain Output Parser Guide</a><br />
+Este artículo profundiza en el uso de los parsers de salida de LangChain, explicando cómo transformar las respuestas de los modelos de lenguaje en formatos estructurados como JSON, y cómo integrarlos en aplicaciones prácticas.</p>
+<h3 id="titulo-prompt-template-langchain-opentutorial"><strong>Título:</strong> <em>Prompt Template | LangChain OpenTutorial</em></h3>
+<p><strong>Autor:</strong> Hye-yoon Jeong<br />
+<strong>URL:</strong> <a href="https://langchain-opentutorial.gitbook.io/langchain-opentutorial/02-prompt/01-prompttemplate">Prompt Template | LangChain OpenTutorial</a><br />
+Este tutorial cubre cómo crear y utilizar plantillas de prompts en LangChain, esenciales para generar prompts dinámicos y flexibles que se adapten a diversos casos de uso.</p>
+<h3 id="titulo-jsonoutputparser-langchain-opentutorial"><strong>Título:</strong> <em>JsonOutputParser | LangChain OpenTutorial</em></h3>
+<p><strong>Autor:</strong> LangChain OpenTutorial<br />
+<strong>URL:</strong> <a href="https://langchain-opentutorial.gitbook.io/langchain-opentutorial/03-outputparser/04-jsonoutputparser">JsonOutputParser | LangChain OpenTutorial</a><br />
+Este tutorial muestra cómo utilizar el <code>JsonOutputParser</code> de LangChain para estructurar las salidas de los modelos de lenguaje en formato JSON, facilitando su integración en aplicaciones que requieren datos estructurados.</p>
+<hr />
+<h2 id="videos-recomendados">🎥 Videos recomendados</h2>
+<h3 id="titulo-transformers-how-llm-work-explained-visually-dl5"><strong>Título:</strong> <em>Transformers (how LLM work) explained visually | DL5</em></h3>
+<p><strong>Autor:</strong> 3Blue1Brown<br />
+<strong>URL:</strong> <a href="https://www.youtube.com/watch?v=wjZofJX0v4M">Transformers (how LLM work) explained visually</a><br />
+Este video ofrece una explicación visual de cómo funcionan los modelos de lenguaje grandes (LLM) mediante la arquitectura de transformers, facilitando la comprensión de conceptos complejos.</p>
+<h3 id="titulo-attention-in-transformers-step-by-step-dl6"><strong>Título:</strong> <em>Attention in transformers, step-by-step | DL6</em></h3>
+<p><strong>Autor:</strong> 3Blue1Brown<br />
+<strong>URL:</strong> <a href="https://www.youtube.com/watch?v=eMlx5fFNoYc">Attention in transformers, step-by-step</a><br />
+Este video desglosa paso a paso el mecanismo de atención en los transformers, una parte crucial en el funcionamiento de los LLM.
+Este video desglosa paso a paso el mecanismo de atención en los transformers, una parte crucial en el funcionamiento de los LLM.</p>
+<h3 id="titulo-how-might-llm-store-facts-dl7"><strong>Título:</strong> <em>How might LLM store facts | DL7</em></h3>
+<p><strong>Autor:</strong> 3Blue1Brown<br />
+<strong>URL:</strong> <a href="https://www.youtube.com/watch?v=9-Jl0dxWQs8">How might LLM store facts</a><br />
+Este video explora cómo los modelos de lenguaje grandes pueden almacenar hechos y conocimientos, proporcionando una visión más profunda de su funcionamiento interno.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../.." class="md-footer__link md-footer__link--prev" aria-label="Previous: Presentación del curso">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Presentación del curso
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../Unidad2/modulo2/" class="md-footer__link md-footer__link--next" aria-label="Next: Módulo 2">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Módulo 2
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.footer", "content.code.copy"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
