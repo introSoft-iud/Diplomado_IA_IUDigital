@@ -91,10 +91,10 @@ Por ejemplo, el tokenizador de GPT-4 divide la frase:
 
 de la siguiente manera:
 
-<figure>
-  <img src="../assets/images/tokenizer.png" alt="División en tokens de una frase en GPT-4" width="600">
-  <figcaption>División en tokens de una frase utilizando el tokenizador de GPT-4. Fuente: <a href="https://platform.openai.com/tokenizer">OpenAI Tokenizer</a>.</figcaption>
-</figure>
+
+![División en tokens de una frase utilizando el tokenizador de GPT-4](../assets/images/tokenizer.png){ width=" " }
+
+*División en tokens de una frase utilizando el tokenizador de GPT-4 Fuente: [OpenAI Tokenizer](https://python.langchain.com/docs/concepts/rag/).*
 
 !!! warning "Para tener en cuenta"
     Hay varias razones por las que los modelos de lenguaje utilizan **tokens** en lugar de palabras completas o caracteres individuales.
@@ -149,10 +149,11 @@ Para gran parte del curso usaremos la API de OpenAI. Si aún no tienes una cuent
 
 Una vez creada tu cuenta, deberás generar una clave de API (API Key). Para hacerlo, accede a: [https://platform.openai.com/api-keys](https://platform.openai.com/api-keys) y haz clic en **"Create new secret key"**, como se muestra en la figura a continuación:
 
-<figure>
-  <img src="../assets/images/secret_key.png" alt="Creación de clave secreta en OpenAI" width="600">
-  <figcaption>Generación de una clave secreta desde el panel de usuario de OpenAI. Fuente: <a href="https://platform.openai.com/api-keys">OpenAI</a>.</figcaption>
-</figure>
+![Creación de clave secreta en OpenAI](../assets/images/secret_key.png){ width="600" }
+
+ *Generación de una clave secreta desde el panel de usuario de OpenAI.  
+Fuente: [OpenAI](https://platform.openai.com/api-keys).*
+
 
 !!! warning "Para tener en cuenta"
     Para poder usar tu llave, debes cargar crédito en tu cuenta utilizando una tarjeta de crédito.  
@@ -164,10 +165,11 @@ Cada llamada a la API tiene un costo asociado, el cual depende del número de *t
 Puedes monitorear tu consumo en tiempo real desde la sección **Usage** en el panel de OpenAI:  
 [https://platform.openai.com/account/usage](https://platform.openai.com/account/usage)
 
-<figure>
-  <img src="../assets/images/costs.png" alt="Panel de consumo de la API en OpenAI" width="600">
-  <figcaption>Visualización del consumo y costos acumulados en la sección <strong>Usage</strong> del panel de usuario de OpenAI. Fuente: <a href="https://platform.openai.com/account/usage">OpenAI</a>.</figcaption>
-</figure>
+![Panel de consumo de la API en OpenAI](../assets/images/costs.png){ width="600" .center }
+
+_<div align="center">Visualización del consumo y costos acumulados en la sección **Usage** del panel de usuario de OpenAI.  
+Fuente: [OpenAI](https://platform.openai.com/account/usage).</div>_
+
 !!! tip "Límite de consumo mensual"
     En la sección **Usage** también puedes establecer, por seguridad, un límite mensual máximo de consumo en dólares para tu aplicación.  
     Esto te permite evitar cargos inesperados si se realizan muchas llamadas a la API.
@@ -292,15 +294,10 @@ En la sección anterior, tuviste tu primera interacción con un modelo de lengua
 
 
 En este contexto, el framework más popular hasta el momento es LangChain. LangChain permite realizar las mismas tareas que podríamos llevar a cabo directamente con las APIs de los modelos, pero a través de abstracciones de validez general. Este marco proporciona una interfaz unificada que simplifica la integración con diferentes LLMs, el manejo de prompts, la gestión de contexto y la incorporación de herramientas externas, como bases de datos o funciones personalizadas. De esta forma, LangChain facilita el desarrollo de aplicaciones robustas y escalables basadas en modelos de lenguaje, sin depender de las particularidades de cada API.
+![Logo de LangChain](../assets/images/langchain.jpg){ width="600" .center }
 
-<figure>
-  <img src="../assets/images/langchain.jpg" alt="Logo de LangChain" width="600">
-  <figcaption>
-    Logo  de <strong>LangChain</strong>, un framework para construir aplicaciones con modelos de lenguaje de gran escala.
-    Fuente: <a href="https://www.linkedin.com/pulse/dark-side-langchain-major-problems-facing-generative-ai-matt-gallo-g0rpe" target="_blank">Matt Gallo en LinkedIn</a>.
-  </figcaption>
-</figure>
-
+_<div align="center">Logo de **LangChain**, un framework para construir aplicaciones con modelos de lenguaje de gran escala.  
+Fuente: [Matt Gallo en LinkedIn](https://www.linkedin.com/pulse/dark-side-langchain-major-problems-facing-generative-ai-matt-gallo-g0rpe).</div>_
 
 Para utilizar LangChain con modelos de OpenAI, primero debemos importar la clase `ChatOpenAI` y configurar el modelo:
 
@@ -360,15 +357,10 @@ LangChain proporciona una variedad de herramientas que permiten construir aplica
   Utilizados para estructurar y formatear las respuestas del modelo. Por ejemplo, permiten convertir la salida del modelo en JSON, listas, tablas o formatos específicos para una aplicación.
 
 REEMPLAZAR IMAGEN POR ESTA: https://drive.google.com/file/d/1oCSWBu03JBg1nWFZIRJBfshsllp0ozJ1/view?usp=drive_link
+![Logo de LangChain](../assets/images/langchain_tools.png){ width="600" .center }
 
-<figure>
-  <img src="../assets/images/langchain_tools.png" alt="Logo de LangChain" width="600">
-  <figcaption>
-    Ecosistema de herramientas de <strong>LangChain</strong>:.
-    Fuente: <a href="https://www.langchain.com/" target="_blank">LangChain</a>.
-  </figcaption>
-</figure>
-
+_<div align="center">Ecosistema de herramientas de **LangChain**.  
+Fuente: Elaboración propia.</div>_
 ### Plantillas de Prompts
 
 Comenzaremos estudiando los prompt templates. Los prompts son el componente fundamental para proporcionar instrucciones a los LLM. Al desarrollar aplicaciones asistidas por inteligencia artificial, es útil crear plantillas de prompts que permitan personalizar las instrucciones de forma dinámica. Estas plantillas mantienen constante una parte de la instrucción mientras incorporan elementos variables, como valores proporcionados durante la ejecución, a través de variables de entrada.
@@ -445,13 +437,10 @@ messages=[HumanMessagePromptTemplate(prompt=PromptTemplate(input_variables=['est
 Veremos que tiene como `input_variables` los campos `'estilo'` y `'mensaje'`.
 
 Siguiendo la lógica del paradigma de la programación orientada a objetos, podemos imaginar que la creación de un *prompt template* se asemeja al trabajo de un carpintero. El carpintero (el constructor de la clase) toma un conjunto de maderas (el `string_template`) y las transforma en un gavetero (el objeto de la clase).
+![Carpintero construyendo gavetero a partir de un string](../assets/images/carpintero-1.png){ width="600" .center }
 
-REEMPLAZAR IMAGEN POR ESTA: https://drive.google.com/file/d/16-8m5D5Uwz8dVQmXtKB3ODKVBgOM1I50/view?usp=drive_link
-
-<figure>
-  <img src="../assets/images/carpintero-1.png" alt="Carpintero construyendo gavetero a partir de un string" width="600">
-  <figcaption>Constructor de la clase `ChatPromptTemplate.from_template`. En nuestra analogía, el carpintero crea un contenedor apropiado para alojar el contenido de las dos variables de entrada definidas en el `string_template`. Fuente: <a href="#">Elaboración propia</a>.</figcaption>
-</figure>
+_<div align="center">Constructor de la clase `ChatPromptTemplate.from_template`. En nuestra analogía, el carpintero crea un contenedor apropiado para alojar el contenido de las dos variables de entrada definidas en el `string_template`.  
+Fuente: [Elaboración propia](#).</div>_
 
 En este caso, como ilustra la figura, el *prompt template* sería el gavetero con cajones específicos etiquetados como `estilo` y `mensaje`, listos para ser llenados con valores.
 
@@ -488,12 +477,11 @@ El *prompt* completo lucirá así:
     ```bash
     [HumanMessage(content='Traduce el texto que está delimitado por asteriscos dobles a un estilo que es Español latino en un tono formal y sobrio.\ntexto: **Manque estaba muy embelesao, le dijo Peralta a la hermana: Hija, date una asomaíta por la despensa; desculcá por la cocina, a ver si encontrás alguito que darles a estos señores. Mirálos qué cansaos están; se les ve la fatiga**', additional_kwargs={}, response_metadata={})]
     ```
-REEMPLAZAR IMAGEN POR LA SIGUIENTE: https://drive.google.com/file/d/1rifgJVmUDfMeph1NR5yH4Une6W0TPjB9/view?usp=drive_link
+![Hombre con casco guardando un sobre en un gavetero](../assets/images/empacador.png){ width="600" .center }
 
-<figure>
-  <img src="../assets/images/empacador.png" alt="Hombre con casco guardando un sobre en un gavetero" width="600">
-  <figcaption>Ilustración de la tarea del <code>format_messages()</code>. El método <code>format_messages()</code> reemplaza los valores de las variables de entrada en el template. Fuente: Elaboración propia.</figcaption>
-</figure>
+_<div align="center">Ilustración de la tarea del `format_messages()`. El método `format_messages()` reemplaza los valores de las variables de entrada en el template.  
+Fuente: Elaboración propia.</div>_
+
 Como ilustra la figura, el método `format_messages()` asociado a la clase `ChatPromptTemplate` cumple la función de empaquetar en el objeto los valores específicos en las variables de entrada.
 
 Este tipo de objeto nos permite incorporar programáticamente llamadas a las APIs de los LLM en el flujo de ejecución de un código Python convencional. Veamos cómo hacerlo:
@@ -723,12 +711,9 @@ Las *chains* nos permiten **combinar múltiples pasos**—como preparar un *prom
 
 puedes pensar en una*chain* como una **cinta transportadora**:
 
-REEMPLAZAR FIGURA POR LA SIGUIENTE: https://drive.google.com/file/d/1TsR2dl2eKiAT0LSKwfE9eQcpS4uCxqzp/view?usp=drive_link
+![Dibujo de una banda de supermercado con frutas](../assets/images/banda1.png){ width="600" .center }
 
-<figure>
-  <img src="../assets/images/banda1.png" alt="Dibujo de una banda de supermercado con frutas" width="600">
-  <figcaption> Una cadena simple funciona como una banda transportadora en la que se van ejecutando órdenes de forma secuencial.</a></figcaption>
-</figure>
+_<div align="center">Una cadena simple funciona como una banda transportadora en la que se van ejecutando órdenes de forma secuencial.</div>_
 
 - La configuras una vez.  
 - Luego, simplemente funciona sin necesidad de repetir cada paso manualmente.  
@@ -960,12 +945,9 @@ Los parsers nos permiten agregar pasos adicionales a las cadenas de ejecución; 
 ``` bash
 [Prompt] --> [LLM] --> [Parser] --> Structured Output
 ```
+![Dibujo de una banda de supermercado con frutas](../assets/images/car_asembly.png){ width="600" .center }
 
-REEMPLAZAR IMAGEN POR LA SIGUIENTE:  https://drive.google.com/file/d/1Vb0eyzw5WUuAs5a1JPER6AB_VwKYUSuP/view?usp=drive_link
-<figure>
-  <img src="../assets/images/car_asembly.png" alt="Dibujo de una banda de supermercado con frutas" width="600">
-  <figcaption>Analogía de una cadena con parser. Las instrucciones se ejecutan en orden como en una línea de ensamblaje. </figcaption>
-</figure>
+_<div align="center">Analogía de una cadena con parser. Las instrucciones se ejecutan en orden como en una línea de ensamblaje.</div>_
 
 ### `JsonOutputParser`
 
@@ -1135,13 +1117,10 @@ En este código, el usuario final del mensaje estructurado es el modelo de lengu
 La función `get_format_instructions()` crea un string que contiene las instrucciones de formato basadas en los objetos `ResponseSchema`. Este string describe cómo debe estructurarse la salida del modelo de lenguaje (LLM) para que sea fácil de interpretar y procesar posteriormente.
 
 En analogía con el constructor de la clase `ChatPromptTemplate.from_template`, que describimos como un carpintero que crea un cajón a partir de maderas brutas, este tipo de template con instrucciones de formato se asemejaría a construir un cajón modular con instrucciones de armado, como el de la figura:
-![alt text](image-1.png)
 
-REEMPLAZAR FIGURA POR ESTA: https://drive.google.com/file/d/1yLVWjA672eLDv6EupKmTVZjUhu_SZzsm/view?usp=drive_link
+![Cajón modular con instrucciones de armado](../assets/images/modular_drawer.png){ width="600" .center }
 
-  <img src="../assets/images/modular_drawer.png" alt="Cajón modular con instrucciones de armado" width="600">
-  <figcaption> Analogía de un template con instrucciones de formato. </a></figcaption>
-</figure>
+_<div align="center">Analogía de un template con instrucciones de formato.</div>_
 
 <!--
 
@@ -1281,11 +1260,9 @@ Este tutorial muestra cómo utilizar el `JsonOutputParser` de LangChain para est
 ## 🎥 Videos recomendados
 
 ### **Título:** *Transformers (how LLM work) explained visually | DL5*
-### **Título:** *Transformers (how LLM work) explained visually | DL5*
+
 
 **Autor:** 3Blue1Brown  
-**URL:** [Transformers (how LLM work) explained visually](https://www.youtube.com/watch?v=wjZofJX0v4M)  
-Este video ofrece una explicación visual de cómo funcionan los modelos de lenguaje grandes (LLM) mediante la arquitectura de transformers, facilitando la comprensión de conceptos complejos.
 **URL:** [Transformers (how LLM work) explained visually](https://www.youtube.com/watch?v=wjZofJX0v4M)  
 Este video ofrece una explicación visual de cómo funcionan los modelos de lenguaje grandes (LLM) mediante la arquitectura de transformers, facilitando la comprensión de conceptos complejos.
 
@@ -1299,7 +1276,6 @@ Este video desglosa paso a paso el mecanismo de atención en los transformers, u
 ### **Título:** *How might LLM store facts | DL7*
 
 **Autor:** 3Blue1Brown  
-**URL:** [How might LLM store facts](https://www.youtube.com/watch?v=9-Jl0dxWQs8)  
 **URL:** [How might LLM store facts](https://www.youtube.com/watch?v=9-Jl0dxWQs8)  
 Este video explora cómo los modelos de lenguaje grandes pueden almacenar hechos y conocimientos, proporcionando una visión más profunda de su funcionamiento interno.
 

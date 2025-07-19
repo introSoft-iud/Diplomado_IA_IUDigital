@@ -70,8 +70,9 @@ extra_css:
   - css/custom.css
   - https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css
 
+
 nav:
   - Presentación del curso: index.md
-  - Unidad 1: Unidad 1/index.md
-  - Unidad 2: Unidad2/unidad2.md
-  - Unidad 3: Unidad3/unidad3.md
+  - Módulo 1: Unidad 1/modulo1.md
+  - Módulo 2: Unidad2/modulo2.md
+  - Módulo 3: Unidad3/modulo3.md

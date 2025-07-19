@@ -11,7 +11,9 @@ Nombre del curso: Diplomado en construcción de Aplicaciones Asistidas por IA
 
 -->
 # Diplomado en construcción de Aplicaciones Asistidas por IA
-SUBIR BANNER DEL CURSO: https://drive.google.com/file/d/1gQfMuG5mIBnUS6srf2fkkN8t15ua7BtC/view?usp=drive_link
+
+![Banner del curso](assets/images/Banner.jpg)
+
 <!--
 *********           PRELIMINARES  *****************************
 
@@ -110,7 +112,8 @@ Ejemplos:
 
 ## Mapa del curso
 Estos son los módulos que conforman nuestro diploma:
-(INSERTAR MAPA DEL CURSO: https://drive.google.com/file/d/1abV1RCEsFKhH16yNCnV1w9pI5xRk0EQ5/view?usp=sharing) 
+
+![Mapa del curso](assets/images/Mapa_DIPLOMA_LLM.png)
 
 <!-- Cronograma de actividades 
 Organiza las actividades y evidencias de aprendizaje que deben llevarse a cabo dentro del curso. Este cronograma incluye información sobre la secuencia de las actividades en cada módulo, la ubicación temporal (en qué semana se presentan) y los porcentajes correspondientes a las evidencias de aprendizaje.
