@@ -11,7 +11,7 @@ Nombre del curso: Diplomado en construcción de Aplicaciones Asistidas por IA
 
 -->
 # Diplomado en construcción de Aplicaciones Asistidas por IA
-
+SUBIR BANNER DEL CURSO: https://drive.google.com/file/d/1gQfMuG5mIBnUS6srf2fkkN8t15ua7BtC/view?usp=drive_link
 <!--
 *********           PRELIMINARES  *****************************
 
@@ -20,7 +20,7 @@ Describe de manera precisa y comprensible el propósito general del curso o asig
 
 
 
-Describe la relevancia del contenido del curso para la formación, esto es: los saberes a explorar, las habilidades a desarrollar, qué metodología se empleará, cuál es el proceso de evaluación y cómo están estructuradas las unidades del curso. 
+Describe la relevancia del contenido del curso para la formación, esto es: los saberes a explorar, las habilidades a desarrollar, qué metodología se empleará, cuál es el proceso de evaluación y cómo están estructuradas los módulos del curso. 
 
 Para redactar la presentación, ten en cuenta las siguientes recomendaciones:
 
@@ -60,11 +60,11 @@ Esta información se extrae de la carta descriptiva, por esa razón es important
 -->
 ## Resultados de Aprendizaje
 
-1. **Diseñar y aplicar prompt templates y cadenas de ejecución en LangChain:** Los estudiantes serán capaces de crear instrucciones reutilizables (prompt templates) y encadenarlas utilizando el Lenguaje de Expresión de LangChain (LCEL), especificando formatos de salida con output parsers para interactuar eficazmente con modelos de lenguaje.
+1. **Diseñar y aplicar prompt templates y cadenas de ejecución en LangChain:** los estudiantes serán capaces de crear instrucciones reutilizables (prompt templates) y encadenarlas utilizando el Lenguaje de Expresión de LangChain (LCEL), especificando formatos de salida con output parsers para interactuar eficazmente con modelos de lenguaje.
 
-2. **Desarrollar chatbots con gestión de memoria contextual:** Los estudiantes podrán construir chatbots funcionales utilizando LangChain, integrando memorias para almacenar y gestionar información contextual.
+2. **Desarrollar chatbots con gestión de memoria contextual:** los estudiantes podrán construir chatbots funcionales utilizando LangChain, integrando memorias para almacenar y gestionar información contextual.
 
-3. **Construir y desplegar sistemas RAG para interacción con documentos:** Los estudiantes estarán capacitados para integrar componentes como loaders de documentos, retrievers y bases de datos vectoriales en LangChain, creando sistemas de Retrieval-Augmented Generation (RAG) que permitan conversar con archivos PDF.
+3. **Construir y desplegar sistemas RAG para interacción con documentos:** los estudiantes estarán capacitados para integrar componentes como loaders de documentos, retrievers y bases de datos vectoriales en LangChain, creando sistemas de Retrieval-Augmented Generation (RAG) que permitan conversar con archivos PDF.
 
 <!--
 Pregunta orientadora
@@ -89,9 +89,9 @@ La siguiente imagen es la respuesta de ChatGPT al prompt:
 
 *Figura 1: Representación visual generada por ChatGPT sobre la vida del autor del diplomado.*
 
-¿Qué tan parecida es esta imagen a tu vida en tu caso? ¿Te sorprende que ChatGPT tenga tanta información sobre tu vida y tus gustos o todo lo contrario? ¿Qué opinas que va a pasar con los datos en un futuro donde todo es asistido por IA? ¿Le daremos a las IAs la información sensible de las personas y las empresas?
+¿Qué tan parecida es esta imagen a tu vida en tu caso? ¿Te sorprende que ChatGPT tenga tanta información sobre tu vida y tus gustos o todo lo contrario? ¿Qué opinas que va a pasar con los datos en un futuro donde todo es asistido por IA? ¿Le daremos a las IA la información sensible de las personas y las empresas?
 
-***¿Cómo podemos asegurarnos de que nuestros datos permanezcan privados, y al mismo tiempo aprovechar todo el poder de los modelos de lenguaje en los datos privados?***
+***¿Cómo podemos asegurarnos de que nuestros datos permanezcan privados, y al mismo tiempo, aprovechar todo el poder de los modelos de lenguaje en los datos privados?***
 
 <!--
 
@@ -109,7 +109,8 @@ Ejemplos:
 -->
 
 ## Mapa del curso
-
+Estos son los módulos que conforman nuestro diploma:
+(INSERTAR MAPA DEL CURSO: https://drive.google.com/file/d/1abV1RCEsFKhH16yNCnV1w9pI5xRk0EQ5/view?usp=sharing) 
 
 <!-- Cronograma de actividades 
 Organiza las actividades y evidencias de aprendizaje que deben llevarse a cabo dentro del curso. Este cronograma incluye información sobre la secuencia de las actividades en cada módulo, la ubicación temporal (en qué semana se presentan) y los porcentajes correspondientes a las evidencias de aprendizaje.
@@ -118,7 +119,7 @@ Organiza las actividades y evidencias de aprendizaje que deben llevarse a cabo d
 
 Diligencia el cuadro siguiendo las indicaciones que encontrarás en cada celda. 
 Recuerda la taxonomía y las definiciones establecidas en la carta descriptiva.
-Menciona las actividades y evidencias de aprendizaje que deberá realizar el estudiante durante el estudio del curso (bien sea de 2 o 3 unidades, según el caso).
+Menciona las actividades y evidencias de aprendizaje que deberá realizar el estudiante durante el estudio del curso (bien sea de 2 o 3 es, según el caso).
 
 
 
@@ -147,13 +148,13 @@ Menciona las actividades y evidencias de aprendizaje que deberá realizar el est
 <!-- 
 
 Cronograma de actividades 
-Organiza las actividades y evidencias de aprendizaje que deben llevarse a cabo dentro del curso. Este cronograma incluye información sobre la secuencia de las actividades en cada unidad, la ubicación temporal (en qué semana se presentan) y los porcentajes correspondientes a las evidencias de aprendizaje.
+Organiza las actividades y evidencias de aprendizaje que deben llevarse a cabo dentro del curso. Este cronograma incluye información sobre la secuencia de las actividades en cada , la ubicación temporal (en qué semana se presentan) y los porcentajes correspondientes a las evidencias de aprendizaje.
 
 
 
 Diligencia el cuadro siguiendo las indicaciones que encontrarás en cada celda. 
 Recuerda la taxonomía y las definiciones establecidas en la carta descriptiva.
-Menciona las actividades y evidencias de aprendizaje que deberá realizar el estudiante durante el estudio del curso (bien sea de 2 o 3 unidades, según el caso).
+Menciona las actividades y evidencias de aprendizaje que deberá realizar el estudiante durante el estudio del curso (bien sea de 2 o 3 es, según el caso).
 
 -->
 ## Cronograma de actividades

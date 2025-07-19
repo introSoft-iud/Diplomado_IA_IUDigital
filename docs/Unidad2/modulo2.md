@@ -1,6 +1,6 @@
 
 
-# Módulo 2: Cadenas y Memoria
+# Módulo 2. Cadenas y Memoria
 
 
 ## Introducción al módulo

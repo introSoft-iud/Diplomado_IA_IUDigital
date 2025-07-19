@@ -11,7 +11,7 @@ Bienvenidos al última módulo de nuestro curso sobre aplicaciones asistidas por
 
 | Actividad de aprendizaje                                      | Evidencia de aprendizaje                               | Semana         | Ponderación |
 |---------------------------------------------------------------|--------------------------------------------------------|----------------|-------------|
-| Reto Formativo 3: Carga y división de documentos en PDF       | EA3: Chat con tus datos                                | Semanas 6, 7 y 8 | 30%         |
+| Reto Formativo 3: carga y división de documentos en PDF       | EA3: Chat con tus datos                                | Semanas 6, 7 y 8 | 30%         |
 | **Total**                                                     |                                                        |                | **30%**     |
 
 <!--
@@ -60,7 +60,7 @@ El uso efectivo de metadatos puede mejorar significativamente la capacidad de tu
 
 ## Categorías y ejemplos de cargadores de documentos
 
-LangChain ofrece un vasto ecosistema de cargadores de documentos, ¡actualmente más de 80, y la comunidad sigue añadiendo más! Exploremos algunos:
+LangChain ofrece un vasto ecosistema de cargadores de documentos, ¡actualmente más de 80, y la com sigue añadiendo más! Exploremos algunos:
 
 ### Cargadores Basados en Archivos:
 Estos cargadores leen datos directamente de archivos. Vemos algunos:
